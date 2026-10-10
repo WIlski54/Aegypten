@@ -152,6 +152,37 @@ export const CARDS_B = {
     tags: ['Chemie', 'Versuch'], fragen: ['Welcher Zusatz entzieht dem Apfel das meiste Wasser?', 'Warum faulen die Stücke mit Salz langsamer?'],
   },
 
+  udjat: {
+    name: 'Das Udjat-Auge', say: 'sprich: u-DJAT', tts: 'Udjat', when: 'in allen Epochen', whereLabel: 'Ort', where: 'Amulette, Särge, Wände', specId: 'udjat', sizeM: 0.25,
+    wow: 'Das Horusauge sollte heilen und schützen. Die Teile des Zeichens standen sogar für Bruchteile in der Mathematik.',
+    text: 'Der Sage nach verlor Horus im Kampf sein Auge. Es wurde heil gemacht. Deshalb galt das Udjat-Auge als Zeichen für Heilung, Schutz und Ganzheit. Man trug es als Amulett.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Amulett', 'Götter'], fragen: ['Wofür stand das Udjat-Auge?'],
+  },
+  ankh: {
+    name: 'Das Anch', say: 'sprich: ANCH', tts: 'Anch', meaning: 'Bedeutung: „Leben“.', when: 'in allen Epochen', whereLabel: 'Ort', where: 'in der Hand von Göttern, auf Wänden und Amuletten', specId: 'ankh', sizeM: 0.3,
+    wow: 'Das Anch sieht aus wie ein Kreuz mit einer Schlaufe. Götter halten es oft dem König an die Nase.',
+    text: 'Das Anch ist das Zeichen für Leben. Es ist ein Hieroglyphenzeichen und zugleich ein Symbol, das man überall findet: in der Hand der Götter, auf Särgen und auf Schmuck.',
+    tags: ['Symbol', 'Schrift'], fragen: ['Was bedeutet das Anch?'],
+  },
+  djed: {
+    name: 'Der Djed-Pfeiler', say: 'sprich: DJED', tts: 'Djed', when: 'in allen Epochen', whereLabel: 'Ort', where: 'Amulette, Tempelwände', specId: 'djed', sizeM: 0.4,
+    wow: 'Der Djed-Pfeiler gehört zu Osiris. Er stand für Stärke und Dauer.',
+    text: 'Der Pfeiler hat vier Querbalken am oberen Ende. Er ist ein Zeichen für Beständigkeit. Man legte kleine Djed-Pfeiler als Amulett mit ins Grab.',
+    note: 'Was der Pfeiler ursprünglich darstellte, ist unter Forschern nicht ganz geklärt.', tags: ['Symbol', 'Amulett'], fragen: ['Wofür stand der Djed-Pfeiler?'],
+  },
+  harzkrug: {
+    name: 'Harz- und Salbgefäße', say: '', tts: 'Salbgefäße', when: 'in allen Epochen', whereLabel: 'Ort', where: 'Werkstatt und Gräber', specId: 'harzkrug', sizeM: 0.4,
+    wow: 'Harze aus Bäumen duften und halten Wasser ab. Man verwendete sie bei Mumien, aber auch als Weihrauch.',
+    text: 'In den Krügen standen Öle, Salben und Harze. Aus Zedernholz, Myrrhe und anderen Pflanzen stellte man sie her. Das Harz dichtete die Binden ab und machte den Körper haltbarer.',
+    tags: ['Mumie', 'Handwerk'], fragen: ['Wozu brauchte man Harze bei der Mumifizierung?'],
+  },
+  priester: {
+    name: 'Der Priester', say: 'sprich: PRIES-ter', tts: 'Priester', when: 'in allen Epochen', dietLabel: 'Aufgabe', diet: 'Tempeldienst, Opfer, Gebete', whereLabel: 'Ort', where: 'Tempel und Grabstätten', specId: 'priester', sizeM: 1.7,
+    wow: 'Priester rasierten sich den Kopf und den Körper und wuschen sich mehrmals am Tag.',
+    text: 'Priester kümmerten sich um die Tempel und die Götter. Bei Totenfeiern sprachen sie Gebete. Ein Leopardenfell zeigte oft einen besonderen Rang.',
+    tags: ['Beruf', 'Glaube'], fragen: ['Welche Aufgaben hatte ein Priester?'],
+  },
+
   // ------------------------------------------------------------ Station 6: Alltag
   deir_el_medina: {
     name: 'Deir el-Medina', say: 'sprich: Deir el-Me-DI-na', tts: 'Dair el Medina', when: 'ca. 1500 bis 1100 v. Chr.', period: 'Neues Reich', whereLabel: 'Ort', where: 'am Westufer des Nils bei Theben (Luxor)',

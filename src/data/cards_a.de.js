@@ -259,6 +259,12 @@ export const CARDS_A = {
     text: 'Kupfer war das wichtigste Metall der frühen Ägypter. Werkzeuge schmiedete man aus Kupfer. Später mischte man Zinn dazu. So entstand Bronze, die härter ist.',
     tags: ['Werkzeug', 'Metall'], fragen: ['Was entsteht, wenn man Kupfer mit Zinn mischt?'], specId: 'kupfermeissel', sizeM: 0.35,
   },
+  holzschlaegel: {
+    name: 'Der Holzschlägel', say: '', tts: 'Holzschlägel', when: 'in allen Epochen', whereLabel: 'Ort', where: 'Steinbruch, Werkstatt', specId: 'holzschlaegel', sizeM: 0.35,
+    wow: 'Mit dem Holzschlägel schlug man auf Meißel, ohne das Werkzeug zu beschädigen.',
+    text: 'Der Schlägel besteht aus hartem Holz. Der Steinmetz hielt den Meißel in der einen Hand und schlug mit dem Schlägel darauf. So entstanden Rillen im Stein, und Blöcke ließen sich herauslösen.',
+    tags: ['Werkzeug'], fragen: ['Wozu benutzte der Steinmetz den Holzschlägel?'],
+  },
   arbeitersiedlung: {
     name: 'Die Arbeitersiedlung', say: '', tts: 'Arbeitersiedlung', when: 'um 2500 v. Chr.', whereLabel: 'Ort', where: 'Heit el-Ghurab bei Gizeh, ausgegraben ab den 1990er Jahren',
     wow: 'Archäologen fanden Bäckereien, Brauereien und Wohnräume für Tausende Arbeiter.',

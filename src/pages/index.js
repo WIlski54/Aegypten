@@ -8,5 +8,4 @@ import p5 from './p5.js';
 import p6 from './p6.js';
 import p7 from './p7.js';
 import p8 from './p8.js';
-import { stub } from './stubpage.js';
 export const DEFS = [p0, p1, p2, p3, p4, p5, p6, p7, p8];
