@@ -311,8 +311,8 @@ export default {
     // Dorf Deir el-Medina auf der linken Seite
     const vil = ctx.flat(villagePart(-5.9, 5.9, 21), { x: -6, z: -2.55, delay: 0.14, name: 'village', ppu: 80, border: 0.04 });
     tapFlat(vil, 'deir_el_medina');
-    ctx.prop('dattelpalme', { x: -11.0, z: -3.0, h: 4.4, delay: 0.2 });
-    ctx.prop('dattelpalme', { x: -0.9, z: -3.0, h: 3.5, delay: 0.24, facing: -1 });
+    ctx.prop('dattelpalme', { x: -10.1, z: -3.0, h: 4.1, delay: 0.2 });
+    ctx.prop('dattelpalme', { x: -1.7, z: -3.0, h: 3.4, delay: 0.24, facing: -1 });
     ctx.prop('ziegelmauer', { x: -2.4, z: -1.5, len: 4.6, delay: 0.26, variant: { seed: 2 } });
     yield;
 
@@ -347,7 +347,7 @@ export default {
     const house = ctx.prop('lehmhaus', { x: HX, z: HZ, len: HLEN, delay: 0.1, border: 0.04 });
     house.pickMeshes = house.fig.hit.slice();
     for (const m of house.fig.hit) m.userData.tap = () => app.openCardById('deir_el_medina', HX);
-    ctx.prop('dattelpalme', { x: 11.3, z: -3.0, h: 4.3, delay: 0.2 });
+    ctx.prop('dattelpalme', { x: 10.4, z: -3.0, h: 4.0, delay: 0.2 });
     yield;
 
 
