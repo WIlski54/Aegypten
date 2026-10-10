@@ -171,15 +171,24 @@ export function ellipseAt(c, x, y, rx, ry, color, alpha = 1, rot = 0) {
   ctx.save(); ctx.globalAlpha = alpha; ctx.fillStyle = color; ctx.beginPath(); ctx.ellipse(X, Y, Math.max(0.8, rx * S), Math.max(0.8, ry * S), -rot, 0, TAU); ctx.fill(); ctx.restore();
 }
 /** Parallele Streifen quer zu einer Mittellinie-Richtung ang (Standard: horizontale Bänder, von unten nach oben). */
-export function bands(c, bb, colors, { y0 = bb.y0, y1 = bb.y1, n = 8, ang = 0, alpha = 1, skip = 0 } = {}) {
-  const { ctx, tf } = c;
+export function bands(c, bb, colors, { y0 = bb.y0, y1 = bb.y1, n = 8, ang = 0, alpha = 1, curve = 0, cx = null } = {}) {
+  const { ctx } = c;
   ctx.save(); ctx.globalAlpha = alpha;
   const dy = (y1 - y0) / n;
+  const mx = cx ?? (bb.x0 + bb.x1) / 2;
+  const xa = bb.x0 - 1, xb = bb.x1 + 1, steps = curve ? 18 : 1;
+  const edge = (y, dir) => {
+    const out = [];
+    for (let k = 0; k <= steps; k++) {
+      const x = xa + ((xb - xa) * k) / steps;
+      out.push([x, y + Math.tan(ang) * (x - mx) - curve * (x - mx) * (x - mx)]);
+    }
+    return dir > 0 ? out : out.reverse();
+  };
   for (let i = 0; i < n; i++) {
     const col = colors[i % colors.length]; if (!col) continue;
     const ya = y0 + dy * i, yb = ya + dy;
-    const tilt = Math.tan(ang) * bb.w;
-    const P = [[bb.x0 - 1, ya - tilt / 2 - 1], [bb.x1 + 1, ya + tilt / 2 - 1], [bb.x1 + 1, yb + tilt / 2], [bb.x0 - 1, yb - tilt / 2]];
+    const P = edge(ya - 0.02, 1).concat(edge(yb + 0.02, -1));
     ctx.fillStyle = col; pathPoly(c, P); ctx.fill();
   }
   ctx.restore();

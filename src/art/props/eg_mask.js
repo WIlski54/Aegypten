@@ -64,11 +64,11 @@ function eyeLayers(sg) {
     return pts;
   };
   // Lidstrich (Lapis) bis zur Schläfe
-  const kohl = stroke2poly([[sg * 1.2, 39.0], [sg * 2.4, 40.4], [sg * 4.0, 40.9], [sg * 5.8, 40.5], [sg * 7.6, 40.1]], 0.62);
-  const kohlLow = stroke2poly([[sg * 5.6, 38.7], [sg * 6.6, 39.3]], 0.35);
-  const white = poly(almond(2.5, 0.84), 1);
+  const kohl = stroke2poly([[sg * 1.0, 38.9], [sg * 2.3, 40.5], [sg * 4.0, 41.0], [sg * 5.9, 40.7], [sg * 7.9, 40.5]], 0.6);
+  const kohlLow = stroke2poly([[sg * 5.9, 38.7], [sg * 7.3, 39.5]], 0.32);
+  const white = poly(almond(2.75, 0.98), 1);
   return [
-    inlay([kohl, kohlLow], K.lapisLo, { stroke: 'rgba(5,10,30,.6)', up: 0.3, down: -0.1 }),
+    inlay([kohl, kohlLow], '#1f4a8c', { stroke: 'rgba(5,10,30,.35)', up: 0.2, down: -0.15 }),
     {
       shapes: [white], fill: '#fbf6e6', stroke: 'rgba(30,18,5,.75)',
       deco(c) {
@@ -88,7 +88,7 @@ function browLayer(sg) {
 function faceLayer() {
   const shapes = [faceShape()];
   return {
-    shapes, fill: { stops: [[0, '#fff0b3'], [0.3, '#f0c85a'], [0.7, '#e0b040'], [1, '#b98528']], dir: 'v' }, stroke: 'rgba(100,60,8,.8)',
+    shapes, fill: { stops: [[0, '#fff0b3'], [0.3, '#f0c85a'], [0.7, '#e0b040'], [1, '#b98528']], dir: 'v' }, stroke: 'rgba(100,60,8,.5)',
     deco(c, bb) {
       const { ctx } = c;
       // weiche Wangen-/Stirnlichter
@@ -127,12 +127,12 @@ export function maskLayers() {
   const cx = 0, cy = 26;
   // Nemes-Haube + Lappen als eine Silhouette (Gesicht liegt davor)
   const nemesShape = sym([
-    [0, 58], [7.2, 56.6], [12, 50.6], [13.8, 43], [15.2, 36.5], [17.0, 31], [19.2, 26.4], [18.8, 20], [0, 19],
+    [0, 58.4], [5, 58], [9.6, 55.4], [12.6, 50.4], [13.8, 43], [15.2, 36.5], [17.0, 31], [19.2, 26.4], [18.8, 20], [0, 19],
   ], 1);
   const cloth = {
     shapes: [nemesShape], fill: { stops: [[0, K.goldHi], [0.4, K.gold], [1, '#b98528']], dir: 'v' }, stroke: 'rgba(60,40,5,.8)',
     deco(c, bb) {
-      bands(c, bb, [K.lapis, null], { y0: 19, y1: 58, n: 22 });
+      bands(c, bb, [K.lapis, null], { y0: 17, y1: 61, n: 22, curve: 0.011 });
       volume(c, bb, { dark: 'rgba(15,20,60,.3)', light: 'rgba(255,245,190,.25)' });
       // Faltenlinien an den Lappen
       for (const sg of [-1, 1]) {
