@@ -44,6 +44,7 @@ export function weisse_krone(opts = {}) {
     body: {
       z: 1, layers: [
         whiteLeather([body], k, 0, 0),
+        gold([blob(0.5, 50.2, 1.9, 1.5, 0, 12)], { dir: 'v', gloss: false }),
         bandGold(0, 0.2, 1, 17.6, 2.6),
       ],
     },
@@ -107,9 +108,9 @@ export function rote_krone(opts = {}) {
 
 // ---- Pschent (Doppelkrone) ----------------------------------------------------------------------------------------------
 export function doppelkrone(opts = {}) {
-  const S = deschretShapes(1, 0, 0, 44);
+  const S = deschretShapes(1, -1.6, 0, 46);
   // Hedjet steckt in der Deschret: Fuß auf Höhe der Kappe
-  const k = 1.12, hy = 12, hx = 1.8;
+  const k = 1.12, hy = 12, hx = 3.2;
   const white = hedjetShape(k, hx, hy);
   const uraeus = uraeusProfile(8.6, 5.2, 10.5);
   const parts = {
@@ -130,7 +131,7 @@ export function doppelkrone(opts = {}) {
 
 // ---- Nemes (Streifentuch) ------------------------------------------------------------------------------------------------------
 // Frontal: Haube + zwei Seitenlappen, Gesichtsöffnung ausgeschnitten (wie ein Hohlkopfschmuck), goldenes Stirnband, Uräus.
-export function nemes(opts = {}) {
+function nemesTuch(opts = {}) {
   const cloth = sym([
     [0, 40.4], [6, 39.4], [10.4, 35], [12.2, 28], [14.2, 19], [16.6, 8], [17.8, 0.4], [9.2, 0.4], [8.8, 8], [7.9, 16], [6.8, 21.5], [4.2, 25.4], [0, 27.2],
   ], 1);
@@ -155,6 +156,59 @@ export function nemes(opts = {}) {
   const parts = { body: { z: 1, layers: [cl, band, ur] } };
   return spec('nemes', 'Nemes-Kopftuch', parts, { base: [0, 0], top: [0, 40], uraeus: [0, 38] },
     { heightM: 0.4, ranges: {}, desc: 'Königliches Streifenkopftuch mit Uräus' }, { h: opts.h || 0.4 });
+}
+
+// Standard: goldene Königsbüste im Profil mit Nemes (zeigt, wie das Tuch getragen wird). opts.view='tuch' liefert das Tuch allein (frontal).
+export function nemes(opts = {}) {
+  if (opts.view === 'tuch') return nemesTuch(opts);
+  const stripeFill = { stops: [[0, K.goldHi], [0.3, K.gold], [1, '#b98528']], dir: 'v' };
+  const cloth = (shapes, y0, y1, n) => ({
+    shapes, fill: stripeFill, stroke: 'rgba(60,40,5,.75)',
+    deco(c, bb) {
+      bands(c, bb, [K.lapis, null], { y0, y1, n });
+      volume(c, bb, { dark: 'rgba(15,20,60,.3)', light: 'rgba(255,245,190,.22)' });
+      gloss(c, bb, { ang: 0.9, pos: 0.25, w: 0.12, a: 0.4 });
+      bevel(c, shapes, bb);
+    },
+  });
+  const queue = poly([[-9.6, 23], [-13, 19.5], [-14.8, 12], [-14.6, 5], [-9.8, 4.4], [-8.8, 11], [-7.8, 18]], 1);
+  const dome = poly([[9.6, 29.2], [10, 32.4], [8.6, 36.8], [4.4, 39.8], [-1, 40.6], [-6.6, 38.8], [-10.6, 33.6], [-12, 27], [-11.4, 20.6], [-6.4, 19.2], [-1.2, 22.6], [0.6, 26.2], [2.4, 28], [5.2, 29]], 2);
+  const neck = poly([[-3.6, 22], [4.6, 22], [4.8, 14], [5.8, 8], [7, 0.8], [-6, 0.8], [-5, 8], [-3.8, 14]], 1);
+  const lappet = poly([[3.2, 17.8], [10.6, 17.2], [12.4, 10], [14.2, 0.8], [0.6, 0.8], [1.6, 9]], 1);
+  const face = poly([[0, 29.8], [8.6, 29.8], [9.4, 28.4], [8.9, 26.8], [11.8, 23.2], [10.8, 21.8], [11.0, 20.4], [10.4, 19.6], [10.9, 18.8], [9.9, 16.4], [8.4, 14.6], [3.8, 15.4], [0.6, 19], [0, 24]], 1);
+  const faceL = {
+    shapes: [face], fill: { stops: [[0, '#f0c85a'], [0.5, '#fff0b3'], [1, '#e0b040']], dir: 'h' }, stroke: 'rgba(100,60,8,.85)',
+    deco(c, bb) {
+      volume(c, bb, { dark: 'rgba(110,60,5,.22)', light: 'rgba(255,248,205,.2)' });
+      ln(c, [[10.6, 20.0], [9.2, 20.3]], 'rgba(90,50,5,.8)', 0.22);                       // Mund
+      ellipseAt(c, 10.4, 19.2, 0.7, 0.4, 'rgba(210,150,40,.7)');
+      ln(c, [[10.2, 22.0], [9.4, 22.5]], 'rgba(100,55,5,.55)', 0.2);                       // Nasenflügel
+      gloss(c, bb, { ang: 0, pos: 0.7, w: 0.1, a: 0.35 });
+      bevel(c, [face], bb, { px: 1.0 });
+    },
+  };
+  const neckL = gold([neck], { dir: 'h', gloss: false });
+  const eye = {
+    shapes: [poly([[4.8, 26.4], [6.2, 27.0], [7.8, 26.6], [6.4, 25.8]], 2)], fill: '#fbf6e6', stroke: 'rgba(30,18,5,.85)',
+    deco(c) { dotAt(c, 6.9, 26.5, 0.5, K.black); },
+  };
+  const kohl = inlay([stroke2poly([[3.8, 26.2], [5.0, 26.8], [6.8, 27.2], [8.2, 26.8]], 0.55), stroke2poly([[3.8, 26.2], [2.4, 26.9]], 0.4)], K.lapisLo, { stroke: 'rgba(5,10,30,.6)' });
+  const brow = inlay([stroke2poly([[4.2, 28.2], [6.6, 28.6], [9.0, 28.2]], 0.7)], K.lapis, { stroke: 'rgba(5,10,30,.6)' });
+  const ear = gold([blob(1.8, 23.6, 1.0, 2.0, 0.2, 14)], { dir: 'h', gloss: false, deco(c) { dotAt(c, 1.7, 22.7, 0.25, 'rgba(90,50,5,.7)'); } });
+  const trim = gold([stroke2poly([[9.8, 29.4], [5.2, 29.0], [2.4, 28.1], [0.6, 26.2], [-1.2, 22.8], [-6.4, 19.5], [-11.2, 20.8]], 0.9)], { dir: 'v', gloss: false });
+  const beardShape = poly([[8.6, 17], [11.0, 16.6], [11.3, 9.4], [13, 6], [10.6, 5.4], [8.4, 9]], 1);
+  const beard = {
+    shapes: [beardShape], fill: goldFill('h'), stroke: 'rgba(100,60,8,.85)',
+    deco(c, bb) { bands(c, bb, [K.lapis, null, null], { y0: 5.8, y1: 16.8, n: 14 }); volume(c, bb); bevel(c, [beardShape], bb, { px: 1.0 }); },
+  };
+  const uraeus = uraeusProfile(9.3, 29.4, 9);
+  const parts = {
+    body: {
+      z: 1, layers: [cloth([queue], 4.4, 24, 6), neckL, cloth([lappet], 0.8, 18, 8), faceL, cloth([dome], 19, 40.6, 7), trim, ear, kohl, brow, eye, beard, uraeus],
+    },
+  };
+  return spec('nemes', 'Königsbüste mit Nemes', parts, { base: [0, 0], top: [0, 40], uraeus: [9.3, 38] },
+    { heightM: 0.4, ranges: {}, desc: 'Gestreiftes Königskopftuch (Nemes) mit Uräus auf einer goldenen Büste; opts.view=\'tuch\' zeigt das Tuch allein' }, { h: opts.h || 0.4 });
 }
 
 // ---- Khepresch (Blaue Krone) --------------------------------------------------------------------------------------------------------
@@ -189,7 +243,7 @@ export function blaue_krone(opts = {}) {
       gloss(c, bb, { ang: 0, pos: 0.15, w: 0.1, a: 0.35, color: '220,235,255' });
     },
   };
-  const uraeus = uraeusProfile(8.6, 3.4, 10);
+  const uraeus = uraeusProfile(8.6, 3.4, 12);
   const parts = {
     body: {
       z: 1, layers: [
