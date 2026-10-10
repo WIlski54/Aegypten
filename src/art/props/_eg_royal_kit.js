@@ -289,13 +289,29 @@ export function uraeusFront(x, y, s, { eye = true } = {}) {
   const body = limb([[x, y + 0.3 * s, 0.22 * s], [x, y + 0.1 * s, 0.2 * s], [x, y - 0.0 * s, 0.2 * s]], { per: 5, caps: false });
   const shapes = [hood, head, body];
   return gold(shapes, {
-    ang: 1.2, pos: 0.35, bevelOpts: { px: 1.2 },
+    ang: 1.2, pos: 0.35, bevelOpts: { px: 1.2 }, stroke: 'rgba(100,60,8,.6)',
     deco(c) {
       for (let i = 0; i < 4; i++) {
         const yy = y + (0.3 + i * 0.1) * s, w = 0.3 - i * 0.03;
         ln(c, [[x - w * s, yy + 0.02 * s], [x, yy - 0.03 * s], [x + w * s, yy + 0.02 * s]], i % 2 ? K.carn : K.lapis, 0.05 * s, 0.95);
       }
       if (eye) { dotAt(c, x - 0.05 * s, y + 0.88 * s, 0.022 * s, K.black); dotAt(c, x + 0.05 * s, y + 0.88 * s, 0.022 * s, K.black); }
+    },
+  });
+}
+
+/** Geierkopf frontal (Nechbet): Hals, runder Kopf, Hakenschnabel nach unten. */
+export function vultureFront(x, y, s) {
+  const neck = limb([[x, y, 0.2 * s], [x, y + 0.45 * s, 0.17 * s], [x, y + 0.62 * s, 0.15 * s]], { per: 5, caps: false });
+  const head = blob(x, y + 0.78 * s, 0.2 * s, 0.2 * s, 0, 24);
+  const beak = poly([[x - 0.09 * s, y + 0.82 * s], [x + 0.09 * s, y + 0.82 * s], [x + 0.06 * s, y + 0.62 * s], [x, y + 0.5 * s], [x - 0.06 * s, y + 0.62 * s]], 2);
+  const shapes = [neck, head, beak];
+  return gold(shapes, {
+    ang: 1.2, pos: 0.35, bevelOpts: { px: 1.2 }, stroke: 'rgba(100,60,8,.6)',
+    deco(c) {
+      for (let i = 0; i < 3; i++) ln(c, [[x - 0.13 * s, y + (0.2 + i * 0.1) * s], [x, y + (0.25 + i * 0.1) * s], [x + 0.13 * s, y + (0.2 + i * 0.1) * s]], i % 2 ? K.carn : K.lapis, 0.04 * s, 0.9);
+      for (const sg of [-1, 1]) { dotAt(c, x + sg * 0.1 * s, y + 0.84 * s, 0.05 * s, K.lapisLo); dotAt(c, x + sg * 0.1 * s, y + 0.84 * s, 0.027 * s, K.black); }
+      ln(c, [[x, y + 0.84 * s], [x, y + 0.56 * s]], K.goldLo, 0.02 * s, 0.7);
     },
   });
 }
