@@ -94,8 +94,8 @@ export function narmer_palette(opts = {}) {
           Rr(poly([[-1.8, 22.4], [2.0, 22.4], [2.2, 23.6], [1.2, 24.4], [-1.6, 24.4]], 1), 'rgba(30,38,34,.7)');   // Perücke
         }
       };
-      man(3.0, 21.8, 1.0, true);
-      man(-9.8, 21.8, 0.82, false);
+      man(3.0, 21.8, 0.86, true);
+      man(-9.4, 21.8, 0.72, false);
 
       // ---- Unteres Register: Schlangenhalspanther um die Farbmulde
       const wx = 0, wy = 14.2;
@@ -113,17 +113,19 @@ export function narmer_palette(opts = {}) {
       R(poly([[-2.2, 19.4], [-4.6, 20.6], [-5.4, 20.0], [-4.6, 18.6], [-3, 18.2]], 1), LIGHT); ellipseAt(c, -3.4, 19.6, 0.22, 0.22, 'rgba(18,26,22,.9)');
       // Körper links/rechts mit Beinen und Schwanz
       for (const sg of [-1, 1]) {
-        R(poly([[sg * 8.8, 8.2], [sg * 15.6, 8.4], [sg * 17.2, 11], [sg * 15, 12.6], [sg * 9.4, 12.2]], 2), LIGHT);
-        R([[sg * 10.2, 8.4], [sg * 11.6, 8.4], [sg * 11.4, 4.2], [sg * 10.2, 4.2]], LIGHT); R([[sg * 14.2, 8.4], [sg * 15.6, 8.4], [sg * 15.4, 4.2], [sg * 14.2, 4.2]], LIGHT);
-        L([[sg * 17, 11], [sg * 19, 12.4], [sg * 18.6, 15]], 0.26);
+        R(poly([[sg * 8.8, 9.6], [sg * 15.6, 9.8], [sg * 17.2, 12.2], [sg * 15, 13.6], [sg * 9.4, 13.2]], 2), LIGHT);
+        R([[sg * 10.2, 9.8], [sg * 11.6, 9.8], [sg * 11.4, 6.8], [sg * 10.2, 6.8]], LIGHT); R([[sg * 14.2, 9.8], [sg * 15.6, 9.8], [sg * 15.4, 6.8], [sg * 14.2, 6.8]], LIGHT);
+        L([[sg * 17, 12.2], [sg * 19, 13.4], [sg * 18.6, 16]], 0.2);
       }
-      // Stierköpfe (frontal, Zierde) in den unteren Ecken
+      // Stierköpfe (frontal, Zierde) in den unteren Ecken: Leierhörner, Ohren, schmale Schnauze
       for (const sg of [-1, 1]) {
-        const bx = sg * 12.4, by = 3.0;
-        const horn = spline([[bx + sg * 1.6, by + 1.2, 0.8], [bx + sg * 3.6, by + 2.8, 0.7], [bx + sg * 3.4, by + 5.0, 0.5], [bx + sg * 1.8, by + 5.6, 0.3]], 6);
+        const bx = sg * 6.6, by = 2.2;
+        const horn = spline([[bx + sg * 1.3, by + 2.2, 0.8], [bx + sg * 3.4, by + 2.9, 0.75], [bx + sg * 3.9, by + 5.2, 0.6], [bx + sg * 2.5, by + 6.8, 0.35]], 6);
         R(limb(horn.map((p) => [p[0], p[1], p[2]]), { per: 1 }), LIGHT2);
-        R(poly([[bx - 1.7, by + 1.8], [bx + 1.7, by + 1.8], [bx + 1.3, by - 1.4], [bx + 0.5, by - 2.0], [bx - 0.5, by - 2.0], [bx - 1.3, by - 1.4]], 2), LIGHT2);
-        for (const e of [-1, 1]) ellipseAt(c, bx + e * 0.9, by + 0.8, 0.22, 0.16, 'rgba(18,26,22,.9)');
+        E(bx + sg * 1.9, by + 1.3, 1.0, 0.5, LIGHT, sg * 0.4);
+        R(poly([[bx - 1.3, by + 2.6], [bx + 1.3, by + 2.6], [bx + 1.1, by - 0.2], [bx + 0.7, by - 1.6], [bx - 0.7, by - 1.6], [bx - 1.1, by - 0.2]], 2), LIGHT2);
+        for (const e of [-1, 1]) ellipseAt(c, bx + e * 0.65, by + 1.3, 0.2, 0.14, 'rgba(18,26,22,.9)');
+        L([[bx - 0.5, by - 1.1], [bx + 0.5, by - 1.1]], 0.12);
       }
       // Rahmenlinie
       L([[-19.4, 8], [-19.8, 40], [-19.2, 58]], 0.18, 'rgba(18,26,22,.4)'); L([[19.4, 8], [19.8, 40], [19.2, 58]], 0.18, 'rgba(18,26,22,.4)');

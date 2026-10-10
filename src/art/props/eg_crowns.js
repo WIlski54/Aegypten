@@ -46,6 +46,7 @@ export function weisse_krone(opts = {}) {
         whiteLeather([body], k, 0, 0),
         gold([blob(0.5, 50.2, 1.9, 1.5, 0, 12)], { dir: 'v', gloss: false }),
         bandGold(0, 0.2, 1, 17.6, 2.6),
+        ...(opts.uraeus === false ? [] : [uraeusProfile(9.4, 3.6, 10)]),
       ],
     },
   };
