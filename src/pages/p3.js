@@ -19,14 +19,14 @@ const NL = 12;                                   // Schichten von pyramide_bau
 const PYX = -3.55, PYZ = -2.4, PYH = 4.3;        // Pyramide im Bau: Mitte, Tiefe, Höhe
 const PHALF = (3.95 * PYH) / 5;                  // halbe Basisbreite in Welteinheiten
 const faceX = (y) => PYX - PHALF * (1 - y / PYH);   // linke Pyramidenkante in Höhe y
-const RAMP_Z = -1.3, RAMP_LEN = 5.0, RAMP_WS = RAMP_LEN / 6;
+const RAMP_Z = -1.35, RAMP_LEN = 5.0, RAMP_WS = RAMP_LEN / 6;
 const RAMP_SLOPE = (1.854 - 0.176) / (2.555 + 2.741);              // Steigung der Rampenoberfläche (Modell)
 const rampSurf = (xm) => 0.176 + RAMP_SLOPE * (xm + 2.741);          // Oberfläche in Modellkoordinaten
 const RAMP_END = rampSurf(3.0) * RAMP_WS;                           // Höhe der Oberfläche am hohen Ende (Maßstab 1)
 const V0 = 0.42;                                 // Startwert des Hebels BAUEN!
 
 // Schlittenbahn (Ochse): Strecke des Schlittens
-const LANE_Z = 0.25, LA = -10.0, LB = -5.0;
+const LANE_Z = -0.1, LA = -10.0, LB = -5.0;
 
 // Sphinx (rechte Seite)
 const SPX = 9.0, SPZ = 0.45, SPLEN = 4.5;
@@ -145,7 +145,7 @@ function coverCanvas(w, h) {
   g.strokeStyle = '#f2c25a'; g.lineWidth = 9 * k; g.lineCap = 'round'; g.beginPath(); g.moveTo(cx - pw * 0.52, by - ph * 0.2); g.lineTo(cx - pw * 0.04, by - ph * 0.5); g.stroke();
   g.fillStyle = '#7a4f1c'; g.beginPath(); g.moveTo(cx - pw - 8 * k, by + 12 * k); g.lineTo(cx + pw + 8 * k, by + 12 * k); g.lineTo(cx + pw + 8 * k, by + 30 * k); g.lineTo(cx - pw - 8 * k, by + 30 * k); g.fill();
   g.textAlign = 'center'; g.fillStyle = '#7a1a1a';
-  g.font = `bold ${108 * k}px ${SERIF}`; g.fillText('SCHNITT', w * 0.69, h * 0.43);
+  g.font = `bold ${88 * k}px ${SERIF}`; g.fillText('SCHNITT', w * 0.69, h * 0.43);
   g.fillStyle = '#4a2c12'; g.font = `italic ${42 * k}px ${SERIF}`; g.fillText('Ein Blick ins Innere', w * 0.69, h * 0.56);
   g.fillStyle = '#fff6df'; g.font = `bold ${38 * k}px ${SERIF}`; g.fillText('Tippe zum Aufklappen', w * 0.69, h * 0.8);
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; return t;
@@ -225,13 +225,14 @@ export default {
     yield;
 
     // ---------------------------------------------------------------- rechts: die fertigen Pyramiden, Sphinx
-    const trio = ctx.prop('pyramide_gizeh', { x: 6.6, z: -2.75, len: 11.0, delay: 0.14 });
+    const trio = ctx.prop('pyramide_gizeh', { x: 6.4, z: -2.75, len: 10.6, delay: 0.14 });
     tapProp(trio, 'cheops', [trio.fig.hit[0]]);
     ctx.prop('wuestenduene', { x: 6.2, z: -1.7, len: 10.5, delay: 0.16, variant: { seed: 3 } });
     const sphinx = ctx.stand('sphinx', { x: SPX, z: SPZ, len: SPLEN, facing: -1, delay: 0.3, card: 'sphinx', hitPad: 0.2 });
     sphinx.setFacing(-1);
+    sphinx.hitMeshes = sphinx.fig.hit.slice();   // keine große Trefferfläche: der Käfer dahinter muss antippbar bleiben
     sphinx.onWake = (a) => { a.tw.add(0.9, (k) => { a.hop = Math.sin(k * Math.PI) * 0.06; }, { done: () => { a.hop = 0; } }); puff(SPX - 1.6, 0.1, SPZ + 0.5, 4); app.audio.sfx('sand'); };
-    ctx.prop('palm', { x: 11.4, z: -1.9, h: 3.5, delay: 0.3, facing: -1 });
+    ctx.prop('palm', { x: 10.7, z: -1.9, h: 3.4, delay: 0.3, facing: -1 });
     ctx.prop('dattelpalme', { x: 6.9, z: -1.25, h: 2.7, delay: 0.32 });
     ctx.prop('grass_tuft', { x: 11.3, z: 0.9, len: 0.8, delay: 0.4 });
     // verstecktes Käferchen: hinter dem Schwanzbogen der Sphinx (in der Nische zwischen Schwanz und Hinterbein)
@@ -241,15 +242,15 @@ export default {
     yield;
 
     // ---------------------------------------------------------------- links: Baustelle
-    ctx.prop('steinbruch_wand', { x: -9.55, z: -3.1, len: 5.6, delay: 0.1 });
-    ctx.prop('palm', { x: -11.4, z: -1.8, h: 3.2, delay: 0.3 });
+    ctx.prop('steinbruch_wand', { x: -9.1, z: -3.1, len: 5.6, delay: 0.1 });
+    ctx.prop('palm', { x: -10.5, z: -1.9, h: 3.2, delay: 0.3 });
     const pyr = ctx.prop('pyramide_bau', { x: PYX, z: PYZ, h: PYH, delay: 0.14 });
     pyr.pickMeshes = []; // wird je nach sichtbaren Schichten gefüllt
     const pyrHit = pyr.fig.hit.slice();
-    for (const mm of pyrHit) mm.userData.tap = () => { app.openCardById('cheops', PYX); puff(PYX, PYH * 0.9 * 0, PYZ + 0.6, 0); };
+    for (const mm of pyrHit) mm.userData.tap = () => app.openCardById('cheops', PYX);
     yield;
     // Siedlung der Arbeiter (Deko, antippbar)
-    const house = ctx.prop('lehmhaus', { x: -1.5, z: -1.15, len: 3.1, delay: 0.3 });
+    const house = ctx.prop('lehmhaus', { x: -1.8, z: -1.15, len: 3.1, delay: 0.3 });
     const wall = ctx.prop('ziegelmauer', { x: -3.7, z: -0.75, len: 2.8, delay: 0.32, variant: 1 });
     tapProp(house, 'arbeitersiedlung'); tapProp(wall, 'arbeitersiedlung');
     // Rampe
@@ -270,7 +271,7 @@ export default {
     const sled = ctx.stand('schlitten', { x: LA, z: LANE_Z, len: 2.2, facing: 1, delay: 0.5, card: 'schlitten', hitPad: 0.2 });
     const ox = ctx.stand('ochse_joch', { x: LA + 3.6, z: LANE_Z - 0.05, len: 1.85, facing: 1, delay: 0.52, id: 'ochse', card: 'ochse' });
     const puller = ctx.stand('arbeiter', { x: LA + 2.0, z: LANE_Z + 0.2, h: 1.15, facing: 1, delay: 0.54, card: 'arbeiter', variant: { ropeLen: 0.05 } });
-    const helper = ctx.stand('arbeiter', { x: LA + 1.2, z: LANE_Z + 0.78, h: 1.15, facing: 1, delay: 0.56, card: 'arbeiter', variant: { ropeLen: 0.02 } });
+    const helper = ctx.stand('arbeiter', { x: LA + 1.2, z: LANE_Z + 0.5, h: 1.15, facing: 1, delay: 0.56, card: 'arbeiter', variant: { ropeLen: 0.02 } });
     const jug = ctx.fig('amphore', { h: 0.46, thickness: 0.02 }); L.own(jug);
     const jugG = new THREE.Group(); jug.group.position.set(0, -0.2, 0); jugG.add(jug.group); helper.popup.add(jugG);
     jug.setCast(false);
@@ -299,7 +300,7 @@ export default {
     cover.rotation.set(0, Math.PI, Math.PI); cover.position.set(0, CH / 2, -0.04 - 0.004); hinge.add(cover);
     const CLOSED = 1.5, OPEN = -0.07;
     const flap = new Spring(0, 70, 11);
-    let flapTarget = 0, cardCool = 0;
+    let cardCool = 0;
     const ring = new THREE.Mesh(new THREE.RingGeometry(0.55, 0.7, 28), new THREE.MeshBasicMaterial({ color: 0xffe08a, transparent: true, opacity: 0, depthWrite: false, side: THREE.DoubleSide }));
     ring.position.z = 0.02; ring.visible = false; card.mesh.add(ring); ring.userData.k = 0;
     const lp = new THREE.Vector3();
@@ -309,12 +310,12 @@ export default {
       return best;
     };
     R.addTap(card.mesh, (hit) => {
-      if (flap.target < 0.5) { flapTarget = 1; flap.set(1); app.audio.sfx('flapOpen'); return; }
+      if (flap.target < 0.5) { flap.set(1); app.audio.sfx('flapOpen'); return; }
       const h = hit && chamberAt(hit);
       if (h) {
         ring.position.set(h.x, h.y, 0.02); ring.scale.setScalar(h.r / 0.65); ring.visible = true; ring.userData.k = 1; app.audio.sfx('chime', { note: 2 });
         if (cardCool <= 0) { cardCool = 1.2; setTimeout(() => app.openCardById('cheops', CARD_X), 250); }
-      } else { flapTarget = 0; flap.set(0); app.audio.sfx('flapClose'); }
+      } else { flap.set(0); app.audio.sfx('flapClose'); }
     });
     yield;
 
@@ -352,8 +353,8 @@ export default {
       const SA = -10.35, SB = xr - 2.35;
       const SX = lerp(SA, SB, smooth(clamp(v)) * 0.6 + clamp(v) * 0.4);
       const slopeAng = (X) => surfaceAt(X)[1];
-      place(rsled, SX, -0.72, undefined);
-      place(rw[0], SX + 1.5, -0.55, undefined); place(rw[1], SX + 2.15, -0.48, undefined);
+      place(rsled, SX, -1.0, undefined);
+      place(rw[0], SX + 1.5, -0.9, undefined); place(rw[1], SX + 2.15, -0.84, undefined);
       rsled.fig.parts.steinblock.visible = v < 0.999;
       // Seil
       const sa = anchorXY(rsled, 'seilende'); const ax = sa[0], ay = sa[1];
@@ -383,8 +384,7 @@ export default {
     rsled.onWake = sled.onWake;
 
     // ---------------------------------------------------------------- pro Frame
-    const sw = (a, n) => a.fig.meta.swing[n];
-    let lanePh = 0, laneX = LA, rampPh = 0, rampSX = null, dustT = 0, waterT = 0, buildDustT = 0, tailT = 0, calmBlend = 0;
+    let lanePh = 0, laneX = LA, rampPh = 0, rampSX = null, dustT = 0, waterT = 0, buildDustT = 0;
     ctx.onUpdate((dt, t) => {
       if (!ctx.spread.active) return;
       const rate = fxRate(app);
@@ -409,10 +409,10 @@ export default {
       { const ha = anchorXY(helper, 'handA'); jugG.position.set(ha[0] - helper.popup.group.position.x, ha[1] - helper.popup.group.position.y + 0.02, 0.12);
         jugG.rotation.z = lerp(0.1, -1.32, pour) + (pour > 0.5 ? Math.sin(t * 3.1) * 0.05 : 0);
         const pX = X + 2.0, x0 = LA - 1.0, len = Math.max(0.01, pX - x0 - 0.2);
-        wet.scale.set(len, 0.95, 1); wet.position.x = x0 + 0.1 + len / 2; wet.material.opacity = smooth(clamp(lv * 12)) * 0.9;
+        wet.scale.set(len, 0.8, 1); wet.position.x = x0 + 0.1 + len / 2; wet.material.opacity = smooth(clamp(lv * 12)) * 0.8;
         if (pour > 0.5 && rate > 0) {
           waterT += dt * 22 * rate; const mx = ha[0] + 0.4, my = ha[1] - 0.12;
-          while (waterT > 1) { waterT -= 1; const w = ctx.world(mx, my, LANE_Z + 0.78 + 0.1); app.fx.dust.emit({ x: w.x, y: w.y, z: w.z, vx: 0.5 + Math.random() * 0.3, vy: 0.1, vz: 0, life: 0.55, size: 0.06, alpha: 0.85, color: [0.62, 0.8, 0.95], grav: 6.5, drag: 0.3 }); }
+          while (waterT > 1) { waterT -= 1; const w = ctx.world(mx, my, LANE_Z + 0.5 + 0.1); app.fx.dust.emit({ x: w.x, y: w.y, z: w.z, vx: 0.5 + Math.random() * 0.3, vy: 0.1, vz: 0, life: 0.55, size: 0.06, alpha: 0.85, color: [0.62, 0.8, 0.95], grav: 6.5, drag: 0.3 }); }
         }
         // Staub hinter den Kufen
         if (moving && rate > 0) { dustT += Math.abs(dX) * 9 * rate; while (dustT > 1) { dustT -= 1; puff(X - 1.0, 0.08, LANE_Z + 0.1, 1, { size: 0.24, alpha: 0.32, color: [0.55, 0.4, 0.26], life: 0.9 }); } }
@@ -440,16 +440,17 @@ export default {
       // ---- Wolken, Sonne
       for (let i = 0; i < clouds.length; i++) clouds[i].group.position.x = cloudX[i] + Math.sin(t * (0.04 + i * 0.012) + i) * 1.2;
       glow.scale.setScalar(0.5 + 0.02 * Math.sin(t * 0.7));
-      // ---- Klappe
+    });
+    // Klappe (läuft auch beim Umblättern: klappt flach, sobald die Seite sich hebt)
+    R.onUpdate((dt) => {
       cardCool = Math.max(0, cardCool - dt);
-      const fk = flap.update(dt);
-      hinge.rotation.x = lerp(CLOSED, OPEN, clamp(fk, 0, 1.12));
+      const fk = flap.update(dt), sc = R.scrub();
+      hinge.rotation.x = lerp(CLOSED, OPEN, clamp(fk, 0, 1.12) * sc);
       hinge.position.y = 0.03;
       if (ring.visible) { ring.userData.k = Math.max(0, ring.userData.k - dt * 1.4); ring.material.opacity = ring.userData.k * 0.9; ring.scale.multiplyScalar(1 + dt * 0.4); if (ring.userData.k <= 0) ring.visible = false; }
-      void tailT; void calmBlend; void sw;
     });
     // der Käfer, die Pyramiden & Co. brauchen keine weitere Logik; Zustand für onDeactivate merken
-    ctx.spread.p3 = { bau, lane, flap, setFlap: (k) => { flapTarget = k; flap.set(k); }, st, applyBuild };
+    ctx.spread.p3 = { bau, lane, flap, card: card.mesh, setFlap: (k) => flap.set(k), st, applyBuild };
   },
   onDeactivate(ctx) {
     const s = ctx.spread.p3; if (!s) return;
