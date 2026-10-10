@@ -9,7 +9,7 @@ import { PAGE_W, PAGE_D } from './scene.js';
 
 export const WEATHER_MODES = ['clear', 'rain', 'storm', 'mist'];
 export const WEATHER_LABEL = { clear: 'Klar', rain: 'Regen', storm: 'Sturm', mist: 'Dunst' };
-const BLOCKED_PAGE = 7;            // Einschlag: eigenes „Wetter“ (Aschewolke, Stille)
+const BLOCKED_PAGE = -99; // Ägypten: Wetter ist auf jeder Seite erlaubt            // Einschlag: eigenes „Wetter“ (Aschewolke, Stille)
 const BOX_X = PAGE_W * 2 + 3.2, BOX_Z = PAGE_D + 2.6, BOX_H = 9.5;
 const RAIN_COUNT = { high: 900, med: 600, low: 340 };
 const RIPPLES = { high: 44, med: 28, low: 16 };
