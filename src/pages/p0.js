@@ -149,7 +149,7 @@ export default {
     // ---- Kulisse: Himmelswand, Dünen, Pyramiden, Nil, Obelisk, Palmen
     for (const sd of ['L', 'R']) {
       const x0 = sd === 'L' ? -11.75 : 0.2, x1 = sd === 'L' ? -0.2 : 11.75;
-      ctx.flat(panelPart(x0, x1, 5.0, { fill: { top: '#6fb8d8', bottom: '#fde9bd' }, wave: 0.28, freq: 3, phase: sd === 'L' ? 0.4 : 2.0, seed: sd === 'L' ? 2 : 5, deco: (c, bb) => { softLight(c, bb, { color: 'rgba(255,236,170,.6)', cx: sd === 'L' ? 0.7 : 0.4, cy: 0.5, r: 0.7 }); dither(c, bb, '#fff', { n: 100, alpha: 0.12, size: 0.04 }); } }), { z: -4.05, lean: -0.05, name: 'sky' + sd, delay: 0, ppu: 70, border: 0.04 });
+      ctx.flat(panelPart(x0, x1, 5.0, { fill: { top: '#6fb8d8', bottom: '#fde9bd' }, wave: 0.28, freq: 3, phase: sd === 'L' ? 0.4 : 2.0, seed: sd === 'L' ? 2 : 5, deco: (c, bb) => { softLight(c, bb, { color: 'rgba(255,236,170,.6)', cx: sd === 'L' ? 0.7 : 0.4, cy: 0.5, r: 0.7 }); dither(c, bb, '#fff', { n: 100, alpha: 0.12, size: 0.04 }); } }), { x: sd === 'L' ? -6 : 6, z: -4.05, lean: -0.05, name: 'sky' + sd, delay: 0, ppu: 70, border: 0.04 });
     }
     yield;
     const sun = ctx.prop('sun_disc', { x: -5.8, y: -0.6, z: -3.9, h: 2.1, delay: 0.1, cast: false });
