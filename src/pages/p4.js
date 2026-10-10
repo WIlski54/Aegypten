@@ -20,7 +20,7 @@ const ROW_Z = -1.6;
 const ROW = [['ra', -10.55], ['horus', -8.95], ['sobek', -7.35], ['bastet', -5.75], ['hathor', -4.15], ['isis', -2.55], ['osiris', -0.95]];
 const WG = { x: 7.7, z: -0.9, h: 3.0 };       // Waage
 const TOR = { x: 3.15, z: -3.2, h: 4.25 };
-const BARKE = { x0: -10.4, x1: 10.5, y: 3.15, z: -2.7, len: 2.6 };
+const BARKE = { x0: -10.4, x1: 9.7, y: 3.15, z: -2.7, len: 2.6 };
 
 const GLOW_COL = { ra: [1, 0.78, 0.35], horus: [0.5, 0.75, 1], sobek: [0.5, 0.9, 0.7], bastet: [1, 0.85, 0.5], hathor: [1, 0.6, 0.6], isis: [0.7, 0.8, 1], osiris: [0.6, 1, 0.7], anubis: [0.8, 0.7, 1], thot: [0.8, 0.9, 1], maat: [1, 0.95, 0.7], ammit: [1, 0.8, 0.6] };
 
@@ -223,14 +223,15 @@ export default {
     const herzF = putOn('herz', 0.4, 'schale_herz', 'tellerHerz', 'endHerz', 0.07);
     const federF = putOn('feder_maat', 0.74, 'schale_feder', 'tellerFeder', 'endFeder', 0.07);
     tapProp(wp, 'waage');
+    S.waage = wp; S.herz = herzF; S.feder = federF; S.tor = tor; S.nut = nut;
     for (const m of herzF.hit) m.userData.tap = () => app.openCardById('herz');
     for (const m of federF.hit) m.userData.tap = () => app.openCardById('maat');
     wp.pickMeshes.push(...herzF.hit, ...federF.hit);
 
     const anubis = ctx.stand('anubis', { x: WG.x - 2.7, z: WG.z + 0.5, h: 2.3, facing: 1, delay: 0.2 });
-    const thot = ctx.stand('thot', { x: WG.x + 2.4, z: WG.z + 0.5, h: 2.15, facing: -1, delay: 0.22 });
+    const thot = ctx.stand('thot', { x: WG.x + 2.2, z: WG.z + 0.5, h: 2.15, facing: -1, delay: 0.22, hitPad: 0.2 });
     thot.setFacing(-1);
-    const maat = ctx.stand('maat', { x: 11.0, z: WG.z - 0.95, h: 2.2, facing: -1, delay: 0.24 });
+    const maat = ctx.stand('maat', { x: 11.1, z: WG.z - 0.95, h: 2.2, facing: -1, delay: 0.24, hitPad: 0.2 });
     maat.setFacing(-1);
     const ammit = ctx.stand('ammit', { x: WG.x + 1.9, z: WG.z + 1.9, len: 2.0, facing: -1, delay: 0.26 });
     ammit.setFacing(-1);
@@ -287,15 +288,18 @@ export default {
 
     // ---------------------------------------------------------------- Sonnenbarke
     const barke = ctx.prop('sonnenbarke', { x: BARKE.x0, y: BARKE.y, z: BARKE.z, len: BARKE.len, delay: 0.3, cast: false });
-    tapProp(barke, 'sonnenbarke');
+    // großzügige, unsichtbare Tippfläche (der Rumpf ist gekrümmt, die Mitte der Hülle wäre sonst leer)
+    const bproxy = new THREE.Mesh(new THREE.PlaneGeometry(barke.fig.width + 0.3, barke.fig.height + 0.2), new THREE.MeshBasicMaterial({ visible: false, side: THREE.DoubleSide }));
+    bproxy.position.set(0, barke.fig.height / 2, 0.1); barke.add(bproxy);
+    tapProp(barke, 'sonnenbarke', [bproxy]); bproxy.userData.tap = () => app.openCardById('sonnenbarke');
     const bf = barke.fig;
     const bglow = sunGlow({ size: 3.4, color: 0xffc860 });
     const sch = bf.anchors.scheibe || new THREE.Vector3(0, 1.2, 0);
     bglow.position.set(sch.x, sch.y, 0.08); bf.root.add(bglow);
-    S.barkeX = BARKE.x0;
+    S.barkeX = BARKE.x0; S.barke = barke;
 
     // ---------------------------------------------------------------- Käferchen: hinter dem Sockel der Waage
-    const kaefer = ctx.stand('skarab5', { x: WG.x + 0.95, z: WG.z - 0.25, len: 0.78, facing: 1, delay: 0.5, hidden: true, hint: false, hitPad: 0.25 });
+    const kaefer = ctx.stand('skarab5', { x: WG.x + 0.85, z: WG.z - 0.12, len: 0.62, facing: 1, delay: 0.5, hidden: true, hint: false, hitPad: 0.25 });
     kaefer.onWake = (a) => { a.tw.add(0.7, (k) => { a.hop = Math.sin(k * Math.PI) * 0.35; }, { done: () => { a.hop = 0; } }); app.audio.voice('skarabaeus'); };
     yield;
 
@@ -318,7 +322,7 @@ export default {
 
     // WAAGE: Federung des Balkens (leichtes Nachschwingen), Zustandswechsel lösen kleine Reaktionen aus
     const bal = new Spring(0, 24, 3.2); S.bal = bal;
-    let wv = 0.5, zone = 'even', zoneCool = 0, sway = 0, lastTh = 0, tick = 0;
+    let appliedTh = 9, appliedSw = 9, wv = 0.5, zone = 'even', zoneCool = 0, sway = 0, lastTh = 0, tick = 0;
     const zoneOf = (v) => (v < 0.2 ? 'light' : v > 0.82 ? 'heavy' : Math.abs(v - 0.5) < 0.07 ? 'even' : 'mid');
     const react = (z) => {
       setState(z);
@@ -345,7 +349,8 @@ export default {
       const th = bal.update(dt);
       const vel = (th - lastTh) / Math.max(dt, 1e-3); lastTh = th;
       sway += (clamp(-vel * 0.09, -0.16, 0.16) - sway) * Math.min(1, dt * 8);
-      waageSet(wf, th, { sway: sway * calmK() });
+      const sw = sway * calmK();
+      if (Math.abs(th - appliedTh) > 1e-5 || Math.abs(sw - appliedSw) > 1e-5) { appliedTh = th; appliedSw = sw; waageSet(wf, th, { sway: sw }); }
     });
 
     // TOR: Flügel öffnen, Licht und Sternenband werden sichtbar
