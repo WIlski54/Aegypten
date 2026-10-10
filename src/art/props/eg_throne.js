@@ -25,7 +25,7 @@ function lionHead(x, y, s) {
 
 function lionLeg(x, w = 7.4) {
   const h = w / 2;
-  const shaft = poly([[x - h * 0.78, 6], [x + h * 0.78, 6], [x + h * 0.9, 20], [x + h * 1.05, 34], [x - h * 1.05, 34], [x - h * 0.9, 20]], 2);
+  const shaft = poly([[x - h * 0.78, 6], [x + h * 0.78, 6], [x + h * 0.9, 20], [x + h * 1.05, 34], [x + h * 1.05, 40], [x - h * 1.05, 40], [x - h * 1.05, 34], [x - h * 0.9, 20]], 2);
   const paw = blob(x, 3.0, h * 1.2, 3.2, 0, 20);
   const base = poly(rrect(x - h * 1.35, 0, x + h * 1.35, 2.0, 0.8, 4), 0);
   return gold([shaft, paw, base], {
@@ -106,13 +106,13 @@ export function thron_tut(opts = {}) {
   layers.push(backFrame, panelLayer);
   // Seitenpfosten der Lehne (Lapis-Streifen)
   layers.push(inlay([rect(-22.6, 56, -19.6, 98), rect(19.6, 56, 22.6, 98)], K.lapis, { bevel: true }));
-  // Armlehnen mit Federflügeln
-  const arm = (sg) => poly([[sg * 22, 46], [sg * 29.6, 46], [sg * 30, 62], [sg * 27.5, 67], [sg * 22, 66]], 1);
+  // Armlehnen (Flügelschlangen): Flügelbrett mit Schuppenfedern, davor die gekrönte Uräusschlange
+  const arm = (sg) => poly([[sg * 22, 46], [sg * 29.8, 46], [sg * 30.2, 62], [sg * 28, 67], [sg * 22, 66]], 1);
   const wings = gold([arm(-1), arm(1)], {
     dir: 'v', deco(c) {
-      for (const sg of [-1, 1]) for (let r = 0; r < 3; r++) {
-        const col = [K.lapis, K.carn, K.turq][r];
-        for (let i = 0; i < 3; i++) ellipseAt(c, sg * (23.2 + i * 2.3), 63.4 - r * 4.6, 1.2, 2.0, col, 0.95, 0);
+      for (const sg of [-1, 1]) for (let r = 0; r < 4; r++) for (let i = 0; i < 2; i++) {
+        const col = [K.lapis, K.carn, K.turq, K.lapis][r];
+        ellipseAt(c, sg * (23.6 + i * 3.6), 49.2 + r * 4.4, 1.5, 2.0, col, 0.9, 0);
       }
     },
   });
@@ -124,9 +124,15 @@ export function thron_tut(opts = {}) {
   layers.push(gold([rect(-30, 38, 30, 47)], { dir: 'v' }));
   layers.push(...inlayRow(-28.2, 28.2, 40.2, 44.8, 14, [K.lapis, K.carn, K.turq]));
   // Löwenköpfe an den Ecken
-  layers.push(...lionHead(-23.4, 30, 11).slice(0, 2), ...lionHead(23.4, 30, 11));
+  layers.push(...lionHead(-23.4, 32, 11), ...lionHead(23.4, 32, 11));
   // Armlehnen-Kobras
-  layers.push(uraeusFront(-26, 46.4, 16), uraeusFront(26, 46.4, 16));
+  layers.push(uraeusFront(-26, 56, 18), uraeusFront(26, 56, 18));
+  // kleine Doppelkronen auf den Schlangenköpfen
+  const mini = (x) => [
+    inlay([blob(x, 74.6, 2.5, 1.9, 0, 14)], K.carn, { bevel: true, volume: false }),
+    flat([blob(x, 78.4, 1.7, 3.6, 0, 14)], K.linen, { bevel: true }),
+  ];
+  layers.push(...mini(-26), ...mini(26));
   const parts = { body: { z: 1, layers } };
   return spec('thron_tut', 'Goldener Thron des Tutanchamun', parts, { seat: [0, 47], back: [0, 80] },
     { heightM: 1.0, ranges: {}, desc: 'Thron aus vergoldetem Holz mit Silber- und Edelstein-Einlagen; Rückenlehne zeigt König und Königin' }, { h: opts.h || 1.0 });

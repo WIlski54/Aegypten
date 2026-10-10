@@ -122,7 +122,8 @@ function faceLayer() {
   };
 }
 
-export function tutmaske(opts = {}) {
+/** Alle Layer der Maske (Rohkoordinaten in cm, Höhe ca. 58): auch als Kopf des goldenen Sargs verwendet. */
+export function maskLayers() {
   const cx = 0, cy = 26;
   // Nemes-Haube + Lappen als eine Silhouette (Gesicht liegt davor)
   const nemesShape = sym([
@@ -164,12 +165,11 @@ export function tutmaske(opts = {}) {
   };
   const ur1 = vultureFront(-2.7, 46.8, 10.8);
   const ur2 = uraeusFront(2.7, 46.8, 10.8);
-  const parts = {
-    body: {
-      z: 1, layers: [cloth, neck, ...collar, ears, face, band, ...browLayer(-1) ? [browLayer(-1), browLayer(1)] : [],
-        ...eyeLayers(-1), ...eyeLayers(1), beard, ur1, ur2],
-    },
-  };
+  return [cloth, neck, ...collar, ears, face, band, browLayer(-1), browLayer(1), ...eyeLayers(-1), ...eyeLayers(1), beard, ur1, ur2];
+}
+
+export function tutmaske(opts = {}) {
+  const parts = { body: { z: 1, layers: maskLayers() } };
   return spec('tutmaske', 'Goldmaske des Tutanchamun', parts, { head: [0, 38], eye: [3.5, 40.7], uraeus: [0, 52] },
     { heightM: 0.54, ranges: {}, desc: 'Totenmaske aus massivem Gold, Lapislazuli, Karneol und Glas; um 1323 v. Chr.' }, { h: opts.h || 0.54 });
 }

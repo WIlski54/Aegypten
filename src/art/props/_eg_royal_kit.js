@@ -192,9 +192,9 @@ export function bead(c, x, y, r, color, hi = 'rgba(255,255,255,.55)') {
 // s = Höhe in Modelleinheiten, (x,y) = Fußmitte
 const G = {
   ankh(c, x, y, s, col, w) {
-    ellipseAt(c, x, y + s * 0.78, s * 0.2, s * 0.24, col, 1);
-    ellipseAt(c, x, y + s * 0.78, s * 0.095, s * 0.13, 'rgba(0,0,0,0)', 1);
-    seg(c, [x, y], [x, y + s * 0.56], col, w); seg(c, [x - s * 0.26, y + s * 0.42], [x + s * 0.26, y + s * 0.42], col, w);
+    const { ctx, tf, S } = c; const [X, Y] = tf(x, y + s * 0.78);
+    ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = Math.max(0.8, w * S); ctx.beginPath(); ctx.ellipse(X, Y, s * 0.17 * S, s * 0.21 * S, 0, 0, TAU); ctx.stroke(); ctx.restore();
+    seg(c, [x, y], [x, y + s * 0.58], col, w); seg(c, [x - s * 0.28, y + s * 0.42], [x + s * 0.28, y + s * 0.42], col, w);
   },
   was(c, x, y, s, col, w) {
     seg(c, [x, y + s * 0.08], [x, y + s * 0.88], col, w);
@@ -314,4 +314,16 @@ export function vultureFront(x, y, s) {
       ln(c, [[x, y + 0.84 * s], [x, y + 0.56 * s]], K.goldLo, 0.02 * s, 0.7);
     },
   });
+}
+
+/** Fertige Layer verschieben/skalieren (z. B. Maske als Kopf eines Sargs): Formen und deco werden mit transformiert. */
+export function place(layers, s = 1, dx = 0, dy = 0) {
+  const tp = (p) => p.map(([x, y]) => [x * s + dx, y * s + dy]);
+  const wrapC = (c) => Object.assign(Object.create(c), {
+    tf: (x, y) => c.tf(x * s + dx, y * s + dy), px: (x, y) => c.tf(x * s + dx, y * s + dy), S: c.S * s,
+  });
+  return layers.map((l) => ({
+    ...l, shapes: l.shapes.map(tp),
+    deco: l.deco ? (c, bb) => l.deco(wrapC(c), { x0: (bb.x0 - dx) / s, x1: (bb.x1 - dx) / s, y0: (bb.y0 - dy) / s, y1: (bb.y1 - dy) / s, w: bb.w / s, h: bb.h / s }) : undefined,
+  }));
 }
