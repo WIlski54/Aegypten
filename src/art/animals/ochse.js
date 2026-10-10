@@ -8,7 +8,7 @@ import { kit } from './_t_kit.js';
 
 export default function make(opts = {}) {
   const cow = opts.kind === 'kuh';   // Hathor-Kuh: Euter, Leier-Hörner mit Sonnenscheibe, etwas kleiner
-  const K = kit(cow ? 0.0082 : 0.01);
+  const K = kit(cow ? 0.0076 : 0.0092);
   const coat = opts.coat || 'rot';
   const C = coat === 'schwarz'
     ? { top: '#3a302d', mid: '#4d403a', low: '#6a5a50', far: '#2b2321', farB: '#41352f', patch: '#f3ead6', ink: 'rgba(30,22,20,.9)' }
@@ -132,7 +132,7 @@ export default function make(opts = {}) {
     id: cow ? 'kuh' : 'ochse', parts,
     anchors: { head: K.pt([150, 112]), mouth: K.pt([176, 74]), eye: K.pt([144, 112]), back: K.pt([0, 132]), foot: K.pt([0, 0]), yoke: K.pt([100, 112]), horn: K.pt(cow ? [153, 190] : [168, 198]), disc: K.pt([139, 174]), shoulder: K.pt(NP), tailTip: K.pt([-107, 30]) },
     meta: {
-      name: cow ? 'Hathor-Kuh' : 'Ochse', lengthM: cow ? 2.0 : 2.4, heightM: cow ? 1.65 : 2.0, shoulderHeightM: cow ? 1.07 : 1.3, coat, yoke: !!opts.yoke, ...(cow ? { disc: true } : {}),
+      name: cow ? 'Hathor-Kuh' : 'Ochse', lengthM: cow ? 1.9 : 2.4, heightM: cow ? 1.55 : 1.85, shoulderHeightM: cow ? 1.0 : 1.2, coat, yoke: !!opts.yoke, ...(cow ? { disc: true } : {}),
       ranges: { head: [0, -0.35], tail: [0, 0.4], legA: [0, 0.3], legB: [0, -0.3], armA: [0, -0.3], armB: [0, 0.3] },
       swing: { head: [-0.12, 0.08], tail: [-0.3, 0.3], legA: sw, legB: sw, armA: sw, armB: sw },
       gait: [['legB', 'armB'], ['legA', 'armA']],

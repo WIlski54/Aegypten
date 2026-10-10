@@ -6,7 +6,7 @@
 import { kit } from './_t_kit.js';
 
 export default function make(opts = {}) {
-  const K = kit(0.01);
+  const K = kit(0.0086);   // 1 Einheit = 0,86 cm: Nilpferd ~4 m lang
   const C = { top: '#8d7886', mid: '#a28b97', low: '#c9a4a4', belly: '#e3bcb2', pink: '#e9a1a0', far: '#6e5b6a', farB: '#8b7685', dark: '#4b3a48', hoof: '#d8c4b8', ink: 'rgba(58,40,56,.9)' };
   const rimc = 'rgba(58,40,56,.9)';
 
