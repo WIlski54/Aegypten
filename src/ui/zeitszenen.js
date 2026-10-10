@@ -344,11 +344,11 @@ function hatschepsut(g, t, o) {
   g.fillStyle = '#c8aa72'; g.fillRect(-10, 256, 260, 4); g.strokeStyle = 'rgba(110,80,40,.35)'; g.lineWidth = 0.7; for (let x = 2; x < 250; x += 22) { g.beginPath(); g.moveTo(x, 256); g.lineTo(x, 260); g.stroke(); }
   // Baldachin-Standarte
   g.strokeStyle = '#7a4f2a'; g.lineWidth = 2; g.beginPath(); g.moveTo(24, 296); g.lineTo(24, 168); g.stroke(); g.fillStyle = EG.carn; g.beginPath(); g.moveTo(24, 168); g.quadraticCurveTo(40 + sin(T * 1.6) * 3, 172, 54 + sin(T * 1.6) * 4, 190); g.lineTo(24, 186); g.fill(); g.fillStyle = EG.gold; g.beginPath(); g.arc(24, 166, 3, 0, TAU); g.fill();
-  const q = egyptian(g, 130, 298, 1.85, 1, 'point', T * 1.2, { sex: 'f', head: 'nemes', beard: true, collar: true, kilt: '#fffaf0', belt: EG.gold, apron: true, longDress: false, handA: [20.5, 2 + sin(T * 1.2) * 1] });
-  egyptian(g, 62, 298, 1.3, 1, 'stand', T, { hold: 'fan', head: 'band' });
-  egyptian(g, 200, 300, 1.15, -1, 'offer', T, { hold: 'scroll', kilt: '#efe1c4', head: 'band' });
-  egyptian(g, 226, 300, 1.0, -1, 'carry', T * 3, { hold: 'basketHead', kilt: '#efe1c4' });
-  harzKorb(g, 162, 303, 1.0);
+  const q = egyptian(g, 130, 289, 1.85, 1, 'point', T * 1.2, { sex: 'f', head: 'nemes', beard: true, collar: true, kilt: '#fffaf0', belt: EG.gold, apron: true, longDress: false, handA: [20.5, 2 + sin(T * 1.2) * 1] });
+  egyptian(g, 62, 290, 1.3, 1, 'stand', T, { hold: 'fan', head: 'band' });
+  egyptian(g, 200, 293, 1.15, -1, 'offer', T, { hold: 'scroll', kilt: '#efe1c4', head: 'band' });
+  egyptian(g, 226, 293, 1.0, -1, 'carry', T * 3, { hold: 'basketHead', kilt: '#efe1c4' });
+  harzKorb(g, 162, 297, 1.0);
   palm(g, 232, 262, 52, T, 1, { calm: o.calm, lean: 3 });
   for (let k = 0; k < 3; k++) bird(g, mod(T * 11 + k * 190, 560) - 40, 46 + k * 16, 0.85, T, k, '#fffaf0', '#1c1816', o.calm);
 }
