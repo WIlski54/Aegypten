@@ -3,7 +3,7 @@
 // Laschen: LEUCHTTURM (L), 3 SPRACHEN (R, Bänder nacheinander + Namenslinie), FINALE (R, Sonnenbarke + Parade, Käferzähler).
 import * as THREE from 'three';
 import { mood } from '../engine/scene.js';
-import { textCard, printLabel, SERIF, RED, INK } from '../engine/pagepaint.js';
+import { textCard, SERIF, RED, INK } from '../engine/pagepaint.js';
 import { PAGES_DE } from '../data/pages.de.js';
 import { ANIMALS_DE } from '../data/animals.de.js';
 import { Popup, poseAmt, FOLD } from '../engine/popup.js';
@@ -74,7 +74,7 @@ function drawNameSheet(c, k) { // k = {h,d,g}: Einblendung der Spalten 0..1
         for (let j = 0; j < 9; j++) { const nx = px - 0.14 * S; g.quadraticCurveTo(px - 0.07 * S, cy + (j % 2 ? 0.2 : -0.2) * S, nx, cy + (j % 3 === 0 ? 0.05 : -0.04) * S); px = nx; }
         g.stroke();
       } else {
-        g.fillStyle = '#16315e'; g.font = `bold ${0.25 * S}px ${SERIF}`; g.fillText('ΠΤΟΛΕΜΑΙΟΣ', cx, cy);
+        g.fillStyle = '#16315e'; g.font = `bold ${0.205 * S}px ${SERIF}`; g.fillText('ΠΤΟΛΕΜΑΙΟΣ', cx, cy);
       }
     } else {
       g.fillStyle = 'rgba(120,90,50,.55)'; g.font = `bold ${0.4 * S}px ${SERIF}`; g.fillText('?', cx, cy);
@@ -413,7 +413,7 @@ export default {
       // Rückmeldung: Ton und Käfer-Leuchten
       app.audio.ctl && app.audio.ctl('parade', clamp(P));
       const live = P > 0.01 && P < 0.995;
-      const gk = live ? 0.55 + 0.35 * Math.sin(t * 3.0) * k : (S.ended ? 0.5 : 0);
+      const gk = live ? 0.75 + 0.25 * Math.sin(t * 3.0) * k : (S.ended ? 0.7 : 0);
       klGlow.material.opacity = lerp(klGlow.material.opacity, gk, 1 - Math.exp(-dt * 6));
       klGlow.visible = klGlow.material.opacity > 0.01;
       const pk = live || S.ended ? 1 + (0.025 + 0.012 * Math.sin(t * 5)) * k : 1; klMesh.scale.set(pk, pk, pk);
