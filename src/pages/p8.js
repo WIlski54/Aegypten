@@ -122,12 +122,13 @@ function zeitPart() {
         ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
         let [X, Y] = t(0, 1.8); ctx.fillStyle = RED; ctx.font = `bold ${0.17 * S}px ${SERIF}`; ctx.fillText('Wie lange ist das her?', X, Y);
         const bar = (y, w0, col, label, big) => {
-          const [x0, y0] = t(-0.88, y); ctx.fillStyle = col; ctx.fillRect(x0, y0 - 0.1 * S, w0 * S, 0.2 * S);
-          ctx.fillStyle = INK; ctx.textAlign = 'left'; ctx.font = `bold ${0.125 * S}px ${SERIF}`; ctx.fillText(big, x0, y0 + 0.2 * S);
-          ctx.font = `${0.105 * S}px ${SERIF}`; ctx.fillStyle = '#5a3d22'; ctx.fillText(label, x0 + 0.62 * S, y0 + 0.2 * S);
+          const [x0, y0] = t(-0.88, y);
+          ctx.fillStyle = '#5a3d22'; ctx.textAlign = 'left'; ctx.font = `${0.105 * S}px ${SERIF}`; ctx.fillText(label, x0, y0 - 0.2 * S);
+          ctx.fillStyle = col; ctx.fillRect(x0, y0 - 0.1 * S, w0 * S, 0.22 * S);
+          ctx.fillStyle = '#fff'; ctx.font = `bold ${0.135 * S}px ${SERIF}`; ctx.textBaseline = 'middle'; ctx.fillText(big, x0 + 0.07 * S, y0 + 0.01 * S);
         };
-        bar(1.43, 1.76, '#c9a96a', 'Cheops bis Kleopatra', 'ca. 2500 Jahre');
-        bar(0.95, 1.5, '#2a9d8f', 'Kleopatra bis heute', 'gut 2050 Jahre');
+        bar(1.42, 1.76, '#b8862d', 'Cheops bis Kleopatra', 'ca. 2500 Jahre');
+        bar(0.92, 1.45, '#2a9d8f', 'Kleopatra bis heute', 'gut 2050 Jahre');
         ctx.fillStyle = '#3f8f5a';
       },
     }],
@@ -137,16 +138,16 @@ function zeitPart() {
 // ------------------------------------------------------------------ Parade
 // Kleine Papierschnitt-Kopien, die mit dem FINALE-Hebel von links nach rechts durch das Buch ziehen.
 const PARADE = [
-  { id: 'sonnenbarke', len: 2.7, kind: 'barke' },
-  { id: 'nilpferd', len: 1.9 },
-  { id: 'pharao', h: 1.55 },
-  { id: 'sphinx', len: 2.4 },
-  { id: 'ibis', h: 1.0, nod: true },
-  { id: 'schreiber', h: 1.2, variant: { pose: 'stand' } },
-  { id: 'katze_walk', len: 0.9 },
-  { id: 'tutmaske', h: 1.0, float: true },
-  { id: 'carter', h: 1.55 },
-  { id: 'wesir', h: 1.55 },
+  { id: 'sonnenbarke', len: 3.3, kind: 'barke' },
+  { id: 'nilpferd', len: 2.5 },
+  { id: 'pharao', h: 2.0 },
+  { id: 'sphinx', len: 3.1 },
+  { id: 'ibis', h: 1.3, nod: true },
+  { id: 'schreiber', h: 1.5, variant: { pose: 'stand' } },
+  { id: 'katze_walk', len: 1.2 },
+  { id: 'tutmaske', h: 1.3, float: true },
+  { id: 'carter', h: 2.0 },
+  { id: 'wesir', h: 2.0 },
 ];
 const LANE_Z = 0.0;
 
@@ -195,9 +196,9 @@ export default {
           ctx.strokeStyle = 'rgba(70,35,10,.18)'; ctx.lineWidth = 0.012 * S;
           for (let i = 0; i < 60; i++) { const x = 0.5 + r() * 11, z = -4 + r() * 8; ctx.beginPath(); ctx.moveTo(m.x(x), m.z(z)); ctx.lineTo(m.x(x + 0.4 + r() * 0.8), m.z(z + (r() - 0.5) * 0.06)); ctx.stroke(); }
           // Teppich vor dem Tisch
-          ctx.save(); ctx.fillStyle = 'rgba(150,40,35,.55)'; ctx.fillRect(m.x(6.6), m.z(-2.3), 4.8 * S, 2.1 * S);
-          ctx.strokeStyle = 'rgba(240,210,120,.7)'; ctx.lineWidth = 0.04 * S; ctx.strokeRect(m.x(6.7), m.z(-2.2), 4.6 * S, 1.9 * S);
-          ctx.strokeStyle = 'rgba(240,210,120,.4)'; ctx.lineWidth = 0.02 * S; ctx.strokeRect(m.x(6.85), m.z(-2.05), 4.3 * S, 1.6 * S); ctx.restore();
+          ctx.save(); ctx.fillStyle = 'rgba(150,40,35,.55)'; ctx.fillRect(m.x(5.9), m.z(-1.9), 5.5 * S, 2.7 * S);
+          ctx.strokeStyle = 'rgba(240,210,120,.7)'; ctx.lineWidth = 0.04 * S; ctx.strokeRect(m.x(6.0), m.z(-1.8), 5.3 * S, 2.5 * S);
+          ctx.strokeStyle = 'rgba(240,210,120,.4)'; ctx.lineWidth = 0.02 * S; ctx.strokeRect(m.x(6.15), m.z(-1.65), 5.0 * S, 2.2 * S); ctx.restore();
         },
       },
     };
@@ -240,8 +241,8 @@ export default {
     { const g1 = bg.createLinearGradient(512, 0, 0, 0); g1.addColorStop(0, 'rgba(255,236,160,.85)'); g1.addColorStop(0.5, 'rgba(255,236,170,.3)'); g1.addColorStop(1, 'rgba(255,236,170,0)');
       bg.fillStyle = g1; bg.beginPath(); bg.moveTo(512, 64); bg.lineTo(0, 4); bg.lineTo(0, 124); bg.closePath(); bg.fill();
       bg.globalCompositeOperation = 'destination-in'; const g2 = bg.createLinearGradient(0, 0, 0, 128); g2.addColorStop(0, 'rgba(0,0,0,.2)'); g2.addColorStop(0.5, 'rgba(0,0,0,1)'); g2.addColorStop(1, 'rgba(0,0,0,.2)'); bg.fillStyle = g2; bg.fillRect(0, 0, 512, 128); }
-    const BEAM_L = 9.0;
-    const beam = popupPlane(L, { x: -2.3 + fx0, y: fy0, z: -2.05, w: BEAM_L, h: 2.4, cx: -BEAM_L / 2, map: tex(beamC, 2), opacity: 0, additive: true, color: 0xffe9a8 });
+    const BEAM_L = 10.0;
+    const beam = popupPlane(L, { x: -2.3 + fx0, y: fy0, z: -2.05, w: BEAM_L, h: 3.2, cx: -BEAM_L / 2, map: tex(beamC, 2), opacity: 0, additive: true, color: 0xffe9a8 });
     yield;
     const ship = ctx.stand('segelschiff_griechisch', { x: -6.3, z: -1.55, len: 3.5, facing: 1, delay: 0.3, card: 'segelschiff', hint: false, hitPad: 0.2 });
     ship.onWake = (a) => { a.tw.add(1.4, (k) => { a.hop = Math.sin(k * Math.PI) * 0.1; poseAmt(a.fig, 'sail', Math.sin(k * Math.PI * 2) * 0.5 + 0.5); }, { done: () => { a.hop = 0; } }); app.audio.sfx('sail'); };
@@ -249,40 +250,50 @@ export default {
     const waves = [-9.6, -5.9, -2.2].map((x, i) => ctx.prop('wave_strip', { x, z: -0.95, len: 3.9, delay: 0.32 + i * 0.02, cast: false, facing: i % 2 ? -1 : 1 }));
     ctx.onUpdate((dt, t) => { const k = calmK(); waves.forEach((w, i) => { w.group.position.x = [-9.6, -5.9, -2.2][i] + Math.sin(t * 0.6 + i * 1.7) * 0.22 * k; }); });
     yield;
-    const kleo = ctx.stand('kleopatra', { x: -3.7, z: 0.75, h: 2.05, facing: 1, delay: 0.4, card: 'kleopatra' });
+    const kleo = ctx.stand('kleopatra', { x: -3.5, z: 0.8, h: 2.7, facing: 1, delay: 0.4, card: 'kleopatra' });
     kleo.behaviors.push((dt, t) => { if (kleo.tw.list.length === 0) poseAmt(kleo.fig, 'armA', 0.35 + 0.25 * Math.sin(t * 0.8)); });
     kleo.onWake = (a) => { a.tw.add(1.2, (k) => { poseAmt(a.fig, 'armA', Math.sin(k * Math.PI)); a.hop = Math.sin(k * Math.PI) * 0.08; }, { done: () => { a.hop = 0; } }); app.audio.sfx('harp'); };
     // Schild „Zeitspanne“
-    const zl = ctx.flat(zeitPart(), { x: -1.35, z: 1.15, name: 'zeit', delay: 0.5, ppu: 150, thickness: 0.04, border: 0.04, lean: -0.04 });
+    const zl = ctx.flat(zeitPart(), { x: -1.4, z: 1.1, ws: 1.3, name: 'zeit', delay: 0.5, ppu: 130, thickness: 0.04, border: 0.04, lean: -0.04 });
     zl.pickMeshes = [zl.cut.mesh]; zl.cut.mesh.userData.tap = () => app.openCardById('zeitluecke');
     yield;
     // ------------------------------------------------------------ rechts: Gelehrtenzimmer
-    const room = ctx.prop('gelehrtenzimmer', { x: 6.0, z: -3.4, len: 11.0, delay: 0.1 });
-    const stone = ctx.prop('rosetta_stein', { x: 9.6, y: 1.55, z: -3.0, h: 1.45, delay: 0.3 });
+    const room = ctx.prop('gelehrtenzimmer', { x: 6.0, z: -2.2, len: 11.0, delay: 0.1 });
+    const stone = ctx.prop('rosetta_stein', { x: 9.45, y: 1.55, z: -1.78, h: 2.1, delay: 0.3 });
     const sf = stone.fig, sbb = sf.bbox, sws = sf.ws;
     // Band-Einblendung: Streifen klappen von der Mitte auf (Skalierung um die Bandmitte)
     const BANDS = [{ part: 'band_hiero', cy: 0.9 }, { part: 'band_demot', cy: 0.56 }, { part: 'band_greek', cy: 0.25 }];
     const setBands = (v) => {
       BANDS.forEach((b, i) => {
         const k = smooth(clamp(v * 3 - i)), g = sf.parts[b.part]; if (!g) return;
-        g.visible = k > 0.005; const s = 0.15 + 0.85 * k;
-        g.scale.set(s, s, 1); g.position.set(0.37 * sws * (1 - s), b.cy * sws * (1 - s), g.position.z);
+        g.visible = k > 0.005; const s = 0.15 + 0.85 * k, rest = g.userData.rest;
+        g.scale.set(s, s, 1); g.position.set(rest.px + (0 - rest.px) * (1 - s), rest.py + (b.cy * sws - rest.py) * (1 - s), g.position.z);
         b.k = k;
       });
+      S.ovDirty = true;
     };
-    sf.parts.band_hiero.userData.baseZ = sf.parts.band_hiero.position.z;
+    const DX = -0.38; // Steinmitte: die Spec zentriert den Stein in x (Anker stehen in den Original-Koordinaten)
     // Overlay auf dem Stein: Markierungen + Namenslinie (Meter im Steinraum)
     const OW = 320, OH = Math.round(OW * sbb.h / sbb.w);
     const ovC = cv(OW, OH), ovT = tex(ovC, 4);
     const ovMesh = new THREE.Mesh(new THREE.PlaneGeometry(sbb.w * sws, sbb.h * sws), new THREE.MeshBasicMaterial({ map: ovT, transparent: true, depthWrite: false }));
     ovMesh.position.set((sbb.x0 + sbb.x1) / 2 * sws, (sbb.y0 + sbb.y1) / 2 * sws, 0.12); ovMesh.renderOrder = 4;
     sf.root.add(ovMesh);
-    const ovPx = (x, y) => [(x - sbb.x0) / sbb.w * OW, (sbb.y1 - y) / sbb.h * OH];
+    const ovPx = (x, y) => [(x + DX - sbb.x0) / sbb.w * OW, (sbb.y1 - y) / sbb.h * OH];
+    const GHOST = [{ x0: 0.08, x1: 0.69, y0: 0.74, y1: 1.0, col: '#e0b040', name: 'Hieroglyphen' }, { x0: 0.07, x1: 0.69, y0: 0.47, y1: 0.66, col: '#3bb3a8', name: 'Demotisch' }, { x0: 0.07, x1: 0.69, y0: 0.09, y1: 0.41, col: '#7ea8ff', name: 'Griechisch' }];
     const BOX = [{ x: 0.335, y: 0.865, w: 0.58, h: 0.14, col: '#e0b040' }, { x: 0.39, y: 0.545, w: 0.5, h: 0.04, col: '#3bb3a8' }, { x: 0.22, y: 0.285, w: 0.34, h: 0.04, col: '#4f86d6' }];
     const drawOverlay = () => {
       const g = ovC.getContext('2d'); g.clearRect(0, 0, OW, OH);
-      const k = S.lineK; if (k < 0.01) { ovT.needsUpdate = true; return; }
       const sc = OW / sbb.w;
+      // Geisterrahmen: hier erscheinen gleich die drei Schriften
+      GHOST.forEach((b, i) => {
+        const a = 1 - (BANDS[i].k || 0); if (a < 0.02) return;
+        const [bx, by] = ovPx(b.x0, b.y1); g.save(); g.globalAlpha = 0.75 * a; g.strokeStyle = b.col; g.lineWidth = 0.008 * sc; g.setLineDash([0.025 * sc, 0.018 * sc]);
+        rr(g, bx, by, (b.x1 - b.x0) * sc, (b.y1 - b.y0) * sc, 0.02 * sc); g.stroke(); g.setLineDash([]);
+        g.fillStyle = b.col; g.font = `bold ${0.052 * sc}px ${SERIF}`; g.textAlign = 'center'; g.textBaseline = 'middle';
+        g.fillText(b.name, ovPx((b.x0 + b.x1) / 2, (b.y0 + b.y1) / 2)[0], ovPx(0, (b.y0 + b.y1) / 2)[1]); g.restore();
+      });
+      const k = S.lineK; if (k < 0.01) { ovT.needsUpdate = true; return; }
       g.lineCap = 'round'; g.lineJoin = 'round';
       const x0 = 0.335;
       // Linie von der Kartusche nach unten durch Demotisch bis Griechisch
@@ -300,22 +311,22 @@ export default {
     };
     // Tipp-Fläche über der Kartusche -> Karte ptolemaios
     const cartHit = new THREE.Mesh(new THREE.PlaneGeometry(0.62 * sws, 0.17 * sws), new THREE.MeshBasicMaterial({ visible: false, side: THREE.DoubleSide }));
-    cartHit.position.set(0.335 * sws, 0.865 * sws, 0.16); sf.root.add(cartHit);
+    cartHit.position.set((0.335 + DX) * sws, 0.865 * sws, 0.16); sf.root.add(cartHit);
     cartHit.userData.tap = () => { if (S.sprV > 0.1) app.openCardById('ptolemaios'); else app.openCardById('rosetta'); };
     stone.pickMeshes = [cartHit, ...sf.hit]; for (const m of sf.hit) m.userData.tap = () => app.openCardById('rosetta');
     setBands(0);
 
     // Schreibzeug auf dem Tisch
-    const pal = ctx.prop('schreibpalette', { x: 8.75, y: 1.55, z: -2.75, len: 0.6, delay: 0.34 });
-    const rolle = ctx.prop('papyrusrolle', { x: 10.55, y: 1.55, z: -2.95, h: 0.5, delay: 0.36 });
+    const pal = ctx.prop('schreibpalette', { x: 10.85, y: 1.55, z: -1.5, len: 0.7, delay: 0.34 });
+    
     yield;
     // Gelehrter am Tisch
-    const sch = ctx.stand('gelehrter_sitzend', { x: 7.75, z: -2.25, h: 2.3, facing: 1, delay: 0.4, card: 'champollion', hint: false });
+    const sch = ctx.stand('gelehrter_sitzend', { x: 8.2, z: -1.0, h: 2.5, facing: 1, delay: 0.4, card: 'champollion', hint: false });
     sch.behaviors.push((dt, t) => { if (sch.tw.list.length === 0) poseAmt(sch.fig, 'armA', 0.5 + 0.3 * Math.sin(t * 0.7)); });
     sch.onWake = (a) => { a.tw.add(1.4, (k) => { poseAmt(a.fig, 'armA', Math.sin(k * Math.PI)); a.hop = Math.sin(k * Math.PI) * 0.05; }, { done: () => { a.hop = 0; } }); app.audio.sfx('papyrus'); };
     // verstecktes Käferchen am Rand des Rosetta-Steins
-    const kx = 9.6 + sf.width * 0.5 + 0.12;
-    const kaefer = ctx.stand('skarab9', { x: kx, y: 1.55, z: -3.12, len: 0.8, facing: 1, delay: 0.5, hidden: true, hint: false, hitPad: 0.25 });
+    const kx = 9.45 + sf.width * 0.5 - 0.1;
+    const kaefer = ctx.stand('skarab9', { x: kx, y: 1.55, z: -1.9, len: 0.8, facing: 1, delay: 0.5, hidden: true, hint: false, hitPad: 0.25 });
     kaefer.onWake = (a) => { a.tw.add(0.7, (k) => { a.hop = Math.sin(k * Math.PI) * 0.3; }, { done: () => { a.hop = 0; } }); app.audio.voice('skarabaeus'); };
     yield;
 
@@ -425,14 +436,14 @@ export default {
       // Flackern höchstens ~3 Hz, im Ruhigen Modus gleichmäßig
       const fl = app.calm ? 1 : 1 + 0.1 * Math.sin(t * TAU * 1.7) + 0.06 * Math.sin(t * TAU * 2.6 + 1.3);
       fireGlow.scale.setScalar(Math.max(0.0001, (0.1 + 0.9 * v) * fl)); fireGlow.userData.update(t, 0.6 + 0.6 * v); fireGlow.visible = v > 0.003 || true;
-      beam.mesh.material.opacity = 0.9 * v * (app.calm ? 1 : 0.94 + 0.06 * Math.sin(t * TAU * 1.1));
-      beam.holder.rotation.z = 0.09 + (app.calm ? 0 : Math.sin(t * 0.35) * 0.035 * v);
+      beam.mesh.material.opacity = 1.0 * v * (app.calm ? 1 : 0.94 + 0.06 * Math.sin(t * TAU * 1.1));
+      beam.holder.rotation.z = 0.2 + (app.calm ? 0 : Math.sin(t * 0.35) * 0.035 * v);
       beam.group.visible = beam.group.visible && v > 0.01;
-      dusk.mesh.material.opacity = 0.42 * v; dusk.group.visible = dusk.group.visible && v > 0.01;
+      dusk.mesh.material.opacity = 0.62 * v; dusk.group.visible = dusk.group.visible && v > 0.01;
       if (v > 0.3 && !app.calm && ctx.spread.active) { fireT += dt; if (fireT > 0.25) { fireT = 0; const w = ctx.world(-2.3 + fx0 + (Math.random() - 0.5) * 0.3, fy0 + 0.15, -2.2); app.fx.glow.emit({ x: w.x, y: w.y, z: w.z, vx: (Math.random() - 0.5) * 0.3, vy: 0.5 + Math.random() * 0.4, vz: 0, life: 1.1, size: 0.16, alpha: 0.7 * v, color: [1, 0.65, 0.25], drag: 0.8 }); } }
       // Namenslinie läuft nach, wenn alle drei Bänder da sind
       const tl = S.sprV > 0.97 ? 1 : 0; const nk = S.lineK + clamp(tl - S.lineK, -dt * 1.1, dt * 1.1);
-      if (Math.abs(nk - S.lineK) > 1e-4 || S.ov.sig !== 'x') { S.lineK = nk; S.ov.sig = 'x'; drawOverlay(); }
+      if (Math.abs(nk - S.lineK) > 1e-4 || S.ovDirty) { S.lineK = nk; S.ovDirty = false; drawOverlay(); }
       // Parade folgt dem Hebel mit begrenzter Geschwindigkeit
       const tg2 = S.target || 0; const pr = 0.085; S.P += clamp(tg2 - S.P, -dt * pr * 2.2, dt * pr);
       if (S.P > 0.995 && !S.ended) { S.ended = true; endShow(); } if (S.P < 0.6) { S.ended = false; S.endShown = false; }
