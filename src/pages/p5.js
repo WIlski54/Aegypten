@@ -160,19 +160,19 @@ function muralPart(W, H) {
 function signPart() {
   return {
     layers: [{
-      shapes: [rect(-0.07, 0, 0.07, 0.8), rect(-0.78, 0.6, 0.78, 1.5)], fill: '#8a5a32',
+      shapes: [rect(-0.07, 0, 0.07, 0.8), rect(-0.85, 0.55, 0.85, 1.6)], fill: '#8a5a32',
       deco(c) {
-        woodGrain(c, -0.78, 0.6, 0.78, 1.5, '#b07c48', { seed: 9, n: 10 });
-        fr(c, -0.72, 0.66, 0.72, 1.44, '#f1e2b8'); fr(c, -0.72, 0.66, 0.72, 0.69, 'rgba(60,30,5,.2)');
-        txt(c, 'Versuch', 0, 1.3, 0.25, { bold: true, col: '#7a1a1a' });
-        txt(c, 'Apfel mumifizieren', 0, 1.1, 0.13, { italic: true, col: '#4a3220' });
+        woodGrain(c, -0.85, 0.55, 0.85, 1.6, '#b07c48', { seed: 9, n: 10 });
+        fr(c, -0.79, 0.61, 0.79, 1.54, '#f1e2b8'); fr(c, -0.79, 0.61, 0.79, 0.64, 'rgba(60,30,5,.2)');
+        txt(c, 'Versuch', 0, 1.4, 0.3, { bold: true, col: '#7a1a1a' });
+        txt(c, 'Apfel mumifizieren', 0, 1.19, 0.15, { italic: true, col: '#4a3220' });
         // zwei Apfelstücke: eins mit Salz (weiße Kruste), eins ohne
-        for (const [x, salt] of [[-0.3, true], [0.3, false]]) {
-          fillPoly(c, blob(x, 0.88, 0.17, 0.16, 0, 20), salt ? '#f3e7c0' : '#f5e9b8'); strokePoly(c, blob(x, 0.88, 0.17, 0.16, 0, 20), '#b5483a', 0.03);
-          if (salt) for (const [dx, dy] of [[-0.07, 0.06], [0.06, 0.03], [0, -0.06], [0.08, -0.07], [-0.09, -0.03]]) fillPoly(c, [[x + dx - 0.025, dy + 0.88 - 0.025], [x + dx + 0.025, dy + 0.88 - 0.025], [x + dx + 0.025, dy + 0.88 + 0.025], [x + dx - 0.025, dy + 0.88 + 0.025]], '#ffffff');
-          fillPoly(c, [[x - 0.01, 1.04], [x + 0.01, 1.04], [x + 0.03, 1.12], [x + 0.0, 1.12]], '#4a7a2e');
+        for (const [x, salt] of [[-0.35, true], [0.35, false]]) {
+          fillPoly(c, blob(x, 0.93, 0.21, 0.2, 0, 20), '#f5e9b8'); strokePoly(c, blob(x, 0.93, 0.21, 0.2, 0, 20), '#b5483a', 0.04);
+          if (salt) for (const [dx, dy] of [[-0.09, 0.07], [0.07, 0.04], [0, -0.08], [0.1, -0.09], [-0.11, -0.04], [0.0, 0.1]]) fillPoly(c, [[x + dx - 0.03, dy + 0.93 - 0.03], [x + dx + 0.03, dy + 0.93 - 0.03], [x + dx + 0.03, dy + 0.93 + 0.03], [x + dx - 0.03, dy + 0.93 + 0.03]], '#ffffff');
+          fillPoly(c, [[x - 0.012, 1.11], [x + 0.012, 1.11], [x + 0.035, 1.19], [x + 0.0, 1.19]], '#4a7a2e');
+          txt(c, salt ? 'mit Salz' : 'ohne Salz', x, 0.7, 0.13, { col: '#4a3220', bold: true });
         }
-        txt(c, 'mit Salz', -0.3, 0.72, 0.1, { col: '#4a3220' }); txt(c, 'ohne', 0.3, 0.72, 0.1, { col: '#4a3220' });
       },
     }],
   };
@@ -234,18 +234,18 @@ export default {
     const wallR = ctx.prop('werkstatt_wand', { x: 5.7, z: -3.6, len: 11, delay: 0.02 });
     yield;
     // Wandbild (tippen: Karte Mumifizieren)
-    const mural = ctx.flat(muralPart(5.2, 1.85), { x: -4.7, y: 2.6, z: -3.5, name: 'wandbild', delay: 0.1, ppu: 110, border: 0.03 });
+    const mural = ctx.flat(muralPart(5.2, 1.85), { x: -4.8, y: 2.6, z: -3.5, name: 'wandbild', delay: 0.1, ppu: 110, border: 0.03 });
     tap(mural, card('mumifizierung'));
     // Regal mit Harzkrügen
     const RX = -9.75, RZ = -3.2, RS = 1.14;
     ctx.flat(regalPart(), { x: RX, z: RZ, ws: RS, name: 'regal', delay: 0.06, ppu: 100, border: 0.03 });
     const krug = [];
     [[0, -0.7, 1], [1, 0.62, 1], [2, -0.45, 2], [3, 0.72, 2]].forEach(([v, lx, row], i) => {
-      const p = ctx.prop('harzkrug', { x: RX + lx * RS, z: RZ + 0.16, y: (REGAL.ys[row] + 0.02) * RS, h: 0.58 * RS, variant: v, delay: 0.14 + i * 0.03 });
+      const p = ctx.prop('harzkrug', { x: RX + lx * RS, z: RZ + 0.16, y: (REGAL.ys[row] + 0.02) * RS, h: 0.58 * RS, variant: { variant: v }, delay: 0.14 + i * 0.03 });
       krug.push(p);
     });
     // verstecktes Käferchen: steht hinter dem zweiten Krug im Regal, nur Rücken und Fühler lugen hervor
-    const kaefer = ctx.stand('skarab6', { x: RX + (0.62 - 0.4) * RS, z: RZ + 0.07, y: (REGAL.ys[1] + 0.02) * RS, len: 0.66, facing: 1, delay: 0.3, hidden: true, hint: false, hitPad: 0.2 });
+    const kaefer = ctx.stand('skarab6', { x: RX + (0.62 - 0.27) * RS, z: RZ + 0.08, y: (REGAL.ys[1] + 0.02) * RS, len: 0.6, facing: 1, delay: 0.3, hidden: true, hint: false, hitPad: 0.2 });
     kaefer.onWake = (a) => {
       a.tw.add(0.7, (k) => { a.hop = Math.sin(k * Math.PI) * 0.3; }, { done: () => { a.hop = 0; } });
       const kr = krug[1]; kr.group.userData.wig = 0.9; app.audio.voice('skarabaeus');
@@ -254,13 +254,13 @@ export default {
     yield;
 
     // ================================================================ Kanopen auf dem Sockel
-    const SX = -4.6, SZ = -1.5, SH = 0.6, KH = 1.45, KD = 1.12;
-    ctx.flat(sockelPart(4.9, SH), { x: SX, z: SZ, name: 'sockel', delay: 0.1, ppu: 120, border: 0.03 });
+    const SX = -4.8, SZ = -1.2, SH = 0.6, KH = 1.75, KD = 1.3;
+    ctx.flat(sockelPart(5.5, SH), { x: SX, z: SZ, name: 'sockel', delay: 0.1, ppu: 120, border: 0.03 });
     const KN = [['kanope_mensch', 'Amset', 'Mensch'], ['kanope_pavian', 'Hapi', 'Pavian'], ['kanope_schakal', 'Duamutef', 'Schakal'], ['kanope_falke', 'Kebehsenuef', 'Falke']];
     const kan = KN.map(([id, nm, an], i) => {
       const pop = ctx.prop(id, { x: SX - 1.5 * KD + i * KD, z: SZ + 0.02, y: SH, h: KH, delay: 0.2 + i * 0.04 });
       const lid = pop.fig.parts.deckel, rest = lid.userData.rest, lift = (pop.fig.meta.lift || 0.14) * pop.fig.ws;
-      const tag = canvasPlane(1.5, 0.58, 140);
+      const tag = canvasPlane(1.22, 0.52, 150);
       drawTag(tag, nm, an, SK[i]);
       tag.mesh.position.set(0, -SH + 0.34, 0.95); tag.mesh.scale.setScalar(0.001); tag.mat.opacity = 0; pop.add(tag.mesh); pop.side.own(tag);
       tap(pop, () => { st.bump[i] = 1; app.audio.sfx('chime', { note: i * 2 }); app.openCardById('kanopen'); });
@@ -268,33 +268,33 @@ export default {
     });
     yield;
     // Tisch mit Amuletten
-    const TX = -1.25, TZ = -1.7, TH = 0.8;
-    const tisch = ctx.flat(tischPart(1.95, TH), { x: TX, z: TZ, name: 'tisch', delay: 0.14, ppu: 120, border: 0.03 });
-    const herz = ctx.prop('amulett_herzskarabaeus', { x: TX - 0.62, z: TZ + 0.12, y: TH, h: 0.6, delay: 0.3 });
+    const TX = -0.95, TZ = -1.3, TH = 0.8;
+    const tisch = ctx.flat(tischPart(1.8, TH), { x: TX, z: TZ, name: 'tisch', delay: 0.14, ppu: 120, border: 0.03 });
+    const herz = ctx.prop('amulett_herzskarabaeus', { x: TX - 0.58, z: TZ + 0.12, y: TH, h: 0.7, delay: 0.3 });
     tap(herz, card('herzskarabaeus'));
-    ctx.prop('udjat', { x: TX - 0.12, z: TZ + 0.1, y: TH, h: 0.52, delay: 0.32 });
-    ctx.prop('ankh', { x: TX + 0.36, z: TZ + 0.12, y: TH, h: 0.7, delay: 0.34 });
-    ctx.prop('djed', { x: TX + 0.74, z: TZ + 0.1, y: TH, h: 0.78, delay: 0.36 });
+    ctx.prop('udjat', { x: TX - 0.1, z: TZ + 0.1, y: TH, h: 0.58, delay: 0.32 });
+    ctx.prop('ankh', { x: TX + 0.33, z: TZ + 0.12, y: TH, h: 0.78, delay: 0.34 });
+    ctx.prop('djed', { x: TX + 0.68, z: TZ + 0.1, y: TH, h: 0.84, delay: 0.36 });
     yield;
 
     // ================================================================ Rechte Seite: Werkstatt
     // Leinenbahnen (rücken im Verlauf der Tage der Bahre näher)
-    const LX0 = 2.0, LX1 = 3.45;
+    const LX0 = 1.75, LX1 = 3.2;
     const linen = ctx.prop('leinenbahn', { x: LX0, z: -1.9, len: 3.0, delay: 0.1 });
     tap(linen, card('leinenbinden'));
-    const priest = ctx.stand('priester', { x: 4.1, z: 0.1, h: 2.6, facing: 1, delay: 0.2, card: null, hint: false });
+    const priest = ctx.stand('priester', { x: 3.2, z: 0.3, h: 3.0, facing: 1, delay: 0.2, card: null, hint: false });
     priest.onWake = (a) => { a.tw.add(1.2, (k) => { a.fig.rotatePart('armA', Math.sin(k * Math.PI) * 0.3); a.hop = Math.sin(k * Math.PI) * 0.06; }, { done: () => { a.hop = 0; } }); app.audio.voice('priester'); };
     // Bahre
-    const bahre = ctx.prop('mumie_bahre', { x: 6.8, z: -0.85, len: 3.7, delay: 0.16 });
+    const bahre = ctx.prop('mumie_bahre', { x: 6.8, z: -0.5, len: 4.2, delay: 0.16 });
     tap(bahre, card('mumie_bahre'));
     yield;
     // Natron
-    const heap = ctx.prop('natron_haufen', { x: 9.3, z: -0.7, len: 2.1, delay: 0.24 });
+    const heap = ctx.prop('natron_haufen', { x: 9.8, z: -0.35, len: 2.1, delay: 0.24 });
     tap(heap, card('natron'));
     const heapMat = heap.fig.cuts[0].material;
-    const schale = ctx.prop('natron_schale', { x: 9.4, z: 0.85, len: 1.1, delay: 0.28 });
+    const schale = ctx.prop('natron_schale', { x: 9.35, z: 0.95, len: 1.25, delay: 0.28 });
     tap(schale, card('natron'));
-    const einb = ctx.stand('einbalsamierer', { x: 10.7, z: 0.35, h: 2.8, facing: -1, delay: 0.26 });
+    const einb = ctx.stand('einbalsamierer', { x: 11.0, z: 0.5, h: 3.2, facing: -1, delay: 0.26 });
     einb.setFacing(-1);
     {
       const armG = einb.fig.parts.armA, piv = einb.fig.spec.parts.armA.pivot, ws = einb.fig.ws, ha = einb.fig.spec.anchors.handA;
@@ -302,11 +302,11 @@ export default {
     }
     einb.onWake = (a) => { a.tw.add(1.3, (k) => { a.fig.rotatePart('armA', Math.sin(k * Math.PI) * 0.5); a.hop = Math.sin(k * Math.PI) * 0.05; }, { done: () => { a.hop = 0; } }); };
     // Hinweis über dem Natron
-    const note = canvasPlane(2.5, 0.78, 150);
-    drawNote(note, 'Salz zieht Wasser an', 'Natron trocknet den Körper aus');
-    note.mesh.position.set(0, 1.75, 0.2); note.mesh.scale.setScalar(0.001); note.mat.opacity = 0; heap.add(note.mesh); heap.side.own(note);
+    const note = canvasPlane(3.1, 0.9, 150);
+    drawNote(note, 'Salz zieht Wasser an', 'Es entzieht dem Körper Wasser');
+    note.mesh.position.set(0, 1.85, 0.2); note.mesh.scale.setScalar(0.001); note.mat.opacity = 0; heap.add(note.mesh); heap.side.own(note);
     // Versuchsschild
-    const sign = ctx.flat(signPart(), { x: 1.6, z: 1.0, ws: 1.3, name: 'versuch', delay: 0.3, ppu: 130, border: 0.03 });
+    const sign = ctx.flat(signPart(), { x: 1.35, z: 1.15, ws: 1.5, name: 'versuch', delay: 0.3, ppu: 130, border: 0.03 });
     tap(sign, card('mumifizieren_versuch'));
     yield;
 
@@ -330,7 +330,7 @@ export default {
 
     // ================================================================ Zeitleiste auf der Seite
     const strip = canvasPlane(STRIP_W, STRIP_H, 190, { flat: true });
-    strip.mesh.position.set(6.3, 0.016, 2.2); ctx.R.add(strip.mesh); ctx.R.own(strip);
+    strip.mesh.position.set(6.3, 0.016, 2.25); ctx.R.add(strip.mesh); ctx.R.own(strip);
     drawStrip(strip, 0);
     ctx.R.addTap(strip.mesh, card('mumifizierung'));
 
@@ -339,7 +339,7 @@ export default {
     const natron = ctx.control('R', { id: 'natron', label: 'NATRON', a: [8.5, 3.78], b: [10.0, 3.78], size: [2.0, 0.95], color: '#2a6aa0', value: 0, springBack: true });
     const kanopen = ctx.control('L', { id: 'kanopen', label: 'KANOPEN', a: [-4.2, 3.8], b: [-1.5, 3.8], size: [2.2, 0.95], color: '#b8862d', value: 0, hold: true, ticks: 4 });
 
-    const BX = 6.8; // Bahre
+    const BX = 6.8; // Bahre (Mitte)
     const applyDay = (immediate) => {
       const d = st.day, pi = phaseIndex(d), a = clamp((d - 4) / 40);
       drawStrip(strip, d, { touched: st.tageTouched });
@@ -350,7 +350,7 @@ export default {
       // Leinenbinden rücken heran
       linen.group.position.x = lerp(LX0, LX1, smooth(clamp((d - 44) / 22)));
       setBeam(lerp(-0.5, 0.7, d / DAYS));
-      if (pi === 3 && st.lastPi < 3) { st.glitter = 2.2; app.audio.sfx('chime', { note: 4 }); }
+      if (pi === 3 && st.lastPi < 3) { st.glitter = 2.2; app.audio.sfx('sistrum'); app.audio.sfx('chime', { note: 4 }); }
       if (pi !== st.lastPi) { if (pi > st.lastPi) app.audio.sfx('tapp'); st.lastPi = pi; }
       st.beis = pi === 3 ? 1 : 0;
     };
@@ -383,7 +383,7 @@ export default {
         st.kanShown[i] += (st.kan[i] - st.kanShown[i]) * (1 - Math.exp(-dt * 9));
         st.bump[i] = Math.max(0, st.bump[i] - dt * 2.2);
         const s = st.kanShown[i], b = Math.sin(st.bump[i] * Math.PI) * 0.35 + (calm ? 0 : Math.sin(t * 1.7 + i * 1.3) * 0.02 * s);
-        K.lid.position.y = K.rest.py + K.lift * (s * 1.15 + b * 0.5);
+        K.lid.position.y = K.rest.py + K.lift * (s * 0.8 + b * 0.4);
         K.pop.fig.rotatePart('deckel', -0.3 * s);
         const ta = clamp((s - 0.35) / 0.4);
         K.tag.mat.opacity = ta; const sc = Math.max(0.001, 0.4 + 0.6 * smooth(ta)); K.tag.mesh.scale.setScalar(sc);
@@ -417,7 +417,7 @@ export default {
         acc.drop += dt * dr;
         while (acc.drop >= 1) {
           acc.drop -= 1;
-          const w = ctx.world(BX + 0.9 + Math.random() * 0.8, 1.05 + Math.random() * 0.3, -0.85 + Math.random() * 0.6);
+          const w = ctx.world(BX + 1.0 + Math.random() * 0.8, 1.2 + Math.random() * 0.3, -0.7 + Math.random() * 0.5);
           app.fx.dust.emit({ x: w.x, y: w.y, z: w.z, vx: 1.05 + Math.random() * 0.2, vy: 0.5 + Math.random() * 0.15, vz: 0.1 + Math.random() * 0.1, life: 1.6, size: 0.085, alpha: 0.85, color: [0.45, 0.76, 0.98], grav: 1.0, drag: 0.1 });
         }
       } else acc.drop = 0;
@@ -435,7 +435,7 @@ export default {
       // Beisetzung: goldenes Funkeln über der Bahre
       if (st.glitter > 0) {
         st.glitter -= dt; acc.gold += dt * 22 * fxK();
-        while (acc.gold >= 1) { acc.gold -= 1; const w = ctx.world(BX - 1.5 + Math.random() * 3.0, 1.2 + Math.random() * 0.6, -0.85 + Math.random() * 0.5); app.fx.glow.emit({ x: w.x, y: w.y, z: w.z, vx: 0, vy: 0.25 + Math.random() * 0.2, vz: 0.05, life: 1.4, size: 0.11, alpha: 0.9, color: [1, 0.84, 0.35], drag: 0.8 }); }
+        while (acc.gold >= 1) { acc.gold -= 1; const w = ctx.world(BX - 1.6 + Math.random() * 3.2, 1.3 + Math.random() * 0.6, -0.7 + Math.random() * 0.5); app.fx.glow.emit({ x: w.x, y: w.y, z: w.z, vx: 0, vy: 0.25 + Math.random() * 0.2, vz: 0.05, life: 1.4, size: 0.11, alpha: 0.9, color: [1, 0.84, 0.35], drag: 0.8 }); }
       }
       // sanftes Atmen des Lichtstrahls
       bmat.opacity = 0.56 + (calm ? 0 : 0.07 * Math.sin(t * 0.7));

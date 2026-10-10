@@ -25,7 +25,7 @@ export function moisture(d) {
 export function canvasPlane(w, h, ppu, { additive = false, opacity = 1, flat = false } = {}) {
   const cv = document.createElement('canvas'); cv.width = Math.round(w * ppu); cv.height = Math.round(h * ppu);
   const g = cv.getContext('2d');
-  const tex = new THREE.CanvasTexture(cv); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4;
+  const tex = new THREE.CanvasTexture(cv); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4; tex.generateMipmaps = false; tex.minFilter = THREE.LinearFilter;
   const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, opacity, depthWrite: false, blending: additive ? THREE.AdditiveBlending : THREE.NormalBlending, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
   const mesh = new THREE.Mesh(new THREE.PlaneGeometry(w, h), mat);
   if (flat) mesh.rotation.x = -Math.PI / 2;
@@ -88,11 +88,13 @@ export function drawStrip(P, day, { touched = false } = {}) {
 export function drawTag(P, line1, line2, col) {
   const { g, S, cv } = P; const u = (v) => v * S;
   g.clearRect(0, 0, cv.width, cv.height);
-  g.fillStyle = '#f6edd6'; roundRect(g, u(0.02), u(0.02), P.w * S - u(0.04), P.h * S - u(0.04), u(0.1)); g.fill();
-  g.fillStyle = col; roundRect(g, u(0.07), u(0.07), P.w * S - u(0.14), P.h * S - u(0.14), u(0.07)); g.fill();
+  g.save(); g.shadowColor = 'rgba(30,15,5,.4)'; g.shadowBlur = u(0.05); g.shadowOffsetY = u(0.02);
+  g.fillStyle = '#f6edd6'; roundRect(g, u(0.03), u(0.03), P.w * S - u(0.06), P.h * S - u(0.08), u(0.09)); g.fill(); g.restore();
+  g.fillStyle = col; roundRect(g, u(0.08), u(0.08), P.w * S - u(0.16), P.h * S - u(0.18), u(0.06)); g.fill();
   g.fillStyle = '#fff6df'; g.textAlign = 'center'; g.textBaseline = 'middle';
-  g.font = `bold ${u(0.2)}px ${SERIF}`; g.fillText(line1, P.w * S / 2, P.h * S * 0.38);
-  g.font = `italic ${u(0.15)}px ${SERIF}`; g.fillText(line2, P.w * S / 2, P.h * S * 0.74);
+  let fs = 0.24; g.font = `bold ${u(fs)}px ${SERIF}`; while (g.measureText(line1).width > P.w * S - u(0.3) && fs > 0.1) { fs -= 0.01; g.font = `bold ${u(fs)}px ${SERIF}`; }
+  g.fillText(line1, P.w * S / 2, P.h * S * 0.38);
+  g.font = `italic ${u(0.17)}px ${SERIF}`; g.fillText(line2, P.w * S / 2, P.h * S * 0.72);
   P.tex.needsUpdate = true;
 }
 
