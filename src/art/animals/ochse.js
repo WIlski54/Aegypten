@@ -77,11 +77,11 @@ export default function make(opts = {}) {
       }), K.rim(K.S(neckL, dewlap, headP, muzzle), { w: 0.24, color: rimc })) },
     { shapes: ear, fill: { top: C.top, bottom: pink }, stroke: null,
       deco: K.deco(L.d((c) => { K.paintBlob(c, 112, 114, 8, 3, 0.1, pink, 0.85); }), K.rim(ear, { w: 0.2, color: rimc })) },
-    { shapes: [hornNear], fill: { top: horn, bottom: '#e0cf9c' }, stroke: null,
+    { shapes: hornNear, fill: { top: horn, bottom: '#e0cf9c' }, stroke: null,
       deco: K.deco(L.d((c, bb) => {
         K.paintBlob(c, hornTipAt[0] - 4, hornTipAt[1], 13, 5, -0.4, hornTip, 0.95);
         for (let i = 0; i < 3; i++) K.curve(c, [[124 + i * 3, 138 + i * 12], [134 + i * 3, 138 + i * 12]], 'rgba(120,90,50,.3)', 0.7);
-      }), K.rim([hornNear], { w: 0.22, color: 'rgba(90,60,30,.9)' })) },
+      }), K.rim(hornNear, { w: 0.22, color: 'rgba(90,60,30,.9)' })) },
   ];
 
   if (cow) {
