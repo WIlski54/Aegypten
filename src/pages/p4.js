@@ -45,6 +45,31 @@ function sockelPart() {
   };
 }
 
+// ---- Feuerschalen: Ständer aus Gold und Schwarz, Flamme als eigenes Blatt (flackert sanft)
+function brazierPart() {
+  const body = poly([[-0.46, 0.88], [0.46, 0.88], [0.4, 0.7], [0.26, 0.6], [0.1, 0.55], [0.1, 0.22], [0.3, 0.12], [0.3, 0], [-0.3, 0], [-0.3, 0.12], [-0.1, 0.22], [-0.1, 0.55], [-0.26, 0.6], [-0.4, 0.7]], 1);
+  return {
+    layers: [{
+      shapes: [body], fill: { top: '#f0cf72', bottom: '#a87420' },
+      deco: (c) => {
+        const { ctx, tf, S } = c;
+        const band = (y0, y1, col) => { const [xa, ya] = tf(-0.5, y1), [xb, yb] = tf(0.5, y0); ctx.fillStyle = col; ctx.fillRect(xa, ya, xb - xa, yb - ya); };
+        band(0.0, 0.07, '#17203f'); band(0.74, 0.8, '#2d5aa6'); band(0.8, 0.83, '#17203f'); band(0.34, 0.4, '#2d5aa6');
+        ctx.fillStyle = 'rgba(255,255,255,.28)'; const [hx, hy] = tf(-0.04, 0.5); ctx.fillRect(hx, hy, 0.025 * S, -0.2 * S);
+      },
+    }],
+  };
+}
+function flamePart() {
+  const f = poly([[0, 0], [0.19, 0.1], [0.23, 0.34], [0.11, 0.62], [0.03, 0.95], [-0.03, 0.7], [-0.13, 0.62], [-0.23, 0.34], [-0.19, 0.1]], 2);
+  return {
+    layers: [{
+      shapes: [f], fill: { top: '#ffe98a', bottom: '#e8601a' }, stroke: null,
+      deco: (c) => { const { ctx, tf, S } = c; const [x, y] = tf(0, 0.22); const g = ctx.createRadialGradient(x, y, 0, x, y, 0.28 * S); g.addColorStop(0, 'rgba(255,255,230,.95)'); g.addColorStop(1, 'rgba(255,220,120,0)'); ctx.fillStyle = g; ctx.fillRect(x - 0.4 * S, y - 0.4 * S, 0.8 * S, 0.8 * S); },
+    }],
+  };
+}
+
 // ---- Zeilen der Anzeige auf der Seite (Zustand der Waage), kurz und freundlich
 const STATES = {
   mid: ['Herz gegen Feder:', 'Was ist schwerer?'],
@@ -93,7 +118,7 @@ export default {
           tiles(m, 0, 12);
           speckles(m, { x0: 0.6, x1: 11.4, z0: -3.8, z1: 4.0, n: 260, color: 'rgba(255,230,160,.18)', size: 0.025, seed: 6 });
           // Läufer unter der Waage: Lapis mit Goldrand
-          const rx = 4.35, rz = -1.7, rw = 7.15, rh = 4.15;
+          const rx = 4.35, rz = -1.7, rw = 7.15, rh = 3.95;
           ctx.save();
           ctx.shadowColor = 'rgba(0,0,10,.45)'; ctx.shadowBlur = 0.12 * m.S; ctx.shadowOffsetY = 0.05 * m.S;
           ctx.fillStyle = '#2d5aa6'; roundRect(ctx, m.x(rx), m.z(rz), rw * m.S, rh * m.S, 0.12 * m.S); ctx.fill(); ctx.shadowColor = 'transparent';
@@ -238,6 +263,28 @@ export default {
     }
     yield;
 
+    // ---------------------------------------------------------------- Feuerschalen (Fackelschimmer) beiderseits des Falzes
+    const fires = [];
+    for (const [fx, fz, ph] of [[-2.5, 1.1, 0], [2.7, 1.2, 2.1]]) {
+      ctx.flat(brazierPart(), { x: fx, z: fz, ws: 1.3, delay: 0.2, name: 'schale' + fx, border: 0.03, ppu: 150 });
+      const fl = ctx.flat(flamePart(), { x: fx, z: fz + 0.03, y: 1.09, ws: 1.3, delay: 0.24, name: 'flamme' + fx, border: 0.02, ppu: 130 });
+      fl.cut.mesh.castShadow = false;
+      const gl = new THREE.Mesh(new THREE.PlaneGeometry(3.0, 3.0), new THREE.MeshBasicMaterial({ map: softTexture(), color: 0xff9a40, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending, depthWrite: false }));
+      gl.position.set(0, 0.65, 0.05); gl.renderOrder = 3; fl.add(gl);
+      const fg = new THREE.Mesh(new THREE.PlaneGeometry(5.0, 5.0), new THREE.MeshBasicMaterial({ map: softTexture(), color: 0xff8a30, transparent: true, opacity: 0.3, blending: THREE.AdditiveBlending, depthWrite: false }));
+      fg.rotation.x = -Math.PI / 2; fg.position.set(0, -1.09 + 0.012, 0.0); fg.renderOrder = 2; fl.add(fg);
+      fires.push({ fl, gl, fg, ph });
+    }
+    ctx.onUpdate((dt, t) => {
+      const fk = app.calm ? 0 : 1;
+      for (const f of fires) {
+        const w = fk * (Math.sin(t * 6.1 + f.ph) * 0.06 + Math.sin(t * 9.7 + f.ph * 2) * 0.03);
+        f.fl.group.scale.set(1 - w * 0.5, 1 + w * 1.4, 1); f.fl.group.rotation.z = fk * Math.sin(t * 3.1 + f.ph) * 0.05;
+        const q = 0.5 + fk * w * 1.2; f.gl.material.opacity = q; f.fg.material.opacity = 0.3 + fk * w * 0.9;
+      }
+    });
+    yield;
+
     // ---------------------------------------------------------------- Sonnenbarke
     const barke = ctx.prop('sonnenbarke', { x: BARKE.x0, y: BARKE.y, z: BARKE.z, len: BARKE.len, delay: 0.3, cast: false });
     tapProp(barke, 'sonnenbarke');
@@ -248,14 +295,14 @@ export default {
     S.barkeX = BARKE.x0;
 
     // ---------------------------------------------------------------- Käferchen: hinter dem Sockel der Waage
-    const kaefer = ctx.stand('skarab5', { x: WG.x - 0.85, z: WG.z - 0.2, len: 0.9, facing: 1, delay: 0.5, hidden: true, hint: false, hitPad: 0.25 });
+    const kaefer = ctx.stand('skarab5', { x: WG.x + 0.95, z: WG.z - 0.25, len: 0.78, facing: 1, delay: 0.5, hidden: true, hint: false, hitPad: 0.25 });
     kaefer.onWake = (a) => { a.tw.add(0.7, (k) => { a.hop = Math.sin(k * Math.PI) * 0.35; }, { done: () => { a.hop = 0; } }); app.audio.voice('skarabaeus'); };
     yield;
 
     // ---------------------------------------------------------------- Anzeige auf der Seite
     const stTex = {}, stMat = new THREE.MeshBasicMaterial({ transparent: true, depthWrite: false });
     const stMesh = new THREE.Mesh(new THREE.PlaneGeometry(6.2, 1.065), stMat);
-    stMesh.rotation.x = -Math.PI / 2; stMesh.position.set(WG.x + 0.0, 0.016, 2.95); ctx.R.add(stMesh);
+    stMesh.rotation.x = -Math.PI / 2; stMesh.position.set(WG.x - 0.2, 0.016, 2.72); ctx.R.add(stMesh);
     const setState = (key) => {
       if (S.state === key) return; S.state = key;
       if (!stTex[key]) { const t = new THREE.CanvasTexture(stateCanvas(key)); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; stTex[key] = t; ctx.R.textures.push(t); }
@@ -305,7 +352,7 @@ export default {
     tCtl.on((v) => {
       const k = smooth(clamp(v)); S.door = k;
       torOeffnen(tf, k);
-      lightMat.opacity = 0.75 * k * (app.calm ? 0.6 : 1); floorMat.opacity = 0.55 * k * (app.calm ? 0.6 : 1);
+      lightMat.opacity = 1.0 * k * (app.calm ? 0.6 : 1); floorMat.opacity = 0.55 * k * (app.calm ? 0.6 : 1);
       app.audio.ctl('door', v);
     });
     tCtl.onGrab = () => app.audio.sfx('grab'); tCtl.onTick = (v) => app.audio.sfx('door', { v }); tCtl.onRelease = () => app.audio.sfx('snap');
