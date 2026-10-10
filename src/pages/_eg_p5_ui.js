@@ -25,12 +25,16 @@ export function moisture(d) {
 export function canvasPlane(w, h, ppu, { additive = false, opacity = 1, flat = false } = {}) {
   const cv = document.createElement('canvas'); cv.width = Math.round(w * ppu); cv.height = Math.round(h * ppu);
   const g = cv.getContext('2d');
-  const tex = new THREE.CanvasTexture(cv); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4; tex.generateMipmaps = false; tex.minFilter = THREE.LinearFilter;
+  const mk = () => { const t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; t.generateMipmaps = false; t.minFilter = THREE.LinearFilter; return t; };
+  const tex = mk();
   const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, opacity, depthWrite: false, blending: additive ? THREE.AdditiveBlending : THREE.NormalBlending, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
   const mesh = new THREE.Mesh(new THREE.PlaneGeometry(w, h), mat);
   if (flat) mesh.rotation.x = -Math.PI / 2;
   mesh.renderOrder = 3;
-  return { mesh, cv, g, tex, mat, S: ppu, w, h, dispose() { tex.dispose(); mat.dispose(); mesh.geometry.dispose(); } };
+  const P = { mesh, cv, g, tex, mat, S: ppu, w, h, dispose() { P.tex.dispose(); mat.dispose(); mesh.geometry.dispose(); } };
+  // Die Leinwand wurde neu gemalt: frische Textur statt Teil-Update (im Software-Renderer blieb sonst ein Geisterbild des alten Inhalts stehen)
+  P.commit = () => { const old = P.tex; P.tex = mat.map = mk(); old.dispose(); };
+  return P;
 }
 
 // ---------------------------------------------------------------------------------------------------- Zeitleiste (liegt auf der Seite)
@@ -78,10 +82,11 @@ export function drawStrip(P, day, { touched = false } = {}) {
   T('Salben, Wickeln', tx0 + (PHASES[2].d0 + PHASES[2].d1) / 2 * k, ty, 0.21, { bold: true, align: 'center', col: '#4a3010' });
   T('Reinigung', tx0, 2.08, 0.22, { bold: true, col: '#2a7f77' });
   T('Beisetzung', tx1, 2.08, 0.22, { bold: true, align: 'right', col: '#2a5aa0' });
+  T('70-Tage-Rahmen nach Herodot', STRIP_W / 2, 2.08, 0.21, { italic: true, align: 'center', col: '#6b4a2a' });
   // Marke
   g.fillStyle = '#8B1E1E'; g.beginPath(); g.moveTo(u(px), u(ty - th / 2 - 0.02)); g.lineTo(u(px - 0.13), u(ty - th / 2 - 0.22)); g.lineTo(u(px + 0.13), u(ty - th / 2 - 0.22)); g.closePath(); g.fill();
   g.fillRect(u(px - 0.018), u(ty - th / 2), u(0.036), u(th + 0.06));
-  P.tex.needsUpdate = true;
+  P.commit();
 }
 
 // ---------------------------------------------------------------------------------------------------- Namensschild über einem Kanopenkrug

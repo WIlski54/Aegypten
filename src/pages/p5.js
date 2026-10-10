@@ -342,7 +342,7 @@ export default {
     const BX = 6.8; // Bahre (Mitte)
     const applyDay = (immediate) => {
       const d = st.day, pi = phaseIndex(d), a = clamp((d - 4) / 40);
-      drawStrip(strip, d, { touched: st.tageTouched });
+      st.dirty = true; // die Zeitleiste wird höchstens einmal pro Bild neu gemalt
       // Salz nimmt Wasser auf: dunkelt leicht, wird flacher
       const wet = smooth(a);
       heapMat.color.setRGB(lerp(1, 0.84, wet), lerp(1, 0.8, wet), lerp(1, 0.72, wet));
@@ -377,6 +377,7 @@ export default {
     const tmpA = new THREE.Vector3();
     ctx.onUpdate((dt, t) => {
       const calm = app.calm;
+      if (st.dirty) { st.dirty = false; drawStrip(strip, st.day, { touched: st.tageTouched }); }
       // Kanopendeckel
       for (let i = 0; i < 4; i++) {
         const K = kan[i];
