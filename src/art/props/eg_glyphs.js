@@ -213,13 +213,14 @@ export const GLYPHS = {
       SH([[-0.14, 0.2], [-0.06, 0.0]], '#8a4f1f', 0.02), SH([[0.04, 0.22], [0.1, 0.0]], '#8a4f1f', 0.02), SH([[0.22, 0.18], [0.26, 0.0]], '#8a4f1f', 0.02),
     ];
   },
-  // S29 Gefaltetes Tuch (s): Stoffbahn mit Falte und Fransen
+  // S29 Gefaltetes Tuch (s): Stoffbahn mit umgeschlagener Ecke, Falten und Fransen
   stoff() {
-    const lower = poly([[-0.36, -0.2], [-0.1, -0.3], [0.2, -0.22], [0.42, -0.28], [0.44, -0.02], [-0.3, 0.04]], 2);
-    const flap = poly([[-0.46, 0.0], [-0.2, 0.28], [0.1, 0.22], [0.44, 0.3], [0.4, 0.04], [0.1, -0.04], [-0.2, 0.02]], 2);
-    const out = [F(lower, '#e8e0cc'), F(flap, '#f6efe0'), F(poly([[-0.46, 0.0], [-0.2, 0.28], [-0.22, 0.04]], 1), '#cfc2a6')];
-    for (let k = 0; k < 4; k++) out.push(SH([[0.43, -0.24 + k * 0.1], [0.52, -0.25 + k * 0.1]], '#bfae8a', 0.026));
-    out.push(LN([[-0.24, 0.0], [0.1, -0.02], [0.4, 0.03]], '#bfae8a', 0.02, { a: 0.9 }), LN([[-0.1, -0.16], [0.2, -0.17], [0.4, -0.2]], '#cfc2a6', 0.018), LN([[-0.1, 0.19], [0.1, 0.17], [0.34, 0.22]], '#d9cdb4', 0.018));
+    const cloth = poly([[-0.42, -0.24], [0.4, -0.24], [0.4, 0.22], [-0.2, 0.22], [-0.42, 0.0]], 0);
+    const out = [F(cloth, '#f6efe0')];
+    out.push(F([[-0.2, 0.22], [-0.42, 0.0], [-0.18, 0.0]], '#d9cdb4'));
+    for (let k = 0; k < 5; k++) out.push(SH([[0.4, -0.2 + k * 0.09], [0.5, -0.21 + k * 0.09]], '#bfae8a', 0.028));
+    out.push(SH([[-0.14, -0.06], [0.4, -0.06]], '#bfae8a', 0.022), SH([[-0.14, -0.14], [0.4, -0.14]], '#d9cdb4', 0.02), SH([[-0.04, 0.12], [0.34, 0.12]], '#d9cdb4', 0.02));
+    out.push(F(rect(0.22, -0.24, 0.4, 0.22), P.lapis, { line: null, a: 0.0 }));
     return out;
   },
   // O1 Haus (pr): Grundriss, Eingang unten
@@ -267,50 +268,65 @@ export const GLYPH_FIT = {
   loewe: { w: 1.1, z: 1 }, matte: { w: 1.0, z: 0.8 }, brot: { w: 1.0, z: 0.85 }, stoff: { w: 1.1, z: 0.85 }, haus: { w: 0.9, z: 0.95 }, auge: { w: 1.0, z: 0.9 },
 };
 
-/** Malt Zeichen `key` mit Mittelpunkt (cx,cy), Höhe/Breite s (Einheitsbox → s Meter). opts: flip, ink, lw (Linienstärke ×), tint (Farbfunktion) */
-export function drawGlyph(c, key, cx, cy, s, { flip = false, ink = INK, lw = 1, mono = null } = {}) {
+const lum = (h) => { const n = parseInt(h.slice(1, 7), 16); return (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255; };
+
+/**
+ * Malt Zeichen `key` mit Mittelpunkt (cx,cy), Höhe/Breite s (Einheitsbox → s Meter).
+ * opts: flip (Blick nach links), lw (Linienstärke ×), style 'color' (Standard, bunt) | 'line' (nur Umrisse in `ink` auf `paper`: eingemeißelt/Tusche)
+ */
+export function drawGlyph(c, key, cx, cy, s, { flip = false, ink = INK, lw = 1, style = 'color', paper = '#f3e6c0' } = {}) {
   const prims = GLYPHS[key]();
   const T = ([x, y]) => [cx + (flip ? -x : x) * s, cy + y * s];
+  const lineStyle = style === 'line';
   for (const pr of prims) {
     if (pr.p) {
       const pts = pr.p.map(T);
-      if (mono) { fillPoly(c, pts, mono, pr.a ?? 1); continue; }
+      if (lineStyle) {
+        if (pr.a !== 0) fillPoly(c, pts, paper, 1);
+        if (pr.line !== null) strokePoly(c, pts, ink, (pr.w ?? 0.03) * s * lw * 0.9);
+        continue;
+      }
       if (pr.fill && pr.a !== 0) fillPoly(c, pts, pr.fill, pr.a ?? 1);
       if (pr.line !== null) strokePoly(c, pts, pr.line || ink, (pr.w ?? 0.03) * s * lw);
     } else if (pr.ln) {
       const pts = pr.ln.map(T);
-      if (mono) { if (pr.c === ink) line(c, pts, mono, pr.w * s * lw); continue; }
       if (pr.a === 0) continue;
+      if (lineStyle) { if (lum(pr.c) < 0.62) line(c, pts, ink, pr.w * s * lw * 0.8, { alpha: 0.9 }); continue; }
       if (pr.sharp) line(c, pts, pr.c, pr.w * s * lw, { alpha: pr.a ?? 1 }); else curve(c, pts, pr.c, pr.w * s * lw, { alpha: pr.a ?? 1 });
     } else if (pr.d) {
       const [x, y, r] = pr.d; const [X, Y] = T([x, y]);
-      dot(c, X, Y, r * s, mono || pr.c);
+      dot(c, X, Y, r * s, lineStyle ? (lum(pr.c) < 0.62 ? ink : paper) : pr.c);
     }
   }
 }
 
-/** Kartusche (Namensring): liegendes Oval aus dickem Rand, Zeichenreihe `keys`, Abschlussstrich. flip = Schreibrichtung nach links. */
-export function drawCartouche(c, keys, cx, cy, W, H, { flip = false, ink = INK, bg = '#f3e6c0', edge = P.goldD, mono = null, bar = true, lw = 1 } = {}) {
+/**
+ * Kartusche (Namensring): liegendes Oval aus dickem Rand, Zeichenreihe `keys` (in Bildreihenfolge von links nach rechts), Abschlussstrich.
+ * flip = Zeichen blicken nach links (Schreibrichtung nach rechts). Rückgabe: Liste der Zeichenmitten.
+ */
+export function drawCartouche(c, keys, cx, cy, W, H, { flip = false, ink = INK, bg = '#f3e6c0', edge = P.goldD, style = 'color', lw = 1, ring: ringCol = null } = {}) {
   const r = H / 2;
   const body = poly([[cx - W / 2 + r * 0.2, cy + r], [cx + W / 2 - r * 0.2, cy + r], [cx + W / 2 + r * 0.05, cy + r * 0.45], [cx + W / 2 + r * 0.05, cy - r * 0.45], [cx + W / 2 - r * 0.2, cy - r],
     [cx - W / 2 + r * 0.2, cy - r], [cx - W / 2 - r * 0.05, cy - r * 0.45], [cx - W / 2 - r * 0.05, cy + r * 0.45]], 3);
-  fillPoly(c, body, mono ? 'rgba(0,0,0,0)' : bg, mono ? 0 : 1);
-  strokePoly(c, body, mono || ink, H * 0.07 * lw, 1);
-  if (!mono) strokePoly(c, body.map(([x, y]) => [cx + (x - cx) * 0.965, cy + (y - cy) * 0.93]), edge, H * 0.03 * lw, 0.9);
-  // Abschlussstrich an der „Schlussseite“
-  const bx = cx + (flip ? -1 : 1) * (W / 2 + r * 0.02);
-  if (bar) line(c, [[bx, cy - r * 1.02], [bx, cy + r * 1.02]], mono || ink, H * 0.08 * lw);
-  // Zeichen verteilen
+  fillPoly(c, body, bg, 1);
+  strokePoly(c, body, ringCol || ink, H * 0.075 * lw, 1);
+  if (style === 'color') strokePoly(c, body.map(([x, y]) => [cx + (x - cx) * 0.965, cy + (y - cy) * 0.93]), edge, H * 0.03 * lw, 0.9);
+  // Abschlussstrich an der „Schlussseite“ (dort, wohin die Zeichen blicken, ist der Anfang)
+  const bx = cx + (flip ? W / 2 + r * 0.02 : -W / 2 - r * 0.02);
+  line(c, [[bx + (flip ? -1 : 1) * H * 0.02, cy - r * 1.0], [bx + (flip ? -1 : 1) * H * 0.02, cy + r * 1.0]], ringCol || ink, H * 0.08 * lw);
   const inner = H * 0.74;
   const slots = keys.map((k) => GLYPH_FIT[k].w * GLYPH_FIT[k].z * inner * 0.92);
   const tot = slots.reduce((a, b) => a + b, 0);
   const gap = Math.max(0, (W - r * 0.55 - tot) / (keys.length + 1));
   let x = cx - tot / 2 - (gap * (keys.length - 1)) / 2;
+  const mids = [];
   keys.forEach((k, i) => {
     const sl = slots[i];
-    drawGlyph(c, k, x + sl / 2, cy, inner * GLYPH_FIT[k].z, { flip, ink, mono, lw });
+    drawGlyph(c, k, x + sl / 2, cy, inner * GLYPH_FIT[k].z, { flip, ink, style, paper: bg, lw });
+    mids.push(x + sl / 2);
     x += sl + gap;
   });
+  return mids;
 }
 
 // ------------------------------------------------------------------------------------------------
