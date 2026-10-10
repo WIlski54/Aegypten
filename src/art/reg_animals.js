@@ -10,10 +10,22 @@ import pferd from './animals/pferd.js';
 import katze from './animals/katze.js';
 import falke from './animals/falke.js';
 import kobra from './animals/kobra.js';
+import schakal from './animals/schakal.js';
+import pavian from './animals/pavian.js';
+import geier from './animals/geier.js';
+import wasservogel from './animals/wasservogel.js';
+import kuh from './animals/kuh.js';
 import nilpferd from './animals/nilpferd.js';
 const sk = (tone) => (o = {}) => skarabaeus({ tone, ...o });
 export default {
   skarabaeus,
+  kuh,
+  wasservogel,
+  wasservogel_ente: (o = {}) => wasservogel({ ...o, kind: 'ente' }),
+  geier,
+  pavian,
+  schakal,
+  schakal_natur: (o = {}) => schakal({ ...o, coat: 'natur' }),
   kobra,
   falke,
   katze,

@@ -2,12 +2,13 @@
 // weit geschwungene Hörner, sanfte Augen. Zugtier für Schlitten und Pflug.
 // Teile: body (Rumpf, Joch optional), head (Hals + Kopf + Hörner + Ohren, Pivot Schulter; negativ = Kopf senkt sich),
 //        tail (Pivot Kruppe), legA (fernes Hinterbein), legB (nahes Hinterbein) – Pivot Hüfte, armA (nahes Vorderbein), armB (fernes) – Pivot Schulter.
-// Optionen: opts.yoke = true (Holzjoch mit Strick am Hals), opts.coat = 'rot' (Standard) | 'gescheckt' (weiß-braun) | 'schwarz'.
+// Optionen: opts.kind = 'kuh' (Hathor-Kuh, siehe kuh.js: Euter, Leier-Hörner, goldene Sonnenscheibe mit Uräus), opts.yoke = true (Holzjoch mit Strick am Hals), opts.coat = 'rot' (Standard) | 'gescheckt' (weiß-braun) | 'schwarz'.
 // Entwurf in cm; Blick nach +x, Boden y = 0.
 import { kit } from './_t_kit.js';
 
 export default function make(opts = {}) {
-  const K = kit(0.01);
+  const cow = opts.kind === 'kuh';   // Hathor-Kuh: Euter, Leier-Hörner mit Sonnenscheibe, etwas kleiner
+  const K = kit(cow ? 0.0082 : 0.01);
   const coat = opts.coat || 'rot';
   const C = coat === 'schwarz'
     ? { top: '#3a302d', mid: '#4d403a', low: '#6a5a50', far: '#2b2321', farB: '#41352f', patch: '#f3ead6', ink: 'rgba(30,22,20,.9)' }
@@ -20,7 +21,7 @@ export default function make(opts = {}) {
 
   // ---- Rumpf ----
   const trunk = K.S(K.blob(0, 96, 92, 38, 0.0), K.blob(66, 96, 34, 40), K.blob(-70, 98, 32, 34), K.blob(0, 80, 82, 28));
-  const hump = K.blob(58, 128, 20, 11, 0.1);
+  const hump = cow ? K.blob(58, 124, 16, 7, 0.1) : K.blob(58, 128, 20, 11, 0.1);
   const tailBase = K.blob(-98, 112, 8, 7);
   // Beine
   const hoofP = (x, y, w = 15) => K.S(K.blob(x, y + 5, w * 0.5, 5.4, 0.0), K.blob(x + 3, y + 3, w * 0.55, 4, 0.0));
@@ -50,7 +51,10 @@ export default function make(opts = {}) {
   const dewlap = L.s(K.blob(100, 78, 26, 15, -0.15));
   const headP = L.s(K.poly([[116, 116], [138, 118], [152, 108], [166, 90], [176, 72], [178, 56], [166, 48], [150, 54], [138, 72], [122, 86], [108, 98]], 2));
   const muzzle = L.s(K.blob(170, 58, 15, 13, 0.4));
-  const hornC = [[134, 117, 14], [130, 134, 13], [128, 152, 11], [136, 170, 8], [150, 182, 5], [164, 184, 2.6], [172, 180, 0.8]];
+  const hornC = cow
+    ? [[134, 117, 16], [120, 133, 14], [113, 152, 12], [121, 172, 10], [141, 184, 7], [158, 182, 3.6], [167, 172, 1]]
+    : [[134, 117, 14], [130, 134, 13], [128, 152, 11], [136, 170, 8], [150, 182, 5], [164, 184, 2.6], [172, 180, 0.8]];
+  const hornTipAt = cow ? [160, 177] : [168, 183];
   const hornFar = L.s(K.limb(hornC.map(([x, y, w]) => [x + 9, y - 3, w * 0.95]), { per: 12 }));
   const hornNear = L.s(K.limb(hornC, { per: 12 }));
   const ear = L.s(K.limb([[124, 112, 9], [108, 116, 8], [94, 112, 4]], { per: 8 }));
@@ -58,7 +62,7 @@ export default function make(opts = {}) {
 
   const headLayers = [
     { shapes: K.S(hornFar, earFar), fill: { top: horn, bottom: '#d8c58f' }, stroke: null,
-      deco: K.deco(L.d((c, bb) => { K.paintBlob(c, 170, 186, 12, 5, -0.4, hornTip, 0.9); }), K.rim(K.S(hornFar, earFar), { w: 0.2, color: 'rgba(90,60,30,.85)' })) },
+      deco: K.deco(L.d((c, bb) => { K.paintBlob(c, hornTipAt[0] + 2, hornTipAt[1] + 3, 12, 5, -0.4, hornTip, 0.9); }), K.rim(K.S(hornFar, earFar), { w: 0.2, color: 'rgba(90,60,30,.85)' })) },
     { shapes: K.S(neckL, dewlap, headP, muzzle), fill: { stops: [[0, C.top], [0.45, C.mid], [0.75, C.low], [1, C.low]] }, stroke: null,
       deco: K.deco(L.d((c, bb) => {
         K.shade(c, bb, { dark: 'rgba(60,25,10,.18)', light: 'rgba(255,230,190,.16)' });
@@ -75,10 +79,19 @@ export default function make(opts = {}) {
       deco: K.deco(L.d((c) => { K.paintBlob(c, 112, 114, 8, 3, 0.1, pink, 0.85); }), K.rim(ear, { w: 0.2, color: rimc })) },
     { shapes: [hornNear], fill: { top: horn, bottom: '#e0cf9c' }, stroke: null,
       deco: K.deco(L.d((c, bb) => {
-        K.paintBlob(c, 164, 183, 13, 5, -0.4, hornTip, 0.95);
+        K.paintBlob(c, hornTipAt[0] - 4, hornTipAt[1], 13, 5, -0.4, hornTip, 0.95);
         for (let i = 0; i < 3; i++) K.curve(c, [[124 + i * 3, 138 + i * 12], [134 + i * 3, 138 + i * 12]], 'rgba(120,90,50,.3)', 0.7);
       }), K.rim([hornNear], { w: 0.22, color: 'rgba(90,60,30,.9)' })) },
   ];
+
+  if (cow) {
+    // Sonnenscheibe zwischen den Hörnern (Gold, Karneol-Ring, kleine Uräus-Schlange)
+    const disc = L.s(K.blob(139, 160, 17, 17, 0, 40));
+    const discIn = L.s(K.blob(139, 160, 12.4, 12.4, 0, 36));
+    headLayers.splice(1, 0,
+      { shapes: disc, fill: { top: '#f3cf6a', bottom: '#d8a22e' }, stroke: null, deco: K.deco(L.d((c) => { K.paintBlob(c, 139, 160, 13.4, 13.4, 0, '#c0432e', 0.9); }), K.rim(disc, { w: 0.24, color: 'rgba(110,70,15,.95)' })) },
+      { shapes: discIn, fill: { top: '#fff0b3', bottom: '#f0c24a' }, stroke: null, deco: K.deco(L.d((c) => { K.paintBlob(c, 135, 164, 4, 3, 0.4, 'rgba(255,255,255,.7)', 0.8); K.curve(c, [[144, 153], [148, 158], [145, 164], [148, 168]], '#3a8a50', 1.6); K.paintBlob(c, 148.6, 169, 2.1, 1.7, 0, '#3a8a50', 1); }), K.rim(discIn, { w: 0.16, color: 'rgba(130,90,20,.9)' })) });
+  }
 
   // ---- Joch (optional): Holzbalken am Hals mit Strick ----
   const yokeBeam = K.limb([[100, 156, 9], [98, 118, 11], [102, 70, 9]], { per: 10 });
@@ -87,6 +100,7 @@ export default function make(opts = {}) {
 
   const bodyLayers = [
     { shapes: K.S(tailBase), fill: C.top, stroke: null },
+    ...(cow ? [{ shapes: K.S(K.blob(-26, 58, 14, 11, 0.1), ...[-32, -24, -17].map((x) => K.limb([[x, 52, 4], [x + 0.6, 44, 3.2]], { per: 4 }))), fill: '#f0b0a4', stroke: null, deco: K.rim(K.S(K.blob(-26, 58, 14, 11, 0.1), ...[-32, -24, -17].map((x) => K.limb([[x, 52, 4], [x + 0.6, 44, 3.2]], { per: 4 }))), { w: 0.2, color: 'rgba(120,60,50,.8)' }) }] : []),
     { shapes: K.S(trunk, hump), fill: { stops: [[0, C.top], [0.5, C.mid], [0.74, C.low], [0.9, C.low], [1, C.patch]] }, stroke: null,
       deco: K.deco((c, bb) => {
         K.shade(c, bb, { dark: 'rgba(60,25,10,.16)', light: 'rgba(255,230,190,.18)' });
@@ -115,10 +129,10 @@ export default function make(opts = {}) {
   };
   const sw = [-0.3, 0.3];
   return {
-    id: 'ochse', parts,
-    anchors: { head: K.pt([150, 112]), mouth: K.pt([176, 74]), eye: K.pt([144, 112]), back: K.pt([0, 132]), foot: K.pt([0, 0]), yoke: K.pt([100, 112]), horn: K.pt([170, 198]), shoulder: K.pt(NP), tailTip: K.pt([-107, 30]) },
+    id: cow ? 'kuh' : 'ochse', parts,
+    anchors: { head: K.pt([150, 112]), mouth: K.pt([176, 74]), eye: K.pt([144, 112]), back: K.pt([0, 132]), foot: K.pt([0, 0]), yoke: K.pt([100, 112]), horn: K.pt(cow ? [153, 190] : [168, 198]), disc: K.pt([139, 174]), shoulder: K.pt(NP), tailTip: K.pt([-107, 30]) },
     meta: {
-      name: 'Ochse', lengthM: 2.4, heightM: 2.0, shoulderHeightM: 1.3, coat, yoke: !!opts.yoke,
+      name: cow ? 'Hathor-Kuh' : 'Ochse', lengthM: cow ? 2.0 : 2.4, heightM: cow ? 1.65 : 2.0, shoulderHeightM: cow ? 1.07 : 1.3, coat, yoke: !!opts.yoke, ...(cow ? { disc: true } : {}),
       ranges: { head: [0, -0.35], tail: [0, 0.4], legA: [0, 0.3], legB: [0, -0.3], armA: [0, -0.3], armB: [0, 0.3] },
       swing: { head: [-0.12, 0.08], tail: [-0.3, 0.3], legA: sw, legB: sw, armA: sw, armB: sw },
       gait: [['legB', 'armB'], ['legA', 'armA']],
