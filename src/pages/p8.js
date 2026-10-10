@@ -150,10 +150,12 @@ const PARADE = [
   { id: 'wesir', h: 2.0 },
 ];
 const LANE_Z = 0.0;
+const DAY = mood({ key: '#fff0d6', keyI: 2.35, sky: '#eaf3f6', gnd: '#8a6f50', hemiI: 1.8 });
+const DUSK = mood({ key: '#ffd2a0', keyI: 1.75, sky: '#a9b8dc', gnd: '#6a5040', hemiI: 1.35 });
 
 export default {
   id: 'finale',
-  mood: mood({ key: '#fff0d6', keyI: 2.35, sky: '#eaf3f6', gnd: '#8a6f50', hemiI: 1.8 }),
+  mood: DAY,
   motes: { colors: [[1, 0.93, 0.72], [0.82, 0.92, 1]], size: 0.06, alpha: 0.4, dy: 0.05, dx: 0.07, tw: 1.1, density: 0.6 },
   atmo: 'finale',
   base() {
@@ -228,9 +230,9 @@ export default {
     yield;
     const hafen = ctx.prop('hafen_kulisse', { x: -6.0, z: -3.5, len: 11.0, delay: 0.1 });
     tapProp(hafen, 'alexandria');
-    const bib = ctx.prop('bibliothek_alexandria', { x: -8.2, z: -2.6, h: 4.4, delay: 0.18 });
+    const bib = ctx.prop('bibliothek_alexandria', { x: -8.7, z: -2.6, h: 4.2, delay: 0.18 });
     tapProp(bib, 'bibliothek');
-    const turm = ctx.prop('leuchtturm_pharos', { x: -2.3, z: -2.35, h: 5.35, delay: 0.24 });
+    const turm = ctx.prop('leuchtturm_pharos', { x: -2.0, z: -2.35, h: 5.35, delay: 0.24 });
     tapProp(turm, 'leuchtturm');
     yield;
     // Feuer, Glut und Lichtkegel des Leuchtturms
@@ -242,7 +244,7 @@ export default {
       bg.fillStyle = g1; bg.beginPath(); bg.moveTo(512, 64); bg.lineTo(0, 4); bg.lineTo(0, 124); bg.closePath(); bg.fill();
       bg.globalCompositeOperation = 'destination-in'; const g2 = bg.createLinearGradient(0, 0, 0, 128); g2.addColorStop(0, 'rgba(0,0,0,.2)'); g2.addColorStop(0.5, 'rgba(0,0,0,1)'); g2.addColorStop(1, 'rgba(0,0,0,.2)'); bg.fillStyle = g2; bg.fillRect(0, 0, 512, 128); }
     const BEAM_L = 10.0;
-    const beam = popupPlane(L, { x: -2.3 + fx0, y: fy0, z: -2.05, w: BEAM_L, h: 3.2, cx: -BEAM_L / 2, map: tex(beamC, 2), opacity: 0, additive: true, color: 0xffe9a8 });
+    const beam = popupPlane(L, { x: -2.0 + fx0, y: fy0, z: -2.05, w: BEAM_L, h: 3.2, cx: -BEAM_L / 2, map: tex(beamC, 2), opacity: 0, additive: true, color: 0xffe9a8 });
     yield;
     const ship = ctx.stand('segelschiff_griechisch', { x: -6.3, z: -1.55, len: 3.5, facing: 1, delay: 0.3, card: 'segelschiff', hint: false, hitPad: 0.2 });
     ship.onWake = (a) => { a.tw.add(1.4, (k) => { a.hop = Math.sin(k * Math.PI) * 0.1; poseAmt(a.fig, 'sail', Math.sin(k * Math.PI * 2) * 0.5 + 0.5); }, { done: () => { a.hop = 0; } }); app.audio.sfx('sail'); };
@@ -259,7 +261,7 @@ export default {
     yield;
     // ------------------------------------------------------------ rechts: Gelehrtenzimmer
     const room = ctx.prop('gelehrtenzimmer', { x: 6.0, z: -2.2, len: 11.0, delay: 0.1 });
-    const stone = ctx.prop('rosetta_stein', { x: 9.45, y: 1.55, z: -1.78, h: 2.1, delay: 0.3 });
+    const stone = ctx.prop('rosetta_stein', { x: 9.6, y: 1.55, z: -1.78, h: 2.45, delay: 0.3 });
     const sf = stone.fig, sbb = sf.bbox, sws = sf.ws;
     // Band-Einblendung: Streifen klappen von der Mitte auf (Skalierung um die Bandmitte)
     const BANDS = [{ part: 'band_hiero', cy: 0.9 }, { part: 'band_demot', cy: 0.56 }, { part: 'band_greek', cy: 0.25 }];
@@ -325,7 +327,7 @@ export default {
     sch.behaviors.push((dt, t) => { if (sch.tw.list.length === 0) poseAmt(sch.fig, 'armA', 0.5 + 0.3 * Math.sin(t * 0.7)); });
     sch.onWake = (a) => { a.tw.add(1.4, (k) => { poseAmt(a.fig, 'armA', Math.sin(k * Math.PI)); a.hop = Math.sin(k * Math.PI) * 0.05; }, { done: () => { a.hop = 0; } }); app.audio.sfx('papyrus'); };
     // verstecktes Käferchen am Rand des Rosetta-Steins
-    const kx = 9.45 + sf.width * 0.5 - 0.1;
+    const kx = 9.6 + sf.width * 0.5 - 0.12;
     const kaefer = ctx.stand('skarab9', { x: kx, y: 1.55, z: -1.9, len: 0.8, facing: 1, delay: 0.5, hidden: true, hint: false, hitPad: 0.25 });
     kaefer.onWake = (a) => { a.tw.add(0.7, (k) => { a.hop = Math.sin(k * Math.PI) * 0.3; }, { done: () => { a.hop = 0; } }); app.audio.voice('skarabaeus'); };
     yield;
@@ -439,8 +441,9 @@ export default {
       beam.mesh.material.opacity = 1.0 * v * (app.calm ? 1 : 0.94 + 0.06 * Math.sin(t * TAU * 1.1));
       beam.holder.rotation.z = 0.2 + (app.calm ? 0 : Math.sin(t * 0.35) * 0.035 * v);
       beam.group.visible = beam.group.visible && v > 0.01;
-      dusk.mesh.material.opacity = 0.62 * v; dusk.group.visible = dusk.group.visible && v > 0.01;
-      if (v > 0.3 && !app.calm && ctx.spread.active) { fireT += dt; if (fireT > 0.25) { fireT = 0; const w = ctx.world(-2.3 + fx0 + (Math.random() - 0.5) * 0.3, fy0 + 0.15, -2.2); app.fx.glow.emit({ x: w.x, y: w.y, z: w.z, vx: (Math.random() - 0.5) * 0.3, vy: 0.5 + Math.random() * 0.4, vz: 0, life: 1.1, size: 0.16, alpha: 0.7 * v, color: [1, 0.65, 0.25], drag: 0.8 }); } }
+      dusk.mesh.material.opacity = 0.8 * v; dusk.group.visible = dusk.group.visible && v > 0.01;
+      if (v > 0.3 && !app.calm && ctx.spread.active) { fireT += dt; if (fireT > 0.25) { fireT = 0; const w = ctx.world(-2.0 + fx0 + (Math.random() - 0.5) * 0.3, fy0 + 0.15, -2.2); app.fx.glow.emit({ x: w.x, y: w.y, z: w.z, vx: (Math.random() - 0.5) * 0.3, vy: 0.5 + Math.random() * 0.4, vz: 0, life: 1.1, size: 0.16, alpha: 0.7 * v, color: [1, 0.65, 0.25], drag: 0.8 }); } }
+      { const want = S.lampV > 0.5; if (want !== S.duskOn && ctx.spread.active) { S.duskOn = want; app.stage.setMood(want ? DUSK : DAY); } }
       // Namenslinie läuft nach, wenn alle drei Bänder da sind
       const tl = S.sprV > 0.97 ? 1 : 0; const nk = S.lineK + clamp(tl - S.lineK, -dt * 1.1, dt * 1.1);
       if (Math.abs(nk - S.lineK) > 1e-4 || S.ovDirty) { S.lineK = nk; S.ovDirty = false; drawOverlay(); }
@@ -470,5 +473,6 @@ export default {
     for (const c of Object.values(S.ctls || {})) c.setValue(0, { snap: true });
     S.P = 0; S.target = 0; S.ended = false; S.endShown = false; S.lineK = 0;
     ctx.app.audio.ctl && ctx.app.audio.ctl('parade', 0);
+    if (S.duskOn) { S.duskOn = false; ctx.app.stage.setMood(DAY); }
   },
 };
