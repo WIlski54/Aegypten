@@ -9,6 +9,8 @@ import maat from './animals/maat.js';
 import hathor from './animals/hathor.js';
 import bastet from './animals/bastet.js';
 import sobek from './animals/sobek.js';
+import ammit from './animals/ammit.js';
 import chepre from './animals/chepre.js';
+import nut from './animals/nut.js';
 
-export default { ra, osiris, isis, horus, anubis, thot, maat, hathor, bastet, sobek, chepre };
+export default { ra, osiris, isis, horus, anubis, thot, maat, hathor, bastet, sobek, ammit, chepre, nut };

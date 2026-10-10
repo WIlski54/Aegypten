@@ -133,6 +133,7 @@ export function god(o = {}) {
   s.meta.bodyHeightM = spec.heightM;
   s.meta.ranges.armA = [0, 0.3];
   s.meta.ranges.armB = [0, -0.2];
+  for (const k of Object.keys(s.meta.ranges)) if (!s.parts[k]) delete s.meta.ranges[k];   // z. B. Osiris (eingewickelt): keine Beine
   // Gesamthöhe inkl. Kopfschmuck
   let maxY = 0; for (const p of Object.values(s.parts)) for (const L of p.layers) for (const sh of L.shapes) for (const q of sh) if (q[1] > maxY) maxY = q[1];
   s.meta.heightM = Math.round(maxY * 100) / 100;
