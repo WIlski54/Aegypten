@@ -154,6 +154,7 @@ export default {
     yield;
     const sun = ctx.prop('sun_disc', { x: -5.8, y: -0.6, z: -3.9, h: 2.1, delay: 0.1, cast: false });
     const glow = sunGlow({ size: 8.5, color: 0xffd27a }); glow.position.set(0, 1.0, -0.06); sun.add(glow);
+    glow.scale.setScalar(0.35);
     ctx.onUpdate((dt, t) => glow.userData.update(t));
     ctx.prop('wuestenduene', { x: -6, z: -3.0, len: 11.6, delay: 0.06, variant: { seed: 1 } });
     ctx.prop('wuestenduene', { x: 6, z: -3.0, len: 11.6, delay: 0.06, variant: { seed: 2 } });
