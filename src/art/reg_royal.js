@@ -4,6 +4,9 @@ import { tutmaske } from './props/eg_mask.js';
 import { thron_tut } from './props/eg_throne.js';
 import { schrein_gold } from './props/eg_shrine.js';
 import { sarkophag_gold, sarkophag_stein } from './props/eg_coffin.js';
+import { streitwagen } from './props/eg_chariot.js';
+import { dolch_eisen, truhe, fackel, ushabti, kartusche } from './props/eg_gear.js';
+import { narmer_palette } from './props/eg_narmer.js';
 
 export default {
   weisse_krone: (o) => weisse_krone(o),
@@ -17,4 +20,11 @@ export default {
   schrein_gold: (o) => schrein_gold(o),
   sarkophag_gold: (o) => sarkophag_gold(o),
   sarkophag_stein: (o) => sarkophag_stein(o),
+  streitwagen: (o) => streitwagen(o),
+  dolch_eisen: (o) => dolch_eisen(o),
+  truhe: (o) => truhe(o),
+  fackel: (o) => fackel(o),
+  ushabti: (o) => ushabti(o),
+  kartusche: (o) => kartusche(o),
+  narmer_palette: (o) => narmer_palette(o),
 };
