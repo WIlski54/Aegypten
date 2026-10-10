@@ -59,8 +59,8 @@ export function waageSet(fig, theta, { sway = 0 } = {}) {
 export function waage(opts = {}) {
   const hubY = 1.78, L = 0.9, chain = 0.62, rimY = hubY - chain;
   // --- Ständer ---------------------------------------------------------------------------------
-  const plinthA = rrect(-0.74, 0, 0.74, 0.11, 0.02), plinthB = rrect(-0.56, 0.1, 0.56, 0.21, 0.02);
-  const column = poly([[-0.13, 0.2], [0.13, 0.2], [0.098, 1.66], [-0.098, 1.66]]);
+  const plinthA = rrect(-0.78, 0, 0.78, 0.14, 0.02), plinthB = rrect(-0.6, 0.13, 0.6, 0.27, 0.02);
+  const column = poly([[-0.14, 0.26], [0.14, 0.26], [0.1, 1.66], [-0.1, 1.66]]);
   const capital = poly([[-0.2, 1.62], [0.2, 1.62], [0.2, 1.69], [0.09, 1.72], [0.09, 1.9], [-0.09, 1.9], [-0.09, 1.72], [-0.2, 1.69]], 0);
   const finialStem = rect(-0.03, 1.9, 0.03, 2.0);
   const finialDisc = blob(0, 2.1, 0.1, 0.1, 0, 28);
@@ -70,19 +70,20 @@ export function waage(opts = {}) {
         shapes: [plinthA, plinthB], fill: { top: '#ead09a', bottom: '#b3935a' },
         deco(c, bb) {
           volume(c, bb);
-          for (let k = 0; k < 14; k++) rectFill(c, -0.68 + k * 0.0975, 0.025, -0.68 + k * 0.0975 + 0.06, 0.075, k % 2 ? P.turq : P.lapis, 0.95);
-          rectFill(c, -0.74, 0.0, 0.74, 0.016, P.goldLo, 0.5); rectFill(c, -0.56, 0.18, 0.56, 0.21, P.gold, 0.9);
-          for (let k = 0; k < 9; k++) rectFill(c, -0.5 + k * 0.125, 0.125, -0.5 + k * 0.125 + 0.065, 0.165, k % 2 ? P.carn : P.goldHi, 0.85);
+          for (let k = 0; k < 14; k++) rectFill(c, -0.72 + k * 0.103, 0.03, -0.72 + k * 0.103 + 0.065, 0.1, k % 2 ? P.turq : P.lapis, 0.95);
+          rectFill(c, -0.78, 0.0, 0.78, 0.016, P.goldLo, 0.5); rectFill(c, -0.6, 0.24, 0.6, 0.27, P.gold, 0.9);
+          for (let k = 0; k < 9; k++) rectFill(c, -0.52 + k * 0.13, 0.165, -0.52 + k * 0.13 + 0.07, 0.215, k % 2 ? P.carn : P.goldHi, 0.85);
         },
       },
       {
         shapes: [column], fill: lapisH,
         deco(c, bb) {
-          rectFill(c, -0.15, 0.2, 0.15, 0.245, P.gold); rectFill(c, -0.15, 1.5, 0.15, 1.545, P.gold); rectFill(c, -0.15, 0.84 - 0.0, 0.15, 0.87, P.gold, 0.9);
-          fillPolys(c, ankhPolys(0, 0.29, 0.27, 1), P.gold);
-          fillPolys(c, djedPolys(0, 0.93, 0.27), P.gold);
-          fillPolys(c, wasPolys(0, 0.56, 0.27), P.gold);
-          rectFill(c, -0.15, 1.2, 0.15, 1.235, P.gold, 0.9); rectFill(c, -0.13, 1.215, 0.13, 1.225, P.turq, 0.9);
+          rectFill(c, -0.16, 0.26, 0.16, 0.305, P.gold); rectFill(c, -0.15, 1.5, 0.15, 1.545, P.gold);
+          fillPolys(c, ankhPolys(0, 0.37, 0.3, 1), P.gold);
+          rectFill(c, -0.15, 0.73, 0.15, 0.76, P.gold, 0.9); rectFill(c, -0.12, 0.74, 0.12, 0.75, P.turq, 0.9);
+          fillPolys(c, djedPolys(0, 0.81, 0.3), P.gold);
+          rectFill(c, -0.15, 1.16, 0.15, 1.19, P.gold, 0.9); rectFill(c, -0.12, 1.17, 0.12, 1.18, P.turq, 0.9);
+          fillPolys(c, wasPolys(0, 1.22, 0.26), P.gold);
         },
       },
       {
@@ -182,9 +183,9 @@ export function herz(opts = {}) {
   const body = heartOutline();
   const neck = rect(-0.075, 0.55, 0.075, 0.9);
   const rimTop = rrect(-0.14, 0.87, 0.14, 0.96, 0.035);
-  const handles = [arcLimb(-0.44, 0.56, 0.13, 0.15, d2r(100), d2r(280), 0.05), arcLimb(0.44, 0.56, 0.13, 0.15, d2r(-100), d2r(80), 0.05)];
+  const handles = [arcLimb(-0.41, 0.56, 0.14, 0.15, d2r(95), d2r(285), 0.07), arcLimb(0.41, 0.56, 0.14, 0.15, d2r(-105), d2r(85), 0.07)];
   const layers = [
-    { shapes: handles, fill: goldH, deco(c, bb) { cylinder(c, bb); } },
+    { shapes: handles, fill: goldV, deco(c, bb) { volume(c, bb, { dark: 'rgba(60,30,0,0.25)', light: 'rgba(255,250,210,0.3)' }); } },
     {
       shapes: [body], fill: carnV,
       deco(c, bb) {
@@ -212,7 +213,7 @@ export function feder_maat(opts = {}) {
   const wf = (s) => {
     const u = (s - 0.17) / 0.83; if (u <= 0) return 0.01;
     const a = u < 0.45 ? Math.pow(Math.sin((u / 0.45) * Math.PI / 2), 0.75) : Math.pow(Math.cos(((u - 0.45) / 0.55) * Math.PI / 2), 0.62);
-    return 0.115 * a;
+    return 0.15 * a;
   };
   const N = 15, left = [], right = [], barbs = [];
   const at = (s, side, w, lift = 0) => {

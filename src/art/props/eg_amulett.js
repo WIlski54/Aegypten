@@ -2,7 +2,7 @@
 // Alle sind farbige Papierplatten (Gold/Lapis/Türkis/Karneol), frontal, Mitte x=0, Basis y=0.
 import {
   P, goldH, goldV, lapisV, turqV, carnV, rect, rrect, shift, ring, arcLimb, limb, blob, poly, ankhPolys, djedParts,
-  fillPoly, fillPolys, sparkle, cylinder, rectFill, ellipseFill, curve, strokes, volume, finish, mix,
+  fillPoly, fillPolys, scaleLayers, sparkle, cylinder, rectFill, ellipseFill, curve, strokes, volume, finish, mix,
 } from './_eg_ritual_kit.js';
 
 const mk = (id, name, parts, anchors, meta, o) => finish({ id, parts, anchors, meta: { name, ...meta } }, o);
@@ -14,7 +14,7 @@ export function ankh(opts = {}) {
   const base = { gold: goldH, tuerkis: turqV, karneol: carnV }[stoff] || goldH;
   const inlay = { gold: P.lapis, tuerkis: P.gold, karneol: P.gold }[stoff];
   const outer = ankhPolys(0, 0, 1, 1);
-  const inner = ankhPolys(0, 0.012, 1, 0.42);
+  const inner = ankhPolys(0, 0.025, 0.96, 0.22);
   const layers = [
     {
       shapes: outer, fill: base,
@@ -81,11 +81,11 @@ function udjatShapes(g) {
   return { almond, brow, cheek, spiral };
 }
 export function udjat(opts = {}) {
-  const o = udjatShapes(0.022), i = udjatShapes(0);
+  const o = udjatShapes(0.034), i = udjatShapes(0);
   const iris = blob(0.02, 0.05, 0.15, 0.15, 0, 28);
   const layers = [
     { shapes: [o.almond, o.brow, o.cheek, o.spiral], fill: goldH, deco(c, bb) { cylinder(c, bb, { dark: 'rgba(60,30,0,0.3)', light: 'rgba(255,250,210,0.3)', at: 0.2 }); } },
-    { shapes: [i.brow, i.cheek, i.spiral], fill: lapisV, deco(c, bb) { cylinder(c, bb, { dark: 'rgba(0,0,30,0.3)', light: 'rgba(200,225,255,0.3)' }); } },
+    { shapes: [i.brow, i.cheek, i.spiral], fill: { stops: [[0, '#5b8ad0'], [0.5, '#2a5aa0'], [1, '#1f4585']], dir: 'v' }, deco(c, bb) { cylinder(c, bb, { dark: 'rgba(0,0,30,0.3)', light: 'rgba(200,225,255,0.3)' }); } },
     { shapes: [i.almond], fill: { top: '#fffaf0', bottom: '#e8dcc0' }, deco(c, bb) { volume(c, bb, { dark: 'rgba(120,90,40,0.25)', light: 'rgba(255,255,255,0.1)' }); } },
     {
       shapes: [iris], fill: { top: '#2a5aa0', bottom: '#0f1c3c' },
@@ -114,21 +114,21 @@ function scarabShapes() {
 }
 export function amulett_herzskarabaeus(opts = {}) {
   const sc = scarabShapes();
-  const frameOval = blob(0, 0, 0.52, 0.66, 0, 44);
+  const frameOval = blob(0, 0, 0.55, 0.68, 0, 44);
   const loop = ring(0, 0.76, 0.12, 0.12, 0.062, 0.062, 24);
-  const stoneOval = blob(0, 0, 0.44, 0.58, 0, 44);
-  const green = { stops: [[0, '#4fa07a'], [0.5, '#2f6f55'], [1, '#17402e']], dir: 'v' };
+  const stoneOval = blob(0, 0, 0.43, 0.56, 0, 44);
+  const green = { stops: [[0, '#6fd09a'], [0.5, '#3f9f6a'], [1, '#1f6a45']], dir: 'v' };
   const layers = [
     {
       shapes: [frameOval, loop], fill: goldV,
       deco(c, bb) {
         cylinder(c, bb, { dark: 'rgba(60,30,0,0.25)', light: 'rgba(255,250,210,0.3)' });
         // Perlenkranz im Rahmen
-        for (let k = 0; k < 22; k++) { const a = k / 22 * Math.PI * 2; ellipseFill(c, Math.cos(a) * 0.485, Math.sin(a) * 0.625, 0.022, 0.022, k % 2 ? P.carn : P.turq, 0.95); }
+        for (let k = 0; k < 22; k++) { const a = k / 22 * Math.PI * 2; ellipseFill(c, Math.cos(a) * 0.49, Math.sin(a) * 0.62, 0.024, 0.024, k % 2 ? P.carn : P.turq, 0.95); }
       },
     },
-    { shapes: [stoneOval], fill: { top: '#1f3f66', bottom: '#0f1c3c' }, deco(c, bb) { volume(c, bb); } },
-    {
+    { shapes: [stoneOval], fill: { top: '#2f6ab8', bottom: '#17386e' }, deco(c, bb) { volume(c, bb); } },
+    ...scaleLayers([{
       shapes: [sc.head, sc.pro, sc.elytra, ...sc.legs], fill: green,
       deco(c, bb) {
         volume(c, bb, { dark: 'rgba(0,10,5,0.4)', light: 'rgba(200,255,220,0.25)' });
@@ -139,7 +139,7 @@ export function amulett_herzskarabaeus(opts = {}) {
         sparkle(c, -0.12, -0.05, 0.05, { alpha: 0.7 });
         for (const sd of [-1, 1]) for (const [x, y] of [[0.05, 0.31], [0.07, 0.34]]) ellipseFill(c, sd * x, y, 0.012, 0.012, '#fff6d0', 0.9);
       },
-    },
+    }], 1.05, 0, -0.02),
   ];
   return mk('amulett_herzskarabaeus', 'Herzskarabäus', { body: { z: 1, layers } },
     { loop: { rel: [0.5, 0.95] }, center: [0, 0] }, { kind: 'amulett', lengthM: 0.12, bedeutung: 'Schutz des Herzens beim Totengericht' }, { h: opts.h ?? 0.12 });
