@@ -1,21 +1,20 @@
-// Zeitfenster: Bildfenster neben dem Buch, das zur Erduhr (Seite 0) passende Szenen zeigt.
+// Zeitfenster: Bildfenster neben dem Buch, das zur Zeitrad (Seite 0) passende Szenen zeigt.
 // Rahmenlos: das Bild schwebt mit weichen, organischen Rändern auf dem Tisch (kein Kartenrahmen).
 // Breites Fenster: rechts neben dem Buch. Schmales (iPad quer/hoch): kompakt links oben über dem Buch.
 import * as THREE from 'three';
 import { SCENES, sceneIndexAt } from './zeitszenen.js';
 import { SW, SH, TAU } from './zeitkit.js';
-import { yearsAgoOf, hourOf, ERAS } from '../pages/p0.js';
+import { bceOf, hourOf, ERAS } from '../pages/p0.js';
 import { PAGE_W, PAGE_D } from '../engine/scene.js';
 
 const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
 const ERA_COL = Object.fromEntries(ERAS.map((e) => [e.name, e.col]));
-ERA_COL['Känozoikum'] = ERA_COL['Känozoikum'] || '#e0b040';
 
 export class TimeWindow {
   constructor(app, root) {
     this.app = app; this.active = false; this.min = false; this.idx = -1; this.hour = 0; this.ctl = null;
     this.t = 0; this.trans = 1; this.frame = 0; this.compact = false; this.lastLay = -9; this.shown = false;
-    const e = this.el = el('section', 'zf'); e.setAttribute('aria-label', 'Zeitfenster: Bilder zur Erduhr'); e.style.display = 'none';
+    const e = this.el = el('section', 'zf'); e.setAttribute('aria-label', 'Zeitfenster: Bilder zum Zeitrad'); e.style.display = 'none';
     const h = el('header', 'zf-h'); this.eraDot = el('i'); this.eraTxt = el('span', 'zf-era'); this.eraWhen = el('span', 'zf-erawhen'); this.minBtn = el('button', 'zf-min', '–');
     this.minBtn.type = 'button'; this.minBtn.setAttribute('aria-label', 'Zeitfenster einklappen'); this.minBtn.addEventListener('click', () => this.setMin(!this.min));
     this.eraTxt.append(this.eraName = document.createTextNode(''), this.eraWhen);
@@ -36,9 +35,9 @@ export class TimeWindow {
     this.nav.append(this.bPrev, this.dots, this.cnt, this.bNext);
     e.append(h, this.view, this.body, this.nav);
     root.append(e);
-    this.setScene(sceneIndexAt(yearsAgoOf(0)), true);
+    this.setScene(sceneIndexAt(bceOf(0)), true);
   }
-  // Uhr verbinden (Zeiger-Steuerung der Erduhr)
+  // Uhr verbinden (Zeiger-Steuerung der Zeitrad)
   attach(ctl) { this.ctl = ctl; }
   setMin(on) { this.min = on; this.el.classList.toggle('min', on); this.minBtn.textContent = on ? '+' : '–'; this.minBtn.setAttribute('aria-label', on ? 'Zeitfenster aufklappen' : 'Zeitfenster einklappen'); this.lastLay = -9; this.lkey = ''; }
   show() { this.active = true; this.lastLay = -9; this.lkey = ''; }
@@ -49,7 +48,7 @@ export class TimeWindow {
     if (this.app.audio && this.app.audio.sfx) this.app.audio.sfx('tick', { fast: true });
   }
   setHour(h) {
-    this.hour = h; const i = sceneIndexAt(yearsAgoOf(h));
+    this.hour = h; const i = sceneIndexAt(bceOf(h));
     if (i !== this.idx) this.setScene(i, false);
   }
   setScene(i, first) {
@@ -109,9 +108,9 @@ export class TimeWindow {
       if (y === 0) { l = Math.min(l, sx); r = Math.max(r, sx); t0 = Math.min(t0, sy); b = Math.max(b, sy); }
       tTop = Math.min(tTop, sy);
     }
-    // stehende Erduhr (Scheibe x 3,35..9,45, Höhe 0..6,4, z -1,2): hier darf das Zeitfenster nicht hinein
+    // stehende Zeitrad (Scheibe x 3,35..9,45, Höhe 0..6,4, z -1,2): hier darf das Zeitfenster nicht hinein
     let cl = 1e9;
-    for (const x of [3.35, 9.45]) for (const y of [0, 6.4]) { v.set(gx + x, y, gz - 1.2).project(cam); cl = Math.min(cl, (v.x * 0.5 + 0.5) * W); }
+    for (const x of [3.05, 9.75]) for (const y of [0, 6.4]) { v.set(gx + x, y, gz - 1.2).project(cam); cl = Math.min(cl, (v.x * 0.5 + 0.5) * W); }
     const key = [W, H, l | 0, r | 0, t0 | 0, b | 0, cl | 0, this.min ? 1 : 0].join();
     if (key === this.lkey) return; this.lkey = key;
     if (this.min && this.mode) return; // eingeklappt: Platz und Größe bleiben

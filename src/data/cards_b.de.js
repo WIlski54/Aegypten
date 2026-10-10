@@ -1,0 +1,223 @@
+// Karten Station 4 bis 6 (Deutsch, Klasse 5/6).
+export const CARDS_B = {
+  // ------------------------------------------------------------ Station 4: Götter
+  ra: {
+    name: 'Ra, der Sonnengott', say: 'sprich: RA', tts: 'Ra', when: 'in allen Epochen', dietLabel: 'Zuständig für', diet: 'Sonne, Licht, Ordnung', whereLabel: 'Ort', where: 'Himmel, Unterwelt, Tempel in Heliopolis', specId: 'ra', sizeM: 1.8,
+    wow: 'Jeden Morgen, so glaubte man, wird die Sonne neu geboren.',
+    text: 'Ra hat einen Falkenkopf mit einer Sonnenscheibe. Am Tag fährt er in der Tagesbarke über den Himmel, in der Nacht in der Nachtbarke durch die Unterwelt. Viele Pharaonen nannten sich „Sohn des Ra“.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Götter', 'Sonne'], fragen: ['Wofür ist Ra zuständig?'],
+  },
+  osiris: {
+    name: 'Osiris, Herr der Toten', say: 'sprich: o-SI-ris', tts: 'Osiris', when: 'seit dem Alten Reich', dietLabel: 'Zuständig für', diet: 'Totenreich und Wiedergeburt', whereLabel: 'Ort', where: 'Totenreich, Abydos', specId: 'osiris', sizeM: 1.8,
+    wow: 'Seine Haut ist grün, wie frisches Getreide: Zeichen für neues Leben.',
+    text: 'Osiris war ein Gott der Toten. Er wird als Mumie mit Krone, Krummstab und Wedel gezeigt. Viele Ägypter hofften, nach dem Tod wie Osiris weiterzuleben.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Götter', 'Tod'], fragen: ['Warum ist Osiris grün dargestellt?'],
+  },
+  isis: {
+    name: 'Isis', say: 'sprich: I-sis', tts: 'Isis', when: 'in allen Epochen', dietLabel: 'Zuständig für', diet: 'Magie, Heilung, Familie', whereLabel: 'Ort', where: 'Philae, ganz Ägypten', specId: 'isis', sizeM: 1.7,
+    wow: 'Auf dem Kopf trägt sie einen Thron: Das ist ihr Name in Zeichen.',
+    text: 'Isis ist die Frau des Osiris und die Mutter des Horus. Sie schützte Familien und konnte nach dem Glauben der Ägypter heilen. Später verehrte man sie auch in Griechenland und Rom.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Götter'], fragen: ['Wer war die Mutter des Horus?'],
+  },
+  horus: {
+    name: 'Horus', say: 'sprich: HO-rus', tts: 'Horus', when: 'in allen Epochen', dietLabel: 'Zuständig für', diet: 'Himmel und Königtum', whereLabel: 'Ort', where: 'Edfu, ganz Ägypten', specId: 'horus', sizeM: 1.8,
+    wow: 'Sein Auge, das Udjat, galt als Glücks- und Heilzeichen.',
+    text: 'Horus hat einen Falkenkopf. Er ist der Sohn von Isis und Osiris. Der König sollte ein lebender Horus sein. Deshalb trug Horus oft die Doppelkrone.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Götter', 'König'], fragen: ['Was bedeutet das Horusauge?'],
+  },
+  anubis: {
+    name: 'Anubis', say: 'sprich: a-NU-bis', tts: 'Anubis', when: 'seit der Frühzeit', dietLabel: 'Zuständig für', diet: 'Einbalsamierer und Wächter der Toten', whereLabel: 'Ort', where: 'Friedhöfe', specId: 'anubis', sizeM: 1.8,
+    wow: 'Die Ägypter wählten den Schakal, weil diese Tiere oft an Friedhöfen herumstreiften.',
+    text: 'Anubis hat den Kopf eines Schakals. Er führt die Toten zum Totengericht und bewacht die Waage. Die Einbalsamierer trugen bei Zeremonien manchmal seine Maske.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Götter', 'Tod'], fragen: ['Welche Aufgabe hatte Anubis?'],
+  },
+  thot: {
+    name: 'Thot', say: 'sprich: TOT', tts: 'Thot', when: 'in allen Epochen', dietLabel: 'Zuständig für', diet: 'Schrift, Wissen, Mond', whereLabel: 'Ort', where: 'Hermopolis', specId: 'thot', sizeM: 1.8,
+    wow: 'Thot schreibt das Ergebnis des Totengerichts auf.',
+    text: 'Thot hat den Kopf eines Ibis oder war ein Pavian. Er war der Gott der Schreiber. Die Ägypter sagten: Er hat die Schrift erfunden.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Götter', 'Schrift'], fragen: ['Wofür war Thot zuständig?'],
+  },
+  maat: {
+    name: 'Ma’at', say: 'sprich: ma-AT', tts: 'Maat', when: 'in allen Epochen', dietLabel: 'Zuständig für', diet: 'Wahrheit, Gerechtigkeit, Ordnung', whereLabel: 'Ort', where: 'ganz Ägypten', specId: 'maat', sizeM: 1.7,
+    wow: 'Die Straußenfeder der Ma’at war das Gegengewicht zum Herzen.',
+    text: 'Ma’at stand für Wahrheit, Recht und Gleichgewicht. Auf dem Kopf trägt sie eine Feder. Der Pharao sollte dafür sorgen, dass Ma’at im Land herrscht.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Götter', 'Wahrheit'], fragen: ['Wofür steht die Feder der Ma’at?'],
+  },
+  hathor: {
+    name: 'Hathor', say: 'sprich: HA-thor', tts: 'Hator', when: 'in allen Epochen', dietLabel: 'Zuständig für', diet: 'Freude, Musik, Liebe', whereLabel: 'Ort', where: 'Dendera', specId: 'hathor', sizeM: 1.7,
+    wow: 'Hathor wird oft als Kuh oder als Frau mit Kuhohren gezeigt.',
+    text: 'Hathor war die Göttin der Freude, des Tanzes und der Musik. Zwischen ihren Hörnern sitzt die Sonnenscheibe. Man verehrte sie auch als Beschützerin der Frauen.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Götter'], fragen: ['Woran erkennt man Hathor?'],
+  },
+  bastet: {
+    name: 'Bastet', say: 'sprich: BAS-tet', tts: 'Bastet', when: 'seit der Frühzeit', dietLabel: 'Zuständig für', diet: 'Schutz des Hauses, Familie', whereLabel: 'Ort', where: 'Bubastis im Delta', specId: 'bastet', sizeM: 1.7,
+    wow: 'In Bubastis fand man viele Katzenmumien, die man der Göttin geweiht hatte.',
+    text: 'Bastet hat den Kopf einer Katze. Sie schützte das Haus und die Familie. Deshalb liebten die Ägypter ihre Hauskatzen. Sie fingen Mäuse und Schlangen.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Götter', 'Tier'], fragen: ['Warum waren Katzen den Ägyptern heilig?'],
+  },
+  sobek: {
+    name: 'Sobek', say: 'sprich: SO-bek', tts: 'Sobek', when: 'seit dem Alten Reich', dietLabel: 'Zuständig für', diet: 'Nil, Kraft, Fruchtbarkeit', whereLabel: 'Ort', where: 'Fajum, Kom Ombo', specId: 'sobek', sizeM: 1.8,
+    wow: 'In Kom Ombo teilte sich Sobek einen Tempel mit dem Falkengott Haroeris.',
+    text: 'Sobek hat den Kopf eines Krokodils. Er gehörte zum Nil und zur Fruchtbarkeit. Die Ägypter hofften, dass er sie vor den echten Krokodilen schützt.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Götter', 'Nil'], fragen: ['Wofür war Sobek zuständig?'],
+  },
+  ammit: {
+    name: 'Ammit', say: 'sprich: AM-mit', tts: 'Ammit', meaning: 'Bedeutung: „Fresserin der Toten“.', when: 'im Neuen Reich bekannt', dietLabel: 'Aufgabe', diet: 'wartet beim Totengericht', whereLabel: 'Ort', where: 'Totenreich', specId: 'ammit', sizeM: 1.5,
+    wow: 'Ammit ist aus drei Tieren gemischt: Krokodil, Löwe und Nilpferd.',
+    text: 'Ammit saß neben der Waage. Wenn das Herz schwerer war als die Feder, so glaubten die Ägypter, sollte Ammit es fressen. Dann gab es kein Leben nach dem Tod.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Götter', 'Tod'], fragen: ['Aus welchen Tieren besteht Ammit?'],
+  },
+  waage: {
+    name: 'Die Waage des Totengerichts', say: '', tts: 'Waage', when: 'ab dem Neuen Reich bekannt', whereLabel: 'Ort', where: 'Totenreich (Totenbuch)', specId: 'waage', sizeM: 2.2,
+    wow: 'Beim Totengericht sagte der Tote: „Ich habe nicht gestohlen. Ich habe nicht gelogen.“',
+    text: 'Das Totenbuch beschreibt eine Waage. In der einen Schale liegt das Herz des Toten, in der anderen die Feder der Ma’at. Waren sie gleich schwer, durfte der Tote ins Jenseits. Thot schrieb das Ergebnis auf.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Tod', 'Glaube'], fragen: ['Was wurde beim Totengericht gewogen?'],
+  },
+  herz: {
+    name: 'Das Herz', say: '', tts: 'Herz', when: 'in allen Epochen', whereLabel: 'Ort', where: 'in der Brust des Menschen', specId: 'herz', sizeM: 0.2,
+    wow: 'Die Ägypter hielten das Herz für den Sitz von Gedanken und Gefühlen, nicht das Gehirn.',
+    text: 'Bei einer Mumie ließ man das Herz im Körper. Die Ägypter glaubten, dass der Tote es beim Totengericht brauchte. Das Gehirn dagegen nahm man heraus.',
+    tags: ['Körper', 'Glaube'], fragen: ['Was hielten die Ägypter für den Sitz der Gedanken?'],
+  },
+  tor_unterwelt: {
+    name: 'Das Tor der Unterwelt', say: '', tts: 'Tor der Unterwelt', when: 'ab dem Neuen Reich bekannt', whereLabel: 'Ort', where: 'Totenreich (Totenbuch)',
+    wow: 'Im Totenbuch muss der Tote durch viele Tore. Er muss ihre Namen kennen.',
+    text: 'Im Totenbuch führt der Weg durch Tore, die von Wächtern bewacht werden. Wer die Zaubersprüche kennt, kommt hindurch.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Tod', 'Glaube'], fragen: ['Was musste man am Tor der Unterwelt wissen?'],
+  },
+  sonnenbarke: {
+    name: 'Die Sonnenbarke', say: '', tts: 'Sonnenbarke', when: 'in allen Epochen', whereLabel: 'Ort', where: 'Himmel und Unterwelt', specId: 'sonnenbarke', sizeM: 3,
+    wow: 'Neben der Cheops-Pyramide fand man ein echtes Schiff aus Zedernholz, 43 m lang.',
+    text: 'Die Sonnenbarke ist das Schiff des Ra. In der Nacht fährt sie durch die Unterwelt und am Morgen in den neuen Tag. Auch der Pharao wollte nach dem Tod mit ihr fahren. Deshalb legte man ihm Boote ins Grab.',
+    note: 'Dass das Schiff bei Cheops zum Totenglauben gehörte, ist wahrscheinlich, aber nicht sicher.', tags: ['Schiff', 'Sonne'], fragen: ['Wer fuhr mit der Sonnenbarke?'],
+  },
+  nut: {
+    name: 'Nut, die Himmelsgöttin', say: 'sprich: NUT', tts: 'Nut', when: 'in allen Epochen', dietLabel: 'Zuständig für', diet: 'Himmel und Sterne', whereLabel: 'Ort', where: 'Decken von Tempeln und Gräbern', specId: 'nut', sizeM: 11,
+    wow: 'Auf Tempeldecken wölbt sich Nut als Frau über der Erde, ihr Körper ist mit Sternen bedeckt.',
+    text: 'Nach dem Glauben der Ägypter verschluckt Nut abends die Sonne und gebiert sie morgens neu. Deshalb malte man sie an Sargdeckel und Tempeldecken.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Götter', 'Himmel'], fragen: ['Wofür steht Nut?'],
+  },
+
+  // ------------------------------------------------------------ Station 5: Mumie (Chemie-Schwerpunkt)
+  mumifizierung: {
+    name: 'Mumifizieren', say: 'sprich: mu-mi-fi-ZIE-ren', tts: 'Mumifizieren', when: 'ca. 2600 v. Chr. bis in die römische Zeit', whereLabel: 'Ort', where: 'Einbalsamierungs-Werkstätten (das „Schöne Haus“)',
+    wow: 'Das ganze Verfahren dauerte etwa 70 Tage. Das ist durch Herodot überliefert, neuere Darstellungen nennen 40 Tage für das Trocknen.',
+    text: 'Zuerst wurde der Körper gereinigt. Die Organe kamen getrennt in Krüge, das Herz blieb im Körper. Dann trocknete man den Körper lange mit Natron aus. Danach salbte man ihn mit Ölen und Harzen und wickelte ihn in Leinen.',
+    note: 'Es gab einfache und teure Verfahren. Wie genau man vorging, änderte sich über die Jahrhunderte. Die wichtigsten Berichte stammen von Herodot im 5. Jahrhundert v. Chr.',
+    tags: ['Mumie', 'Chemie'], fragen: ['Wie lange dauerte das Mumifizieren?', 'Warum bleibt ein Körper mit Natron erhalten?'],
+  },
+  einbalsamierer: {
+    name: 'Der Einbalsamierer', say: 'sprich: ein-bal-SA-mie-rer', tts: 'Einbalsamierer', when: 'Neues Reich', dietLabel: 'Aufgabe', diet: 'bereitete Verstorbene für das Jenseits vor', whereLabel: 'Ort', where: 'das „Schöne Haus“ (Werkstatt)', specId: 'einbalsamierer', sizeM: 1.75,
+    wow: 'Bei der Zeremonie trug ein Priester die Maske des Schakalgottes Anubis.',
+    text: 'Einbalsamierer waren Handwerker und Priester. Sie kannten Salze, Harze und Öle. Ihr Wissen gaben sie in der Familie weiter. Die Arbeit galt als heilig.',
+    tags: ['Beruf', 'Mumie'], fragen: ['Was gehörte zur Arbeit eines Einbalsamierers?'],
+  },
+  natron: {
+    name: 'Natron', say: 'sprich: NA-tron', tts: 'Natron', when: 'seit der Frühzeit', whereLabel: 'Fundort', where: 'Wadi Natrun, Ägypten',
+    size: 'weißes Salz', diet: null, specId: 'natron_haufen', sizeM: 1,
+    wow: 'Natron zieht Wasser an. Ohne Wasser können Bakterien und Pilze nicht wachsen.',
+    text: 'Natron ist ein Salzgemisch aus trockenen Seen. Es besteht vor allem aus Natriumcarbonat (Soda). Es ist wasseranziehend (hygroskopisch) und leicht alkalisch. Beides hemmt Bakterien. Die Ägypter benutzten Natron auch zum Reinigen.',
+    note: 'Vorsicht, Namen: Das Mineral „Natron“ ist Natriumcarbonat-Decahydrat (Soda). Im Haushalt heißt „Natron“ dagegen Natriumhydrogencarbonat (Backnatron).',
+    tags: ['Chemie', 'Mumie'], fragen: ['Warum bleibt ein Körper mit Natron erhalten?', 'Welches Salz steckt vor allem im Natron?'],
+  },
+  kanopen: {
+    name: 'Die vier Kanopenkrüge', say: 'sprich: ka-NO-pen', tts: 'Kanopen', when: 'ab dem Alten Reich', whereLabel: 'Ort', where: 'neben dem Sarg in der Grabkammer',
+    wow: 'Die vier Deckel zeigen die vier Söhne des Horus: Mensch, Pavian, Schakal und Falke.',
+    text: 'In den Krügen lagen die Organe: Leber, Lunge, Magen und Darm. Die Ägypter glaubten, dass jeder Sohn des Horus ein Organ beschützt. Die Deckel waren beschriftet und bemalt.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Mumie', 'Glaube'], fragen: ['Welche vier Köpfe haben die Deckel der Kanopenkrüge?'],
+  },
+  leinenbinden: {
+    name: 'Leinenbinden', say: '', tts: 'Leinenbinden', when: 'in allen Epochen', whereLabel: 'Ort', where: 'Werkstatt',
+    wow: 'Leinen wird aus Flachs gemacht. Die Fasern sind sehr reißfest.',
+    text: 'Zum Schluss wickelte man den Körper in viele Lagen Leinen. Zwischen den Lagen legte man Amulette. Auch Priester sprachen dabei Gebete.',
+    tags: ['Mumie', 'Handwerk'], fragen: ['Woraus wird Leinen gemacht?'],
+  },
+  herzskarabaeus: {
+    name: 'Der Herzskarabäus', say: 'sprich: ska-ra-BÄ-us', tts: 'Skarabäus', when: 'ab dem Neuen Reich', whereLabel: 'Ort', where: 'auf der Brust der Mumie', specId: 'amulett_herzskarabaeus', sizeM: 0.12,
+    wow: 'Auf dem Herzskarabäus stand ein Spruch: Das Herz soll nicht gegen den Toten aussagen.',
+    text: 'Ein Herzskarabäus ist ein Käfer-Amulett aus Stein. Man legte ihn über das Herz der Mumie. Er sollte beim Totengericht helfen.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Mumie', 'Amulett'], fragen: ['Wozu dient ein Herzskarabäus?'],
+  },
+  mumie_bahre: {
+    name: 'Die Bahre', say: '', tts: 'Bahre', when: 'Neues Reich', whereLabel: 'Ort', where: 'Werkstatt',
+    wow: 'Die Bahre hat die Form eines Löwen: Das Tier sollte den Toten beschützen.',
+    text: 'Auf der Bahre lag der Verstorbene. Hier gab es Gebete und Zeremonien. In unserem Buch bleibt der Körper bedeckt: Das ist ein würdevoller Ort.',
+    tags: ['Mumie'], fragen: ['Wozu diente die Bahre?'],
+  },
+  mumifizieren_versuch: {
+    name: 'Versuch: Apfel „mumifizieren“', when: 'für den Unterricht', whereLabel: 'Ort', where: 'Klassenzimmer',
+    wow: 'Mit Natron, Kochsalz und Zucker verliert ein Apfelstück Wasser. Man kann den Verlust wiegen!',
+    text: 'Lege vier Apfelstücke in Becher: mit Soda oder Backnatron, mit Kochsalz, mit Zucker und ohne Zusatz. Wiege sie jeden Tag und trage den Gewichtsverlust in ein Diagramm ein. Beobachte: Was passiert mit dem Stück ohne Salz?',
+    note: 'Nur unter Aufsicht, nichts essen. Becher abdecken, damit keine Fliegen kommen.',
+    tags: ['Chemie', 'Versuch'], fragen: ['Welcher Zusatz entzieht dem Apfel das meiste Wasser?', 'Warum faulen die Stücke mit Salz langsamer?'],
+  },
+
+  // ------------------------------------------------------------ Station 6: Alltag
+  deir_el_medina: {
+    name: 'Deir el-Medina', say: 'sprich: Deir el-Me-DI-na', tts: 'Dair el Medina', when: 'ca. 1500 bis 1100 v. Chr.', period: 'Neues Reich', whereLabel: 'Ort', where: 'am Westufer des Nils bei Theben (Luxor)',
+    wow: 'Hier wohnten die Handwerker, die die Königsgräber im Tal der Könige bauten.',
+    text: 'Das Arbeiterdorf lag in einem Tal, nah an den Gräbern. Die Handwerker bekamen Getreide als Lohn. Sie hinterließen sehr viele Briefe und Notizen auf Scherben und Papyrus. So kennen wir ihren Alltag gut.',
+    tags: ['Alltag', 'Dorf'], fragen: ['Warum weiß man so viel über das Leben in Deir el-Medina?'],
+  },
+  streik: {
+    name: 'Der erste bekannte Streik', when: 'um 1157 v. Chr.', period: 'Regierungszeit Ramses’ III.', whereLabel: 'Ort', where: 'Deir el-Medina',
+    wow: 'Die Arbeiter bekamen ihre Getreide-Rationen nicht rechtzeitig und legten die Arbeit nieder.',
+    text: 'Ein Papyrus berichtet davon. Die Arbeiter zogen aus dem Dorf und setzten sich vor einen Tempel. Sie forderten ihren Lohn. Es ist der älteste bekannte Streik der Geschichte.',
+    note: 'Das Datum ist ungefähr. Das Wort „Streik“ ist modern, aber das Verhalten war ähnlich.', tags: ['Alltag', 'Geschichte'], fragen: ['Warum streikten die Arbeiter?'],
+  },
+  baeckerin: {
+    name: 'Die Bäckerin', say: '', tts: 'Bäckerin', when: 'in allen Epochen', dietLabel: 'Aufgabe', diet: 'backte Brot im Lehmofen', whereLabel: 'Ort', where: 'Backstube im Haus', specId: 'baeckerin', sizeM: 1.55,
+    wow: 'Brot war so wichtig, dass „Brot“ im Alltag oft „Essen“ bedeutete.',
+    text: 'Brot gehörte zu jeder Mahlzeit. Der Teig wurde aus Emmer-Mehl und Wasser geknetet. Man ließ ihn aufgehen und backte ihn in Formen im Ofen. Oft war Sand im Mehl. Das sieht man an den abgenutzten Zähnen der Mumien.',
+    tags: ['Beruf', 'Essen'], fragen: ['Wie wurde Brot gebacken?'],
+  },
+  braeuerin: {
+    name: 'Die Bierbrauerin', say: '', tts: 'Brauerin', when: 'in allen Epochen', dietLabel: 'Aufgabe', diet: 'braute Bier aus Gerste', whereLabel: 'Ort', where: 'Haus, Brauerei', specId: 'braeuerin', sizeM: 1.55,
+    wow: 'Bier galt als nahrhaftes Getränk. Arbeiter bekamen es als Teil ihres Lohns.',
+    text: 'Das ägyptische Bier war dick und nahrhaft. Man braute aus Gerste und Wasser einen Brei. Hefe machte aus Zucker Alkohol und Kohlenstoffdioxid. Heute würde man es kaum wie Bier erkennen.',
+    note: 'Wie stark das Bier war, ist nicht ganz klar. Es war wohl eher mild.', tags: ['Beruf', 'Essen'], fragen: ['Woraus braute man Bier?'],
+  },
+  kind: {
+    name: 'Ein Kind', say: '', tts: 'Kind', when: 'in allen Epochen', dietLabel: 'Alltag', diet: 'spielte, half im Haus, lernte', whereLabel: 'Ort', where: 'im Dorf', specId: 'kind', sizeM: 1.1,
+    wow: 'Kinder trugen als Frisur eine „Jugendlocke“ an der Seite des Kopfes.',
+    text: 'Kinder spielten mit Bällen, Puppen und Holztieren. Mit etwa vier Jahren halfen viele schon im Haushalt mit. Wer Glück hatte, ging in die Schule und lernte lesen und schreiben.',
+    tags: ['Alltag'], fragen: ['Womit spielten ägyptische Kinder?'],
+  },
+  katze: {
+    name: 'Hauskatze', sci: 'Felis catus', say: 'sprich: HAUS-kat-ze', tts: 'Hauskatze', when: 'seit dem Mittleren Reich im Haus', whereLabel: 'Ort', where: 'Häuser und Felder',
+    size: 'etwa 55 cm lang', diet: 'Mäuse, Ratten, kleine Vögel', specId: 'katze', sizeM: 0.55,
+    wow: 'Katzen waren so beliebt, dass man sie als Mumien beisetzte.',
+    text: 'Die Katze beschützte die Vorräte vor Mäusen. Man hielt sie als Haustier. Wenn eine Katze starb, trauerte die Familie. Die Göttin Bastet wurde mit Katzenkopf dargestellt.',
+    tags: ['Tier', 'Alltag'], fragen: ['Wozu hielt man Katzen?'],
+  },
+  papyrusrolle: {
+    name: 'Die Papyrusrolle', say: 'sprich: pa-PÜ-rus', tts: 'Papüruss', when: 'seit der Frühzeit', whereLabel: 'Ort', where: 'Schreibstube, Tempel, Verwaltung', specId: 'papyrusrolle', sizeM: 0.4,
+    wow: 'Papyrusrollen waren teuer. Für Notizen benutzte man oft Scherben, sogenannte Ostraka.',
+    text: 'Auf einer Papyrusrolle schrieb man Briefe, Zauberbücher, Geschichten und Listen. Die Rolle wurde zusammengerollt und aufbewahrt. Manche sind über 3000 Jahre alt und noch lesbar.',
+    tags: ['Schrift'], fragen: ['Was schrieb man auf Papyrus, was auf Scherben?'],
+  },
+  hieroglyphen: {
+    name: 'Hieroglyphen', say: 'sprich: hi-e-ro-GLÜ-fen', tts: 'Hieroglüfen', meaning: 'Bedeutung: „heilige Zeichen“ (griechisch).', when: 'ab ca. 3200 v. Chr. bis ins 4. Jahrhundert n. Chr.', whereLabel: 'Ort', where: 'Tempel, Gräber, Papyri',
+    wow: 'Es gibt Zeichen für einzelne Laute, für ganze Wörter und Zeichen, die man nicht liest, sondern die erklären.',
+    text: 'Hieroglyphen sind Bilderzeichen. Ein Zeichen kann einen Laut meinen (wie ein Buchstabe), ein ganzes Wort oder eine Wortart. Es gibt 24 Zeichen für einzelne Konsonanten. Vokale schrieb man nicht.',
+    tags: ['Schrift'], fragen: ['Was bedeutet das Wort „Hieroglyphe“?', 'Wie viele Einkonsonantenzeichen gibt es?'],
+  },
+  mahlstein: {
+    name: 'Der Mahlstein', say: '', tts: 'Mahlstein', when: 'in allen Epochen', whereLabel: 'Ort', where: 'in jedem Haushalt', specId: 'mahlstein', sizeM: 0.9,
+    wow: 'Im Mehl war oft Steinstaub. Daran sieht man heute, wie stark die Zähne der Ägypter abgenutzt waren.',
+    text: 'Getreide wurde auf dem Mahlstein zerrieben. Man kniete davor und schob einen kleinen Stein hin und her. Das war anstrengende Arbeit.',
+    tags: ['Alltag', 'Essen'], fragen: ['Wie machte man Mehl?'],
+  },
+  senet: {
+    name: 'Senet', say: 'sprich: SE-net', tts: 'Senet', when: 'seit etwa 3000 v. Chr.', whereLabel: 'Ort', where: 'Haushalt und Gräber', specId: 'senet_brett', sizeM: 0.6,
+    wow: 'Senet ist eines der ältesten bekannten Brettspiele der Welt.',
+    text: 'Senet spielte man auf einem Brett mit 30 Feldern. Jeder hatte Spielsteine, gewürfelt wurde mit Stäbchen. Wer zuerst alle Steine vom Brett brachte, gewann. Später sah man darin ein Bild für den Weg ins Jenseits.',
+    note: 'Die genauen Regeln kennen wir nicht. Heutige Regeln sind Vorschläge von Forschern.', tags: ['Spiel'], fragen: ['Wie viele Felder hat ein Senet-Brett?'],
+  },
+  bierbrot: {
+    name: 'Brot und Bier', say: '', tts: 'Brot und Bier', when: 'in allen Epochen', whereLabel: 'Ort', where: 'in jedem Haus',
+    wow: 'Auch für die Toten gab man Brot und Bier mit: im Grab sollten sie nicht hungern.',
+    text: 'Brot und Bier waren die Grundnahrung. Die Arbeiter bekamen sie als Lohn. Dazu gab es Zwiebeln, Linsen, Fisch und Früchte.',
+    tags: ['Essen', 'Alltag'], fragen: ['Was waren die wichtigsten Nahrungsmittel?'],
+  },
+};

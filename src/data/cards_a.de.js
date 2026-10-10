@@ -1,0 +1,227 @@
+// Karten Station 0 bis 3 (Deutsch, Klasse 5/6). Felder siehe animals.de.js.
+// dietLabel / whereLabel überschreiben die Beschriftung "Nahrung" / "Ort" (z. B. "Aufgabe", "Fundort").
+export const CARDS_A = {
+  // ------------------------------------------------------------ Station 0
+  pyramiden: {
+    name: 'Die Pyramiden von Gizeh', say: 'sprich: GI-seh', tts: 'Gisseh', when: 'um 2600 bis 2500 v. Chr.', period: 'Altes Reich', whereLabel: 'Ort', where: 'bei Kairo, Ägypten',
+    size: 'Cheops-Pyramide: ursprünglich 146,6 m hoch',
+    wow: 'Die Cheops-Pyramide war über 3800 Jahre lang das höchste Bauwerk der Welt.',
+    text: 'In Gizeh stehen drei große Pyramiden: für die Könige Cheops, Chephren und Mykerinos. Sie sind Gräber. Vor den Pyramiden stehen die Sphinx und viele kleinere Gräber.',
+    note: 'Wie genau man die Blöcke hochgebracht hat, wissen Forscher nicht sicher.',
+    tags: ['Pyramide', 'Altes Reich'], fragen: ['Für welche drei Könige wurden die Pyramiden von Gizeh gebaut?'],
+  },
+  obelisk: {
+    name: 'Obelisk', say: 'sprich: o-be-LISK', tts: 'Obelisk', when: 'ab dem Alten Reich', period: 'bis in die Spätzeit', whereLabel: 'Ort', where: 'vor Tempeln, z. B. in Luxor und Karnak',
+    size: 'bis über 30 m hoch, aus einem Stück Granit',
+    wow: 'Manche Obelisken wiegen mehrere hundert Tonnen und wurden in einem Stück aus dem Stein gehauen.',
+    text: 'Ein Obelisk ist eine hohe, spitze Steinnadel. Die Spitze war oft vergoldet. Sie fing die ersten Strahlen der Sonne ein. Er war ein Zeichen für den Sonnengott Ra.',
+    tags: ['Bauwerk', 'Sonne'], fragen: ['Wofür stand ein Obelisk?'],
+  },
+  sonnenscheibe: {
+    name: 'Die Sonne (Ra)', say: 'sprich: RA', tts: 'Ra', when: 'in allen Epochen', whereLabel: 'Ort', where: 'am Himmel über Ägypten',
+    wow: 'Die Ägypter glaubten: Die Sonne fährt jeden Tag mit einer Barke über den Himmel.',
+    text: 'Ra war der Sonnengott. Am Morgen fuhr er mit seiner Barke in den Himmel hinein, abends versank er im Westen. Nachts reiste er durch die Unterwelt, bis es wieder Morgen wurde.',
+    note: 'Das ist der Glaube der alten Ägypter.', tags: ['Sonne', 'Götter'], fragen: ['Wie erklärten die Ägypter den Lauf der Sonne?'],
+  },
+  barke: {
+    name: 'Barke', say: 'sprich: BAR-ke', tts: 'Barke', when: 'in allen Epochen', whereLabel: 'Ort', where: 'auf dem Nil',
+    wow: 'Der Nil war die wichtigste Straße Ägyptens: Fast alles reiste auf dem Wasser.',
+    text: 'Eine Barke ist ein Schiff. Mit der Strömung fuhr man nach Norden, mit dem Wind und dem Segel zurück nach Süden. Der Wind weht in Ägypten meistens von Norden.',
+    tags: ['Nil', 'Schiff'], fragen: ['Warum fuhr man auf dem Nil mit dem Wind nach Süden?'],
+  },
+
+  // ------------------------------------------------------------ Station 1: Nil
+  nilpferd: {
+    name: 'Nilpferd', sci: 'Flusspferd, Hippopotamus amphibius', say: 'sprich: NIL-pferd', tts: 'Nielpferd', when: 'lebt dort seit Urzeiten, heute weiter im Süden', whereLabel: 'Ort', where: 'Nil und Seen in Afrika',
+    size: 'bis 4 m lang · bis über 1,5 Tonnen', diet: 'Gras (nachts an Land)', specId: 'nilpferd', sizeM: 4,
+    wow: 'Ein Nilpferd kann bis zu fünf Minuten tauchen. Mit dem riesigen Maul kann es sehr weit gähnen.',
+    text: 'Im alten Ägypten gab es Nilpferde im Fluss. Sie waren gefährlich, wenn man ihnen zu nah kam. Die Ägypter verehrten aber auch die Göttin Taweret. Sie war nilpferdgestaltig und beschützte Mütter und Kinder.',
+    note: 'In Ägypten selbst gibt es seit dem 19. Jahrhundert keine wilden Nilpferde mehr. Sie leben weiter südlich.',
+    tags: ['Tier', 'Nil'], fragen: ['Wovon ernährt sich ein Nilpferd?', 'Welche Göttin sah aus wie ein Nilpferd?'],
+  },
+  krokodil: {
+    name: 'Nilkrokodil', sci: 'Crocodylus niloticus', say: 'sprich: kro-ko-DIEL', tts: 'Krokodiel', when: 'lebt dort seit Urzeiten', whereLabel: 'Ort', where: 'Nil und Seen in Afrika',
+    size: 'bis 5 m lang · bis über 500 kg', diet: 'Fische und größere Tiere am Ufer', specId: 'krokodil', sizeM: 4.5,
+    wow: 'Eine Krokodilmutter trägt ihre Jungen im Maul vorsichtig zum Wasser.',
+    text: 'Krokodile lagen am Ufer in der Sonne. Die Ägypter hatten Respekt vor ihnen. Der Gott Sobek hatte einen Krokodilkopf. Er stand für die Kraft des Nils.',
+    tags: ['Tier', 'Nil', 'Götter'], fragen: ['Welcher Gott hatte einen Krokodilkopf?'],
+  },
+  ibis: {
+    name: 'Heiliger Ibis', sci: 'Threskiornis aethiopicus', say: 'sprich: I-bis', tts: 'Ibis', when: 'lebt dort seit Urzeiten', whereLabel: 'Ort', where: 'Feuchtgebiete in Afrika',
+    size: 'etwa 75 cm hoch', diet: 'Würmer, Insekten, kleine Tiere', specId: 'ibis', sizeM: 0.75,
+    wow: 'In Sakkara fand man Millionen Ibis-Mumien. Sie waren Opfergaben für den Gott Thot.',
+    text: 'Der Ibis hat einen langen, gebogenen Schnabel und einen schwarzen Kopf. Der Gott Thot hatte einen Ibiskopf. Er war der Gott der Schrift und des Wissens.',
+    note: 'Heute ist der Heilige Ibis in Ägypten selten.', tags: ['Tier', 'Götter'], fragen: ['Welcher Gott hatte einen Ibiskopf?'],
+  },
+  fischer: {
+    name: 'Fischer', say: '', tts: 'Fischer', when: 'in allen Epochen', dietLabel: 'Aufgabe', diet: 'fing Fische mit Netz, Speer und Angel', whereLabel: 'Ort', where: 'am Nil und im Delta', specId: 'fischer', sizeM: 1.65,
+    wow: 'Auf Papyrusbooten stehend warfen Fischer ihre Netze aus.',
+    text: 'Fische gehörten zu den wichtigsten Nahrungsmitteln. Das Boot war aus gebündeltem Papyrus gebaut. Es war leicht und glitt gut durch das flache Wasser.',
+    tags: ['Beruf', 'Nil'], fragen: ['Woraus bestand ein einfaches Boot?'],
+  },
+  bauer: {
+    name: 'Bauer', say: '', tts: 'Bauer', when: 'in allen Epochen', dietLabel: 'Aufgabe', diet: 'baute Getreide, Gemüse und Flachs an', whereLabel: 'Ort', where: 'auf den Feldern am Nil', specId: 'bauer', sizeM: 1.65,
+    wow: 'Das ägyptische Jahr hatte drei Jahreszeiten: Überschwemmung, Wachsen und Ernte.',
+    text: 'Während der Flut ruhte die Feldarbeit. Danach säte man auf dem Schlamm. Man baute vor allem Emmer und Gerste an. Aus ihnen machte man Brot und Bier. Auch Flachs für Leinenkleidung wuchs auf den Feldern.',
+    tags: ['Beruf', 'Landwirtschaft'], fragen: ['Wie hießen die drei Jahreszeiten im alten Ägypten?'],
+  },
+  papyrus: {
+    name: 'Papyrus', sci: 'Cyperus papyrus', say: 'sprich: pa-PÜ-rus', tts: 'Papüruss', when: 'wächst dort seit Urzeiten', whereLabel: 'Ort', where: 'Sumpfgebiete am Nil, vor allem im Delta',
+    size: 'bis 4 m hoch', wow: 'Aus Papyrus machte man nicht nur Schreibpapier, sondern auch Boote, Seile, Matten und Sandalen.',
+    text: 'Der Papyrus wächst im Sumpf. Für Schreibblätter schnitt man das Mark in dünne Streifen. Man legte sie kreuzweise übereinander und presste sie. Der Pflanzensaft klebte die Schichten zusammen.',
+    note: 'Unser Wort „Papier“ kommt von „Papyrus“.', tags: ['Pflanze', 'Schrift'], fragen: ['Wie machte man ein Blatt aus Papyrus?'],
+  },
+  schaduf: {
+    name: 'Schaduf', say: 'sprich: scha-DUF', tts: 'Schaduf', when: 'seit dem Neuen Reich', period: 'ca. 1500 v. Chr.', whereLabel: 'Ort', where: 'an Kanälen und am Nil',
+    size: 'etwa 3 m hoch', wow: 'Mit einem Gegengewicht am Balken war das Wasserschöpfen viel leichter.',
+    text: 'Ein Schaduf ist ein Schwengelbrunnen. An einem langen Balken hängt ein Eimer, am anderen Ende ein schwerer Stein. So hebt man Wasser vom Fluss auf höher gelegene Felder.',
+    tags: ['Technik', 'Landwirtschaft'], fragen: ['Wozu hängte man einen Stein an das andere Ende des Balkens?'],
+  },
+  nilometer: {
+    name: 'Nilometer', say: 'sprich: nil-o-ME-ter', tts: 'Niliometer', when: 'seit dem Alten Reich bekannt', whereLabel: 'Ort', where: 'z. B. auf der Insel Elephantine',
+    wow: 'Am Nilometer sah man schon vorher, wie gut die Ernte werden würde.',
+    text: 'Ein Nilometer ist eine Treppe oder ein Schacht mit Markierungen. Daran las man den Wasserstand des Nils ab. Bei einer hohen Flut gab es eine gute Ernte. Danach richteten die Beamten die Steuern aus.',
+    tags: ['Technik', 'Nil'], fragen: ['Wozu brauchte man einen Nilometer?'],
+  },
+  nilflut: {
+    name: 'Die Nilflut', say: 'sprich: NIL-flut', tts: 'Nielflut', when: 'jedes Jahr, etwa Juli bis Oktober', whereLabel: 'Ort', where: 'Nil in Ägypten',
+    wow: 'Seit dem Bau des Assuan-Staudamms (Hochdamm 1970) gibt es keine natürliche Nilflut mehr.',
+    text: 'Im Sommer regnete es weit im Süden, in Äthiopien, sehr stark. Das Wasser floss den Nil hinunter und trat in Ägypten über die Ufer. Danach blieb dunkler, fruchtbarer Schlamm auf den Feldern liegen.',
+    note: 'Beginn und Höhe der Flut schwankten von Jahr zu Jahr.', tags: ['Nil', 'Landwirtschaft'], fragen: ['Warum war die Nilflut so wichtig?'],
+  },
+  schwarzes_land: {
+    name: 'Das Schwarze und das Rote Land', say: 'sprich: Ke-met und Desch-ret', tts: 'Kemet und Deschret', when: 'in allen Epochen', whereLabel: 'Ort', where: 'Ägypten',
+    wow: 'Die Ägypter nannten ihr Land „Kemet“, das Schwarze Land, nach dem dunklen Nilschlamm.',
+    text: 'Am Fluss lag das fruchtbare, schwarze Land. Dahinter begann die Wüste. Die Ägypter nannten sie das „rote Land“, Deschret. Dort wohnte kaum jemand, und dort fand man Gold und Steine.',
+    tags: ['Landschaft'], fragen: ['Was bedeutet „Kemet“?'],
+  },
+
+  // ------------------------------------------------------------ Station 2: Zwei Länder
+  pharao: {
+    name: 'Der Pharao', say: 'sprich: FA-ra-o', tts: 'Pharao', meaning: 'Bedeutung: „Großes Haus“ (so nannte man den Palast, später den König).',
+    when: 'vom Beginn bis zum Ende', dietLabel: 'Aufgabe', diet: 'Herrscher, Priester und Richter zugleich', whereLabel: 'Ort', where: 'Ägypten', size: 'meist etwa so groß wie ein Mensch', specId: 'pharao', sizeM: 1.7,
+    wow: 'Die Ägypter sahen den König als lebenden Horus. Er sollte für Ordnung und Wahrheit sorgen.',
+    text: 'Der Pharao herrschte über ganz Ägypten. Krummstab und Wedel waren seine Zeichen. Der Krummstab stand für den Hirten, der sein Volk führt. Das Wort „Pharao“ wurde erst später für den König üblich.',
+    tags: ['Herrscher'], fragen: ['Welche zwei Zeichen trug der Pharao in den Händen?'],
+  },
+  rote_krone: {
+    name: 'Rote Krone', say: 'sprich: Desch-ret', tts: 'Deschret', when: 'seit der Frühzeit', whereLabel: 'Ort', where: 'für Unterägypten (Delta)',
+    wow: 'Die rote Krone hat vorn eine kleine Spirale, wie ein Fühler.',
+    text: 'Die rote Krone gehörte zu Unterägypten im Norden. Dort breitet sich der Nil zum Delta aus. Das Zeichen der Region war die Papyruspflanze.',
+    tags: ['Krone'], fragen: ['Zu welchem Landesteil gehörte die rote Krone?'], specId: 'rote_krone', sizeM: 0.5,
+  },
+  weisse_krone: {
+    name: 'Weiße Krone', say: 'sprich: Hed-jet', tts: 'Hedjet', when: 'seit der Frühzeit', whereLabel: 'Ort', where: 'für Oberägypten (Niltal)',
+    wow: 'Die weiße Krone sieht aus wie eine hohe Kegelmütze mit einer Kugel oben.',
+    text: 'Die weiße Krone gehörte zu Oberägypten im Süden. Dort fließt der Nil durch ein schmales Tal. Das Zeichen der Region war die Lotosblume.',
+    tags: ['Krone'], fragen: ['Zu welchem Landesteil gehörte die weiße Krone?'], specId: 'weisse_krone', sizeM: 0.5,
+  },
+  doppelkrone: {
+    name: 'Doppelkrone', say: 'sprich: PSCHENT', tts: 'Pschent', when: 'seit der Frühzeit', whereLabel: 'Ort', where: 'für ganz Ägypten',
+    wow: 'Die Doppelkrone zeigte: Ober- und Unterägypten sind ein Reich.',
+    text: 'Die Doppelkrone besteht aus der weißen Krone, die in der roten steckt. Sie war das Zeichen für das ganze Reich. Der Pharao nannte sich „Herr der Beiden Länder“.',
+    tags: ['Krone'], fragen: ['Woraus besteht die Doppelkrone?'], specId: 'doppelkrone', sizeM: 0.8,
+  },
+  narmer_palette: {
+    name: 'Narmer-Palette', say: 'sprich: NAR-mer', tts: 'Narmer', when: 'um 3100 v. Chr.', period: 'Frühzeit', whereLabel: 'Fundort', where: 'Hierakonpolis, gefunden 1898',
+    size: 'etwa 64 cm hoch', specId: 'narmer_palette', sizeM: 0.64,
+    wow: 'Auf der Palette trägt der König auf einer Seite die weiße, auf der anderen die rote Krone.',
+    text: 'Die Palette ist eine Steinplatte aus Schiefer. Sie gehört dem König Narmer. Die Bilder zeigen ihn mit beiden Kronen. Man sieht darin einen Hinweis auf die Einigung des Landes.',
+    note: 'Ob Narmer und Menes dieselbe Person sind, ist unter Forschern umstritten. Die Einigung war wohl ein längerer Prozess.',
+    tags: ['Frühzeit', 'Einigung'], fragen: ['Woran erkennt man auf der Palette, dass Ägypten geeint ist?'],
+  },
+  kobra: {
+    name: 'Uräus-Schlange', sci: 'Ägyptische Kobra', say: 'sprich: u-RÄ-us', tts: 'Uräus', when: 'seit der Frühzeit', whereLabel: 'Ort', where: 'an der Stirn des Pharaos',
+    size: 'etwa 40 cm hoch dargestellt', diet: 'Schutz des Königs', specId: 'kobra', sizeM: 0.4,
+    wow: 'Die aufgerichtete Kobra auf der Stirn sollte Feinde abwehren, so glaubte man.',
+    text: 'Die Kobra war die Göttin Wadjet. Sie sollte den König schützen. Deshalb trug er eine kleine Kobra an der Krone oder am Kopftuch. Das ist der Uräus.',
+    tags: ['Tier', 'Schutz'], fragen: ['Wozu trug der Pharao die Kobra an der Stirn?'],
+  },
+  wesir: {
+    name: 'Der Wesir', say: 'sprich: we-SIR', tts: 'Wesir', when: 'seit dem Alten Reich', dietLabel: 'Aufgabe', diet: 'höchster Beamter nach dem König', whereLabel: 'Ort', where: 'am Hof', specId: 'wesir', sizeM: 1.7,
+    wow: 'Der Wesir war oberster Richter und kümmerte sich um Steuern und Bauwerke.',
+    text: 'Der Pharao konnte nicht alles allein regeln. Der Wesir leitete die Verwaltung des Landes. Er trug ein langes Leinengewand und einen Stab.',
+    tags: ['Beruf', 'Verwaltung'], fragen: ['Was waren Aufgaben des Wesirs?'],
+  },
+  schreiber: {
+    name: 'Der Schreiber', say: 'sprich: SCHREI-ber', tts: 'Schreiber', when: 'seit der Frühzeit', dietLabel: 'Aufgabe', diet: 'schrieb Listen, Briefe und Verträge', whereLabel: 'Ort', where: 'am Hof, im Tempel und in der Verwaltung', specId: 'schreiber', sizeM: 1.0,
+    wow: 'Schreiber mussten jahrelang lernen und waren sehr angesehen. Sie saßen im Schneidersitz mit der Papyrusrolle auf dem Knie.',
+    text: 'Nur wenige Menschen konnten lesen und schreiben. Ein Schreiber hatte deshalb einen guten Beruf. Er zählte Getreide, führte Listen und schrieb Briefe.',
+    tags: ['Beruf', 'Schrift'], fragen: ['Warum waren Schreiber so wichtig?'],
+  },
+  stufenpyramide: {
+    name: 'Die Stufenpyramide', say: 'sprich: STU-fen-pü-ra-mi-de', tts: 'Stufenpüramide', when: 'um 2650 v. Chr.', period: 'Altes Reich', whereLabel: 'Ort', where: 'Sakkara, bei Memphis',
+    size: 'etwa 60 m hoch, sechs Stufen',
+    wow: 'Sie ist die älteste große Steinpyramide. Als Baumeister gilt Imhotep.',
+    text: 'König Djoser ließ sich in Sakkara eine Stufenpyramide bauen. Vorher baute man Gräber nur aus Lehmziegeln. Hier benutzte man zum ersten Mal Stein in großem Stil. Das Grab sieht aus wie sechs übereinandergestapelte Gräber.',
+    note: 'Ob Imhotep die Pyramide wirklich entworfen hat, ist nicht ganz sicher.', tags: ['Pyramide', 'Altes Reich'], fragen: ['Wie viele Stufen hat die Stufenpyramide?'],
+  },
+  falke: {
+    name: 'Falke (Horus)', sci: 'Falke', say: 'sprich: HO-rus', tts: 'Horus', when: 'seit der Frühzeit', whereLabel: 'Ort', where: 'Ägypten',
+    size: 'etwa 40 cm', diet: 'Vögel und kleine Tiere', specId: 'falke', sizeM: 0.4,
+    wow: 'Jeder König hatte einen „Horusnamen“. Der Falke saß auf dem Königsnamen.',
+    text: 'Der Falke war das Tier des Himmelsgottes Horus. Die Ägypter sahen im König einen lebenden Horus. Deshalb zeigte man den Falken oft hinter oder über dem König.',
+    tags: ['Tier', 'Götter'], fragen: ['Welcher Gott war ein Falke?'],
+  },
+
+  // ------------------------------------------------------------ Station 3: Gizeh
+  cheops: {
+    name: 'Die Cheops-Pyramide', say: 'sprich: CHE-ops', tts: 'Cheops', when: 'um 2600 v. Chr.', period: 'Altes Reich', whereLabel: 'Ort', where: 'Gizeh bei Kairo',
+    size: 'ursprünglich 146,6 m hoch (heute rund 138,5 m)',
+    wow: 'Etwa 2,3 Millionen Steinblöcke und rund 26 Jahre Bauzeit.',
+    text: 'Die Pyramide des Königs Cheops ist die größte von Gizeh. Sie wurde aus Kalkstein gebaut. Innen liegen die Königskammer, die Große Galerie und enge Schächte. Heute fehlt die glatte Außenschicht aus feinem Kalkstein.',
+    note: 'Die Zahl der Blöcke und die Bauzeit sind Schätzungen. Wie man die Blöcke nach oben brachte, ist nicht sicher geklärt: Rampen, Hebel, mehrere Verfahren.',
+    tags: ['Pyramide', 'Altes Reich'], fragen: ['Wie hoch war die Cheops-Pyramide ursprünglich?', 'Wie viele Blöcke wurden verbaut (Schätzung)?'],
+  },
+  sphinx: {
+    name: 'Die Sphinx', say: 'sprich: SFINKS', tts: 'Sphinks', when: 'um 2500 v. Chr.', period: 'Altes Reich', whereLabel: 'Ort', where: 'Gizeh bei Kairo',
+    size: 'rund 73 m lang, 20 m hoch',
+    wow: 'Sie ist aus dem Kalkstein des Felsens gehauen, nicht aus einzelnen Blöcken gebaut.',
+    text: 'Die Sphinx hat den Körper eines Löwen und den Kopf eines Königs. Sie bewacht den Weg zu den Pyramiden. Man nimmt an, dass sie das Gesicht des Königs Chephren trägt.',
+    note: 'Wessen Gesicht die Sphinx zeigt, ist nicht ganz sicher.', tags: ['Bauwerk'], fragen: ['Wie sieht eine Sphinx aus?'],
+  },
+  baumeister: {
+    name: 'Der Baumeister', say: '', tts: 'Baumeister', when: 'Altes Reich', dietLabel: 'Aufgabe', diet: 'plante und leitete den Bau', whereLabel: 'Ort', where: 'auf der Baustelle', specId: 'baumeister', sizeM: 1.7,
+    wow: 'Die Pyramidenseiten sind fast genau nach den Himmelsrichtungen ausgerichtet.',
+    text: 'Der Baumeister plante die Pyramide. Er musste Winkel messen, Mengen berechnen und die Arbeit einteilen. Messleine und Winkelmaß waren seine Werkzeuge. Als Leiter des Baus der Cheops-Pyramide gilt wohl Hemiunu.',
+    note: 'Dass Hemiunu die Cheops-Pyramide leitete, ist wahrscheinlich, aber nicht sicher.', tags: ['Beruf', 'Pyramide'], fragen: ['Welche Werkzeuge nutzte ein Baumeister?'],
+  },
+  steinmetz: {
+    name: 'Der Steinmetz', say: 'sprich: STEIN-mets', tts: 'Steinmetz', when: 'in allen Epochen', dietLabel: 'Aufgabe', diet: 'bearbeitete Steinblöcke', whereLabel: 'Ort', where: 'im Steinbruch und auf der Baustelle', specId: 'steinmetz', sizeM: 1.4,
+    wow: 'Kalkstein schnitt man mit Kupferwerkzeugen. Für den harten Granit nahm man Steinkugeln aus Dolerit.',
+    text: 'Der Steinmetz schlug mit Holzschlägel und Meißel Blöcke aus dem Fels. Danach glättete er sie. Wichtig war, dass die Quader genau aufeinander passten.',
+    tags: ['Beruf', 'Pyramide'], fragen: ['Womit bearbeitete man Kalkstein?'],
+  },
+  arbeiter: {
+    name: 'Der Arbeiter', say: '', tts: 'Arbeiter', when: 'Altes Reich', dietLabel: 'Lohn', diet: 'Brot, Bier, Fleisch und Gemüse', whereLabel: 'Ort', where: 'Arbeitersiedlung bei Gizeh', specId: 'arbeiter', sizeM: 1.65,
+    wow: 'Die Arbeitsgruppen gaben sich Namen wie „Freunde des Cheops“. Man fand sie als Zeichen in den Steinen.',
+    text: 'Die Pyramiden bauten bezahlte Arbeiter. Sie waren in Gruppen eingeteilt, bekamen Essen und konnten sich ausruhen. Sie wurden nicht als Sklaven gehalten. Am Rand der Pyramiden fand man ihre Gräber.',
+    tags: ['Beruf', 'Pyramide'], fragen: ['Woher weiß man, dass die Pyramiden-Arbeiter keine Sklaven waren?'],
+  },
+  ochse: {
+    name: 'Ochse', sci: 'Hausrind', say: 'sprich: OCH-se', tts: 'Ochse', when: 'seit der Frühzeit', whereLabel: 'Ort', where: 'Ägypten',
+    size: 'etwa 2,4 m lang', diet: 'Gras und Futter', specId: 'ochse', sizeM: 2.4,
+    wow: 'Rinder lieferten Fleisch, Milch und Leder und zogen Pflüge und Schlitten.',
+    text: 'Rinder waren sehr wertvoll. Für die Arbeiter der Pyramiden wurden viele Rinder gehalten. Aus Funden von Knochen weiß man, dass dort viel Fleisch gegessen wurde.',
+    tags: ['Tier'], fragen: ['Wozu nutzte man Rinder?'],
+  },
+  schlitten: {
+    name: 'Der Schlitten', say: '', tts: 'Schlitten', when: 'Altes Reich', whereLabel: 'Ort', where: 'auf der Baustelle',
+    wow: 'Feuchter Sand ist fester als trockener Sand. Auf ihm gleitet ein Schlitten viel leichter.',
+    text: 'Ein Wandbild zeigt: Eine Statue wird auf einem Schlitten gezogen, und ein Mann gießt Wasser vor die Kufen. Forscher haben das 2014 nachgemessen. Mit der richtigen Wassermenge brauchte man nur etwa halb so viel Zugkraft.',
+    note: 'Das Bild stammt aus einem Grab des Mittleren Reiches. Ob man bei den Pyramiden genauso arbeitete, ist nicht sicher.',
+    tags: ['Technik', 'Physik'], fragen: ['Warum goss man Wasser vor den Schlitten?'],
+  },
+  kupfermeissel: {
+    name: 'Kupfermeißel', say: 'sprich: KUP-fer-mei-ßel', tts: 'Kupfermeißel', when: 'seit der Frühzeit', whereLabel: 'Ort', where: 'Steinbruch, Werkstatt',
+    wow: 'Kupfer ist weich. Mit Sand und Wasser als Schleifmittel schneidet es trotzdem Stein.',
+    text: 'Kupfer war das wichtigste Metall der frühen Ägypter. Werkzeuge schmiedete man aus Kupfer. Später mischte man Zinn dazu. So entstand Bronze, die härter ist.',
+    tags: ['Werkzeug', 'Metall'], fragen: ['Was entsteht, wenn man Kupfer mit Zinn mischt?'], specId: 'kupfermeissel', sizeM: 0.35,
+  },
+  arbeitersiedlung: {
+    name: 'Die Arbeitersiedlung', say: '', tts: 'Arbeitersiedlung', when: 'um 2500 v. Chr.', whereLabel: 'Ort', where: 'Heit el-Ghurab bei Gizeh, ausgegraben ab den 1990er Jahren',
+    wow: 'Archäologen fanden Bäckereien, Brauereien und Wohnräume für Tausende Arbeiter.',
+    text: 'Südlich der Pyramiden lagen Häuser, Bäckereien und Werkstätten. Hier lebten und aßen die Bauarbeiter. Auch Gräber von Arbeitern und Baumeistern hat man gefunden.',
+    tags: ['Pyramide', 'Alltag'], fragen: ['Was fand man in der Arbeitersiedlung bei Gizeh?'],
+  },
+};

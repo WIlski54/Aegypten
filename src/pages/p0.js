@@ -1,4 +1,4 @@
-// Station 0: Willkommen + Erduhr (Pop-up-Zifferblatt, 4,54 Mrd. Jahre = 24 Stunden)
+// Station 0: Willkommen + Zeitrad der Sonne (Pop-up-Zifferblatt, 3300 bis 30 v. Chr.)
 import * as THREE from 'three';
 import { mood } from '../engine/scene.js';
 import { blob, poly } from '../art/dsl.js';
@@ -8,38 +8,30 @@ import { Popup } from '../engine/popup.js';
 import { TAU, clamp, lerp, smooth } from '../engine/util.js';
 import { cracks } from './common.js';
 
-// ---- Erduhr: alle Zeiten werden aus den Jahreszahlen berechnet
-export const EARTH_AGE = 4540; // Mio. Jahre
-export const hourOf = (yearsAgoMa) => 24 * (1 - yearsAgoMa / EARTH_AGE);
-export const yearsAgoOf = (hour) => EARTH_AGE * (1 - hour / 24);
-export function fmtClock(h) {
-  const tot = Math.round(h * 3600); const hh = Math.floor(tot / 3600) % 24, mm = Math.floor((tot % 3600) / 60), ss = tot % 60;
-  const p = (n) => String(n).padStart(2, '0');
-  return h >= 23.9 ? `${p(hh)}:${p(mm)}:${p(ss)} Uhr` : `${p(hh)}:${p(mm)} Uhr`;
-}
-export function fmtAgo(ma) {
-  if (ma >= 1000) return `vor ${(ma / 1000).toFixed(2).replace('.', ',')} Mrd. Jahren`;
-  if (ma >= 10) return `vor ${Math.round(ma)} Mio. Jahren`;
-  if (ma >= 1) return `vor ${ma.toFixed(1).replace('.', ',')} Mio. Jahren`;
-  return `vor ${Math.round(ma * 1000)} Tausend Jahren`;
-}
+// ---- Zeitrad der Sonne: der Zeiger läuft von 3300 v. Chr. (oben) einmal im Kreis bis 30 v. Chr.
+export const BCE0 = 3300, BCE1 = 30; // Beginn und Ende des Rades (Jahre v. Chr.)
+export const hourOf = (bce) => 24 * ((BCE0 - bce) / (BCE0 - BCE1));   // Jahr -> "Stunde" 0..24 (Winkel)
+export const bceOf = (hour) => BCE0 - (BCE0 - BCE1) * (hour / 24);   // "Stunde" -> Jahr v. Chr.
+export function fmtBce(y) { return `ca. ${Math.round(y / 10) * 10 >= 1000 ? Math.round(y / 10) * 10 : Math.round(y / 5) * 5} v. Chr.`.replace(/(\d)(\d{3}) v/, '$1.$2 v'); }
 export const EVENTS = [
-  { id: 'erde', ma: 4540, label: 'Die Erde entsteht' },
-  { id: 'leben', ma: 3800, label: 'Erstes Leben im Meer' },
-  { id: 'tiere', ma: 539, label: 'Tiere mit Skeletten' },
-  { id: 'dino', ma: 231, label: 'Die ersten Dinosaurier' },
-  { id: 'saeuger', ma: 205, label: 'Die ersten Säugetiere' },
-  { id: 'ende', ma: 66, label: 'Der Asteroid trifft die Erde' },
-  { id: 'lucy', ma: 3.2, label: 'Lucy geht aufrecht' },
-  { id: 'sapiens', ma: 0.315, label: 'Homo sapiens' },
+  { id: 'narmer', bce: 3100, label: 'Zwei Länder werden eins' },
+  { id: 'djoser', bce: 2650, label: 'Die erste Stufenpyramide' },
+  { id: 'cheops', bce: 2560, label: 'Cheops-Pyramide' },
+  { id: 'hatschepsut', bce: 1470, label: 'Hatschepsut regiert' },
+  { id: 'tut', bce: 1323, label: 'Tutanchamun' },
+  { id: 'ramses', bce: 1260, label: 'Ramses II.' },
+  { id: 'alex', bce: 331, label: 'Alexandria wird gegründet' },
+  { id: 'kleo', bce: 30, label: 'Kleopatra, das Ende' },
 ];
 export const ERAS = [
-  { name: 'Hadaikum', from: 4540, to: 4000, col: '#6b5a52' },
-  { name: 'Archaikum', from: 4000, to: 2500, col: '#8a6a4a' },
-  { name: 'Proterozoikum', from: 2500, to: 539, col: '#7a8a5a' },
-  { name: 'Paläozoikum', from: 539, to: 252, col: '#3f8f8a' },
-  { name: 'Mesozoikum', from: 252, to: 66, col: '#c8693a' },
-  { name: 'Känozoikum', from: 66, to: 0, col: '#e0b040' },
+  { name: 'Frühzeit', from: 3300, to: 2686, col: '#c9a96a' },
+  { name: 'Altes Reich', from: 2686, to: 2181, col: '#e0a83a' },
+  { name: 'Zwischenzeit', from: 2181, to: 2055, col: '#a89a82' },
+  { name: 'Mittleres Reich', from: 2055, to: 1650, col: '#2f7fa8' },
+  { name: 'Zwischenzeit', from: 1650, to: 1550, col: '#a89a82' },
+  { name: 'Neues Reich', from: 1550, to: 1070, col: '#c8452c' },
+  { name: 'Späte Zeit', from: 1070, to: 332, col: '#7a5a9a' },
+  { name: 'Ptolemäer', from: 332, to: 30, col: '#2a9d8f' },
 ];
 const R = 3.05, CY = 3.3;
 
@@ -49,41 +41,50 @@ function clockFace(c) {
   const arc = (r0, r1, a0, a1, col) => {
     ctx.beginPath(); ctx.arc(cx, cy, r1 * S, -Math.PI / 2 + a0, -Math.PI / 2 + a1, false); ctx.arc(cx, cy, r0 * S, -Math.PI / 2 + a1, -Math.PI / 2 + a0, true); ctx.closePath(); ctx.fillStyle = col; ctx.fill();
   };
+  const ang = (bce) => (hourOf(bce) / 24) * TAU;
+  // Sonnenstrahlen am Rand (goldene Dreiecke)
+  ctx.fillStyle = '#e0b040';
+  for (let k = 0; k < 48; k++) {
+    const a = (k / 48) * TAU - Math.PI / 2, w = 0.045;
+    ctx.beginPath(); ctx.moveTo(cx + Math.cos(a - w) * (R - 0.05) * S, cy + Math.sin(a - w) * (R - 0.05) * S);
+    ctx.lineTo(cx + Math.cos(a) * (R + 0.2) * S, cy + Math.sin(a) * (R + 0.2) * S); ctx.lineTo(cx + Math.cos(a + w) * (R - 0.05) * S, cy + Math.sin(a + w) * (R - 0.05) * S); ctx.closePath(); ctx.fill();
+  }
   // face
   ctx.fillStyle = '#f7edd3'; ctx.beginPath(); ctx.arc(cx, cy, R * S, 0, TAU); ctx.fill();
   const g = ctx.createRadialGradient(cx, cy, 0.3 * S, cx, cy, R * S); g.addColorStop(0, 'rgba(255,255,255,.35)'); g.addColorStop(1, 'rgba(120,80,30,.12)'); ctx.fillStyle = g; ctx.fill();
   // gold rim
   ctx.lineWidth = 0.16 * S; ctx.strokeStyle = '#b8862d'; ctx.beginPath(); ctx.arc(cx, cy, (R - 0.08) * S, 0, TAU); ctx.stroke();
   ctx.lineWidth = 0.04 * S; ctx.strokeStyle = '#fff0b3'; ctx.beginPath(); ctx.arc(cx, cy, (R - 0.02) * S, 0, TAU); ctx.stroke();
-  // era ring (angle from years)
-  for (const e of ERAS) {
-    const a0 = (hourOf(e.from) / 24) * TAU, a1 = (hourOf(e.to) / 24) * TAU;
-    arc(R - 0.78, R - 0.36, a0, a1, e.col);
-  }
+  // Epochenring
+  for (const e of ERAS) arc(R - 0.78, R - 0.36, ang(e.from), ang(e.to), e.col);
   ctx.strokeStyle = 'rgba(60,30,10,.5)'; ctx.lineWidth = 0.012 * S; ctx.beginPath(); ctx.arc(cx, cy, (R - 0.36) * S, 0, TAU); ctx.stroke(); ctx.beginPath(); ctx.arc(cx, cy, (R - 0.78) * S, 0, TAU); ctx.stroke();
-  // dinosaur arc (231..66) on an inner ring
-  arc(R - 1.12, R - 0.84, (hourOf(231) / 24) * TAU, (hourOf(66) / 24) * TAU, '#a4161a');
-  // ticks and numerals
-  ctx.fillStyle = INK; ctx.strokeStyle = INK; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-  for (let h = 0; h < 24; h++) {
-    const a = (h / 24) * TAU - Math.PI / 2, major = h % 3 === 0;
-    ctx.lineWidth = (major ? 0.045 : 0.02) * S;
-    ctx.beginPath(); ctx.moveTo(cx + Math.cos(a) * (R - 0.36) * S, cy + Math.sin(a) * (R - 0.36) * S); ctx.lineTo(cx + Math.cos(a) * (R - (major ? 0.22 : 0.28)) * S, cy + Math.sin(a) * (R - (major ? 0.22 : 0.28)) * S); ctx.stroke();
-    if (major) { ctx.font = `bold ${0.26 * S}px ${SERIF}`; const lab = h === 0 ? '24' : String(h); ctx.fillText(lab, cx + Math.cos(a) * (R - 0.55) * S, cy + Math.sin(a) * (R - 0.55) * S); }
+  for (const e of ERAS) { const a = ang(e.from) - Math.PI / 2; ctx.beginPath(); ctx.moveTo(cx + Math.cos(a) * (R - 0.78) * S, cy + Math.sin(a) * (R - 0.78) * S); ctx.lineTo(cx + Math.cos(a) * (R - 0.36) * S, cy + Math.sin(a) * (R - 0.36) * S); ctx.stroke(); }
+  // Epochen-Namen entlang des Rings (kleine gedrehte Schrift in den breiten Sektoren)
+  ctx.save(); ctx.fillStyle = '#fff8e6'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.font = `bold ${0.17 * S}px ${SERIF}`;
+  for (const e of ERAS) {
+    if (e.name === 'Zwischenzeit') continue;
+    const a = (ang(e.from) + ang(e.to)) / 2 - Math.PI / 2, rr = (R - 0.57) * S;
+    ctx.save(); ctx.translate(cx + Math.cos(a) * rr, cy + Math.sin(a) * rr); ctx.rotate(a + Math.PI / 2); ctx.shadowColor = 'rgba(0,0,0,.55)'; ctx.shadowBlur = 2; ctx.fillText(e.name, 0, 0); ctx.restore();
   }
-  // event marks on the dinosaur ring edge
-  const mark = (ma, col, r = R - 0.98, rad = 0.07) => { const a = (hourOf(ma) / 24) * TAU - Math.PI / 2; ctx.fillStyle = col; ctx.beginPath(); ctx.arc(cx + Math.cos(a) * r * S, cy + Math.sin(a) * r * S, rad * S, 0, TAU); ctx.fill(); ctx.strokeStyle = '#fff'; ctx.lineWidth = 0.02 * S; ctx.stroke(); };
-  mark(205, '#ffd166'); mark(0.315, '#2b6cb0', R - 0.57, 0.06);
-  // legend inside (below the centre so the hand does not cover it at 0 o'clock)
-  const ly = [['#a4161a', 'Dinosaurier'], ['#ffd166', 'erste Säugetiere'], ['#2b6cb0', 'Homo sapiens']];
-  ctx.textAlign = 'left'; ctx.font = `${0.2 * S}px ${SERIF}`;
-  ly.forEach(([col, t], i) => { const x = cx - 0.78 * S, y = cy + (1.02 + i * 0.3) * S; ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, 0.085 * S, 0, TAU); ctx.fill(); ctx.fillStyle = INK; ctx.fillText(t, x + 0.19 * S, y + 0.01 * S); });
-  ctx.textAlign = 'center'; ctx.font = `italic bold ${0.28 * S}px ${SERIF}`; ctx.fillStyle = RED; ctx.fillText('Die Erduhr', cx, cy + 0.28 * S);
-  ctx.font = `${0.17 * S}px ${SERIF}`; ctx.fillStyle = '#6b4a2a'; ctx.fillText('4,54 Milliarden Jahre', cx, cy + 0.52 * S); ctx.fillText('in 24 Stunden', cx, cy + 0.72 * S);
+  ctx.restore();
+  // Teilstriche (alle 100 Jahre) und Jahreszahlen (alle 500)
+  ctx.fillStyle = INK; ctx.strokeStyle = INK; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  for (let y = 3300; y >= 30; y -= 100) {
+    if (y > 3300 || y < 30) continue;
+    const a = ang(y) - Math.PI / 2, major = y % 500 === 0;
+    ctx.lineWidth = (major ? 0.045 : 0.018) * S;
+    ctx.beginPath(); ctx.moveTo(cx + Math.cos(a) * (R - 0.36) * S, cy + Math.sin(a) * (R - 0.36) * S); ctx.lineTo(cx + Math.cos(a) * (R - (major ? 0.2 : 0.28)) * S, cy + Math.sin(a) * (R - (major ? 0.2 : 0.28)) * S); ctx.stroke();
+  }
+  for (const y of [3000, 2500, 2000, 1500, 1000, 500]) { const a = ang(y) - Math.PI / 2; ctx.font = `bold ${0.21 * S}px ${SERIF}`; ctx.fillText(String(y), cx + Math.cos(a) * (R - 0.96) * S, cy + Math.sin(a) * (R - 0.96) * S); }
+  // Mitte: Sonnenscheibe
+  const sg = ctx.createRadialGradient(cx - 0.12 * S, cy - 0.12 * S, 0.05 * S, cx, cy, 0.9 * S); sg.addColorStop(0, '#fff3b0'); sg.addColorStop(0.55, '#f0c24a'); sg.addColorStop(1, '#c99224');
+  ctx.fillStyle = sg; ctx.beginPath(); ctx.arc(cx, cy, 0.86 * S, 0, TAU); ctx.fill(); ctx.strokeStyle = '#8a5f1c'; ctx.lineWidth = 0.03 * S; ctx.stroke();
+  ctx.textAlign = 'center'; ctx.font = `italic bold ${0.27 * S}px ${SERIF}`; ctx.fillStyle = '#7a1a1a'; ctx.fillText('Zeitrad', cx, cy + 0.28 * S);
+  ctx.font = `${0.15 * S}px ${SERIF}`; ctx.fillStyle = '#5a3d22'; ctx.fillText('3300 bis 30 v. Chr.', cx, cy + 0.52 * S);
 }
 
 function clockPart() {
-  const disc = blob(0, CY, R + 0.08, R + 0.08, 0, 96);
+  const disc = blob(0, CY, R + 0.28, R + 0.28, 0, 96);
   const foot = poly([[-1.15, 0], [1.15, 0], [0.7, CY - R + 0.6], [-0.7, CY - R + 0.6]]);
   return { layers: [{ shapes: [disc, foot], fill: '#f7edd3', deco: (c) => clockFace(c), stroke: null }] };
 }
@@ -98,10 +99,10 @@ function displayCanvas() {
 }
 
 export default {
-  id: 'erduhr',
+  id: 'zeitrad',
   mood: mood({ key: '#ffe9c4', keyI: 2.3, sky: '#fff3de', gnd: '#8a6a4a', hemiI: 1.8 }),
   motes: { colors: [[1, 0.9, 0.6], [1, 1, 0.85]], size: 0.06, alpha: 0.4, dy: 0.05, dx: 0.08, tw: 1.1, density: 0.6 },
-  atmo: 'erduhr',
+  atmo: 'zeitrad',
   base() {
     const L = PAGES_DE[0];
     return {
@@ -111,9 +112,9 @@ export default {
           blotches(m, { x0: -12, x1: 0, z0: -4.4, z1: 4.4, n: 16, rmin: 1, rmax: 2.4, colors: ['rgba(255,244,214,.18)'], seed: 4 });
           textCard(m, { x: -10.6, z: -3.2, w: 9.3, h: 4.35, kicker: L.kicker, title: L.title, body: L.card, size: 0.37, titleSize: 0.56, tilt: -0.012 });
           // timeline legend: eight eras as coloured dots
-          const names = ['Trias', 'Jura-Wald', 'Jura-Lagune', 'Kreide-Meer', 'Kreide-Land', 'Nest', 'Einschlag', 'Säugetiere'];
+          const names = ['Nil', 'Zwei Länder', 'Gizeh', 'Götter', 'Mumie', 'Alltag', 'Tal der Könige', 'Kleopatra'];
           const cols = PAGES_DE.slice(1).map((p) => p.color);
-          printLabel(m, 'Deine Reise durch die Zeit', -5.95, 2.0, { size: 0.3, color: RED, italic: true });
+          printLabel(m, 'Deine Reise durch Ägypten', -5.95, 2.0, { size: 0.3, color: RED, italic: true });
           names.forEach((n, i) => {
             const x = -10.2 + i * 1.22, z = 3.0;
             ctx.fillStyle = cols[i]; ctx.beginPath(); ctx.arc(m.x(x), m.z(z), 0.2 * m.S, 0, TAU); ctx.fill(); ctx.strokeStyle = '#fff4d0'; ctx.lineWidth = 0.05 * m.S; ctx.stroke();
@@ -139,7 +140,7 @@ export default {
   *build(ctx) {
     const app = ctx.app;
     // ---- the clock stands on the right page
-    const clock = ctx.flat(clockPart(), { x: 6.4, z: -1.2, ws: 1, name: 'erduhr', delay: 0.05, thickness: 0.05, border: 0.07, ppu: Math.min(app.q.ppu, 180), maxTex: 1536, lean: -0.05 });
+    const clock = ctx.flat(clockPart(), { x: 6.4, z: -1.2, ws: 1, name: 'zeitrad', delay: 0.05, thickness: 0.05, border: 0.07, ppu: Math.min(app.q.ppu, 180), maxTex: 1536, lean: -0.05 });
     yield;
     const handCut = ctx.flat(handPart(), { x: 0, z: 0, name: 'zeiger', thickness: 0.03, border: 0.03 });
     // re-parent the hand into the clock so it folds with it, pivoting at the clock centre
@@ -147,7 +148,7 @@ export default {
     const handG = new THREE.Group(); handG.position.set(0, CY, 0.09);
     handG.add(...handCut.pivot.children); clock.add(handG);
     // tap on the clock face -> card
-    const faceMesh = clock.cut.mesh; faceMesh.userData.tap = () => app.openCardById('erduhr');
+    const faceMesh = clock.cut.mesh; faceMesh.userData.tap = () => app.openCardById('zeitrad');
     clock.pickMeshes = [faceMesh];
 
     // ---- live display on the page (time + event)
@@ -157,14 +158,14 @@ export default {
     disp.rotation.x = -Math.PI / 2; disp.position.set(6.4, 0.012, 2.1); ctx.R.add(disp);
     let lastKey = '';
     const draw = (h) => {
-      const ma = yearsAgoOf(h);
-      let ev = null; for (const e of EVENTS) { const eh = hourOf(e.ma); if (Math.abs(eh - h) * 3600 < (e.ma < 1 ? 5 : 1200) * (e.ma < 1 ? 1 : 1)) ev = e; }
-      for (const e of EVENTS) { if (e.ma > 60 && Math.abs(hourOf(e.ma) - h) < 0.12) ev = e; }
-      const key = fmtClock(h) + (ev ? ev.id : ''); if (key === lastKey) return; lastKey = key;
+      const bce = bceOf(h);
+      let ev = null; for (const e of EVENTS) { if (Math.abs(bce - e.bce) < 38) ev = e; }
+      const era = ERAS.find((e) => bce <= e.from && bce >= e.to) || ERAS[ERAS.length - 1];
+      const key = Math.round(bce / 10) + (ev ? ev.id : ''); if (key === lastKey) return; lastKey = key;
       g.clearRect(0, 0, cv.width, cv.height);
       g.textAlign = 'center'; g.textBaseline = 'middle';
-      g.fillStyle = '#7a1a1a'; g.font = `bold 84px ${SERIF}`; g.fillText(fmtClock(h), cv.width / 2, 72);
-      g.fillStyle = '#4a3220'; g.font = `italic 40px ${SERIF}`; g.fillText(h < 0.01 ? 'Beginn der Erde' : h > 23.9999 ? 'heute' : fmtAgo(ma), cv.width / 2, 142);
+      g.fillStyle = '#7a1a1a'; g.font = `bold 78px ${SERIF}`; g.fillText(h > 23.99 ? '30 v. Chr.' : h < 0.01 ? '3300 v. Chr.' : fmtBce(bce), cv.width / 2, 66);
+      g.fillStyle = '#4a3220'; g.font = `italic 40px ${SERIF}`; g.fillText(era.name, cv.width / 2, 136);
       if (ev) { g.fillStyle = '#a4161a'; g.font = `bold 36px ${SERIF}`; g.fillText('★ ' + ev.label, cv.width / 2, 200); }
       tex.needsUpdate = true;
     };

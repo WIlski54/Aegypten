@@ -1,3 +1,7 @@
+import { CARDS_A } from './cards_a.de.js';
+import { CARDS_B } from './cards_b.de.js';
+import { CARDS_C } from './cards_c.de.js';
+
 // Alle Figuren- und Infokarten (Deutsch, Klasse 5/6, Du-Ansprache).
 // Felder pro Karte:
 //   name        Anzeigename           sci         ggf. wissenschaftlicher Name / ägyptischer Name    say   "sprich: ..."   tts  Sprechschreibweise für die Vorlesestimme
@@ -13,7 +17,7 @@ const skarab = (n, o) => ({
   tags: ['Skarabäus', 'Glück'], ...o,
 });
 
-export const ANIMALS_DE = {
+const SK = {
   skarab1: skarab(1, {
     wow: 'Der Käfer formt eine Kugel aus Dung, rollt sie weg und legt seine Eier hinein.',
     text: 'Du hast einen Sonnenkäfer gefunden! Das ist ein Pillendreher. Er rollt Dungkugeln rückwärts über den Boden. In der Kugel wächst später seine Brut heran.',
@@ -62,3 +66,5 @@ export const ANIMALS_DE = {
     fragen: ['Was bedeutet das Käfer-Zeichen in Hieroglyphen?'],
   }),
 };
+
+export const ANIMALS_DE = { ...SK, ...CARDS_A, ...CARDS_B, ...CARDS_C };
