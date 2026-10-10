@@ -386,7 +386,6 @@ export default {
     };
     R.own({ dispose() { tex.dispose(); disp.geometry.dispose(); disp.material.dispose(); } });
     setDatum(0);
-    ctx.spread._dbg = { A0, A1, date };
     const datum = ctx.control('R', { id: 'datum', label: 'DATUM', a: [7.0, 3.7], b: [10.0, 3.7], size: [2.2, 0.95], color: '#b8862d', value: 0, snaps: [0, 1], springBack: false, ticks: 1 });
     datum.on((v) => setDatum(v));
     datum.onGrab = () => app.audio.sfx('grab'); datum.onTick = (v) => app.audio.sfx('slide', { v }); datum.onRelease = () => app.audio.sfx('snap');
@@ -396,7 +395,7 @@ export default {
 
     // ---------------------------------------------------------------- verstecktes Käferchen: am Fuß der Stufenpyramide, halb hinter einem Stein
     const rock = ctx.prop('boulder', { x: 11.0, z: -0.2, len: 1.5, delay: 0.5, variant: { seed: 4 } });
-    const kaefer = ctx.stand('skarab3', { x: 10.95, y: 0.3, z: -0.6, len: 0.95, facing: 1, delay: 0.56, hidden: true, hint: false, hitPad: 0.25 });
+    const kaefer = ctx.stand('skarab3', { x: 10.7, y: 0.15, z: -0.55, len: 0.95, facing: 1, delay: 0.56, hidden: true, hint: false, hitPad: 0.25 });
     kaefer.onWake = (a) => { a.tw.add(0.7, (t) => { a.hop = Math.sin(t * Math.PI) * 0.35; }, { done: () => { a.hop = 0; } }); app.audio.voice('skarabaeus'); };
     kaefer.cover = rock;
     ctx.spread.reset = () => { nord.setValue(0); sued.setValue(0); datum.setValue(0); };
