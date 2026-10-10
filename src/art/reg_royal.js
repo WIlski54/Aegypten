@@ -3,7 +3,7 @@ import { weisse_krone, rote_krone, doppelkrone, nemes, blaue_krone, krummstab_we
 import { tutmaske } from './props/eg_mask.js';
 import { thron_tut } from './props/eg_throne.js';
 import { schrein_gold } from './props/eg_shrine.js';
-import { sarkophag_gold } from './props/eg_coffin.js';
+import { sarkophag_gold, sarkophag_stein } from './props/eg_coffin.js';
 
 export default {
   weisse_krone: (o) => weisse_krone(o),
@@ -16,4 +16,5 @@ export default {
   thron_tut: (o) => thron_tut(o),
   schrein_gold: (o) => schrein_gold(o),
   sarkophag_gold: (o) => sarkophag_gold(o),
+  sarkophag_stein: (o) => sarkophag_stein(o),
 };

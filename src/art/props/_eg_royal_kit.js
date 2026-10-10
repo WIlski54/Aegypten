@@ -4,6 +4,7 @@
 import { blob, limb, poly, xf, spline } from '../dsl.js';
 import { TAU } from '../../engine/util.js';
 import { volume } from '../paint.js';
+import ClipperLib from 'clipper-lib';
 import { unionF } from '../../engine/papercut.js';
 import {
   shade, mix, rngOf, finish, pathPoly, fillPoly, strokePoly, curve, strokes, clipBelow, clipAxis,
@@ -326,4 +327,31 @@ export function place(layers, s = 1, dx = 0, dy = 0) {
     ...l, shapes: l.shapes.map(tp),
     deco: l.deco ? (c, bb) => l.deco(wrapC(c), { x0: (bb.x0 - dx) / s, x1: (bb.x1 - dx) / s, y0: (bb.y0 - dy) / s, y1: (bb.y1 - dy) / s, w: bb.w / s, h: bb.h / s }) : undefined,
   }));
+}
+
+// ---- Mengenoperationen (Clipper) --------------------------------------------------------------------------------------------
+const SCL = 4000;
+const toP = (p) => p.map(([x, y]) => ({ X: Math.round(x * SCL), Y: Math.round(y * SCL) }));
+const fromP = (p) => p.map((q) => [q.X / SCL, q.Y / SCL]);
+function runClip(type, subjects, clips) {
+  const c = new ClipperLib.Clipper();
+  for (const p of subjects) c.AddPath(toP(p), ClipperLib.PolyType.ptSubject, true);
+  for (const p of clips) c.AddPath(toP(p), ClipperLib.PolyType.ptClip, true);
+  const sol = new ClipperLib.Paths();
+  c.Execute(type, sol, ClipperLib.PolyFillType.pftNonZero, ClipperLib.PolyFillType.pftNonZero);
+  return sol.map(fromP);
+}
+/** Schnittmenge: alle `subjects` (als Vereinigung) mit dem Polygon `clip`. */
+export const intersect = (subjects, clip) => runClip(ClipperLib.ClipType.ctIntersection, subjects, [clip]);
+/** Differenz: subjects minus clips (Listen von Polygonen). */
+export const subtract = (subjects, clips) => runClip(ClipperLib.ClipType.ctDifference, subjects, clips);
+/** Jedes Polygon einzeln auf `clip` beschneiden (Ergebnis: Liste von Polygonen). */
+export function clipEach(polys, clip) { const out = []; for (const p of polys) out.push(...intersect([p], clip)); return out; }
+/** Halbbreite eines symmetrischen Umrisses (Liste rechter Seitenpunkte) bei Höhe y – lineare Interpolation. */
+export function halfWidthAt(ptsRight, y) {
+  for (let i = 0; i < ptsRight.length - 1; i++) {
+    const a = ptsRight[i], b = ptsRight[i + 1];
+    if ((y <= a[1] && y >= b[1]) || (y >= a[1] && y <= b[1])) { const t = a[1] === b[1] ? 0 : (y - a[1]) / (b[1] - a[1]); return a[0] + (b[0] - a[0]) * t; }
+  }
+  return 0;
 }
