@@ -102,10 +102,10 @@ export function lehmhaus(o0 = {}) {
     fr(c, x0 - 0.2, y0, x1 + 0.2, y0 + 0.1, '#9c7447'); fr(c, x0 - 0.2, y0 + 0.1, x1 + 0.2, y0 + 0.13, 'rgba(255,235,190,.3)');
   });
   const roomBak = room(bak[0], bak[1], F0, S1b, (c, x0, y0, x1, y1) => {
-    plaster(c, x0 - 0.2, y0, x1 + 0.2, y1 + 0.2, '#d8a468', { seed: 12, alpha: 0.14 });
+    plaster(c, x0 - 0.2, y0, x1 + 0.2, y1 + 0.2, '#e4b87c', { seed: 12, alpha: 0.14 });
     // Ruß über dem Ofenbereich (rechts) und Rauchabzug
-    fillGrad(c, rect(x0 - 0.2, y0, x1 + 0.2, y1 + 0.2), 0, y1, 0, y0 + 0.3, [[0, 'rgba(40,25,18,.5)'], [1, 'rgba(40,25,18,0)']]);
-    fillPoly(c, blob(x1 - 0.8, y1 - 0.25, 0.7, 0.4, 0, 20), 'rgba(30,18,10,.35)');
+    fillGrad(c, rect(x0 - 0.2, y0, x1 + 0.2, y1 + 0.2), 0, y1, 0, y0 + 0.3, [[0, 'rgba(60,35,20,.32)'], [1, 'rgba(60,35,20,0)']]);
+    fillPoly(c, blob(x1 - 0.8, y1 - 0.25, 0.7, 0.4, 0, 20), 'rgba(40,25,15,.28)');
     fr(c, x1 - 1.05, y1 - 0.5, x1 - 0.7, y1 - 0.2, '#fff1b0'); strokePoly(c, rect(x1 - 1.05, y1 - 0.5, x1 - 0.7, y1 - 0.2), '#6a4020', 0.03);
     // Wandnischen (Regal) links oben
     for (let i = 0; i < 3; i++) { const nx = x0 + 0.3 + i * 0.55; fr(c, nx, y1 - 0.95, nx + 0.4, y1 - 0.5, '#7a4a28'); fr(c, nx, y1 - 0.5 - 0.05, nx + 0.4, y1 - 0.5, 'rgba(255,225,170,.3)'); fr(c, nx, y1 - 0.95, nx + 0.4, y1 - 0.9, 'rgba(0,0,0,.3)'); }
