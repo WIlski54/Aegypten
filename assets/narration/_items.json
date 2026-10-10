@@ -165,6 +165,36 @@
   "text": "Kemet und Deschret. In allen Epochen. Wow! Die Ägypter nannten ihr Land Kemet, das Schwarze Land, nach dem dunklen Nilschlamm. Am Fluss lag das fruchtbare, schwarze Land. Dahinter begann die Wüste. Die Ägypter nannten sie das rote Land, Deschret. Dort wohnte kaum jemand, und dort fand man Gold und Steine."
  },
  {
+  "id": "card_reiher",
+  "kind": "card",
+  "text": "Graureiher. Lebt dort seit Urzeiten. Wow! Ein Reiher steht oft minutenlang bewegungslos im Wasser, dann stößt er blitzschnell zu. Reiher haben lange Beine und einen langen Hals. Die Ägypter sahen in einem ähnlichen Vogel, dem Bennu, ein Zeichen für Sonnenaufgang und neues Leben."
+ },
+ {
+  "id": "card_fisch",
+  "kind": "card",
+  "text": "Nielbarsch. Leben dort seit Urzeiten. Wow! Fische gehörten zu den wichtigsten Speisen. Man trocknete und salzte sie, damit sie lange hielten. Im Nil lebten viele Fischarten. Wandbilder zeigen, wie Fischer mit Netzen und Speeren arbeiteten. Die Tilapia, auch Buntbarsch genannt, kommt in vielen Bildern vor."
+ },
+ {
+  "id": "card_wasservogel",
+  "kind": "card",
+  "text": "Nielgans. Lebt dort seit Urzeiten. Wow! Die Nilgans ist hellbraun mit einem dunklen Fleck um das Auge. Man sieht sie auf vielen Wandbildern. Gänse und Enten wurden gefangen und gehalten. Sie gaben Fleisch und Eier. Auf Grabbildern zeigen Jäger mit Wurfhölzern und Netzen, wie sie Wasservögel fangen."
+ },
+ {
+  "id": "card_lotus",
+  "kind": "card",
+  "text": "Lotos. In allen Epochen. Wow! Die Blüte öffnet sich morgens und schließt sich am Abend. Deshalb war sie ein Zeichen für die Sonne und für neues Leben. Der blaue und der weiße Lotos schwimmen auf dem Wasser. Die Ägypter malten ihn auf Wände und in Gräber. Er war auch das Wappenzeichen von Oberägypten."
+ },
+ {
+  "id": "card_schilfboot",
+  "kind": "card",
+  "text": "Papyrusboot. Seit der Frühzeit. Wow! Die ältesten Schiffe der Welt waren wohl Boote aus gebündelten Pflanzenstängeln. Das Boot besteht aus fest verschnürten Papyrusbündeln. Es ist leicht und schwimmt auch in sehr flachem Wasser. Es war ideal für Fischer und Vogeljäger im Sumpf."
+ },
+ {
+  "id": "card_netz",
+  "kind": "card",
+  "text": "Fischernetz. In allen Epochen. Wow! Netze waren aus Leinenfäden geknüpft. Steine und Schwimmer sorgten dafür, dass das Netz richtig im Wasser hängt. Zwei Fischer zogen ein großes Netz durch das Wasser. Kleine Steine zogen die untere Kante nach unten, leichte Holzstücke hielten die obere Kante oben."
+ },
+ {
   "id": "card_pharao",
   "kind": "card",
   "text": "Pharao. Der Name bedeutet: Großes Haus (so nannte man den Palast, später den König). Vom Beginn bis zum Ende. Wow! Die Ägypter sahen den König als lebenden Horus. Er sollte für Ordnung und Wahrheit sorgen. Der Pharao herrschte über ganz Ägypten. Krummstab und Wedel waren seine Zeichen. Der Krummstab stand für den Hirten, der sein Volk führt. Das Wort Pharao wurde erst später für den König üblich."
@@ -253,6 +283,11 @@
   "id": "card_kupfermeissel",
   "kind": "card",
   "text": "Kupfermeißel. Seit der Frühzeit. Wow! Kupfer ist weich. Mit Sand und Wasser als Schleifmittel schneidet es trotzdem Stein. Kupfer war das wichtigste Metall der frühen Ägypter. Werkzeuge schmiedete man aus Kupfer. Später mischte man Zinn dazu. So entstand Bronze, die härter ist."
+ },
+ {
+  "id": "card_holzschlaegel",
+  "kind": "card",
+  "text": "Holzschlägel. In allen Epochen. Wow! Mit dem Holzschlägel schlug man auf Meißel, ohne das Werkzeug zu beschädigen. Der Schlägel besteht aus hartem Holz. Der Steinmetz hielt den Meißel in der einen Hand und schlug mit dem Schlägel darauf. So entstanden Rillen im Stein, und Blöcke ließen sich herauslösen."
  },
  {
   "id": "card_arbeitersiedlung",
@@ -380,6 +415,31 @@
   "text": "Versuch: Apfel mumifizieren. Für den Unterricht. Wow! Mit Natron, Kochsalz und Zucker verliert ein Apfelstück Wasser. Man kann den Verlust wiegen! Lege vier Apfelstücke in Becher: mit Soda oder Backnatron, mit Kochsalz, mit Zucker und ohne Zusatz. Wiege sie jeden Tag und trage den Gewichtsverlust in ein Diagramm ein. Beobachte: Was passiert mit dem Stück ohne Salz?"
  },
  {
+  "id": "card_udjat",
+  "kind": "card",
+  "text": "Udjat. In allen Epochen. Wow! Das Horusauge sollte heilen und schützen. Die Teile des Zeichens standen sogar für Bruchteile in der Mathematik. Der Sage nach verlor Horus im Kampf sein Auge. Es wurde heil gemacht. Deshalb galt das Udjat-Auge als Zeichen für Heilung, Schutz und Ganzheit. Man trug es als Amulett."
+ },
+ {
+  "id": "card_ankh",
+  "kind": "card",
+  "text": "Anch. Der Name bedeutet: Leben. In allen Epochen. Wow! Das Anch sieht aus wie ein Kreuz mit einer Schlaufe. Götter halten es oft dem König an die Nase. Das Anch ist das Zeichen für Leben. Es ist ein Hieroglyphenzeichen und zugleich ein Symbol, das man überall findet: in der Hand der Götter, auf Särgen und auf Schmuck."
+ },
+ {
+  "id": "card_djed",
+  "kind": "card",
+  "text": "Djed. In allen Epochen. Wow! Der Djed-Pfeiler gehört zu Osiris. Er stand für Stärke und Dauer. Der Pfeiler hat vier Querbalken am oberen Ende. Er ist ein Zeichen für Beständigkeit. Man legte kleine Djed-Pfeiler als Amulett mit ins Grab."
+ },
+ {
+  "id": "card_harzkrug",
+  "kind": "card",
+  "text": "Salbgefäße. In allen Epochen. Wow! Harze aus Bäumen duften und halten Wasser ab. Man verwendete sie bei Mumien, aber auch als Weihrauch. In den Krügen standen Öle, Salben und Harze. Aus Zedernholz, Myrrhe und anderen Pflanzen stellte man sie her. Das Harz dichtete die Binden ab und machte den Körper haltbarer."
+ },
+ {
+  "id": "card_priester",
+  "kind": "card",
+  "text": "Priester. In allen Epochen. Wow! Priester rasierten sich den Kopf und den Körper und wuschen sich mehrmals am Tag. Priester kümmerten sich um die Tempel und die Götter. Bei Totenfeiern sprachen sie Gebete. Ein Leopardenfell zeigte oft einen besonderen Rang."
+ },
+ {
   "id": "card_deir_el_medina",
   "kind": "card",
   "text": "Dair el Medina. Ca. 1500 bis 1100 vor Christus. Wow! Hier wohnten die Handwerker, die die Königsgräber im Tal der Könige bauten. Das Arbeiterdorf lag in einem Tal, nah an den Gräbern. Die Handwerker bekamen Getreide als Lohn. Sie hinterließen sehr viele Briefe und Notizen auf Scherben und Papyrus. So kennen wir ihren Alltag gut."
@@ -478,6 +538,16 @@
   "id": "card_carter",
   "kind": "card",
   "text": "Hauard Karter. 1874 bis 1939. Wow! Er suchte jahrelang vergeblich, dann fand er am 4. November 1922 eine Stufe. Howard Carter suchte im Tal der Könige nach dem Grab von Tutanchamun. Sein Geldgeber war Lord Carnarvon. Am 26. November 1922 sah er das erste Mal in die Vorkammer. Dort lagen Truhen, Betten und Statuen voller Gold. Die Ausgrabung dauerte rund zehn Jahre."
+ },
+ {
+  "id": "card_truhe",
+  "kind": "card",
+  "text": "Truhe. Um 1323 vor Christus. Wow! In Truhen wie dieser lagen Kleidung, Schmuck und Salbgefäße für das Leben nach dem Tod. Die Truhe ist aus Holz und mit Lotos- und Papyruspflanzen bemalt. Im Grab fanden Forscher Dutzende solcher Kisten. Sie enthielten Gewänder, Schmuck und vieles mehr."
+ },
+ {
+  "id": "card_traeger",
+  "kind": "card",
+  "text": "Sargträger. Neues Reich. Wow! Der Weg zum Grab war ein feierlicher Zug über den Nil und durch die Wüste. Zur Beisetzung zog eine Prozession zum Tal. Männer trugen den Sarg auf Stangen auf den Schultern. Dahinter gingen Priester, Familie und Klagefrauen."
  },
  {
   "id": "card_hatschepsut",

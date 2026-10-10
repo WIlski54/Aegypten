@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-make-narration.py  --  Erzaehlstimme fuer "Das grosse Dinosaurier-Popup-Buch"
+make-narration.py  --  Erzaehlstimme fuer "Das grosse Aegypten-Popup-Buch"
 =========================================================================
 
 Offline-Neuro-TTS: Piper "de_DE-thorsten-medium" (Thorsten Mueller, CC0) ueber
