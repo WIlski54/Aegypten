@@ -107,7 +107,7 @@ export function totentempel_hatschepsut(o0 = {}) {
   });
   return mk('totentempel_hatschepsut', 'Totentempel der Hatschepsut (Deir el-Bahari)', { body: { z: 1, layers }, fels },
     { base: [cx, 0], rampeFuss: [cx, 0], terrasse1: [cx, 1.1], terrasse2: [cx, 2.2], terrasse3: [cx, 3.3], top: { rel: [0.5, 1] } },
-    { kind: 'building', lengthM: 11, note: 'Part fels = Felswand dahinter; drei Terrassen mit Säulengängen' }, { w: o.w ?? W, floor: 0 });
+    { kind: 'building', lengthM: 11, note: 'Part fels = Felswand dahinter; drei Terrassen mit Säulengängen' }, { h: o.h ?? 5.45, floor: 0 });
 }
 
 // ================================================================================================
