@@ -178,3 +178,24 @@ export function plasterBlotches(c, bb, cols, n, seed = 2) {
     fillPoly(c, blob(x, y, rx, rx * (0.4 + r() * 0.4), r() * 3, 9), cols[Math.floor(r() * cols.length)], 0.35);
   }
 }
+
+/** Gedrehter Mal-Kontext: zeichnet in lokalen Koordinaten, die um a (rad) um (px,py) gedreht erscheinen. */
+export function rotCtx(c, a, px = 0, py = 0) {
+  const co = Math.cos(a), si = Math.sin(a);
+  const f = (x, y) => c.tf(px + (x - px) * co - (y - py) * si, py + (x - px) * si + (y - py) * co);
+  return Object.assign(Object.create(c), { tf: f, px: f });
+}
+/** Polygon gegen ein konvexes Clip-Polygon (CCW) schneiden (Sutherland-Hodgman). */
+export function clipConvex(subject, clip) {
+  let out = subject;
+  for (let i = 0; i < clip.length && out.length; i++) {
+    const a = clip[i], b = clip[(i + 1) % clip.length], inp = out; out = [];
+    const side = (p) => (b[0] - a[0]) * (p[1] - a[1]) - (b[1] - a[1]) * (p[0] - a[0]);
+    for (let j = 0; j < inp.length; j++) {
+      const p = inp[j], q = inp[(j + 1) % inp.length], sp = side(p), sq = side(q);
+      if (sp >= 0) out.push(p);
+      if ((sp >= 0) !== (sq >= 0)) { const t = sp / (sp - sq); out.push([p[0] + (q[0] - p[0]) * t, p[1] + (q[1] - p[1]) * t]); }
+    }
+  }
+  return out;
+}
