@@ -35,21 +35,21 @@ export function streitwagen(opts = {}) {
   // Deichsel (steigt nach vorn an) + Joch am Ende
   const pole = limb([[14, 68, 6.4], [48, 80, 6.0], [82, 94, 5.4], [108, 106, 4.8]], { per: 10 });
   body.push(gold([pole], { dir: 'v', deco(c) { for (let i = 0; i < 6; i++) { const t = i / 5; dotAt(c, 26 + t * 78, 73 + t * 31 + 0.5, 0.9, i % 2 ? K.lapis : K.carn); } } }));
-  body.push(gold([limb([[106, 94, 3.4], [108, 106, 3.4], [109, 120, 3.4]], { per: 4 }), blob(110, 122, 3.6, 3.6, 0, 14)], { dir: 'v', gloss: false }));
+  body.push(gold([limb([[106, 94, 3.4], [108, 104, 3.4], [109, 114, 3.4]], { per: 4 }), blob(110, 116, 3.6, 3.6, 0, 14)], { dir: 'v', gloss: false }));
   // Kasten: Seitenwand (Viertelellipse), Boden
-  const panel = poly([[-56, 70], [-55, 86], [-42, 92], [-20, 102], [0, 118], [14, 132], [24, 138], [30, 132], [30.6, 70]], 2);
+  const panel = poly([[-56, 70], [-55, 82], [-42, 87], [-20, 95], [0, 105], [14, 115], [24, 120], [30, 115], [30.6, 70]], 2);
   body.push(gold([panel], {
     dir: 'v', ga: 0.35, deco(c, bb) {
       // Netzmuster (Rauten) in Türkis/Karneol
-      for (let r = 0; r < 8; r++) for (let q = -1; q < 9; q++) {
-        const x = -50 + q * 11.5 + (r % 2) * 5.7, y = 76 + r * 8.6;
+      for (let r = 0; r < 6; r++) for (let q = -1; q < 9; q++) {
+        const x = -50 + q * 11.5 + (r % 2) * 5.7, y = 76 + r * 7.8;
         const col = (q + r) % 2 ? K.turq : K.carn;
         fillPoly(c, [[x, y - 3.4], [x + 3.4, y], [x, y + 3.4], [x - 3.4, y]], col, 0.92);
       }
     },
   }));
   // Oberkante: Lapisband mit Goldrosetten
-  const railPts = [[-54, 88], [-42, 94], [-20, 104], [0, 120], [14, 134], [26, 139.5]];
+  const railPts = [[-54, 84], [-42, 89], [-20, 97], [0, 108], [14, 118], [26, 123]];
   body.push(inlay([stroke2poly(railPts, 5.2)], K.lapis, { bevel: true }));
   const rosettes = [];
   for (let i = 1; i < railPts.length - 1; i++) rosettes.push(blob(railPts[i][0] + 1, railPts[i][1] + 0.4, 1.7, 1.7, 0, 12));
@@ -58,7 +58,7 @@ export function streitwagen(opts = {}) {
   body.push(gold([poly(rrect(-60, 64, 33, 71.5, 2, 4), 0)], { dir: 'v', gloss: false }));
   body.push(gold([rect(-34, 44, -26, 66)], { dir: 'v', gloss: false }));
   // Frontstütze (Kante vorn): Goldleiste
-  body.push(gold([stroke2poly([[30, 72], [30.4, 124], [26, 140]], 3.4)], { dir: 'v', gloss: false }));
+  body.push(gold([stroke2poly([[30, 72], [30.4, 108], [26, 123]], 3.4)], { dir: 'v', gloss: false }));
   const wA = wheelLayers(AX[0], AX[1], 'A');
   const ox = 9, oy = 3;
   const wB = wheelLayers(AX[0] + ox, AX[1] + oy, 'B');
