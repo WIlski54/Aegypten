@@ -90,7 +90,7 @@ export function duneProfile(d, x) {
   if (u < d.peak) return d.a * Math.pow(Math.sin((u / d.peak) * Math.PI / 2), 1.35);
   return d.a * Math.pow(Math.cos(((u - d.peak) / (1 - d.peak)) * Math.PI / 2), 1.35);
 }
-export function duneLayers(x0, x1, { count = 5, amp = 0.5, base = 0, seed = 1, tone = 'warm', floor = -0.05, lenK = 1.0, ampJit = 0.35, n = 44, speck = true, ripples = true, gain = 1 } = {}) {
+export function duneLayers(x0, x1, { count = 5, amp = 0.5, base = 0, seed = 1, tone = 'warm', floor = -0.05, lenK = 1.0, ampJit = 0.35, n = 44, speck = true, ripples = true, gain = 1, edge = 0, edgeMin = 0.12 } = {}) {
   const T = typeof tone === 'string' ? DUNE_TONES[tone] : tone;
   const rng = rngOf(seed, 211);
   const W = x1 - x0;
@@ -104,19 +104,22 @@ export function duneLayers(x0, x1, { count = 5, amp = 0.5, base = 0, seed = 1, t
   }
   // höhere hinten (zuerst gezeichnet)
   dunes.sort((p, q) => q.a - p.a);
-  const topAt = (x) => { let m = 0; for (const d of dunes) m = Math.max(m, duneProfile(d, x)); return base + m; };
+  // Randabfall: an den Enden sinkt die Höhe auf edgeMin (weiche Übergänge in die Seite)
+  const fb = (x) => { if (!edge) return 1; const a = smooth((x - x0) / edge), b = smooth((x1 - x) / edge); return edgeMin + (1 - edgeMin) * a * b; };
+  const yAt = (d, x) => (base + duneProfile(d, x)) * fb(x);
+  const topAt = (x) => { let m = 0; for (const d of dunes) m = Math.max(m, yAt(d, x)); return m; };
   const layers = dunes.map((d, k) => {
     const pts = [];
-    for (let i = 0; i <= n; i++) { const x = d.s + (d.L * i) / n; pts.push([x, base + duneProfile(d, x)]); }
-    const lo = Math.max(x0 - 0.4, d.s), hi = Math.min(x1 + 0.4, d.s + d.L);
-    const polyPts = [[d.s, floor]].concat(pts, [[d.s + d.L, floor]]);
+    for (let i = 0; i <= n; i++) { const x = d.s + (d.L * i) / n; pts.push([x, yAt(d, x)]); }
+    let polyPts = [[d.s, floor]].concat(pts, [[d.s + d.L, floor]]);
+    if (edge) polyPts = clipAxis(clipAxis(polyPts, 0, x0, true), 0, x1, false);
     return {
       shapes: [polyPts], fill: { top: T.lit[0], bottom: T.lit[1] },
       deco(c, bb) {
-        const xp = d.s + d.peak * d.L, yp = base + d.a;
+        const xp = d.s + d.peak * d.L, yp = yAt(d, xp);
         // Schattenseite (rechts vom Kamm), Kante fällt diagonal nach rechts unten
         const lee = [[xp, yp + 0.02]];
-        for (let i = 0; i <= n; i++) { const x = d.s + (d.L * i) / n; if (x >= xp) lee.push([x, base + duneProfile(d, x) + 0.01]); }
+        for (let i = 0; i <= n; i++) { const x = d.s + (d.L * i) / n; if (x >= xp) lee.push([x, yAt(d, x) + 0.01]); }
         lee.push([d.s + d.L + 0.02, floor - 0.1], [xp + d.L * 0.12, floor - 0.1]);
         fillPoly(c, lee, T.shade);
         // Kammlinie
@@ -125,7 +128,7 @@ export function duneLayers(x0, x1, { count = 5, amp = 0.5, base = 0, seed = 1, t
         const r = rngOf(seed + k, 9);
         if (ripples) for (let q = 0; q < 3; q++) {
           const u0 = 0.08 + r() * 0.3, u1 = Math.min(d.peak - 0.03, u0 + 0.14 + r() * 0.22), dy = d.a * (0.22 + q * 0.22 + r() * 0.06);
-          const rp = []; for (let u = u0; u <= u1; u += 0.025) { const x = d.s + u * d.L; rp.push([x, base + duneProfile(d, x) - dy]); }
+          const rp = []; for (let u = u0; u <= u1; u += 0.025) { const x = d.s + u * d.L; rp.push([x, yAt(d, x) - dy]); }
           if (rp.length > 2) curve(c, rp, T.ripple, Math.max(0.01, d.a * 0.035), { alpha: 1 });
         }
         if (speck) sandSpeckle(c, bb, seed + k * 7, Math.round(bb.w * bb.h * 12 * gain), { rmax: 0.02 });

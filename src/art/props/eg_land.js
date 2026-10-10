@@ -92,7 +92,7 @@ export function pyramidLayers(o = {}) {
 
 // Sandfuß / wellige Wüste vor Bauwerken (mehrere Dünenlagen). Rückgabe: Layer-Liste.
 export function sandSkirt({ x0, x1, base = 0, amp = 0.3, count = 5, seed = 1, floor = -0.05, tone = 'warm' } = {}) {
-  const D = duneLayers(x0, x1, { count, amp, base, seed, tone, floor, lenK: 0.9 });
+  const D = duneLayers(x0, x1, { count, amp, base, seed, tone, floor, lenK: 0.9, edge: 1.0, edgeMin: 0.1 });
   return { layers: D.layers, topAt: D.topAt };
 }
 
