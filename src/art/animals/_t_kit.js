@@ -168,6 +168,18 @@ export function kit(u) {
     }
     ctx.restore();
   };
+  // row of little triangular bumps (scutes, crests, spikes) along a design-space [x,y,w] path; side=+1 left of travel direction, -1 right.
+  // h = height (design units), w = base width, every = spacing; the bumps sit on the edge (half the path width out) and point outward.
+  K.ridge = (ctrl, { every = 6, h = 3, w = 4, side = 1, from = 0, to = 1, grow = 0 } = {}) => {
+    const path = K.path(ctrl), total = path[path.length - 1].s, out = []; let next = from * total;
+    for (const p of path) {
+      if (p.s < next) continue; if (p.s > to * total) break; next = p.s + every;
+      const nx = -p.ty * side, ny = p.tx * side, e = Math.max(0, p.w / 2 - h * 0.35), hh = h * (1 + grow * (p.s / total));
+      const bx = p.x + nx * e, by = p.y + ny * e;
+      out.push(K.poly([[bx - p.tx * w / 2, by - p.ty * w / 2], [bx + nx * hh + p.tx * w * 0.1, by + ny * hh + p.ty * w * 0.1], [bx + p.tx * w / 2, by + p.ty * w / 2]], 0));
+    }
+    return out;
+  };
   // compose several deco functions
   K.deco = (...fns) => (c, bb) => { for (const f of fns) if (f) f(c, bb); };
   return K;
