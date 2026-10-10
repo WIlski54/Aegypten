@@ -85,7 +85,7 @@ function surf(S, { lvl, rate }) {
 }
 /** Wasser: Rauschen mit langsam wogendem Tiefpass + feines Glitzern; gibt {g, lp, sg} zurück (ctl `flood` verstärkt). */
 function water(S, { lvl, f = 800, spark = 0.03, rate = 1, dest }) {
-  const s = S.loop('pink'), lp = S.f('lowpass', f, 0.6), g = S.g(lvl); s.connect(lp); lp.connect(g); g.connect(dest || S.body);
+  const s = S.loop('pink'), hp0 = S.f('highpass', 120, 0.5), lp = S.f('lowpass', f, 0.6), g = S.g(lvl); s.connect(hp0); hp0.connect(lp); lp.connect(g); g.connect(dest || S.body);
   S.lfo(0.33 * rate, lvl * 0.4, g.gain); S.lfo(0.21 * rate, lvl * 0.27, g.gain, 1.3); S.lfo(0.17 * rate, f * 0.3, lp.frequency);
   const sp = S.loop('white'), hp = S.f('highpass', 3500, 0.5), sg = S.g(spark); sp.connect(hp); hp.connect(sg); sg.connect(dest || S.body); S.lfo(0.29 * rate, spark * 0.6, sg.gain);
   return { g, lp, sg };
@@ -116,7 +116,7 @@ function sandBed(S, { lvl, dest }) {
 }
 /** Mahlstein: kratzendes Hin und Her (≈ 1.6 Hz) mit tiefem Rumpeln. */
 function quernBed(S, { lvl, dest }) {
-  const out = S.g(lvl), n = S.loop('pink'), bp = S.f('bandpass', 900, 1.1), ga = S.g(0.5); n.connect(bp); bp.connect(ga); ga.connect(out); out.connect(dest || S.body); S.lfo(1.6, 0.45, ga.gain);
+  const out = S.g(lvl), n = S.loop('pink'), bp = S.f('bandpass', 900, 1.1), ga = S.g(0.5); n.connect(bp); bp.connect(ga); ga.connect(out); out.connect(dest || S.body); S.lfo(1.6, 0.4, ga.gain); S.lfo(0.37, 0.12, ga.gain, 0.8);
   const w = S.loop('white'), hp = S.f('highpass', 3200, 0.5), wg = S.g(0.08); w.connect(hp); hp.connect(wg); wg.connect(out); S.lfo(1.6, 0.07, wg.gain);
   const lo = S.loop('brown'), lf = S.f('lowpass', 220, 0.7), lg = S.g(0.4); lo.connect(lf); lf.connect(lg); lg.connect(out); S.lfo(1.6, 0.3, lg.gain);
   return out;
@@ -205,8 +205,8 @@ export const BUILD = {
     const w = water(S, { lvl: 0.4, f: 900, spark: 0.04 });
     const reeds = wind(S, { lvl: 0.12, f: 2200, q: 0.8, gust: 0.6, rate: 0.12 });
     wind(S, { lvl: 0.1, f: 500, q: 0.5, type: 'lowpass', gust: 0.5, rate: 0.09 });
-    S.stream(frogEv(S, 0.16), 0.5, 2.2); S.stream(plop(S, 0.07), 1.5, 5);
-    S.stream(far(S, ['wasservogel', 'ibis', 'reiher', 'wasservogel'], 0.7), 5, 12);
+    S.stream(frogEv(S, 0.3), 0.5, 2.2); S.stream(plop(S, 0.1), 1.5, 5);
+    S.stream(far(S, ['wasservogel', 'ibis', 'reiher', 'wasservogel'], 0.6), 4, 9);
     S.onCtl.flood = (v, now) => {
       w.g.gain.setTargetAtTime(0.4 * (1 + 1.5 * v), now, 0.6); w.lp.frequency.setTargetAtTime(900 * (1 + v), now, 0.6); w.sg.gain.setTargetAtTime(0.04 * (1 + 1.5 * v), now, 0.6); reeds.gain.setTargetAtTime(0.12 * (1 + 0.6 * v), now, 0.6);
     };
@@ -230,38 +230,38 @@ export const BUILD = {
   goetter(S) { // Tempelhalle: Hall, tiefer Chorton, Weihrauch-Glöckchen, Sistrum; ctl scale 0…1: sanftes Ticken der Waage
     const s = S.loop('pink'), lp = S.f('lowpass', 400, 0.5), g = S.g(0.16); s.connect(lp); lp.connect(g); g.connect(S.body);
     const f1 = S.f('bandpass', 420, 4), f2 = S.f('bandpass', 800, 5), ch = S.g(0.5), cl = S.f('lowpass', 1100, 0.5);
-    for (const [f, a] of [[55, 0.5], [55.3, 0.4], [82.4, 0.35], [82.0, 0.3], [110.2, 0.25], [109.8, 0.2]]) { const o = S.osc('sawtooth', f), og = S.g(a); o.connect(og); og.connect(f1); og.connect(f2); }
-    f1.connect(ch); f2.connect(ch); ch.connect(cl); cl.connect(S.body); S.lfo(0.07, 0.25, ch.gain); S.lfo(0.11, 50, f1.frequency); S.lfo(0.09, 90, f2.frequency);
+    for (const [f, a] of [[110, 0.5], [110.4, 0.4], [164.8, 0.35], [164.3, 0.3], [220.4, 0.25], [219.6, 0.2]]) { const o = S.osc('sawtooth', f), og = S.g(a); o.connect(og); og.connect(f1); og.connect(f2); }
+    f1.connect(ch); f2.connect(ch); ch.connect(cl); cl.connect(S.body); S.lfo(0.07, 0.4, ch.gain); S.lfo(0.043, 0.15, ch.gain, 2); S.lfo(0.11, 50, f1.frequency); S.lfo(0.09, 90, f2.frequency);
     S.stream(bellEv(S, 0.1, 1.0, 9), 5, 11); S.stream(sistrumEv(S, 0.5), 12, 24);
-    S.stream(tickEv(S, 0.3), 0.55, 0.75, () => ((S.cv.scale || 0) < 0.02 ? -1 : 1 / (0.6 + 0.9 * S.cv.scale)));
+    S.stream(tickEv(S, 0.6), 0.55, 0.75, () => ((S.cv.scale || 0) < 0.02 ? -1 : 1 / (0.6 + 0.9 * S.cv.scale)));
   },
   mumie(S) { // gedeckter Raum, leises Murmeln (Rezitation), Sandrieseln; ctl salt 0…1: mehr Rieseln
-    const s = S.loop('brown'), lp = S.f('lowpass', 280, 0.5), g = S.g(0.7); s.connect(lp); lp.connect(g); g.connect(S.body);
+    const s = S.loop('brown'), lp = S.f('lowpass', 280, 0.5), g = S.g(0.3); s.connect(lp); lp.connect(g); g.connect(S.body);
     const p = S.loop('pink'), bp = S.f('bandpass', 600, 0.6), pg = S.g(0.1); p.connect(bp); bp.connect(pg); pg.connect(S.body);
-    murmur(S, { n: 2, lvl: 0.3, f1: 450, f2: 1100, syl: 3.8, lp: 1800 });
+    murmur(S, { n: 2, lvl: 0.5, f1: 450, f2: 1100, syl: 3.8, lp: 1800 });
     const sd = sandBed(S, { lvl: 0.12 }); S.stream(rustleEv(S, 0.05), 4, 10);
     S.onCtl.salt = (v, now) => sd.gain.setTargetAtTime(0.12 + 0.55 * v, now, 0.5);
   },
   alltag(S) { // Mahlen, Schnattern, Kinderlachen aus der Ferne, Lautenklang, Backofen-Knistern
-    quernBed(S, { lvl: 0.35 }); fireBed(S, { lvl: 0.15 });
+    quernBed(S, { lvl: 0.2 }); fireBed(S, { lvl: 0.15 });
     wind(S, { lvl: 0.05, f: 700, q: 0.5, type: 'lowpass', gust: 0.5, rate: 0.1 });
-    S.stream(crackleEv(S, 0.25), 0.3, 1.2); S.stream(far(S, ['wasservogel', 'wasservogel', 'esel'], 0.75), 7, 15);
-    S.stream(laughEv(S, 0.4), 14, 30); S.stream(luteEv(S, 0.5), 9, 18);
+    S.stream(crackleEv(S, 0.35), 0.3, 1.2); S.stream(far(S, ['wasservogel', 'wasservogel', 'esel'], 0.7), 6, 13);
+    S.stream(laughEv(S, 0.7), 12, 26); S.stream(luteEv(S, 0.8), 8, 15);
   },
   tal(S) { // Fackelknistern, Tropfen, tiefer Hornton, Wüstenwind; ctl torch 0…1: Fackeln lodern stärker
     const t = () => S.cv.torch || 0;
-    wind(S, { lvl: 0.25, f: 500, q: 0.5, type: 'lowpass', gust: 0.5, rate: 0.08 }); wind(S, { lvl: 0.06, f: 1700, q: 0.8, gust: 0.6, rate: 0.12 });
-    const lo = S.loop('brown'), lf = S.f('lowpass', 120, 0.5), lg = S.g(0.6); lo.connect(lf); lf.connect(lg); lg.connect(S.body);
-    const fb = fireBed(S, { lvl: 0.12 }); S.stream(crackleEv(S, () => 0.2 + 0.2 * t()), 0.5, 1.8, () => 1 / (1 + 2 * t()));
+    wind(S, { lvl: 0.25, f: 450, q: 0.4, gust: 0.5, rate: 0.08 }); wind(S, { lvl: 0.06, f: 1700, q: 0.8, gust: 0.6, rate: 0.12 });
+    const lo = S.loop('brown'), lf = S.f('lowpass', 120, 0.5), lg = S.g(0.2); lo.connect(lf); lf.connect(lg); lg.connect(S.body);
+    const fb = fireBed(S, { lvl: 0.2 }); S.stream(crackleEv(S, () => 0.2 + 0.2 * t()), 0.5, 1.8, () => 1 / (1 + 2 * t()));
     S.stream(drop(S, 0.22), 3, 9); S.stream(hornEv(S, 0.5), 28, 50);
-    S.onCtl.torch = (v, now) => fb.gain.setTargetAtTime(0.12 * (1 + 2.2 * v), now, 0.4);
+    S.onCtl.torch = (v, now) => fb.gain.setTargetAtTime(0.2 * (1 + 2.2 * v), now, 0.4);
   },
   finale(S) { // Meer, Wellen, ferne Hafenrufe; ctl parade 0…1: Jubel der Parade (das volle Titelthema liegt in music.js)
     surf(S, { lvl: 0.55, rate: 0.1 }); surf(S, { lvl: 0.2, rate: 0.07 });
     wind(S, { lvl: 0.15, f: 650, q: 0.5, gust: 0.5, rate: 0.1 });
     const cr = murmur(S, { n: 2, lvl: 0, f1: 520, f2: 1500, syl: 3.2, lp: 2200 });
     S.stream(callEv(S, 0.4, 170), 8, 16); S.stream(far(S, ['wasservogel'], 0.8), 10, 20); S.stream(flapEv(S, 0.12), 7, 14);
-    S.onCtl.parade = (v, now) => cr.gain.setTargetAtTime(0.3 * v, now, 0.8);
+    S.onCtl.parade = (v, now) => cr.gain.setTargetAtTime(0.8 * v, now, 0.8);
   },
 };
 export const SCENE_IDS = Object.keys(BUILD);

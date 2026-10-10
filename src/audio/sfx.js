@@ -24,7 +24,7 @@ export const SFX = {
   lift(R, t) { const v = mk(R, 'lift'); if (!v) return; v.nz(t, { f: 900, f2: 1800, q: 1, a: 0.05, d: 0.16, peak: 0.25 }); },
   land(R, t, o) { // Seite fällt auf: weiches Plumpsen; Einband schwerer
     const v = mk(R, 'land'); if (!v) return;
-    if (o.cover) { v.tone(t, { f: 72, f2: 40, a: 0.006, d: 0.32, peak: 0.6 }); v.nz(t, { kind: 'brown', type: 'lowpass', f: 320, a: 0.004, d: 0.2, peak: 0.5 }); }
+    if (o.cover) { v.tone(t, { f: 72, f2: 40, a: 0.006, d: 0.32, peak: 0.45 }); v.nz(t, { kind: 'brown', type: 'lowpass', f: 320, a: 0.004, d: 0.2, peak: 0.35 }); }
     else { v.tone(t, { f: 96, f2: 58, a: 0.005, d: 0.16, peak: 0.5 }); v.nz(t, { type: 'lowpass', f: 520, a: 0.003, d: 0.09, peak: 0.3 }); }
   },
   grab(R, t) { const v = mk(R, 'grab'); if (!v) return; v.nz(t, { kind: 'white', f: 2800, q: 2, a: 0.003, d: 0.05, peak: 0.22 }); v.tone(t, { f: 520, f2: 380, a: 0.003, d: 0.05, peak: 0.16 }); },
@@ -166,11 +166,11 @@ export const SFX = {
   },
   door(R, t, o) { // schwere Tür/Tor knarrt auf: tiefes Knarren (Haftreibung), Steinschaben, leises Ausrasten; o.dur (s), o.v = Tonhöhe 0…1
     const v = mk(R, 'door', 2); if (!v) return; const d = clamp(o.dur || 1.9, 0.8, 5), x = clamp(o.v ?? 0.5, 0, 1), e = t + d + 0.5, out = shape(v, t, d, 0.25, 0.9);
-    const cr = v.osc('sawtooth', 70 + 30 * x, t, e); cr.frequency.setValueAtTime(70 + 30 * x, t); cr.frequency.linearRampToValueAtTime(96 + 30 * x, t + d * 0.5); cr.frequency.linearRampToValueAtTime(66 + 20 * x, t + d);
-    const bp = v.f('bandpass', 320, 5); bp.frequency.setValueAtTime(300, t); bp.frequency.exponentialRampToValueAtTime(900, t + d * 0.55); bp.frequency.exponentialRampToValueAtTime(380, t + d);
+    const cr = v.osc('sawtooth', 105 + 40 * x, t, e); cr.frequency.setValueAtTime(105 + 40 * x, t); cr.frequency.linearRampToValueAtTime(140 + 40 * x, t + d * 0.5); cr.frequency.linearRampToValueAtTime(98 + 30 * x, t + d);
+    const bp = v.f('bandpass', 500, 5); bp.frequency.setValueAtTime(450, t); bp.frequency.exponentialRampToValueAtTime(1400, t + d * 0.55); bp.frequency.exponentialRampToValueAtTime(600, t + d);
     const am = v.g(0.55), l = v.osc('sine', 17, t, e), lg = v.g(0.4); l.connect(lg); lg.connect(am.gain); cr.connect(bp); bp.connect(am); const cg = v.g(0.5); am.connect(cg); cg.connect(out);
-    amNoise(v, t, e, { kind: 'pink', type: 'lowpass', f: 260, q: 0.7, base: 0.5, lfo: [[3.1, 0.2]], dest: out });
-    v.tone(t + d, { f: 82, f2: 48, a: 0.01, d: 0.22, peak: 0.3 }); v.send(0.3);
+    amNoise(v, t, e, { kind: 'pink', type: 'lowpass', f: 260, q: 0.7, base: 0.25, lfo: [[3.1, 0.1]], dest: out });
+    v.tone(t + d, { f: 110, f2: 62, a: 0.01, d: 0.22, peak: 0.3 }); v.send(0.3);
   },
   fire(R, t, o) { // kurzes Knistern; o.v = Stärke 0…1 (Dichte der Knacker und Pegel), o.dur (s)
     const v = mk(R, 'fire', 0); if (!v) return; const x = clamp(o.v ?? 0.5, 0, 1), d = clamp(o.dur || 1.3, 0.3, 6), e = t + d + 0.15, out = shape(v, t, d, 0.08, 0.35 + 0.65 * x);
@@ -186,7 +186,7 @@ export const SFX = {
   },
   sail(R, t, o) { // Segel flattert: vier weiche Tuchschläge, dann Nachrascheln; o.v = Wind 0…1
     const v = mk(R, 'sail'); if (!v) return; const x = clamp(o.v ?? 0.6, 0, 1);
-    for (let i = 0; i < 4; i++) { const s = t + i * (0.13 + 0.03 * i), p = 0.9 + R.rng() * 0.2; v.nz(s, { type: 'lowpass', f: 850 * p, f2: 380, q: 0.7, a: 0.012, d: 0.12, peak: (0.55 - i * 0.1) * (0.6 + 0.4 * x) }); v.tone(s, { f: 115 * p, f2: 80, a: 0.01, d: 0.08, peak: 0.16 }); }
+    for (let i = 0; i < 4; i++) { const s = t + i * (0.13 + 0.03 * i), p = 0.9 + R.rng() * 0.2; v.nz(s, { f: 750 * p, f2: 350, q: 0.6, a: 0.012, d: 0.12, peak: (0.55 - i * 0.1) * (0.6 + 0.4 * x) }); v.tone(s, { f: 150 * p, f2: 100, a: 0.01, d: 0.08, peak: 0.14 }); }
     v.nz(t + 0.5, { f: 1500, q: 0.6, a: 0.1, d: 0.4, peak: 0.1 * (0.5 + x) });
   },
   water(R, t) { // Wasser schöpfen: Eintauchen, Füllen (aufsteigende Blubbern), Ausgießen
@@ -205,7 +205,7 @@ export const SFX = {
     const v = mk(R, 'bread'); if (!v) return; const n = clamp(o.n || 3, 1, 5);
     for (let i = 0; i < n; i++) {
       const s = t + i * 0.28;
-      v.tone(s, { f: 150, f2: 95, a: 0.012, d: 0.1, peak: 0.4 }); v.nz(s, { type: 'lowpass', f: 500, f2: 260, q: 0.8, a: 0.015, d: 0.12, peak: 0.35 }); v.nz(s + 0.05, { f: 900, f2: 400, q: 4, a: 0.02, d: 0.09, peak: 0.08 });
+      v.tone(s, { f: 220, f2: 140, a: 0.012, d: 0.1, peak: 0.3 }); v.nz(s, { type: 'lowpass', f: 900, f2: 380, q: 0.8, a: 0.015, d: 0.12, peak: 0.4 }); v.nz(s + 0.05, { f: 900, f2: 400, q: 4, a: 0.02, d: 0.09, peak: 0.08 });
     }
   },
   gold(R, t) { // heller Glanzton: drei aufsteigende Glöckchen mit Funkeln
@@ -215,11 +215,11 @@ export const SFX = {
   },
   seal(R, t) { // Siegel/Stempel: dumpfer Druck auf Ton, kurzes Schmatzen
     const v = mk(R, 'seal'); if (!v) return;
-    v.tone(t, { f: 130, f2: 70, a: 0.003, d: 0.14, peak: 0.55 }); v.nz(t, { f: 700, q: 1, a: 0.002, d: 0.03, peak: 0.3 }); v.nz(t + 0.06, { type: 'lowpass', f: 1000, f2: 400, a: 0.01, d: 0.08, peak: 0.08 });
+    v.tone(t, { f: 190, f2: 110, a: 0.003, d: 0.12, peak: 0.4 }); v.nz(t, { f: 900, q: 0.9, a: 0.002, d: 0.04, peak: 0.45 }); v.nz(t, { kind: 'white', f: 2400, q: 1.2, a: 0.001, d: 0.02, peak: 0.15 }); v.nz(t + 0.06, { type: 'lowpass', f: 1000, f2: 400, a: 0.01, d: 0.08, peak: 0.08 });
   },
   torch(R, t) { // Fackel an: Auffauchen (Rauschen steigt), tiefes „Fwump“, einzelne Knister
     const v = mk(R, 'torch', 2); if (!v) return;
-    v.nz(t, { f: 280, f2: 1700, q: 1.1, a: 0.12, d: 0.3, peak: 0.45 }); v.nz(t, { kind: 'brown', type: 'lowpass', f: 200, a: 0.02, d: 0.35, peak: 0.5 }); v.tone(t, { f: 75, f2: 50, a: 0.02, d: 0.3, peak: 0.3 });
+    v.nz(t, { f: 280, f2: 1700, q: 1.1, a: 0.12, d: 0.3, peak: 0.45 }); v.nz(t, { kind: 'brown', type: 'lowpass', f: 260, a: 0.02, d: 0.35, peak: 0.3 }); v.tone(t, { f: 110, f2: 70, a: 0.02, d: 0.3, peak: 0.25 }); v.nz(t, { f: 700, f2: 1400, q: 0.6, a: 0.04, d: 0.3, peak: 0.3 });
     for (let i = 0; i < 6; i++) v.nz(t + 0.25 + R.rng() * 0.8, { kind: 'white', f: 2500 + R.rng() * 3500, q: 3, a: 0.001, d: 0.006 + R.rng() * 0.014, peak: 0.12 + 0.2 * R.rng() });
   },
 };

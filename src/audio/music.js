@@ -26,10 +26,10 @@ export const MUSIC = {
     perc: { beat: 0.42, vel: 0.5, pat: ['dum', null, 'tak', null, 'dum', 'dum', 'tak', null] } },
   gizeh: { mix: [['harp', 5], ['ney', 5]], root: 55, sc: 'hmin', deg: [0, 7], st: [0.7, 1.1], len: [3, 4], gap: [5, 9], vel: 0.6, rev: 0.5 },
   goetter: { mix: [['ney', 6], ['harp', 4]], root: 57, sc: 'hmin', deg: [0, 7], st: [0.9, 1.4], len: [3, 4], gap: [5, 9], vel: 0.6, rev: 0.85 },
-  mumie: { mix: [['lute', 6], ['ney', 4]], root: 50, sc: 'min5', deg: [0, 6], st: [0.8, 1.3], len: [3, 4], gap: [6, 11], vel: 0.5, rev: 0.7 },
+  mumie: { mix: [['lute', 6], ['ney', 4]], root: 55, sc: 'min5', deg: [0, 6], st: [0.8, 1.3], len: [3, 4], gap: [6, 11], vel: 0.5, rev: 0.7 },
   alltag: { mix: [['lute', 6], ['harp', 2], ['ney', 2]], root: 64, sc: 'phryg', deg: [0, 8], st: [0.28, 0.5], len: [4, 7], gap: [3, 6], vel: 0.6, rev: 0.3,
     perc: { beat: 0.38, vel: 0.4, pat: ['tak', null, 'ka', null, 'dum', null, 'ka', 'tak'] } },
-  tal: { mix: [['harp', 5], ['ney', 5]], root: 52, sc: 'hmin', deg: [0, 6], st: [0.9, 1.5], len: [3, 4], gap: [6, 12], vel: 0.55, rev: 0.8 },
+  tal: { mix: [['harp', 5], ['ney', 5]], root: 59, sc: 'hmin', deg: [0, 6], st: [0.9, 1.5], len: [3, 4], gap: [6, 12], vel: 0.55, rev: 0.8 },
   finale: { theme: 'full', themeAt: 9, tgap: [50, 65], beat: 0.78, root: 62, sc: 'phryg', mix: [['harp', 5], ['ney', 5]], deg: [0, 8], st: [0.7, 1.2], len: [3, 5], gap: [5, 9], vel: 0.7, rev: 0.55,
     pad: { notes: [38, 45, 50], lp: 420, lvl: 0.05 } },
 };

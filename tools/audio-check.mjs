@@ -17,7 +17,8 @@ fs.mkdirSync(path.join(OUT, 'wav'), { recursive: true });
 
 // ------------------------------------------------------------------ Ziele
 const PEAK_T = { slide: -11, footstep: -11, tapp: -12, tick: -10, bubble: -12, rustle: -11, musicbox: -10, chime: -10, ping: -10, lift: -10, grab: -10, snap: -10, flapOpen: -10, flapClose: -10, card: -11, splinter: -10, peep: -10, pop: -10,
-  chisel: -10, seal: -10, scale: -11, sand: -11, bread: -10, fire: -11, sistrum: -11, thud: -10, woodcrack: -10, crack: -10, stomp: -10, door: -10, torch: -10 }, PEAK_DEF = -9;
+  tweet: -11, chisel: -10, seal: -10, scale: -11, sand: -11, bread: -10, fire: -11, sistrum: -11, thud: -10, woodcrack: -10, crack: -10, stomp: -10, door: -10, torch: -10 }, PEAK_DEF = -9;
+const VOICE_T = { falke: -12, skarabaeus: -11, kobra: -11 };
 const SC_T = { cover: -46 }, SC_R = { cover: [-54, -40] };
 const MU_T = { cover: -37, finale: -33 };
 const SFX_SEC = { musicbox: 24, gong: 9, rumble: 5, found: 4, chime: 4, ping: 3, wave: 4, horn: 5, door: 4.5, sand: 3, quern: 3, harp: 4, gold: 3, torch: 3, fire: 3, sistrum: 3, water: 3, sail: 3, default: 3.5 };
@@ -27,11 +28,11 @@ const SFX_VARIANTS = [['stomp', { big: false }], ['splash', { big: true }], ['la
 function jobs(cat) {
   const J = [];
   for (const n of cat.sfx) J.push({ kind: 'sfx', name: n, sec: SFX_SEC[n] || SFX_SEC.default, o: { opts: n === 'slide' ? { v: 0.5 } : n === 'footstep' ? { v: 0.5 } : n === 'tick' ? { rate: 0.3 } : {} }, key: 'sfx:' + n, tp: PEAK_T[n] ?? PEAK_DEF, base: true });
-  for (const [n, op] of SFX_VARIANTS) J.push({ kind: 'sfx', name: n, sec: SFX_SEC[n] || SFX_SEC.default, o: { opts: op }, label: n + JSON.stringify(op).replace(/"/g, ''), tp: null });
+  for (const [n, op] of SFX_VARIANTS) J.push({ kind: 'sfx', name: n, sec: Math.max(SFX_SEC[n] || SFX_SEC.default, (op.dur || 0) + 1.5), o: { opts: op }, label: n + JSON.stringify(op).replace(/"/g, ''), tp: null });
   for (const n of [...cat.voices, 'zzz_unbekannt']) {
     const unk = n === 'zzz_unbekannt';
-    J.push({ kind: 'voice', name: n, sec: 4, o: {}, key: 'voice:' + (unk ? 'blip' : n), tp: -9, base: true });
-    J.push({ kind: 'voice', name: n, sec: 4.5, o: { cine: true }, label: n + ' (cine)', key: 'voice:' + n + ':cine', tp: -7, base: !unk });
+    J.push({ kind: 'voice', name: n, sec: 4, o: {}, key: 'voice:' + (unk ? 'blip' : n), tp: VOICE_T[n] ?? -9, base: true });
+    J.push({ kind: 'voice', name: n, sec: 4.5, o: { cine: true }, label: n + ' (cine)', key: 'voice:' + n + ':cine', tp: (VOICE_T[n] ?? -9) + 2, base: !unk });
   }
   for (const n of cat.scenes) J.push({ kind: 'scene', name: n, sec: 12, o: {}, key: 'scene:' + n, tr: SC_T[n] ?? -28, range: SC_R[n] || [-32, -24], base: true });
   for (const [n, ctl] of [['nil', 'flood'], ['gizeh', 'build'], ['goetter', 'scale'], ['mumie', 'salt'], ['tal', 'torch'], ['finale', 'parade']]) {
@@ -88,7 +89,7 @@ function judge(j, m) {
   if (m.jumpS > 2) warn.push('Sprünge-Anfang'); if (m.jumpE > 2) warn.push('Sprünge-Ende');
   if (j.kind === 'sfx' && !j.master && j.base && (m.peak > -6 || m.peak < -12.5)) warn.push('Pegel ausserhalb -12..-6');
   if (j.kind === 'sfx' && !j.master && !j.base && m.peak > -6) warn.push('Variante lauter als -6');
-  if (j.kind === 'voice' && !j.master && (m.peak > -5.5 || m.peak < -12.5)) warn.push('Pegel ausserhalb -12..-5.5');
+  if (j.kind === 'voice' && !j.master && (m.peak > -5.5 || m.peak < -14)) warn.push('Pegel ausserhalb -14..-5.5');
   if (j.range && (j.kind === 'scene' || j.kind === 'music') && (m.rms < j.range[0] - 0.5 || m.rms > j.range[1] + 0.5)) warn.push(`RMS ausserhalb ${j.range[0]}..${j.range[1]}`);
   if (j.master && m.peak > -1) bad.push('Limiter greift nicht');
   return { bad, warn };
