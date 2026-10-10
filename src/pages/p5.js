@@ -282,7 +282,7 @@ export default {
     const LX0 = 1.75, LX1 = 3.2;
     const linen = ctx.prop('leinenbahn', { x: LX0, z: -1.9, len: 3.0, delay: 0.1 });
     tap(linen, card('leinenbinden'));
-    const priest = ctx.stand('priester', { x: 3.2, z: 0.3, h: 3.0, facing: 1, delay: 0.2, card: null, hint: false });
+    const priest = ctx.stand('priester', { x: 3.45, z: 0.3, h: 3.0, facing: 1, delay: 0.2, card: null, hint: false });
     priest.onWake = (a) => { a.tw.add(1.2, (k) => { a.fig.rotatePart('armA', Math.sin(k * Math.PI) * 0.3); a.hop = Math.sin(k * Math.PI) * 0.06; }, { done: () => { a.hop = 0; } }); app.audio.voice('priester'); };
     // Bahre
     const bahre = ctx.prop('mumie_bahre', { x: 6.8, z: -0.5, len: 4.2, delay: 0.16 });
@@ -306,7 +306,7 @@ export default {
     drawNote(note, 'Salz zieht Wasser an', 'Es entzieht dem Körper Wasser');
     note.mesh.position.set(0, 1.85, 0.2); note.mesh.scale.setScalar(0.001); note.mat.opacity = 0; heap.add(note.mesh); heap.side.own(note);
     // Versuchsschild
-    const sign = ctx.flat(signPart(), { x: 1.35, z: 1.15, ws: 1.5, name: 'versuch', delay: 0.3, ppu: 130, border: 0.03 });
+    const sign = ctx.flat(signPart(), { x: 1.2, z: 0.95, ws: 1.25, name: 'versuch', delay: 0.3, ppu: 130, border: 0.03 });
     tap(sign, card('mumifizieren_versuch'));
     yield;
 

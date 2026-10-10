@@ -42,13 +42,13 @@ export const STRIP_W = 10.6, STRIP_H = 2.4;
 export function drawStrip(P, day, { touched = false } = {}) {
   const key = Math.round(day) + '|' + touched; if (key === P._key) return; P._key = key;
   const { g, S, cv } = P; const u = (v) => v * S;
-  g.clearRect(0, 0, cv.width, cv.height);
+  g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.clearRect(0, 0, cv.width, cv.height);
   const d = Math.round(day), pi = phaseIndex(day), ph = PHASES[pi], m = moisture(day);
   const dark = (c) => (c === '#d9a62e' ? '#8a5f1c' : c);
   // Papierband
   g.save();
   g.shadowColor = 'rgba(40,20,5,.35)'; g.shadowBlur = u(0.08); g.shadowOffsetY = u(0.03);
-  g.fillStyle = 'rgba(250,241,218,.97)'; roundRect(g, u(0.1), u(0.06), u(STRIP_W - 0.2), u(STRIP_H - 0.16), u(0.14)); g.fill();
+  g.fillStyle = 'rgb(250,241,218)'; roundRect(g, u(0.1), u(0.06), u(STRIP_W - 0.2), u(STRIP_H - 0.16), u(0.14)); g.fill();
   g.restore();
   g.strokeStyle = 'rgba(139,30,30,.35)'; g.lineWidth = u(0.016); roundRect(g, u(0.2), u(0.16), u(STRIP_W - 0.4), u(STRIP_H - 0.36), u(0.09)); g.stroke();
   const T = (str, x, y, size, { col = INK, bold = false, italic = false, align = 'left' } = {}) => {
