@@ -7,10 +7,18 @@ import fisch from './animals/fisch.js';
 import ochse from './animals/ochse.js';
 import esel from './animals/esel.js';
 import pferd from './animals/pferd.js';
+import katze from './animals/katze.js';
+import falke from './animals/falke.js';
+import kobra from './animals/kobra.js';
 import nilpferd from './animals/nilpferd.js';
 const sk = (tone) => (o = {}) => skarabaeus({ tone, ...o });
 export default {
   skarabaeus,
+  kobra,
+  falke,
+  katze,
+  katze_walk: (o = {}) => katze({ ...o, pose: 'walk' }),
+  katze_ring: (o = {}) => katze({ ...o, ring: true }),
   pferd,
   esel,
   ochse,

@@ -186,6 +186,19 @@ export function kit(u) {
     s: (...items) => K.S(...items).map((p) => p.map(([x, y]) => [x + dx * u, y + dy * u])),
     d: (fn) => (c, bb) => fn({ ...c, tf: (x, y) => c.tf(x + dx * u, y + dy * u) }, bb),
   });
+  // place: draw something in LOCAL design coordinates (e.g. a head with origin at its centre, facing +x) and put it into the model
+  // at (ox,oy) rotated by rot and scaled by sc. Returns T (local point -> design point), poly/blob/limb builders, d(fn) for deco callbacks.
+  K.place = (ox, oy, rot = 0, sc = 1) => {
+    const cs = Math.cos(rot), sn = Math.sin(rot);
+    const T = ([x, y]) => [ox + (x * cs - y * sn) * sc, oy + (x * sn + y * cs) * sc];
+    return {
+      T, sc, rot,
+      poly: (pts, sm = 2) => K.poly(pts.map(T), sm),
+      blob: (cx, cy, rx, ry = rx, r = 0, n = 32) => K.blob(...T([cx, cy]), rx * sc, ry * sc, r + rot, n),
+      limb: (ctrl, o) => K.limb(ctrl.map(([x, y, w]) => [...T([x, y]), (w ?? 0) * sc]), o),
+      d: (fn) => (c, bb) => fn({ ...c, tf: (xm, ym) => { const [X, Y] = T([xm / u, ym / u]); return c.tf(X * u, Y * u); } }, bb),
+    };
+  };
   // compose several deco functions
   K.deco = (...fns) => (c, bb) => { for (const f of fns) if (f) f(c, bb); };
   return K;
