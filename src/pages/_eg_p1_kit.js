@@ -124,13 +124,11 @@ export function doorOutsideTex(w, h) {
     for (let k = 0; k < 3; k++) { const y = H * 0.30 + k * 0.17 * S; g.beginPath(); for (let i = 0; i <= 6; i++) { const x = W * 0.5 + (i - 3) * 0.12 * S, yy = y + (i % 2 ? -0.045 : 0.045) * S; if (i) g.lineTo(x, yy); else g.moveTo(x, yy); } g.stroke(); }
     g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillStyle = '#6b1d1d';
     let fs = 0.25 * S; g.font = `bold ${fs}px ${SERIF}`; while (g.measureText('NILOMETER').width > W - 0.4 * S) { fs -= 1; g.font = `bold ${fs}px ${SERIF}`; }
-    g.fillText('NILOMETER', W / 2, H * 0.55);
-    g.font = `italic ${0.16 * S}px ${SERIF}`; g.fillStyle = '#5a3d22'; g.fillText('Wie hoch ist die Flut?', W / 2, H * 0.55 + 0.34 * S);
+    g.fillText('NILOMETER', W / 2, H * 0.56);
     // Pfeil + Tippen
-    g.fillStyle = '#8b1e1e'; g.font = `bold ${0.17 * S}px ${SERIF}`; g.fillText('tippe zum Öffnen', W / 2, H - 0.62 * S);
-    g.beginPath(); g.moveTo(W / 2, H - 0.46 * S); g.lineTo(W / 2 - 0.14 * S, H - 0.58 * S + 0.02 * S); g.lineTo(W / 2 + 0.14 * S, H - 0.58 * S + 0.02 * S); g.closePath();
+    g.fillStyle = '#8b1e1e'; g.font = `bold ${0.16 * S}px ${SERIF}`; g.fillText('tippe zum Öffnen', W / 2, H * 0.68);
     // Griffknauf
-    g.fillStyle = '#e0b040'; g.beginPath(); g.arc(W / 2, H * 0.83, 0.075 * S, 0, TAU); g.fill(); g.strokeStyle = '#8a5f1c'; g.lineWidth = 2; g.stroke();
+    g.fillStyle = '#e0b040'; g.beginPath(); g.arc(W / 2, H * 0.8, 0.075 * S, 0, TAU); g.fill(); g.strokeStyle = '#8a5f1c'; g.lineWidth = 2; g.stroke();
   });
 }
 export const DOOR_ZONES = [
@@ -146,7 +144,7 @@ export function doorInsideTex(w, h) {
     g.fillStyle = '#fbf3da'; roundRect(g, 0.07 * S, 0.07 * S, W - 0.14 * S, H - 0.14 * S, 0.05 * S); g.fill();
     g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillStyle = '#6b1d1d';
     g.font = `bold ${0.2 * S}px ${SERIF}`; g.fillText('Der Pegel', W / 2, 0.3 * S);
-    g.font = `italic ${0.13 * S}px ${SERIF}`; g.fillStyle = '#5a3d22'; g.fillText('Schieb FLUT! und schau zu', W / 2, 0.52 * S);
+    g.font = `italic ${0.13 * S}px ${SERIF}`; g.fillStyle = '#5a3d22'; g.fillText('Schieb FLUT!', W / 2, 0.52 * S);
     const top = 0.75 * S, bot = H - 0.2 * S, rh = (bot - top) / DOOR_ZONES.length;
     DOOR_ZONES.forEach((z, i) => {
       const y = top + i * rh;

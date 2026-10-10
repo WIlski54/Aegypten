@@ -63,13 +63,18 @@ function paintLand(ctx, m, x0, x1) {
 const FIELD_STAGES = [0.0, 0.5, 1.0];
 function fieldLook(v) {
   if (v > 0.72) return { idx: 0, sy: 1, tint: 0 };
-  if (v > 0.4) return { idx: 1, sy: lerp(1, 0.4, ramp(v, 0.4, 0.72)) * 1 + 0 * v, tint: 0 };
+  if (v > 0.4) return { idx: 1, sy: lerp(1, 0.4, ramp(v, 0.4, 0.72)), tint: 0 };
   return { idx: 2, sy: lerp(1, 0.9, ramp(v, 0.15, 0.4)), tint: 0 };
 }
 
-const BASE = {
-  skyL: { x0: -11.75, x1: -0.2 }, skyR: { x0: 0.2, x1: 11.75 },
-};
+// Schleierwolken und ferne Vögel (Zierde auf der Himmelswand)
+function skyExtras(c, bb, seed) {
+  const { ctx, tf, S } = c; const r = mulberry32(seed);
+  ctx.fillStyle = 'rgba(255,255,255,.3)';
+  for (let i = 0; i < 6; i++) { const [X, Y] = tf(bb.x0 + r() * bb.w, bb.y0 + bb.h * (0.5 + r() * 0.4)); ctx.beginPath(); ctx.ellipse(X, Y, (0.7 + r() * 1.3) * S, (0.05 + r() * 0.05) * S, 0, 0, TAU); ctx.fill(); }
+  ctx.strokeStyle = 'rgba(70,50,30,.55)'; ctx.lineWidth = Math.max(1.2, 0.03 * S); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  for (let i = 0; i < 5; i++) { const [X, Y] = tf(bb.x0 + 1 + r() * (bb.w - 2), bb.y0 + bb.h * (0.45 + r() * 0.4)), w = (0.12 + r() * 0.08) * S; ctx.beginPath(); ctx.moveTo(X - w, Y - w * 0.3); ctx.quadraticCurveTo(X - w * 0.4, Y - w * 0.5, X, Y); ctx.quadraticCurveTo(X + w * 0.4, Y - w * 0.5, X + w, Y - w * 0.3); ctx.stroke(); }
+}
 
 export default {
   id: 'nil',
@@ -83,7 +88,7 @@ export default {
         ground: { back: '#ead59c', front: '#d9bd7e' }, margin: 0.3, pageNo: 2 * IDX + 1, seed: 11,
         draw(ctx, m) {
           paintLand(ctx, m, -12, 0);
-          textCard(m, { x: -11.35, z: 0.58, w: 5.9, h: 3.35, kicker: d.kicker, title: d.title, sub: d.years, body: d.card, size: 0.262, titleSize: 0.4, tilt: -0.012 });
+          textCard(m, { x: -11.6, z: 0.42, w: 6.35, h: 3.12, kicker: d.kicker, title: d.title, sub: d.years, body: d.card, size: 0.31, titleSize: 0.42, tilt: -0.012 });
         },
       },
       R: {
@@ -115,7 +120,7 @@ export default {
     // ================================================================ Kulisse: Himmel, Wüste (Rotes Land)
     for (const s of ['L', 'R']) {
       const x0 = s === 'L' ? -11.75 : 0.2, x1 = s === 'L' ? -0.2 : 11.75;
-      ctx.flat(panelPart(x0, x1, 5.0, { fill: { top: '#7ec4d6', bottom: '#fdeec6' }, wave: 0.26, freq: 3, phase: s === 'L' ? 0.6 : 2.2, seed: s === 'L' ? 3 : 6, deco: (c, bb) => { softLight(c, bb, { color: 'rgba(255,238,170,.6)', cx: s === 'L' ? 0.3 : 0.7, cy: 0.45, r: 0.7 }); dither(c, bb, '#fff', { n: 90, alpha: 0.12, size: 0.04 }); } }), { z: -4.05, lean: -0.05, name: 'sky' + s, delay: 0, ppu: 70, border: 0.04 });
+      ctx.flat(panelPart(x0, x1, 5.0, { fill: { top: '#7ec4d6', bottom: '#fdeec6' }, wave: 0.26, freq: 3, phase: s === 'L' ? 0.6 : 2.2, seed: s === 'L' ? 3 : 6, deco: (c, bb) => { softLight(c, bb, { color: 'rgba(255,238,170,.6)', cx: s === 'L' ? 0.3 : 0.7, cy: 0.45, r: 0.7 }); dither(c, bb, '#fff', { n: 90, alpha: 0.12, size: 0.04 }); skyExtras(c, bb, s === 'L' ? 5 : 9); } }), { z: -4.05, lean: -0.05, name: 'sky' + s, delay: 0, ppu: 70, border: 0.04 });
     }
     yield;
     const sun = ctx.prop('sun_disc', { x: 7.4, y: 2.9, z: -3.9, h: 1.3, delay: 0.1, cast: false });
@@ -226,8 +231,8 @@ export default {
     const toLoc = (xo, yo) => [(xo - 1.2) * K, yo * K];
     // Säulenbreite in lokalen Einheiten
     const sw = makeShaftWater((0.92 - 1.2) * K, (1.9 - 1.2) * K, (xl) => floorFn(xl / K + 1.2) * K, 10, shaftTex);
-    sw.mesh.position.z = 0.004; nilo.add(sw.mesh);
-    const ptr = makePointer(0.2); ptr.position.set((0.92 - 1.2) * K, 0, 0.02); nilo.add(ptr);
+    sw.mesh.position.z = 0.02; nilo.add(sw.mesh); S1.sw = sw; S1.nilo = nilo;
+    const ptr = makePointer(0.2); ptr.position.set((0.92 - 1.2) * K, 0, 0.045); nilo.add(ptr);
     // Klappe (Tür): unten gelenkt, klappt nach vorn auf die Seite
     const DW = 1.25, DH = 2.3;
     const door = makeDoorCard(DW, DH, doorInsideTex(DW, DH), doorOutsideTex(DW, DH), 0.05);
@@ -255,16 +260,15 @@ export default {
     yield;
 
     // ================================================================ Laschen
-    const flut = ctx.control('R', { id: 'flut', label: 'FLUT!', a: [1.7, 3.75], b: [5.4, 3.75], size: [1.9, 0.95], color: '#2a7aa0', value: 0, springBack: false, hold: true });
-    const schoep = ctx.control('R', { id: 'schoepfen', label: 'SCHÖPFEN', a: [7.2, 3.75], b: [9.3, 3.75], size: [2.3, 0.95], color: '#b8862d', value: 0, springBack: true });
+    const flut = ctx.control('R', { id: 'flut', label: 'FLUT!', a: [1.7, 3.75], b: [5.0, 3.75], size: [1.9, 0.95], color: '#2a7aa0', value: 0, springBack: false, hold: true });
+    const schoep = ctx.control('R', { id: 'schoepfen', label: 'SCHÖPFEN', a: [7.6, 3.75], b: [9.5, 3.75], size: [2.3, 0.95], color: '#b8862d', value: 0, springBack: true });
     S1.flut = flut; S1.schoep = schoep;
     flut.onGrab = () => app.audio.sfx('grab'); flut.onTick = (v) => app.audio.sfx('slide', { v }); flut.onRelease = () => app.audio.sfx('snap');
     schoep.onGrab = () => app.audio.sfx('grab'); schoep.onTick = (v) => app.audio.sfx('slide', { v }); schoep.onRelease = () => app.audio.sfx('snap');
 
     // ================================================================ Zustand aus den Laschenwerten
-    const st = { v: 0, lastAudio: -1, boatY: 0, scoop: 0, hippoLift: 0, crocZ: -0.15, crocPrevZ: -0.15, crocDist: 0, bauerPh: 0, gape: 0, snapT: 0, bauerPuff: 0 };
+    const st = { v: 0, lastAudio: -1, boatY: 0, hippoLift: 0, crocZ: -0.15, crocDist: 0, bauerPh: 0 };
     S1.gape = 0; S1.snap = 0; S1.bauerBoost = 0;
-    const wBack = [], wFront = [];
     const nilL = RF(-6), nilR = RF(6);
     const applyFlood = (v) => {
       st.v = v;
@@ -294,9 +298,7 @@ export default {
 
     // ================================================================ pro Frame
     const tmpV = new THREE.Vector3();
-    const nilMk = { z0: 0.86 + DH * 0, z1: 0 };
-    let t0 = 0, dripT = 0, fishT = 4, fishK = -1, fishX = 0, rippleT = 1, ibisT = 0, bauerSwing = 0, bauerPrev = 0, wakeNet = 0, schooPrev = 0, dipSfx = false;
-    const NET = { x0: 0, y0: 0, x1: 0, k: 0 };
+    let dripT = 0, fishT = 4, fishK = -1, fishX = 0, rippleT = 1, bauerPrev = 0, dipSfx = false;
     ctx.onUpdate((dt, t) => {
       if (!ctx.spread.active) return;
       const calm = app.calm ? 0.5 : 1, rate = fxRate(app);
@@ -358,10 +360,9 @@ export default {
         while (dripT > 1) {
           dripT -= 1;
           tmpV.set(eimerPv[0] * 0 + 0, (eimerRest[1] - 0.1 - tipA[1]) * sws, 0.1); sf.parts.eimer.localToWorld(tmpV);
-          app.fx.dust.emit({ x: tmpV.x + (Math.random() - 0.5) * 0.25, y: tmpV.y, z: tmpV.z + 0.05, vx: (Math.random() - 0.5) * 0.15, vy: -0.1, vz: 0, life: 0.9, size: 0.09, alpha: 0.85, color: [0.7, 0.92, 1], grav: 6 });
+          app.fx.dust.emit({ x: tmpV.x + (Math.random() - 0.5) * 0.25, y: tmpV.y, z: tmpV.z + 0.05, vx: (Math.random() - 0.5) * 0.15, vy: -0.1, vz: 0, life: 0.9, size: 0.13, alpha: 0.9, color: [0.7, 0.92, 1], grav: 6 });
         }
       }
-      schooPrev = sv;
 
       // Netzwurf des Fischers
       if (S1.net >= 0) {
