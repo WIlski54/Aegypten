@@ -129,7 +129,7 @@ export function rosetta_stein(opts = {}) {
         line(c, [[0.08, 0.81], [0.69, 0.81]], '#5d616b', 0.003, { alpha: 0.8 });
         for (const [y, s] of rows) signRow(c, HIERO, y, s, 0.08, 0.7, rng, flip);
         // Kartusche mit PTOLEMAIOS
-        drawCartouche(c, order, 0.335, 0.865, 0.5, 0.105, { flip, ink: '#2b1a10', bg: '#e9dcb4', style: 'color', ring: '#2b1a10' });
+        drawCartouche(c, order, 0.335, 0.865, 0.54, 0.118, { flip, ink: '#2b1a10', bg: '#e9dcb4', style: 'color', ring: '#2b1a10' });
       }),
     },
     band_demot: {

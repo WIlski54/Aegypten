@@ -314,11 +314,14 @@ export function drawCartouche(c, keys, cx, cy, W, H, { flip = false, ink = INK, 
   // Abschlussstrich an der „Schlussseite“ (dort, wohin die Zeichen blicken, ist der Anfang)
   const bx = cx + (flip ? W / 2 + r * 0.02 : -W / 2 - r * 0.02);
   line(c, [[bx + (flip ? -1 : 1) * H * 0.02, cy - r * 1.0], [bx + (flip ? -1 : 1) * H * 0.02, cy + r * 1.0]], ringCol || ink, H * 0.08 * lw);
-  const inner = H * 0.74;
+  let inner = H * 0.74;
+  const avail = W - r * 0.9;
+  const rawTot = keys.reduce((t, k) => t + GLYPH_FIT[k].w * GLYPH_FIT[k].z * inner * 0.92, 0);
+  if (rawTot > avail * 0.9) inner *= (avail * 0.9) / rawTot;
   const slots = keys.map((k) => GLYPH_FIT[k].w * GLYPH_FIT[k].z * inner * 0.92);
   const tot = slots.reduce((a, b) => a + b, 0);
-  const gap = Math.max(0, (W - r * 0.55 - tot) / (keys.length + 1));
-  let x = cx - tot / 2 - (gap * (keys.length - 1)) / 2;
+  const gap = Math.max(0, (avail - tot) / (keys.length + 1));
+  let x = cx - (tot + gap * (keys.length - 1)) / 2;
   const mids = [];
   keys.forEach((k, i) => {
     const sl = slots[i];

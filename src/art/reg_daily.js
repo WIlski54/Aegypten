@@ -7,9 +7,7 @@ import { papyrusrolle, schreibpalette, ostrakon } from './props/eg_script.js';
 
 const glyphs = Object.fromEntries(GLYPH_IDS.map((g) => ['glyphe_' + g, (o) => glyphe({ ...(typeof o === 'object' && o ? o : {}), g })]));
 
-const zz = Object.fromEntries([0,1,2,3,4,5].map((i)=>['zz_brot'+i,()=>brotlaib(i)]).concat([0,1,2].map((i)=>['zz_spiel'+i,()=>spielzeug(i)])));
 export default {
-  ...zz,
   glyphe: (o) => glyphe(o),
   rosetta_stein: (o) => rosetta_stein(o),
   steinblock: (o) => steinblock(o),
