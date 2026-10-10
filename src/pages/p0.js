@@ -6,7 +6,10 @@ import { textCard, printLabel, SERIF, RED, INK, roundRect, blotches, speckles } 
 import { PAGES_DE, CARDS_DE } from '../data/pages.de.js';
 import { Popup } from '../engine/popup.js';
 import { TAU, clamp, lerp, smooth } from '../engine/util.js';
-import { cracks } from './common.js';
+import { poseAmt } from '../engine/popup.js';
+import { cracks, panelPart, leftCard, dither, softLight } from './common.js';
+import { sunGlow } from '../engine/effects.js';
+import { pebbles, grassTufts } from '../engine/pagepaint.js';
 
 // ---- Zeitrad der Sonne: der Zeiger läuft von 3300 v. Chr. (oben) einmal im Kreis bis 30 v. Chr.
 export const BCE0 = 3300, BCE1 = 30; // Beginn und Ende des Rades (Jahre v. Chr.)
@@ -110,17 +113,21 @@ export default {
         paper: '#f2e6c8', ground: { back: '#ecd9aa', front: '#dcc08a' }, margin: 0.4, pageNo: 1,
         draw(ctx, m) {
           blotches(m, { x0: -12, x1: 0, z0: -4.4, z1: 4.4, n: 16, rmin: 1, rmax: 2.4, colors: ['rgba(255,244,214,.18)'], seed: 4 });
-          textCard(m, { x: -10.6, z: -3.2, w: 9.3, h: 4.35, kicker: L.kicker, title: L.title, body: L.card, size: 0.37, titleSize: 0.56, tilt: -0.012 });
-          // timeline legend: eight eras as coloured dots
+          cracks(m, { x0: -11.6, x1: -0.4, z0: -1.0, z1: 4.0, n: 40, seed: 3, color: 'rgba(110,70,30,.2)' });
+          pebbles(m, { x0: -11, x1: -0.8, z0: 0, z1: 3.5, n: 8, seed: 8 });
+          grassTufts(m, { x0: -11, x1: -1, z0: 0.2, z1: 3.7, n: 4, seed: 5, color: '#8a9a4a', h: 0.3 });
+          // gedruckte Textkarte vorn links
+          textCard(m, { x: -11.35, z: 0.55, w: 5.9, h: 3.35, kicker: L.kicker, title: L.title, body: L.card, size: 0.262, titleSize: 0.38, tilt: -0.012 });
+          // Legende: acht Stationen als Punkte
           const names = ['Nil', 'Zwei Länder', 'Gizeh', 'Götter', 'Mumie', 'Alltag', 'Tal der Könige', 'Kleopatra'];
           const cols = PAGES_DE.slice(1).map((p) => p.color);
-          printLabel(m, 'Deine Reise durch Ägypten', -5.95, 2.0, { size: 0.3, color: RED, italic: true });
+          printLabel(m, 'Deine Reise durch Ägypten', -2.85, 0.85, { size: 0.27, color: RED, italic: true });
           names.forEach((n, i) => {
-            const x = -10.2 + i * 1.22, z = 3.0;
+            const col = i % 4, row = Math.floor(i / 4);
+            const x = -5.0 + col * 1.2, z = 1.5 + row * 1.1;
             ctx.fillStyle = cols[i]; ctx.beginPath(); ctx.arc(m.x(x), m.z(z), 0.2 * m.S, 0, TAU); ctx.fill(); ctx.strokeStyle = '#fff4d0'; ctx.lineWidth = 0.05 * m.S; ctx.stroke();
-            ctx.strokeStyle = 'rgba(80,45,15,.35)'; ctx.lineWidth = 0.02 * m.S; if (i) { ctx.beginPath(); ctx.moveTo(m.x(x - 1.22 + 0.22), m.z(z)); ctx.lineTo(m.x(x - 0.22), m.z(z)); ctx.stroke(); }
             printLabel(m, String(i + 1), x, z + 0.01, { size: 0.2, color: '#fff', bold: true });
-            const parts = n.split('-'); parts.forEach((pp, j) => printLabel(m, parts.length > 1 ? (j ? pp : pp + '-') : pp, x, z + 0.52 + j * 0.21, { size: 0.185, color: '#5a3d22' }));
+            const parts = n.split(' '); parts.forEach((pp, j) => printLabel(m, pp, x, z + 0.44 + j * 0.2, { size: 0.165, color: '#5a3d22' }));
           });
         },
       },
@@ -139,6 +146,46 @@ export default {
 
   *build(ctx) {
     const app = ctx.app;
+    // ---- Kulisse: Himmelswand, Dünen, Pyramiden, Nil, Obelisk, Palmen
+    for (const sd of ['L', 'R']) {
+      const x0 = sd === 'L' ? -11.75 : 0.2, x1 = sd === 'L' ? -0.2 : 11.75;
+      ctx.flat(panelPart(x0, x1, 5.0, { fill: { top: '#6fb8d8', bottom: '#fde9bd' }, wave: 0.28, freq: 3, phase: sd === 'L' ? 0.4 : 2.0, seed: sd === 'L' ? 2 : 5, deco: (c, bb) => { softLight(c, bb, { color: 'rgba(255,236,170,.6)', cx: sd === 'L' ? 0.7 : 0.4, cy: 0.5, r: 0.7 }); dither(c, bb, '#fff', { n: 100, alpha: 0.12, size: 0.04 }); } }), { z: -4.05, lean: -0.05, name: 'sky' + sd, delay: 0, ppu: 70, border: 0.04 });
+    }
+    yield;
+    const sun = ctx.prop('sun_disc', { x: -5.8, y: -0.6, z: -3.9, h: 2.1, delay: 0.1, cast: false });
+    const glow = sunGlow({ size: 8.5, color: 0xffd27a }); glow.position.set(0, 1.0, -0.06); sun.add(glow);
+    ctx.onUpdate((dt, t) => glow.userData.update(t));
+    ctx.prop('wuestenduene', { x: -6, z: -3.0, len: 11.6, delay: 0.06, variant: { seed: 1 } });
+    ctx.prop('wuestenduene', { x: 6, z: -3.0, len: 11.6, delay: 0.06, variant: { seed: 2 } });
+    const pyr = ctx.prop('pyramide_gizeh', { x: -6.1, z: -3.45, len: 10.8, delay: 0.14 });
+    const obe = ctx.prop('obelisk', { x: -11.0, z: -2.4, h: 3.6, delay: 0.2 });
+    yield;
+    ctx.prop('nil_wasser', { x: -6, z: -1.5, len: 11.4, delay: 0.18, variant: { tone: 'hell' } });
+    const barke = ctx.prop('sonnenbarke', { x: -10.2, y: 0.18, z: -1.0, len: 3.0, delay: 0.3 });
+    ctx.prop('dattelpalme', { x: -0.9, z: -2.2, h: 3.7, delay: 0.24, facing: -1 });
+    ctx.prop('palm', { x: 11.0, z: -2.4, h: 3.9, delay: 0.26, facing: -1 });
+    ctx.prop('dattelpalme', { x: 0.95, z: -2.6, h: 3.1, delay: 0.28 });
+    ctx.prop('reeds', { x: -3.0, z: -1.0, h: 1.3, delay: 0.3 });
+    const ibis = ctx.stand('ibis', { x: -1.5, z: 0.35, len: 1.3, facing: -1, delay: 0.34 });
+    ibis.setFacing(-1);
+    ibis.behaviors.push((dt, t) => { if (ibis.tw.list.length === 0) poseAmt(ibis.fig, 'neck', 0.35 + 0.35 * Math.sin(t * 0.7)); });
+    ibis.onWake = (a) => { a.tw.add(1.1, (k) => { poseAmt(a.fig, 'neck', Math.sin(k * Math.PI)); a.hop = Math.sin(k * Math.PI) * 0.1; }, { done: () => { a.hop = 0; } }); app.audio.voice('ibis'); };
+    // antippbare Kulissen: Pyramide, Obelisk, Sonne, Barke
+    const tapProp = (pop, id) => { if (!pop || !pop.fig) return; pop.pickMeshes = pop.fig.hit.slice(); for (const m of pop.fig.hit) m.userData.tap = () => app.openCardById(id); };
+    tapProp(pyr, 'pyramiden'); tapProp(obe, 'obelisk'); tapProp(sun, 'sonnenscheibe'); tapProp(barke, 'barke');
+    // verstecktes Käferchen neben dem Obelisken
+    const kaefer = ctx.stand('skarab1', { x: -10.35, z: -2.0, len: 0.95, facing: 1, delay: 0.5, hidden: true, hint: false, hitPad: 0.25 });
+    kaefer.onWake = (a) => { a.tw.add(0.7, (k) => { a.hop = Math.sin(k * Math.PI) * 0.35; }, { done: () => { a.hop = 0; } }); app.audio.voice('skarabaeus'); };
+    yield;
+    // ---- Laschen: SONNE! (Sonne steigt auf) und BARKE (Papierschiff fährt über den Nil)
+    const sunCtl = ctx.control('R', { id: 'sonne', label: 'SONNE!', a: [0.8, 3.75], b: [2.9, 3.75], size: [1.7, 0.95], color: '#e07a1f', value: 0, springBack: false, hold: true });
+    sunCtl.on((v) => { sun.group.position.y = lerp(-0.6, 2.2, smooth(clamp(v))); glow.scale.setScalar(0.35 + 0.65 * v); });
+    sunCtl.onGrab = () => app.audio.sfx('grab'); sunCtl.onTick = (v) => app.audio.sfx('slide', { v }); sunCtl.onRelease = () => app.audio.sfx('snap');
+    const barkeCtl = ctx.control('L', { id: 'barke', label: 'BARKE', a: [-4.9, 3.85], b: [-1.0, 3.85], size: [1.9, 0.95], color: '#2a7a9a', value: 0, springBack: false, hold: true });
+    barkeCtl.on((v) => { barke.group.position.x = lerp(-10.2, -2.6, v); });
+    ctx.onUpdate((dt, t) => { barke.group.position.y = 0.18 + Math.sin(t * 1.6 + barke.group.position.x) * 0.03; });
+    barkeCtl.onGrab = () => app.audio.sfx('grab'); barkeCtl.onTick = (v) => app.audio.sfx('oar', { v }); barkeCtl.onRelease = () => app.audio.sfx('snap');
+    yield;
     // ---- the clock stands on the right page
     const clock = ctx.flat(clockPart(), { x: 6.4, z: -1.2, ws: 1, name: 'zeitrad', delay: 0.05, thickness: 0.05, border: 0.07, ppu: Math.min(app.q.ppu, 180), maxTex: 1536, lean: -0.05 });
     yield;
