@@ -182,8 +182,8 @@ function sheetCanvas() {
     g.beginPath(); g.ellipse(u, v, 0.42 * (W / SHEET.w), 0.14 * (H / SHEET.d), 0, 0, TAU); g.stroke();
   }
   g.setLineDash([]);
-  g.fillStyle = 'rgba(120,60,25,.42)'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.font = `italic 34px ${SERIF}`;
-  g.fillText('Hier erscheinen die Zeichen', W / 2, H - 70);
+  g.fillStyle = 'rgba(120,60,25,.42)'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.font = `italic 30px ${SERIF}`;
+  g.fillText('Hier erscheinen die Zeichen', W / 2, H - 52);
   return c;
 }
 
@@ -279,7 +279,6 @@ export default {
   // ----------------------------------------------------------------------------------------------------- Aufbau
   *build(ctx) {
     const app = ctx.app;
-    const side = (x) => (x < 0 ? ctx.L : ctx.R);
     const tw = new Tweens();
     const S = (ctx.spread.p6 = { wv: 0, act: 0, ph: 0, zv: 0, mv: 0, mact: 0, mph: 0, poke: 0, kneadBoost: 0, t: 0, pour: 0, cat: 0, toy: 0, toyW: 0, mkick: 0, idleW: 3 });
     ctx.onUpdate((dt) => tw.update(dt));
@@ -462,8 +461,6 @@ export default {
     S.ctls = [wctl, zctl, mctl];
 
     // ------------------------------------------------------------------- Pro-Bild-Animation
-    const aOf = (f, n) => f.anchors[n];
-    const tmp = { x: 0, y: 0, z: 0 };
     let smokeT = 0, dustT = 0;
     ctx.onUpdate((dt, t) => {
       S.t = t;
@@ -477,7 +474,6 @@ export default {
       const writing = Math.max(S.act, S.poke > 0 ? 0.7 : 0, 0);
       S.ph += dt * (7 + 9 * writing);
       const done = wv > 0.985;
-      const sc = poseAmt; void sc;
       schr.fig.rotatePart('armA', done ? 0 : 0.07 + (0.02 + 0.07 * writing) * Math.sin(S.ph) + 0.01 * Math.sin(t * 1.3));
       // Binse der Palette tupft
       pal.fig.rotatePart('pinsel', 0.05 + 0.04 * Math.sin(t * 0.9) + (S.act > 0.1 ? 0.15 * Math.sin(S.ph * 0.5) : 0));
@@ -501,7 +497,7 @@ export default {
       S.mact = lerp(S.mact, Math.min(1, dmv / Math.max(dt, 1e-3) * 0.7), 1 - Math.exp(-dt * 8));
       S.mkick = Math.max(0, (S.mkick || 0) - dt * 1.5);
       const lw = mahl.fig.parts.laeufer;
-      if (lw) { lw.position.x = (lw.userData.rest ? lw.userData.rest.px : 0) + (mv - 0.5) * 0.6 + Math.sin(t * 9) * 0.015 * S.mkick; lw.rotation.z = (mv - 0.5) * 0.12; }
+      if (lw) { lw.position.x = (lw.userData.rest ? lw.userData.rest.px : 0) + mv * 0.5 + Math.sin(t * 9) * 0.015 * S.mkick; lw.rotation.z = mv * 0.1; }
       S.mph += dmv * 14 + dt * (S.kneadBoost > 0 ? 6 : 1.3);
       S.kneadBoost = Math.max(0, S.kneadBoost - dt);
       const kn = Math.max(S.mact, S.kneadBoost > 0 ? 0.8 : 0);
@@ -526,8 +522,6 @@ export default {
         app.fx.dust.emit({ x: w.x + (Math.random() - 0.5) * 0.15, y: w.y, z: w.z, vx: (Math.random() - 0.4) * 0.05, vy: 0.3 + Math.random() * 0.12, vz: 0.02, life: 1.5, size: 0.22, alpha: 0.2, color: [0.72, 0.66, 0.6], drag: 0.6, grow: 1.6 });
       }
       // --- Leben im Haus
-      const kneadIdle = 0;
-      void kneadIdle;
       S.pour = Math.max(0, S.pour - dt * 0.7);
       brau.fig.rotatePart('armA', -0.1 - (S.pour > 0 ? 0.45 * Math.sin(Math.min(1, (1 - S.pour) * 1.6) * Math.PI) : 0.05 * Math.sin(t * 0.8)));
       S.toy = Math.max(0, S.toy - dt * 1.2); S.toyW = Math.max(0, S.toyW - dt * 1.2);
@@ -536,7 +530,6 @@ export default {
       S.cat = Math.max(0, S.cat - dt * 0.9);
       poseAmt(katze.fig, 'tail', 0.5 + 0.5 * Math.sin(t * (calm ? 0.8 : 1.4)) + S.cat);
     });
-    // Wunsch-Zustand der Käferchen-Popup-Position gegen Zittern: keine
   },
 
   onActivate(ctx) { /* nichts: Laschen starten ruhig */ },
