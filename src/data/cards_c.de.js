@@ -55,6 +55,18 @@ export const CARDS_C = {
     text: 'Howard Carter suchte im Tal der Könige nach dem Grab von Tutanchamun. Sein Geldgeber war Lord Carnarvon. Am 26. November 1922 sah er das erste Mal in die Vorkammer. Dort lagen Truhen, Betten und Statuen voller Gold. Die Ausgrabung dauerte rund zehn Jahre.',
     note: 'Ein „Fluch der Pharaonen“ ist eine Erfindung von Zeitungen.', tags: ['Archäologie'], fragen: ['Wann entdeckte Howard Carter das Grab?'],
   },
+  truhe: {
+    name: 'Die bemalte Truhe', say: '', tts: 'Truhe', when: 'um 1323 v. Chr.', whereLabel: 'Ort', where: 'Grab KV62', specId: 'truhe', sizeM: 0.8,
+    wow: 'In Truhen wie dieser lagen Kleidung, Schmuck und Salbgefäße für das Leben nach dem Tod.',
+    text: 'Die Truhe ist aus Holz und mit Lotos- und Papyruspflanzen bemalt. Im Grab fanden Forscher Dutzende solcher Kisten. Sie enthielten Gewänder, Schmuck und vieles mehr.',
+    tags: ['Schatz', 'Grab'], fragen: ['Was lag in den Truhen im Grab?'],
+  },
+  traeger: {
+    name: 'Die Sargträger', say: '', tts: 'Sargträger', when: 'Neues Reich', dietLabel: 'Aufgabe', diet: 'trugen den Sarg zum Grab', whereLabel: 'Ort', where: 'Totenzug zum Westufer', specId: 'traeger', sizeM: 1.65,
+    wow: 'Der Weg zum Grab war ein feierlicher Zug über den Nil und durch die Wüste.',
+    text: 'Zur Beisetzung zog eine Prozession zum Tal. Männer trugen den Sarg auf Stangen auf den Schultern. Dahinter gingen Priester, Familie und Klagefrauen.',
+    tags: ['Beruf', 'Grab'], fragen: ['Wie kam der Sarg zum Grab?'],
+  },
   hatschepsut: {
     name: 'Hatschepsut', say: 'sprich: hat-SCHEP-sut', tts: 'Hatschepsut', meaning: 'Bedeutung: „Die Erste unter den edlen Damen“.', when: 'regierte ca. 1479 bis 1458 v. Chr.', period: 'Neues Reich', dietLabel: 'Aufgabe', diet: 'Pharao', whereLabel: 'Ort', where: 'Theben, Totentempel Deir el-Bahari', specId: 'hatschepsut', sizeM: 1.65,
     wow: 'Sie war eine der wenigen Frauen, die als Pharao regierte. Auf Bildern trägt sie oft einen falschen Bart.',
