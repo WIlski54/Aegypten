@@ -1,0 +1,4818 @@
+{
+ "cover": [
+  {
+   "text": "Das große Ägypten-Pop-up-Buch.",
+   "start": 0.12,
+   "end": 2.016
+  },
+  {
+   "text": "Eine Reise durch dreitausend Jahre.",
+   "start": 2.256,
+   "end": 4.191
+  },
+  {
+   "text": "Tippe auf das Buch, dann geht es los!",
+   "start": 4.431,
+   "end": 6.297
+  }
+ ],
+ "page0": [
+  {
+   "text": "Willkommen im großen Ägypten-Popup-Buch!",
+   "start": 0.12,
+   "end": 2.332
+  },
+  {
+   "text": "Wir reisen gemeinsam durch dreitausend Jahre.",
+   "start": 2.632,
+   "end": 4.982
+  },
+  {
+   "text": "Zuerst schauen wir auf das Zeitrad der Sonne.",
+   "start": 5.222,
+   "end": 7.378
+  },
+  {
+   "text": "Zieh an der Lasche und dreh den Zeiger, dann siehst du, wie sich Ägypten verändert.",
+   "start": 7.618,
+   "end": 12.048
+  }
+ ],
+ "page1": [
+  {
+   "text": "Das hier ist der Nil.",
+   "start": 0.12,
+   "end": 1.178
+  },
+  {
+   "text": "Ringsum ist Wüste, aber am Fluss ist es grün.",
+   "start": 1.418,
+   "end": 3.892
+  },
+  {
+   "text": "Jedes Jahr kam die Flut, und danach war der Boden fruchtbar.",
+   "start": 4.132,
+   "end": 6.956
+  },
+  {
+   "text": "Zieh am Schieber Flut und sieh, wie das Wasser steigt.",
+   "start": 7.196,
+   "end": 9.929
+  },
+  {
+   "text": "Tippe auf die Tiere am Ufer.",
+   "start": 10.169,
+   "end": 11.656
+  }
+ ],
+ "page2": [
+  {
+   "text": "Hier siehst du zwei Länder.",
+   "start": 0.12,
+   "end": 1.317
+  },
+  {
+   "text": "Links liegt Unterägypten mit der roten Krone, rechts Oberägypten mit der weißen Krone.",
+   "start": 1.557,
+   "end": 6.107
+  },
+  {
+   "text": "Zieh an den beiden Laschen Nord und Süd.",
+   "start": 6.347,
+   "end": 8.502
+  },
+  {
+   "text": "Wenn beide Kronen zusammenkommen, wird daraus die Doppelkrone des Pharaos.",
+   "start": 8.742,
+   "end": 12.613
+  }
+ ],
+ "page3": [
+  {
+   "text": "Das hier ist Gizeh, vor über viertausendfünfhundert Jahren.",
+   "start": 0.12,
+   "end": 3.612
+  },
+  {
+   "text": "Diese riesigen Pyramiden wurden von Arbeitern gebaut, nicht von Sklaven.",
+   "start": 3.852,
+   "end": 7.723
+  },
+  {
+   "text": "Zieh am Hebel Bauen und sieh die Pyramide wachsen.",
+   "start": 7.963,
+   "end": 10.783
+  },
+  {
+   "text": "Mit Schnitt klappst du sie auf und schaust hinein.",
+   "start": 11.023,
+   "end": 13.188
+  }
+ ],
+ "page4": [
+  {
+   "text": "Wir sind in einem Tempel voller Götter.",
+   "start": 0.12,
+   "end": 1.856
+  },
+  {
+   "text": "Viele Ägypter glaubten, dass im Totenreich das Herz gewogen wird.",
+   "start": 2.096,
+   "end": 5.419
+  },
+  {
+   "text": "Auf der anderen Waagschale liegt eine Feder, die Feder der Wahrheit.",
+   "start": 5.659,
+   "end": 9.23
+  },
+  {
+   "text": "Zieh am Schieber Waage und sieh zu.",
+   "start": 9.47,
+   "end": 11.376
+  }
+ ],
+ "page5": [
+  {
+   "text": "Das hier ist eine Mumienwerkstatt.",
+   "start": 0.12,
+   "end": 1.886
+  },
+  {
+   "text": "Die Ägypter wussten schon viel über Salz und Wasser.",
+   "start": 2.126,
+   "end": 4.75
+  },
+  {
+   "text": "Zieh am Schieber Tage und sieh, wie die Zeit vergeht.",
+   "start": 4.99,
+   "end": 7.883
+  },
+  {
+   "text": "Mit der Lasche Natron streust du das Salz auf.",
+   "start": 8.123,
+   "end": 10.299
+  }
+ ],
+ "page6": [
+  {
+   "text": "Wir schauen in ein Haus im Arbeiterdorf.",
+   "start": 0.12,
+   "end": 2.182
+  },
+  {
+   "text": "Hier wird gebacken, geschrieben und gespielt.",
+   "start": 2.422,
+   "end": 4.447
+  },
+  {
+   "text": "Zieh am Schieber Schreiben, dann schreibt der Schreiber Hieroglyphen.",
+   "start": 4.687,
+   "end": 8.02
+  },
+  {
+   "text": "Mit Zeichen siehst du, was sie bedeuten.",
+   "start": 8.26,
+   "end": 10.293
+  }
+ ],
+ "page7": [
+  {
+   "text": "Das hier ist das Tal der Könige.",
+   "start": 0.12,
+   "end": 1.866
+  },
+  {
+   "text": "Zieh an der Lasche Tür und öffne das Grab von Tutanchamun.",
+   "start": 2.106,
+   "end": 5.339
+  },
+  {
+   "text": "Mit dem Schieber Schätze siehst du, was die Ägypter ihrem jungen König mitgegeben haben.",
+   "start": 5.579,
+   "end": 9.689
+  }
+ ],
+ "page8": [
+  {
+   "text": "Das ist die letzte Seite.",
+   "start": 0.12,
+   "end": 1.383
+  },
+  {
+   "text": "Links liegt Alexandria mit dem Leuchtturm.",
+   "start": 1.623,
+   "end": 3.828
+  },
+  {
+   "text": "Rechts sitzt ein Gelehrter und studiert den Stein von Rosette.",
+   "start": 4.068,
+   "end": 7.52
+  },
+  {
+   "text": "Schiebe 3 Sprachen und sieh, wie aus Zeichen Wörter werden.",
+   "start": 7.76,
+   "end": 10.942
+  },
+  {
+   "text": "Mit Finale fährt die Sonnenbarke noch einmal an allem vorbei.",
+   "start": 11.182,
+   "end": 14.467
+  }
+ ],
+ "card_skarab1": [
+  {
+   "text": "Skarabäus.",
+   "start": 0.12,
+   "end": 0.988
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.408,
+   "end": 2.535
+  },
+  {
+   "text": "Wow!",
+   "start": 2.775,
+   "end": 3.224
+  },
+  {
+   "text": "Der Käfer formt eine Kugel aus Dung, rollt sie weg und legt seine Eier hinein.",
+   "start": 3.564,
+   "end": 7.396
+  },
+  {
+   "text": "Du hast einen Sonnenkäfer gefunden!",
+   "start": 7.636,
+   "end": 9.452
+  },
+  {
+   "text": "Das ist ein Pillendreher.",
+   "start": 9.752,
+   "end": 11.059
+  },
+  {
+   "text": "Er rollt Dungkugeln rückwärts über den Boden.",
+   "start": 11.299,
+   "end": 13.552
+  },
+  {
+   "text": "In der Kugel wächst später seine Brut heran.",
+   "start": 13.792,
+   "end": 15.898
+  }
+ ],
+ "card_skarab2": [
+  {
+   "text": "Skarabäus.",
+   "start": 0.12,
+   "end": 0.988
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.408,
+   "end": 2.535
+  },
+  {
+   "text": "Wow!",
+   "start": 2.775,
+   "end": 3.224
+  },
+  {
+   "text": "Die Ägypter sahen im rollenden Käfer ein Bild für die Sonne, die über den Himmel wandert.",
+   "start": 3.564,
+   "end": 7.895
+  },
+  {
+   "text": "Der Gott Chepre trug einen Käfer auf dem Kopf oder hatte einen Käferkopf.",
+   "start": 8.135,
+   "end": 12.076
+  },
+  {
+   "text": "Er stand für die Morgensonne: Wie der Käfer die Kugel schiebt, so schiebt Chepre die Sonne in den neuen Tag.",
+   "start": 12.316,
+   "end": 16.885
+  }
+ ],
+ "card_skarab3": [
+  {
+   "text": "Skarabäus.",
+   "start": 0.12,
+   "end": 0.988
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.408,
+   "end": 2.535
+  },
+  {
+   "text": "Wow!",
+   "start": 2.775,
+   "end": 3.224
+  },
+  {
+   "text": "Manche Skarabäus-Amulette haben auf der Unterseite Namen und Zeichen.",
+   "start": 3.564,
+   "end": 7.305
+  },
+  {
+   "text": "Man benutzte sie als Siegel.",
+   "start": 7.545,
+   "end": 9.022
+  },
+  {
+   "text": "Aus Stein oder Fayence schnitt man kleine Käfer.",
+   "start": 9.262,
+   "end": 11.613
+  },
+  {
+   "text": "Auf der flachen Unterseite standen Hieroglyphen.",
+   "start": 11.853,
+   "end": 14.34
+  },
+  {
+   "text": "Man drückte sie in Ton oder Lehm und siegelte so Krüge, Kisten und Briefe.",
+   "start": 14.58,
+   "end": 19.01
+  }
+ ],
+ "card_skarab4": [
+  {
+   "text": "Skarabäus.",
+   "start": 0.12,
+   "end": 0.988
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.408,
+   "end": 2.535
+  },
+  {
+   "text": "Wow!",
+   "start": 2.775,
+   "end": 3.224
+  },
+  {
+   "text": "Auf manche Mumien legte man einen Herzskarabäus.",
+   "start": 3.564,
+   "end": 6.218
+  },
+  {
+   "text": "Er sollte beim Totengericht helfen.",
+   "start": 6.458,
+   "end": 8.125
+  },
+  {
+   "text": "Das Herz war für die Ägypter der Sitz von Gedanken und Gefühlen.",
+   "start": 8.365,
+   "end": 11.827
+  },
+  {
+   "text": "Beim Totengericht wurde es gewogen.",
+   "start": 12.067,
+   "end": 13.763
+  },
+  {
+   "text": "Der Herzskarabäus sollte dafür sorgen, dass das Herz nichts Schlechtes verrät.",
+   "start": 14.003,
+   "end": 18.024
+  }
+ ],
+ "card_skarab5": [
+  {
+   "text": "Skarabäus.",
+   "start": 0.12,
+   "end": 0.988
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.408,
+   "end": 2.535
+  },
+  {
+   "text": "Wow!",
+   "start": 2.775,
+   "end": 3.224
+  },
+  {
+   "text": "Echte Pillendreher finden ihren Weg nachts mit Hilfe der Milchstraße.",
+   "start": 3.564,
+   "end": 7.226
+  },
+  {
+   "text": "Forscher zeigten 2013: Afrikanische Pillendreher laufen auch in sternklaren Nächten geradeaus.",
+   "start": 7.466,
+   "end": 13.582
+  },
+  {
+   "text": "Sie orientieren sich am hellen Band der Milchstraße.",
+   "start": 13.822,
+   "end": 16.716
+  },
+  {
+   "text": "Damit rollen sie ihre Kugel schnell von anderen Käfern weg.",
+   "start": 16.956,
+   "end": 19.959
+  }
+ ],
+ "card_skarab6": [
+  {
+   "text": "Skarabäus.",
+   "start": 0.12,
+   "end": 0.988
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.408,
+   "end": 2.535
+  },
+  {
+   "text": "Wow!",
+   "start": 2.775,
+   "end": 3.224
+  },
+  {
+   "text": "Skarabäus-Amulette gab es aus Fayence, Speckstein, Halbedelstein und sogar aus Gold.",
+   "start": 3.564,
+   "end": 8.851
+  },
+  {
+   "text": "Fayence ist eine Art Keramik mit glasiger, oft blauer oder grüner Oberfläche.",
+   "start": 9.091,
+   "end": 13.88
+  },
+  {
+   "text": "Die Ägypter machten damit viel Schmuck.",
+   "start": 14.12,
+   "end": 16.006
+  },
+  {
+   "text": "Der Käfer war ein beliebtes Muster, weil er Glück bringen sollte.",
+   "start": 16.246,
+   "end": 19.219
+  }
+ ],
+ "card_skarab7": [
+  {
+   "text": "Skarabäus.",
+   "start": 0.12,
+   "end": 0.988
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.408,
+   "end": 2.535
+  },
+  {
+   "text": "Wow!",
+   "start": 2.775,
+   "end": 3.224
+  },
+  {
+   "text": "Manche Pharaonen ließen große Gedenk-Skarabäen mit Nachrichten herstellen und verschicken.",
+   "start": 3.564,
+   "end": 8.653
+  },
+  {
+   "text": "Unter Amenophis der Dritte gab es Skarabäen, auf denen besondere Ereignisse standen, zum Beispiel eine Hochzeit oder eine Jagd.",
+   "start": 8.893,
+   "end": 15.667
+  },
+  {
+   "text": "Man verschickte sie wohl an Beamte und Verbündete.",
+   "start": 15.907,
+   "end": 18.591
+  }
+ ],
+ "card_skarab8": [
+  {
+   "text": "Skarabäus.",
+   "start": 0.12,
+   "end": 0.988
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.408,
+   "end": 2.535
+  },
+  {
+   "text": "Wow!",
+   "start": 2.775,
+   "end": 3.224
+  },
+  {
+   "text": "Auch heute arbeiten Pillendreher als Müllabfuhr: In Australien setzte man sie gezielt gegen Kuhdung ein.",
+   "start": 3.564,
+   "end": 8.882
+  },
+  {
+   "text": "Pillendreher vergraben Dung und düngen so den Boden.",
+   "start": 9.122,
+   "end": 11.746
+  },
+  {
+   "text": "In Australien gab es zu viel Kuhdung, weil die einheimischen Käfer ihn nicht beseitigen konnten.",
+   "start": 11.986,
+   "end": 16.855
+  },
+  {
+   "text": "Deshalb brachte man ab den 1960er Jahren passende Dungkäfer ins Land.",
+   "start": 17.095,
+   "end": 22.742
+  }
+ ],
+ "card_skarab9": [
+  {
+   "text": "Skarabäus.",
+   "start": 0.12,
+   "end": 0.988
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.408,
+   "end": 2.535
+  },
+  {
+   "text": "Wow!",
+   "start": 2.775,
+   "end": 3.224
+  },
+  {
+   "text": "Der Käfer ist sogar ein Hieroglyphenzeichen.",
+   "start": 3.564,
+   "end": 5.829
+  },
+  {
+   "text": "Es bedeutet werden und entstehen.",
+   "start": 6.069,
+   "end": 7.785
+  },
+  {
+   "text": "Das Zeichen für Cheper zeigt einen Käfer.",
+   "start": 8.025,
+   "end": 10.316
+  },
+  {
+   "text": "Das ägyptische Wort bedeutet werden, entstehen, sein.",
+   "start": 10.556,
+   "end": 13.368
+  },
+  {
+   "text": "So passt das Zeichen zur Sonne, die jeden Morgen neu entsteht.",
+   "start": 13.608,
+   "end": 16.761
+  }
+ ],
+ "card_pyramiden": [
+  {
+   "text": "Gisseh.",
+   "start": 0.12,
+   "end": 0.516
+  },
+  {
+   "text": "Um 2600 bis 2500 vor Christus.",
+   "start": 0.936,
+   "end": 4.699
+  },
+  {
+   "text": "Wow!",
+   "start": 4.939,
+   "end": 5.388
+  },
+  {
+   "text": "Die Cheops-Pyramide war über 3800 Jahre lang das höchste Bauwerk der Welt.",
+   "start": 5.728,
+   "end": 10.757
+  },
+  {
+   "text": "In Gizeh stehen drei große Pyramiden: für die Könige Cheops, Chephren und Mykerinos.",
+   "start": 10.997,
+   "end": 16.235
+  },
+  {
+   "text": "Sie sind Gräber.",
+   "start": 16.475,
+   "end": 17.403
+  },
+  {
+   "text": "Vor den Pyramiden stehen die Sphinx und viele kleinere Gräber.",
+   "start": 17.643,
+   "end": 20.991
+  }
+ ],
+ "card_obelisk": [
+  {
+   "text": "Obelisk.",
+   "start": 0.12,
+   "end": 0.779
+  },
+  {
+   "text": "Ab dem Alten Reich.",
+   "start": 1.199,
+   "end": 2.255
+  },
+  {
+   "text": "Wow!",
+   "start": 2.495,
+   "end": 2.944
+  },
+  {
+   "text": "Manche Obelisken wiegen mehrere hundert Tonnen und wurden in einem Stück aus dem Stein gehauen.",
+   "start": 3.284,
+   "end": 8.043
+  },
+  {
+   "text": "Ein Obelisk ist eine hohe, spitze Steinnadel.",
+   "start": 8.283,
+   "end": 10.617
+  },
+  {
+   "text": "Die Spitze war oft vergoldet.",
+   "start": 10.857,
+   "end": 12.384
+  },
+  {
+   "text": "Sie fing die ersten Strahlen der Sonne ein.",
+   "start": 12.624,
+   "end": 14.629
+  },
+  {
+   "text": "Er war ein Zeichen für den Sonnengott Ra.",
+   "start": 14.869,
+   "end": 16.668
+  }
+ ],
+ "card_sonnenscheibe": [
+  {
+   "text": "Ra.",
+   "start": 0.12,
+   "end": 0.589
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.009,
+   "end": 2.136
+  },
+  {
+   "text": "Wow!",
+   "start": 2.376,
+   "end": 2.825
+  },
+  {
+   "text": "Die Ägypter glaubten: Die Sonne fährt jeden Tag mit einer Barke über den Himmel.",
+   "start": 3.165,
+   "end": 6.808
+  },
+  {
+   "text": "Ra war der Sonnengott.",
+   "start": 7.048,
+   "end": 8.205
+  },
+  {
+   "text": "Am Morgen fuhr er mit seiner Barke in den Himmel hinein, abends versank er im Westen.",
+   "start": 8.445,
+   "end": 12.506
+  },
+  {
+   "text": "Nachts reiste er durch die Unterwelt, bis es wieder Morgen wurde.",
+   "start": 12.746,
+   "end": 15.779
+  }
+ ],
+ "card_barke": [
+  {
+   "text": "Barke.",
+   "start": 0.12,
+   "end": 0.639
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.059,
+   "end": 2.186
+  },
+  {
+   "text": "Wow!",
+   "start": 2.426,
+   "end": 2.875
+  },
+  {
+   "text": "Der Nil war die wichtigste Straße Ägyptens: Fast alles reiste auf dem Wasser.",
+   "start": 3.215,
+   "end": 7.256
+  },
+  {
+   "text": "Eine Barke ist ein Schiff.",
+   "start": 7.496,
+   "end": 8.783
+  },
+  {
+   "text": "Mit der Strömung fuhr man nach Norden, mit dem Wind und dem Segel zurück nach Süden.",
+   "start": 9.023,
+   "end": 13.074
+  },
+  {
+   "text": "Der Wind weht in Ägypten meistens von Norden.",
+   "start": 13.314,
+   "end": 15.579
+  }
+ ],
+ "card_nilpferd": [
+  {
+   "text": "Nielpferd.",
+   "start": 0.12,
+   "end": 0.727
+  },
+  {
+   "text": "Lebt dort seit Urzeiten, heute weiter im Süden.",
+   "start": 1.147,
+   "end": 3.941
+  },
+  {
+   "text": "Wow!",
+   "start": 4.181,
+   "end": 4.63
+  },
+  {
+   "text": "Ein Nilpferd kann bis zu fünf Minuten tauchen.",
+   "start": 4.97,
+   "end": 7.654
+  },
+  {
+   "text": "Mit dem riesigen Maul kann es sehr weit gähnen.",
+   "start": 7.894,
+   "end": 10.218
+  },
+  {
+   "text": "Im alten Ägypten gab es Nilpferde im Fluss.",
+   "start": 10.458,
+   "end": 13.013
+  },
+  {
+   "text": "Sie waren gefährlich, wenn man ihnen zu nah kam.",
+   "start": 13.253,
+   "end": 15.647
+  },
+  {
+   "text": "Die Ägypter verehrten aber auch die Göttin Taweret.",
+   "start": 15.887,
+   "end": 18.372
+  },
+  {
+   "text": "Sie war nilpferdgestaltig und beschützte Mütter und Kinder.",
+   "start": 18.612,
+   "end": 21.774
+  }
+ ],
+ "card_krokodil": [
+  {
+   "text": "Krokodiel.",
+   "start": 0.12,
+   "end": 0.81
+  },
+  {
+   "text": "Lebt dort seit Urzeiten.",
+   "start": 1.23,
+   "end": 2.607
+  },
+  {
+   "text": "Wow!",
+   "start": 2.847,
+   "end": 3.296
+  },
+  {
+   "text": "Eine Krokodilmutter trägt ihre Jungen im Maul vorsichtig zum Wasser.",
+   "start": 3.636,
+   "end": 7.218
+  },
+  {
+   "text": "Krokodile lagen am Ufer in der Sonne.",
+   "start": 7.458,
+   "end": 9.623
+  },
+  {
+   "text": "Die Ägypter hatten Respekt vor ihnen.",
+   "start": 9.863,
+   "end": 11.818
+  },
+  {
+   "text": "Der Gott Sobek hatte einen Krokodilkopf.",
+   "start": 12.058,
+   "end": 14.273
+  },
+  {
+   "text": "Er stand für die Kraft des Nils.",
+   "start": 14.513,
+   "end": 16.05
+  }
+ ],
+ "card_ibis": [
+  {
+   "text": "Ibis.",
+   "start": 0.12,
+   "end": 0.659
+  },
+  {
+   "text": "Lebt dort seit Urzeiten.",
+   "start": 1.079,
+   "end": 2.456
+  },
+  {
+   "text": "Wow!",
+   "start": 2.696,
+   "end": 3.145
+  },
+  {
+   "text": "In Sakkara fand man Millionen Ibis-Mumien.",
+   "start": 3.485,
+   "end": 5.969
+  },
+  {
+   "text": "Sie waren Opfergaben für den Gott Thot.",
+   "start": 6.209,
+   "end": 8.165
+  },
+  {
+   "text": "Der Ibis hat einen langen, gebogenen Schnabel und einen schwarzen Kopf.",
+   "start": 8.405,
+   "end": 12.326
+  },
+  {
+   "text": "Der Gott Thot hatte einen Ibiskopf.",
+   "start": 12.566,
+   "end": 14.451
+  },
+  {
+   "text": "Er war der Gott der Schrift und des Wissens.",
+   "start": 14.691,
+   "end": 16.627
+  }
+ ],
+ "card_fischer": [
+  {
+   "text": "Fischer.",
+   "start": 0.12,
+   "end": 0.549
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 0.969,
+   "end": 2.096
+  },
+  {
+   "text": "Wow!",
+   "start": 2.336,
+   "end": 2.785
+  },
+  {
+   "text": "Auf Papyrusbooten stehend warfen Fischer ihre Netze aus.",
+   "start": 3.125,
+   "end": 6.378
+  },
+  {
+   "text": "Fische gehörten zu den wichtigsten Nahrungsmitteln.",
+   "start": 6.618,
+   "end": 8.933
+  },
+  {
+   "text": "Das Boot war aus gebündeltem Papyrus gebaut.",
+   "start": 9.173,
+   "end": 11.488
+  },
+  {
+   "text": "Es war leicht und glitt gut durch das flache Wasser.",
+   "start": 11.728,
+   "end": 14.212
+  }
+ ],
+ "card_bauer": [
+  {
+   "text": "Bauer.",
+   "start": 0.12,
+   "end": 0.569
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 0.989,
+   "end": 2.116
+  },
+  {
+   "text": "Wow!",
+   "start": 2.356,
+   "end": 2.805
+  },
+  {
+   "text": "Das ägyptische Jahr hatte drei Jahreszeiten: Überschwemmung, Wachsen und Ernte.",
+   "start": 3.145,
+   "end": 7.057
+  },
+  {
+   "text": "Während der Flut ruhte die Feldarbeit.",
+   "start": 7.297,
+   "end": 9.056
+  },
+  {
+   "text": "Danach säte man auf dem Schlamm.",
+   "start": 9.296,
+   "end": 10.873
+  },
+  {
+   "text": "Man baute vor allem Emmer und Gerste an.",
+   "start": 11.113,
+   "end": 13.278
+  },
+  {
+   "text": "Aus ihnen machte man Brot und Bier.",
+   "start": 13.518,
+   "end": 15.354
+  },
+  {
+   "text": "Auch Flachs für Leinenkleidung wuchs auf den Feldern.",
+   "start": 15.594,
+   "end": 18.397
+  }
+ ],
+ "card_papyrus": [
+  {
+   "text": "Papüruss.",
+   "start": 0.12,
+   "end": 0.818
+  },
+  {
+   "text": "Wächst dort seit Urzeiten.",
+   "start": 1.238,
+   "end": 2.605
+  },
+  {
+   "text": "Wow!",
+   "start": 2.845,
+   "end": 3.294
+  },
+  {
+   "text": "Aus Papyrus machte man nicht nur Schreibpapier, sondern auch Boote, Seile, Matten und Sandalen.",
+   "start": 3.634,
+   "end": 9.152
+  },
+  {
+   "text": "Der Papyrus wächst im Sumpf.",
+   "start": 9.392,
+   "end": 11.048
+  },
+  {
+   "text": "Für Schreibblätter schnitt man das Mark in dünne Streifen.",
+   "start": 11.288,
+   "end": 13.972
+  },
+  {
+   "text": "Man legte sie kreuzweise übereinander und presste sie.",
+   "start": 14.212,
+   "end": 17.084
+  },
+  {
+   "text": "Der Pflanzensaft klebte die Schichten zusammen.",
+   "start": 17.324,
+   "end": 19.689
+  }
+ ],
+ "card_schaduf": [
+  {
+   "text": "Schaduf.",
+   "start": 0.12,
+   "end": 0.662
+  },
+  {
+   "text": "Seit dem Neuen Reich.",
+   "start": 1.082,
+   "end": 2.229
+  },
+  {
+   "text": "Wow!",
+   "start": 2.469,
+   "end": 2.918
+  },
+  {
+   "text": "Mit einem Gegengewicht am Balken war das Wasserschöpfen viel leichter.",
+   "start": 3.258,
+   "end": 6.731
+  },
+  {
+   "text": "Ein Schaduf ist ein Schwengelbrunnen.",
+   "start": 6.971,
+   "end": 8.497
+  },
+  {
+   "text": "An einem langen Balken hängt ein Eimer, am anderen Ende ein schwerer Stein.",
+   "start": 8.737,
+   "end": 12.399
+  },
+  {
+   "text": "So hebt man Wasser vom Fluss auf höher gelegene Felder.",
+   "start": 12.639,
+   "end": 15.572
+  }
+ ],
+ "card_nilometer": [
+  {
+   "text": "Niliometer.",
+   "start": 0.12,
+   "end": 0.818
+  },
+  {
+   "text": "Seit dem Alten Reich bekannt.",
+   "start": 1.238,
+   "end": 2.635
+  },
+  {
+   "text": "Wow!",
+   "start": 2.875,
+   "end": 3.324
+  },
+  {
+   "text": "Am Nilometer sah man schon vorher, wie gut die Ernte werden würde.",
+   "start": 3.664,
+   "end": 7.126
+  },
+  {
+   "text": "Ein Nilometer ist eine Treppe oder ein Schacht mit Markierungen.",
+   "start": 7.366,
+   "end": 10.699
+  },
+  {
+   "text": "Daran las man den Wasserstand des Nils ab.",
+   "start": 10.939,
+   "end": 13.081
+  },
+  {
+   "text": "Bei einer hohen Flut gab es eine gute Ernte.",
+   "start": 13.321,
+   "end": 15.655
+  },
+  {
+   "text": "Danach richteten die Beamten die Steuern aus.",
+   "start": 15.895,
+   "end": 18.18
+  }
+ ],
+ "card_nilflut": [
+  {
+   "text": "Nielflut.",
+   "start": 0.12,
+   "end": 0.779
+  },
+  {
+   "text": "Jedes Jahr, etwa Juli bis Oktober.",
+   "start": 1.199,
+   "end": 3.234
+  },
+  {
+   "text": "Wow!",
+   "start": 3.474,
+   "end": 3.923
+  },
+  {
+   "text": "Seit dem Bau des Assuan-Staudamms (Hochdamm 1970) gibt es keine natürliche Nilflut mehr.",
+   "start": 4.263,
+   "end": 10.0
+  },
+  {
+   "text": "Im Sommer regnete es weit im Süden, in Äthiopien, sehr stark.",
+   "start": 10.24,
+   "end": 13.901
+  },
+  {
+   "text": "Das Wasser floss den Nil hinunter und trat in Ägypten über die Ufer.",
+   "start": 14.141,
+   "end": 17.863
+  },
+  {
+   "text": "Danach blieb dunkler, fruchtbarer Schlamm auf den Feldern liegen.",
+   "start": 18.103,
+   "end": 21.455
+  }
+ ],
+ "card_schwarzes_land": [
+  {
+   "text": "Kemet und Deschret.",
+   "start": 0.12,
+   "end": 1.113
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.533,
+   "end": 2.661
+  },
+  {
+   "text": "Wow!",
+   "start": 2.901,
+   "end": 3.35
+  },
+  {
+   "text": "Die Ägypter nannten ihr Land Kemet, das Schwarze Land, nach dem dunklen Nilschlamm.",
+   "start": 3.69,
+   "end": 7.751
+  },
+  {
+   "text": "Am Fluss lag das fruchtbare, schwarze Land.",
+   "start": 7.991,
+   "end": 10.535
+  },
+  {
+   "text": "Dahinter begann die Wüste.",
+   "start": 10.775,
+   "end": 11.937
+  },
+  {
+   "text": "Die Ägypter nannten sie das rote Land, Deschret.",
+   "start": 12.177,
+   "end": 14.722
+  },
+  {
+   "text": "Dort wohnte kaum jemand, und dort fand man Gold und Steine.",
+   "start": 14.962,
+   "end": 17.975
+  }
+ ],
+ "card_reiher": [
+  {
+   "text": "Graureiher.",
+   "start": 0.12,
+   "end": 0.729
+  },
+  {
+   "text": "Lebt dort seit Urzeiten.",
+   "start": 1.149,
+   "end": 2.525
+  },
+  {
+   "text": "Wow!",
+   "start": 2.765,
+   "end": 3.214
+  },
+  {
+   "text": "Ein Reiher steht oft minutenlang bewegungslos im Wasser, dann stößt er blitzschnell zu.",
+   "start": 3.554,
+   "end": 8.074
+  },
+  {
+   "text": "Reiher haben lange Beine und einen langen Hals.",
+   "start": 8.314,
+   "end": 10.799
+  },
+  {
+   "text": "Die Ägypter sahen in einem ähnlichen Vogel, dem Bennu, ein Zeichen für Sonnenaufgang und neues Leben.",
+   "start": 11.039,
+   "end": 16.516
+  }
+ ],
+ "card_fisch": [
+  {
+   "text": "Nielbarsch.",
+   "start": 0.12,
+   "end": 0.788
+  },
+  {
+   "text": "Leben dort seit Urzeiten.",
+   "start": 1.208,
+   "end": 2.615
+  },
+  {
+   "text": "Wow!",
+   "start": 2.855,
+   "end": 3.304
+  },
+  {
+   "text": "Fische gehörten zu den wichtigsten Speisen.",
+   "start": 3.644,
+   "end": 5.68
+  },
+  {
+   "text": "Man trocknete und salzte sie, damit sie lange hielten.",
+   "start": 5.92,
+   "end": 9.023
+  },
+  {
+   "text": "Im Nil lebten viele Fischarten.",
+   "start": 9.263,
+   "end": 10.979
+  },
+  {
+   "text": "Wandbilder zeigen, wie Fischer mit Netzen und Speeren arbeiteten.",
+   "start": 11.219,
+   "end": 14.743
+  },
+  {
+   "text": "Die Tilapia, auch Buntbarsch genannt, kommt in vielen Bildern vor.",
+   "start": 14.983,
+   "end": 18.406
+  }
+ ],
+ "card_wasservogel": [
+  {
+   "text": "Nielgans.",
+   "start": 0.12,
+   "end": 0.838
+  },
+  {
+   "text": "Lebt dort seit Urzeiten.",
+   "start": 1.258,
+   "end": 2.635
+  },
+  {
+   "text": "Wow!",
+   "start": 2.875,
+   "end": 3.324
+  },
+  {
+   "text": "Die Nilgans ist hellbraun mit einem dunklen Fleck um das Auge.",
+   "start": 3.664,
+   "end": 6.737
+  },
+  {
+   "text": "Man sieht sie auf vielen Wandbildern.",
+   "start": 6.977,
+   "end": 8.809
+  },
+  {
+   "text": "Gänse und Enten wurden gefangen und gehalten.",
+   "start": 9.049,
+   "end": 11.493
+  },
+  {
+   "text": "Sie gaben Fleisch und Eier.",
+   "start": 11.733,
+   "end": 13.35
+  },
+  {
+   "text": "Auf Grabbildern zeigen Jäger mit Wurfhölzern und Netzen, wie sie Wasservögel fangen.",
+   "start": 13.59,
+   "end": 17.99
+  }
+ ],
+ "card_lotus": [
+  {
+   "text": "Lotos.",
+   "start": 0.12,
+   "end": 0.689
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.109,
+   "end": 2.236
+  },
+  {
+   "text": "Wow!",
+   "start": 2.476,
+   "end": 2.925
+  },
+  {
+   "text": "Die Blüte öffnet sich morgens und schließt sich am Abend.",
+   "start": 3.265,
+   "end": 6.059
+  },
+  {
+   "text": "Deshalb war sie ein Zeichen für die Sonne und für neues Leben.",
+   "start": 6.299,
+   "end": 9.212
+  },
+  {
+   "text": "Der blaue und der weiße Lotos schwimmen auf dem Wasser.",
+   "start": 9.452,
+   "end": 12.266
+  },
+  {
+   "text": "Die Ägypter malten ihn auf Wände und in Gräber.",
+   "start": 12.506,
+   "end": 15.319
+  },
+  {
+   "text": "Er war auch das Wappenzeichen von Oberägypten.",
+   "start": 15.559,
+   "end": 17.954
+  }
+ ],
+ "card_schilfboot": [
+  {
+   "text": "Papyrusboot.",
+   "start": 0.12,
+   "end": 1.018
+  },
+  {
+   "text": "Seit der Frühzeit.",
+   "start": 1.438,
+   "end": 2.525
+  },
+  {
+   "text": "Wow!",
+   "start": 2.765,
+   "end": 3.214
+  },
+  {
+   "text": "Die ältesten Schiffe der Welt waren wohl Boote aus gebündelten Pflanzenstängeln.",
+   "start": 3.554,
+   "end": 7.715
+  },
+  {
+   "text": "Das Boot besteht aus fest verschnürten Papyrusbündeln.",
+   "start": 7.955,
+   "end": 10.948
+  },
+  {
+   "text": "Es ist leicht und schwimmt auch in sehr flachem Wasser.",
+   "start": 11.188,
+   "end": 13.742
+  },
+  {
+   "text": "Es war ideal für Fischer und Vogeljäger im Sumpf.",
+   "start": 13.982,
+   "end": 16.756
+  }
+ ],
+ "card_netz": [
+  {
+   "text": "Fischernetz.",
+   "start": 0.12,
+   "end": 0.848
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.268,
+   "end": 2.396
+  },
+  {
+   "text": "Wow!",
+   "start": 2.636,
+   "end": 3.085
+  },
+  {
+   "text": "Netze waren aus Leinenfäden geknüpft.",
+   "start": 3.425,
+   "end": 5.33
+  },
+  {
+   "text": "Steine und Schwimmer sorgten dafür, dass das Netz richtig im Wasser hängt.",
+   "start": 5.57,
+   "end": 9.402
+  },
+  {
+   "text": "Zwei Fischer zogen ein großes Netz durch das Wasser.",
+   "start": 9.642,
+   "end": 12.166
+  },
+  {
+   "text": "Kleine Steine zogen die untere Kante nach unten, leichte Holzstücke hielten die obere Kante oben.",
+   "start": 12.406,
+   "end": 17.501
+  }
+ ],
+ "card_pharao": [
+  {
+   "text": "Pharao.",
+   "start": 0.12,
+   "end": 0.669
+  },
+  {
+   "text": "Der Name bedeutet: Großes Haus (so nannte man den Palast, später den König).",
+   "start": 1.089,
+   "end": 5.439
+  },
+  {
+   "text": "Vom Beginn bis zum Ende.",
+   "start": 5.679,
+   "end": 6.956
+  },
+  {
+   "text": "Wow!",
+   "start": 7.196,
+   "end": 7.645
+  },
+  {
+   "text": "Die Ägypter sahen den König als lebenden Horus.",
+   "start": 7.985,
+   "end": 10.409
+  },
+  {
+   "text": "Er sollte für Ordnung und Wahrheit sorgen.",
+   "start": 10.649,
+   "end": 12.679
+  },
+  {
+   "text": "Der Pharao herrschte über ganz Ägypten.",
+   "start": 12.919,
+   "end": 14.835
+  },
+  {
+   "text": "Krummstab und Wedel waren seine Zeichen.",
+   "start": 15.075,
+   "end": 17.1
+  },
+  {
+   "text": "Der Krummstab stand für den Hirten, der sein Volk führt.",
+   "start": 17.34,
+   "end": 20.01
+  },
+  {
+   "text": "Das Wort Pharao wurde erst später für den König üblich.",
+   "start": 20.25,
+   "end": 23.09
+  }
+ ],
+ "card_rote_krone": [
+  {
+   "text": "Deschret.",
+   "start": 0.12,
+   "end": 0.584
+  },
+  {
+   "text": "Seit der Frühzeit.",
+   "start": 1.004,
+   "end": 2.091
+  },
+  {
+   "text": "Wow!",
+   "start": 2.331,
+   "end": 2.78
+  },
+  {
+   "text": "Die rote Krone hat vorn eine kleine Spirale, wie ein Fühler.",
+   "start": 3.12,
+   "end": 6.363
+  },
+  {
+   "text": "Die rote Krone gehörte zu Unterägypten im Norden.",
+   "start": 6.603,
+   "end": 9.354
+  },
+  {
+   "text": "Dort breitet sich der Nil zum Delta aus.",
+   "start": 9.594,
+   "end": 11.769
+  },
+  {
+   "text": "Das Zeichen der Region war die Papyruspflanze.",
+   "start": 12.009,
+   "end": 14.635
+  }
+ ],
+ "card_weisse_krone": [
+  {
+   "text": "Hedjet.",
+   "start": 0.12,
+   "end": 0.709
+  },
+  {
+   "text": "Seit der Frühzeit.",
+   "start": 1.129,
+   "end": 2.216
+  },
+  {
+   "text": "Wow!",
+   "start": 2.456,
+   "end": 2.905
+  },
+  {
+   "text": "Die weiße Krone sieht aus wie eine hohe Kegelmütze mit einer Kugel oben.",
+   "start": 3.245,
+   "end": 6.987
+  },
+  {
+   "text": "Die weiße Krone gehörte zu Oberägypten im Süden.",
+   "start": 7.227,
+   "end": 10.16
+  },
+  {
+   "text": "Dort fließt der Nil durch ein schmales Tal.",
+   "start": 10.4,
+   "end": 12.575
+  },
+  {
+   "text": "Das Zeichen der Region war die Lotosblume.",
+   "start": 12.815,
+   "end": 15.11
+  }
+ ],
+ "card_doppelkrone": [
+  {
+   "text": "Pschent.",
+   "start": 0.12,
+   "end": 0.659
+  },
+  {
+   "text": "Seit der Frühzeit.",
+   "start": 1.079,
+   "end": 2.166
+  },
+  {
+   "text": "Wow!",
+   "start": 2.406,
+   "end": 2.855
+  },
+  {
+   "text": "Die Doppelkrone zeigte: Ober- und Unterägypten sind ein Reich.",
+   "start": 3.195,
+   "end": 6.418
+  },
+  {
+   "text": "Die Doppelkrone besteht aus der weißen Krone, die in der roten steckt.",
+   "start": 6.658,
+   "end": 10.26
+  },
+  {
+   "text": "Sie war das Zeichen für das ganze Reich.",
+   "start": 10.5,
+   "end": 12.236
+  },
+  {
+   "text": "Der Pharao nannte sich Herr der Beiden Länder.",
+   "start": 12.476,
+   "end": 14.661
+  }
+ ],
+ "card_narmer_palette": [
+  {
+   "text": "Narmer.",
+   "start": 0.12,
+   "end": 0.759
+  },
+  {
+   "text": "Um 3100 vor Christus.",
+   "start": 1.179,
+   "end": 3.124
+  },
+  {
+   "text": "Wow!",
+   "start": 3.364,
+   "end": 3.813
+  },
+  {
+   "text": "Auf der Palette trägt der König auf einer Seite die weiße, auf der anderen die rote Krone.",
+   "start": 4.153,
+   "end": 8.713
+  },
+  {
+   "text": "Die Palette ist eine Steinplatte aus Schiefer.",
+   "start": 8.953,
+   "end": 11.074
+  },
+  {
+   "text": "Sie gehört dem König Narmer.",
+   "start": 11.314,
+   "end": 12.773
+  },
+  {
+   "text": "Die Bilder zeigen ihn mit beiden Kronen.",
+   "start": 13.013,
+   "end": 14.969
+  },
+  {
+   "text": "Man sieht darin einen Hinweis auf die Einigung des Landes.",
+   "start": 15.209,
+   "end": 18.042
+  }
+ ],
+ "card_kobra": [
+  {
+   "text": "Uräus.",
+   "start": 0.12,
+   "end": 0.624
+  },
+  {
+   "text": "Seit der Frühzeit.",
+   "start": 1.044,
+   "end": 2.131
+  },
+  {
+   "text": "Wow!",
+   "start": 2.371,
+   "end": 2.82
+  },
+  {
+   "text": "Die aufgerichtete Kobra auf der Stirn sollte Feinde abwehren, so glaubte man.",
+   "start": 3.16,
+   "end": 7.291
+  },
+  {
+   "text": "Die Kobra war die Göttin Wadjet.",
+   "start": 7.531,
+   "end": 9.048
+  },
+  {
+   "text": "Sie sollte den König schützen.",
+   "start": 9.288,
+   "end": 10.645
+  },
+  {
+   "text": "Deshalb trug er eine kleine Kobra an der Krone oder am Kopftuch.",
+   "start": 10.885,
+   "end": 14.357
+  },
+  {
+   "text": "Das ist der Uräus.",
+   "start": 14.597,
+   "end": 15.594
+  }
+ ],
+ "card_wesir": [
+  {
+   "text": "Wesir.",
+   "start": 0.12,
+   "end": 0.614
+  },
+  {
+   "text": "Seit dem Alten Reich.",
+   "start": 1.034,
+   "end": 2.219
+  },
+  {
+   "text": "Wow!",
+   "start": 2.459,
+   "end": 2.908
+  },
+  {
+   "text": "Der Wesir war oberster Richter und kümmerte sich um Steuern und Bauwerke.",
+   "start": 3.248,
+   "end": 7.1
+  },
+  {
+   "text": "Der Pharao konnte nicht alles allein regeln.",
+   "start": 7.34,
+   "end": 9.724
+  },
+  {
+   "text": "Der Wesir leitete die Verwaltung des Landes.",
+   "start": 9.964,
+   "end": 12.139
+  },
+  {
+   "text": "Er trug ein langes Leinengewand und einen Stab.",
+   "start": 12.379,
+   "end": 14.744
+  }
+ ],
+ "card_schreiber": [
+  {
+   "text": "Schreiber.",
+   "start": 0.12,
+   "end": 0.731
+  },
+  {
+   "text": "Seit der Frühzeit.",
+   "start": 1.151,
+   "end": 2.238
+  },
+  {
+   "text": "Wow!",
+   "start": 2.478,
+   "end": 2.927
+  },
+  {
+   "text": "Schreiber mussten jahrelang lernen und waren sehr angesehen.",
+   "start": 3.267,
+   "end": 6.5
+  },
+  {
+   "text": "Sie saßen im Schneidersitz mit der Papyrusrolle auf dem Knie.",
+   "start": 6.74,
+   "end": 9.963
+  },
+  {
+   "text": "Nur wenige Menschen konnten lesen und schreiben.",
+   "start": 10.203,
+   "end": 12.777
+  },
+  {
+   "text": "Ein Schreiber hatte deshalb einen guten Beruf.",
+   "start": 13.017,
+   "end": 15.142
+  },
+  {
+   "text": "Er zählte Getreide, führte Listen und schrieb Briefe.",
+   "start": 15.382,
+   "end": 18.157
+  }
+ ],
+ "card_stufenpyramide": [
+  {
+   "text": "Stufenpüramide.",
+   "start": 0.12,
+   "end": 1.188
+  },
+  {
+   "text": "Um 2650 vor Christus.",
+   "start": 1.608,
+   "end": 4.276
+  },
+  {
+   "text": "Wow!",
+   "start": 4.516,
+   "end": 4.965
+  },
+  {
+   "text": "Sie ist die älteste große Steinpyramide.",
+   "start": 5.305,
+   "end": 7.61
+  },
+  {
+   "text": "Als Baumeister gilt Imhotep.",
+   "start": 7.85,
+   "end": 9.603
+  },
+  {
+   "text": "König Djoser ließ sich in Sakkara eine Stufenpyramide bauen.",
+   "start": 9.843,
+   "end": 13.445
+  },
+  {
+   "text": "Vorher baute man Gräber nur aus Lehmziegeln.",
+   "start": 13.685,
+   "end": 15.95
+  },
+  {
+   "text": "Hier benutzte man zum ersten Mal Stein in großem Stil.",
+   "start": 16.19,
+   "end": 18.934
+  },
+  {
+   "text": "Das Grab sieht aus wie sechs übereinandergestapelte Gräber.",
+   "start": 19.174,
+   "end": 22.386
+  }
+ ],
+ "card_falke": [
+  {
+   "text": "Horus.",
+   "start": 0.12,
+   "end": 0.572
+  },
+  {
+   "text": "Seit der Frühzeit.",
+   "start": 0.992,
+   "end": 2.08
+  },
+  {
+   "text": "Wow!",
+   "start": 2.32,
+   "end": 2.769
+  },
+  {
+   "text": "Jeder König hatte einen Horusnamen.",
+   "start": 3.109,
+   "end": 4.875
+  },
+  {
+   "text": "Der Falke saß auf dem Königsnamen.",
+   "start": 5.115,
+   "end": 6.96
+  },
+  {
+   "text": "Der Falke war das Tier des Himmelsgottes Horus.",
+   "start": 7.2,
+   "end": 9.695
+  },
+  {
+   "text": "Die Ägypter sahen im König einen lebenden Horus.",
+   "start": 9.935,
+   "end": 12.404
+  },
+  {
+   "text": "Deshalb zeigte man den Falken oft hinter oder über dem König.",
+   "start": 12.644,
+   "end": 15.867
+  }
+ ],
+ "card_cheops": [
+  {
+   "text": "Cheops.",
+   "start": 0.12,
+   "end": 0.689
+  },
+  {
+   "text": "Um 2600 vor Christus.",
+   "start": 1.109,
+   "end": 3.261
+  },
+  {
+   "text": "Wow!",
+   "start": 3.501,
+   "end": 3.95
+  },
+  {
+   "text": "Etwa 2,3 Millionen Steinblöcke und rund 26 Jahre Bauzeit.",
+   "start": 4.29,
+   "end": 8.979
+  },
+  {
+   "text": "Die Pyramide des Königs Cheops ist die größte von Gizeh.",
+   "start": 9.219,
+   "end": 12.512
+  },
+  {
+   "text": "Sie wurde aus Kalkstein gebaut.",
+   "start": 12.752,
+   "end": 14.367
+  },
+  {
+   "text": "Innen liegen die Königskammer, die Große Galerie und enge Schächte.",
+   "start": 14.607,
+   "end": 17.88
+  },
+  {
+   "text": "Heute fehlt die glatte Außenschicht aus feinem Kalkstein.",
+   "start": 18.12,
+   "end": 20.913
+  }
+ ],
+ "card_sphinx": [
+  {
+   "text": "Sphinks.",
+   "start": 0.12,
+   "end": 0.669
+  },
+  {
+   "text": "Um 2500 vor Christus.",
+   "start": 1.089,
+   "end": 3.294
+  },
+  {
+   "text": "Wow!",
+   "start": 3.534,
+   "end": 3.983
+  },
+  {
+   "text": "Sie ist aus dem Kalkstein des Felsens gehauen, nicht aus einzelnen Blöcken gebaut.",
+   "start": 4.323,
+   "end": 8.254
+  },
+  {
+   "text": "Die Sphinx hat den Körper eines Löwen und den Kopf eines Königs.",
+   "start": 8.494,
+   "end": 11.868
+  },
+  {
+   "text": "Sie bewacht den Weg zu den Pyramiden.",
+   "start": 12.108,
+   "end": 13.924
+  },
+  {
+   "text": "Man nimmt an, dass sie das Gesicht des Königs Chephren trägt.",
+   "start": 14.164,
+   "end": 17.187
+  }
+ ],
+ "card_baumeister": [
+  {
+   "text": "Baumeister.",
+   "start": 0.12,
+   "end": 0.788
+  },
+  {
+   "text": "Altes Reich.",
+   "start": 1.208,
+   "end": 2.017
+  },
+  {
+   "text": "Wow!",
+   "start": 2.257,
+   "end": 2.706
+  },
+  {
+   "text": "Die Pyramidenseiten sind fast genau nach den Himmelsrichtungen ausgerichtet.",
+   "start": 3.046,
+   "end": 6.857
+  },
+  {
+   "text": "Der Baumeister plante die Pyramide.",
+   "start": 7.097,
+   "end": 9.212
+  },
+  {
+   "text": "Er musste Winkel messen, Mengen berechnen und die Arbeit einteilen.",
+   "start": 9.452,
+   "end": 12.906
+  },
+  {
+   "text": "Messleine und Winkelmaß waren seine Werkzeuge.",
+   "start": 13.146,
+   "end": 15.7
+  },
+  {
+   "text": "Als Leiter des Baus der Cheops-Pyramide gilt wohl Hemiunu.",
+   "start": 15.94,
+   "end": 19.35
+  }
+ ],
+ "card_steinmetz": [
+  {
+   "text": "Steinmetz.",
+   "start": 0.12,
+   "end": 0.828
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.248,
+   "end": 2.376
+  },
+  {
+   "text": "Wow!",
+   "start": 2.616,
+   "end": 3.065
+  },
+  {
+   "text": "Kalkstein schnitt man mit Kupferwerkzeugen.",
+   "start": 3.405,
+   "end": 5.62
+  },
+  {
+   "text": "Für den harten Granit nahm man Steinkugeln aus Dolerit.",
+   "start": 5.86,
+   "end": 8.673
+  },
+  {
+   "text": "Der Steinmetz schlug mit Holzschlägel und Meißel Blöcke aus dem Fels.",
+   "start": 8.913,
+   "end": 12.356
+  },
+  {
+   "text": "Danach glättete er sie.",
+   "start": 12.596,
+   "end": 13.703
+  },
+  {
+   "text": "Wichtig war, dass die Quader genau aufeinander passten.",
+   "start": 13.943,
+   "end": 16.906
+  }
+ ],
+ "card_arbeiter": [
+  {
+   "text": "Arbeiter.",
+   "start": 0.12,
+   "end": 0.729
+  },
+  {
+   "text": "Altes Reich.",
+   "start": 1.149,
+   "end": 1.957
+  },
+  {
+   "text": "Wow!",
+   "start": 2.197,
+   "end": 2.646
+  },
+  {
+   "text": "Die Arbeitsgruppen gaben sich Namen wie Freunde des Cheops.",
+   "start": 2.986,
+   "end": 6.147
+  },
+  {
+   "text": "Man fand sie als Zeichen in den Steinen.",
+   "start": 6.387,
+   "end": 8.552
+  },
+  {
+   "text": "Die Pyramiden bauten bezahlte Arbeiter.",
+   "start": 8.792,
+   "end": 10.98
+  },
+  {
+   "text": "Sie waren in Gruppen eingeteilt, bekamen Essen und konnten sich ausruhen.",
+   "start": 11.22,
+   "end": 15.101
+  },
+  {
+   "text": "Sie wurden nicht als Sklaven gehalten.",
+   "start": 15.341,
+   "end": 17.127
+  },
+  {
+   "text": "Am Rand der Pyramiden fand man ihre Gräber.",
+   "start": 17.367,
+   "end": 19.575
+  }
+ ],
+ "card_ochse": [
+  {
+   "text": "Ochse.",
+   "start": 0.12,
+   "end": 0.564
+  },
+  {
+   "text": "Seit der Frühzeit.",
+   "start": 0.984,
+   "end": 2.071
+  },
+  {
+   "text": "Wow!",
+   "start": 2.311,
+   "end": 2.76
+  },
+  {
+   "text": "Rinder lieferten Fleisch, Milch und Leder und zogen Pflüge und Schlitten.",
+   "start": 3.1,
+   "end": 7.321
+  },
+  {
+   "text": "Rinder waren sehr wertvoll.",
+   "start": 7.561,
+   "end": 9.025
+  },
+  {
+   "text": "Für die Arbeiter der Pyramiden wurden viele Rinder gehalten.",
+   "start": 9.265,
+   "end": 12.339
+  },
+  {
+   "text": "Aus Funden von Knochen weiß man, dass dort viel Fleisch gegessen wurde.",
+   "start": 12.579,
+   "end": 16.35
+  }
+ ],
+ "card_schlitten": [
+  {
+   "text": "Schlitten.",
+   "start": 0.12,
+   "end": 0.679
+  },
+  {
+   "text": "Altes Reich.",
+   "start": 1.099,
+   "end": 1.907
+  },
+  {
+   "text": "Wow!",
+   "start": 2.147,
+   "end": 2.596
+  },
+  {
+   "text": "Feuchter Sand ist fester als trockener Sand.",
+   "start": 2.936,
+   "end": 5.181
+  },
+  {
+   "text": "Auf ihm gleitet ein Schlitten viel leichter.",
+   "start": 5.421,
+   "end": 7.358
+  },
+  {
+   "text": "Ein Wandbild zeigt: Eine Statue wird auf einem Schlitten gezogen, und ein Mann gießt Wasser vor die Kufen.",
+   "start": 7.598,
+   "end": 13.055
+  },
+  {
+   "text": "Forscher haben das 2014 nachgemessen.",
+   "start": 13.295,
+   "end": 16.089
+  },
+  {
+   "text": "Mit der richtigen Wassermenge brauchte man nur etwa halb so viel Zugkraft.",
+   "start": 16.329,
+   "end": 20.25
+  }
+ ],
+ "card_kupfermeissel": [
+  {
+   "text": "Kupfermeißel.",
+   "start": 0.12,
+   "end": 1.018
+  },
+  {
+   "text": "Seit der Frühzeit.",
+   "start": 1.438,
+   "end": 2.525
+  },
+  {
+   "text": "Wow!",
+   "start": 2.765,
+   "end": 3.214
+  },
+  {
+   "text": "Kupfer ist weich.",
+   "start": 3.554,
+   "end": 4.512
+  },
+  {
+   "text": "Mit Sand und Wasser als Schleifmittel schneidet es trotzdem Stein.",
+   "start": 4.752,
+   "end": 8.115
+  },
+  {
+   "text": "Kupfer war das wichtigste Metall der frühen Ägypter.",
+   "start": 8.355,
+   "end": 11.138
+  },
+  {
+   "text": "Werkzeuge schmiedete man aus Kupfer.",
+   "start": 11.378,
+   "end": 13.294
+  },
+  {
+   "text": "Später mischte man Zinn dazu.",
+   "start": 13.534,
+   "end": 15.07
+  },
+  {
+   "text": "So entstand Bronze, die härter ist.",
+   "start": 15.31,
+   "end": 17.326
+  }
+ ],
+ "card_holzschlaegel": [
+  {
+   "text": "Holzschlägel.",
+   "start": 0.12,
+   "end": 0.848
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.268,
+   "end": 2.396
+  },
+  {
+   "text": "Wow!",
+   "start": 2.636,
+   "end": 3.085
+  },
+  {
+   "text": "Mit dem Holzschlägel schlug man auf Meißel, ohne das Werkzeug zu beschädigen.",
+   "start": 3.425,
+   "end": 7.146
+  },
+  {
+   "text": "Der Schlägel besteht aus hartem Holz.",
+   "start": 7.386,
+   "end": 9.249
+  },
+  {
+   "text": "Der Steinmetz hielt den Meißel in der einen Hand und schlug mit dem Schlägel darauf.",
+   "start": 9.489,
+   "end": 13.31
+  },
+  {
+   "text": "So entstanden Rillen im Stein, und Blöcke ließen sich herauslösen.",
+   "start": 13.55,
+   "end": 17.192
+  }
+ ],
+ "card_arbeitersiedlung": [
+  {
+   "text": "Arbeitersiedlung.",
+   "start": 0.12,
+   "end": 1.108
+  },
+  {
+   "text": "Um 2500 vor Christus.",
+   "start": 1.528,
+   "end": 3.733
+  },
+  {
+   "text": "Wow!",
+   "start": 3.973,
+   "end": 4.422
+  },
+  {
+   "text": "Archäologen fanden Bäckereien, Brauereien und Wohnräume für Tausende Arbeiter.",
+   "start": 4.762,
+   "end": 9.551
+  },
+  {
+   "text": "Südlich der Pyramiden lagen Häuser, Bäckereien und Werkstätten.",
+   "start": 9.791,
+   "end": 13.213
+  },
+  {
+   "text": "Hier lebten und aßen die Bauarbeiter.",
+   "start": 13.453,
+   "end": 15.648
+  },
+  {
+   "text": "Auch Gräber von Arbeitern und Baumeistern hat man gefunden.",
+   "start": 15.888,
+   "end": 19.29
+  }
+ ],
+ "card_ra": [
+  {
+   "text": "Ra.",
+   "start": 0.12,
+   "end": 0.589
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.009,
+   "end": 2.136
+  },
+  {
+   "text": "Wow!",
+   "start": 2.376,
+   "end": 2.825
+  },
+  {
+   "text": "Jeden Morgen, so glaubte man, wird die Sonne neu geboren.",
+   "start": 3.165,
+   "end": 6.218
+  },
+  {
+   "text": "Ra hat einen Falkenkopf mit einer Sonnenscheibe.",
+   "start": 6.458,
+   "end": 8.743
+  },
+  {
+   "text": "Am Tag fährt er in der Tagesbarke über den Himmel, in der Nacht in der Nachtbarke durch die Unterwelt.",
+   "start": 8.983,
+   "end": 13.663
+  },
+  {
+   "text": "Viele Pharaonen nannten sich Sohn des Ra.",
+   "start": 13.903,
+   "end": 16.147
+  }
+ ],
+ "card_osiris": [
+  {
+   "text": "Osiris.",
+   "start": 0.12,
+   "end": 0.729
+  },
+  {
+   "text": "Seit dem Alten Reich.",
+   "start": 1.149,
+   "end": 2.334
+  },
+  {
+   "text": "Wow!",
+   "start": 2.574,
+   "end": 3.023
+  },
+  {
+   "text": "Seine Haut ist grün, wie frisches Getreide: Zeichen für neues Leben.",
+   "start": 3.363,
+   "end": 6.875
+  },
+  {
+   "text": "Osiris war ein Gott der Toten.",
+   "start": 7.115,
+   "end": 8.741
+  },
+  {
+   "text": "Er wird als Mumie mit Krone, Krummstab und Wedel gezeigt.",
+   "start": 8.981,
+   "end": 12.433
+  },
+  {
+   "text": "Viele Ägypter hofften, nach dem Tod wie Osiris weiterzuleben.",
+   "start": 12.673,
+   "end": 16.158
+  }
+ ],
+ "card_isis": [
+  {
+   "text": "Isis.",
+   "start": 0.12,
+   "end": 0.559
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 0.979,
+   "end": 2.106
+  },
+  {
+   "text": "Wow!",
+   "start": 2.346,
+   "end": 2.795
+  },
+  {
+   "text": "Auf dem Kopf trägt sie einen Thron: Das ist ihr Name in Zeichen.",
+   "start": 3.135,
+   "end": 6.388
+  },
+  {
+   "text": "Isis ist die Frau des Osiris und die Mutter des Horus.",
+   "start": 6.628,
+   "end": 9.631
+  },
+  {
+   "text": "Sie schützte Familien und konnte nach dem Glauben der Ägypter heilen.",
+   "start": 9.871,
+   "end": 13.194
+  },
+  {
+   "text": "Später verehrte man sie auch in Griechenland und Rom.",
+   "start": 13.434,
+   "end": 16.277
+  }
+ ],
+ "card_horus": [
+  {
+   "text": "Horus.",
+   "start": 0.12,
+   "end": 0.572
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 0.992,
+   "end": 2.12
+  },
+  {
+   "text": "Wow!",
+   "start": 2.36,
+   "end": 2.809
+  },
+  {
+   "text": "Sein Auge, das Udjat, galt als Glücks- und Heilzeichen.",
+   "start": 3.149,
+   "end": 6.361
+  },
+  {
+   "text": "Horus hat einen Falkenkopf.",
+   "start": 6.601,
+   "end": 8.118
+  },
+  {
+   "text": "Er ist der Sohn von Isis und Osiris.",
+   "start": 8.358,
+   "end": 10.726
+  },
+  {
+   "text": "Der König sollte ein lebender Horus sein.",
+   "start": 10.966,
+   "end": 13.041
+  },
+  {
+   "text": "Deshalb trug Horus oft die Doppelkrone.",
+   "start": 13.281,
+   "end": 15.466
+  }
+ ],
+ "card_anubis": [
+  {
+   "text": "Anubis.",
+   "start": 0.12,
+   "end": 0.729
+  },
+  {
+   "text": "Seit der Frühzeit.",
+   "start": 1.149,
+   "end": 2.236
+  },
+  {
+   "text": "Wow!",
+   "start": 2.476,
+   "end": 2.925
+  },
+  {
+   "text": "Die Ägypter wählten den Schakal, weil diese Tiere oft an Friedhöfen herumstreiften.",
+   "start": 3.265,
+   "end": 7.954
+  },
+  {
+   "text": "Anubis hat den Kopf eines Schakals.",
+   "start": 8.194,
+   "end": 10.09
+  },
+  {
+   "text": "Er führt die Toten zum Totengericht und bewacht die Waage.",
+   "start": 10.33,
+   "end": 13.313
+  },
+  {
+   "text": "Die Einbalsamierer trugen bei Zeremonien manchmal seine Maske.",
+   "start": 13.553,
+   "end": 16.986
+  }
+ ],
+ "card_thot": [
+  {
+   "text": "Thot.",
+   "start": 0.12,
+   "end": 0.511
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 0.931,
+   "end": 2.059
+  },
+  {
+   "text": "Wow!",
+   "start": 2.299,
+   "end": 2.748
+  },
+  {
+   "text": "Thot schreibt das Ergebnis des Totengerichts auf.",
+   "start": 3.088,
+   "end": 5.493
+  },
+  {
+   "text": "Thot hat den Kopf eines Ibis oder war ein Pavian.",
+   "start": 5.733,
+   "end": 8.487
+  },
+  {
+   "text": "Er war der Gott der Schreiber.",
+   "start": 8.727,
+   "end": 9.944
+  },
+  {
+   "text": "Die Ägypter sagten: Er hat die Schrift erfunden.",
+   "start": 10.184,
+   "end": 12.848
+  }
+ ],
+ "card_maat": [
+  {
+   "text": "Maat.",
+   "start": 0.12,
+   "end": 0.489
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 0.909,
+   "end": 2.037
+  },
+  {
+   "text": "Wow!",
+   "start": 2.277,
+   "end": 2.726
+  },
+  {
+   "text": "Die Straußenfeder der Maat war das Gegengewicht zum Herzen.",
+   "start": 3.066,
+   "end": 5.889
+  },
+  {
+   "text": "Maat stand für Wahrheit, Recht und Gleichgewicht.",
+   "start": 6.129,
+   "end": 8.683
+  },
+  {
+   "text": "Auf dem Kopf trägt sie eine Feder.",
+   "start": 8.923,
+   "end": 10.5
+  },
+  {
+   "text": "Der Pharao sollte dafür sorgen, dass Maat im Land herrscht.",
+   "start": 10.74,
+   "end": 13.523
+  }
+ ],
+ "card_hathor": [
+  {
+   "text": "Hator.",
+   "start": 0.12,
+   "end": 0.749
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.169,
+   "end": 2.296
+  },
+  {
+   "text": "Wow!",
+   "start": 2.536,
+   "end": 2.985
+  },
+  {
+   "text": "Hathor wird oft als Kuh oder als Frau mit Kuhohren gezeigt.",
+   "start": 3.325,
+   "end": 6.618
+  },
+  {
+   "text": "Hathor war die Göttin der Freude, des Tanzes und der Musik.",
+   "start": 6.858,
+   "end": 9.634
+  },
+  {
+   "text": "Zwischen ihren Hörnern sitzt die Sonnenscheibe.",
+   "start": 9.874,
+   "end": 11.986
+  },
+  {
+   "text": "Man verehrte sie auch als Beschützerin der Frauen.",
+   "start": 12.226,
+   "end": 14.67
+  }
+ ],
+ "card_bastet": [
+  {
+   "text": "Bastet.",
+   "start": 0.12,
+   "end": 0.629
+  },
+  {
+   "text": "Seit der Frühzeit.",
+   "start": 1.049,
+   "end": 2.136
+  },
+  {
+   "text": "Wow!",
+   "start": 2.376,
+   "end": 2.825
+  },
+  {
+   "text": "In Bubastis fand man viele Katzenmumien, die man der Göttin geweiht hatte.",
+   "start": 3.165,
+   "end": 6.937
+  },
+  {
+   "text": "Bastet hat den Kopf einer Katze.",
+   "start": 7.177,
+   "end": 8.683
+  },
+  {
+   "text": "Sie schützte das Haus und die Familie.",
+   "start": 8.923,
+   "end": 10.999
+  },
+  {
+   "text": "Deshalb liebten die Ägypter ihre Hauskatzen.",
+   "start": 11.239,
+   "end": 13.444
+  },
+  {
+   "text": "Sie fingen Mäuse und Schlangen.",
+   "start": 13.684,
+   "end": 15.14
+  }
+ ],
+ "card_sobek": [
+  {
+   "text": "Sobek.",
+   "start": 0.12,
+   "end": 0.619
+  },
+  {
+   "text": "Seit dem Alten Reich.",
+   "start": 1.039,
+   "end": 2.224
+  },
+  {
+   "text": "Wow!",
+   "start": 2.464,
+   "end": 2.913
+  },
+  {
+   "text": "In Kom Ombo teilte sich Sobek einen Tempel mit dem Falkengott Haroeris.",
+   "start": 3.253,
+   "end": 7.174
+  },
+  {
+   "text": "Sobek hat den Kopf eines Krokodils.",
+   "start": 7.414,
+   "end": 9.339
+  },
+  {
+   "text": "Er gehörte zum Nil und zur Fruchtbarkeit.",
+   "start": 9.579,
+   "end": 11.854
+  },
+  {
+   "text": "Die Ägypter hofften, dass er sie vor den echten Krokodilen schützt.",
+   "start": 12.094,
+   "end": 15.387
+  }
+ ],
+ "card_ammit": [
+  {
+   "text": "Ammit.",
+   "start": 0.12,
+   "end": 0.589
+  },
+  {
+   "text": "Der Name bedeutet: Fresserin der Toten.",
+   "start": 1.009,
+   "end": 3.104
+  },
+  {
+   "text": "Im Neuen Reich bekannt.",
+   "start": 3.344,
+   "end": 4.531
+  },
+  {
+   "text": "Wow!",
+   "start": 4.771,
+   "end": 5.22
+  },
+  {
+   "text": "Ammit ist aus drei Tieren gemischt: Krokodil, Löwe und Nilpferd.",
+   "start": 5.56,
+   "end": 9.082
+  },
+  {
+   "text": "Ammit saß neben der Waage.",
+   "start": 9.322,
+   "end": 10.639
+  },
+  {
+   "text": "Wenn das Herz schwerer war als die Feder, so glaubten die Ägypter, sollte Ammit es fressen.",
+   "start": 10.879,
+   "end": 15.13
+  },
+  {
+   "text": "Dann gab es kein Leben nach dem Tod.",
+   "start": 15.37,
+   "end": 17.146
+  }
+ ],
+ "card_waage": [
+  {
+   "text": "Waage.",
+   "start": 0.12,
+   "end": 0.639
+  },
+  {
+   "text": "Ab dem Neuen Reich bekannt.",
+   "start": 1.059,
+   "end": 2.585
+  },
+  {
+   "text": "Wow!",
+   "start": 2.825,
+   "end": 3.274
+  },
+  {
+   "text": "Beim Totengericht sagte der Tote: Ich habe nicht gestohlen.",
+   "start": 3.614,
+   "end": 6.458
+  },
+  {
+   "text": "Ich habe nicht gelogen.",
+   "start": 6.698,
+   "end": 7.755
+  },
+  {
+   "text": "Das Totenbuch beschreibt eine Waage.",
+   "start": 7.995,
+   "end": 9.911
+  },
+  {
+   "text": "In der einen Schale liegt das Herz des Toten, in der anderen die Feder der Maat.",
+   "start": 10.151,
+   "end": 14.182
+  },
+  {
+   "text": "Waren sie gleich schwer, durfte der Tote ins Jenseits.",
+   "start": 14.422,
+   "end": 17.206
+  },
+  {
+   "text": "Thot schrieb das Ergebnis auf.",
+   "start": 17.446,
+   "end": 19.052
+  }
+ ],
+ "card_herz": [
+  {
+   "text": "Herz.",
+   "start": 0.12,
+   "end": 0.619
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.039,
+   "end": 2.166
+  },
+  {
+   "text": "Wow!",
+   "start": 2.406,
+   "end": 2.855
+  },
+  {
+   "text": "Die Ägypter hielten das Herz für den Sitz von Gedanken und Gefühlen, nicht das Gehirn.",
+   "start": 3.195,
+   "end": 7.655
+  },
+  {
+   "text": "Bei einer Mumie ließ man das Herz im Körper.",
+   "start": 7.895,
+   "end": 10.21
+  },
+  {
+   "text": "Die Ägypter glaubten, dass der Tote es beim Totengericht brauchte.",
+   "start": 10.45,
+   "end": 13.902
+  },
+  {
+   "text": "Das Gehirn dagegen nahm man heraus.",
+   "start": 14.142,
+   "end": 15.988
+  }
+ ],
+ "card_tor_unterwelt": [
+  {
+   "text": "Tor der Unterwelt.",
+   "start": 0.12,
+   "end": 1.028
+  },
+  {
+   "text": "Ab dem Neuen Reich bekannt.",
+   "start": 1.448,
+   "end": 2.974
+  },
+  {
+   "text": "Wow!",
+   "start": 3.214,
+   "end": 3.663
+  },
+  {
+   "text": "Im Totenbuch muss der Tote durch viele Tore.",
+   "start": 4.003,
+   "end": 6.398
+  },
+  {
+   "text": "Er muss ihre Namen kennen.",
+   "start": 6.638,
+   "end": 7.925
+  },
+  {
+   "text": "Im Totenbuch führt der Weg durch Tore, die von Wächtern bewacht werden.",
+   "start": 8.165,
+   "end": 11.687
+  },
+  {
+   "text": "Wer die Zaubersprüche kennt, kommt hindurch.",
+   "start": 11.927,
+   "end": 14.222
+  }
+ ],
+ "card_sonnenbarke": [
+  {
+   "text": "Sonnenbarke.",
+   "start": 0.12,
+   "end": 0.958
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.378,
+   "end": 2.506
+  },
+  {
+   "text": "Wow!",
+   "start": 2.746,
+   "end": 3.195
+  },
+  {
+   "text": "Neben der Cheops-Pyramide fand man ein echtes Schiff aus Zedernholz, 43 Meter lang.",
+   "start": 3.535,
+   "end": 8.932
+  },
+  {
+   "text": "Die Sonnenbarke ist das Schiff des Ra.",
+   "start": 9.172,
+   "end": 10.968
+  },
+  {
+   "text": "In der Nacht fährt sie durch die Unterwelt und am Morgen in den neuen Tag.",
+   "start": 11.208,
+   "end": 14.82
+  },
+  {
+   "text": "Auch der Pharao wollte nach dem Tod mit ihr fahren.",
+   "start": 15.06,
+   "end": 17.714
+  },
+  {
+   "text": "Deshalb legte man ihm Boote ins Grab.",
+   "start": 17.954,
+   "end": 19.8
+  }
+ ],
+ "card_nut": [
+  {
+   "text": "Nut.",
+   "start": 0.12,
+   "end": 0.451
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 0.871,
+   "end": 1.999
+  },
+  {
+   "text": "Wow!",
+   "start": 2.239,
+   "end": 2.688
+  },
+  {
+   "text": "Auf Tempeldecken wölbt sich Nut als Frau über der Erde, ihr Körper ist mit Sternen bedeckt.",
+   "start": 3.028,
+   "end": 7.458
+  },
+  {
+   "text": "Nach dem Glauben der Ägypter verschluckt Nut abends die Sonne und gebiert sie morgens neu.",
+   "start": 7.698,
+   "end": 12.188
+  },
+  {
+   "text": "Deshalb malte man sie an Sargdeckel und Tempeldecken.",
+   "start": 12.428,
+   "end": 15.191
+  }
+ ],
+ "card_mumifizierung": [
+  {
+   "text": "Mumifizieren.",
+   "start": 0.12,
+   "end": 0.968
+  },
+  {
+   "text": "Ca.",
+   "start": 1.388,
+   "end": 1.743
+  },
+  {
+   "text": "2600 vor Christus bis in die römische Zeit.",
+   "start": 1.983,
+   "end": 5.356
+  },
+  {
+   "text": "Wow!",
+   "start": 5.596,
+   "end": 6.045
+  },
+  {
+   "text": "Das ganze Verfahren dauerte etwa 70 Tage.",
+   "start": 6.385,
+   "end": 8.859
+  },
+  {
+   "text": "Das ist durch Herodot überliefert, neuere Darstellungen nennen 40 Tage für das Trocknen.",
+   "start": 9.099,
+   "end": 13.779
+  },
+  {
+   "text": "Zuerst wurde der Körper gereinigt.",
+   "start": 14.019,
+   "end": 15.745
+  },
+  {
+   "text": "Die Organe kamen getrennt in Krüge, das Herz blieb im Körper.",
+   "start": 15.985,
+   "end": 19.527
+  },
+  {
+   "text": "Dann trocknete man den Körper lange mit Natron aus.",
+   "start": 19.767,
+   "end": 22.111
+  },
+  {
+   "text": "Danach salbte man ihn mit Ölen und Harzen und wickelte ihn in Leinen.",
+   "start": 22.351,
+   "end": 26.113
+  }
+ ],
+ "card_einbalsamierer": [
+  {
+   "text": "Einbalsamierer.",
+   "start": 0.12,
+   "end": 1.098
+  },
+  {
+   "text": "Neues Reich.",
+   "start": 1.518,
+   "end": 2.266
+  },
+  {
+   "text": "Wow!",
+   "start": 2.506,
+   "end": 2.955
+  },
+  {
+   "text": "Bei der Zeremonie trug ein Priester die Maske des Schakalgottes Anubis.",
+   "start": 3.295,
+   "end": 7.146
+  },
+  {
+   "text": "Einbalsamierer waren Handwerker und Priester.",
+   "start": 7.386,
+   "end": 10.032
+  },
+  {
+   "text": "Sie kannten Salze, Harze und Öle.",
+   "start": 10.272,
+   "end": 12.447
+  },
+  {
+   "text": "Ihr Wissen gaben sie in der Familie weiter.",
+   "start": 12.687,
+   "end": 14.718
+  },
+  {
+   "text": "Die Arbeit galt als heilig.",
+   "start": 14.958,
+   "end": 16.315
+  }
+ ],
+ "card_natron": [
+  {
+   "text": "Natron.",
+   "start": 0.12,
+   "end": 0.729
+  },
+  {
+   "text": "Seit der Frühzeit.",
+   "start": 1.149,
+   "end": 2.236
+  },
+  {
+   "text": "Wow!",
+   "start": 2.476,
+   "end": 2.925
+  },
+  {
+   "text": "Natron zieht Wasser an.",
+   "start": 3.265,
+   "end": 4.693
+  },
+  {
+   "text": "Ohne Wasser können Bakterien und Pilze nicht wachsen.",
+   "start": 4.933,
+   "end": 7.996
+  },
+  {
+   "text": "Natron ist ein Salzgemisch aus trockenen Seen.",
+   "start": 8.236,
+   "end": 10.82
+  },
+  {
+   "text": "Es besteht vor allem aus Natriumcarbonat (Soda).",
+   "start": 11.06,
+   "end": 13.974
+  },
+  {
+   "text": "Es ist wasseranziehend (hygroskopisch) und leicht alkalisch.",
+   "start": 14.214,
+   "end": 17.386
+  },
+  {
+   "text": "Beides hemmt Bakterien.",
+   "start": 17.626,
+   "end": 19.033
+  },
+  {
+   "text": "Die Ägypter benutzten Natron auch zum Reinigen.",
+   "start": 19.273,
+   "end": 21.738
+  }
+ ],
+ "card_kanopen": [
+  {
+   "text": "Kanopen.",
+   "start": 0.12,
+   "end": 0.749
+  },
+  {
+   "text": "Ab dem Alten Reich.",
+   "start": 1.169,
+   "end": 2.225
+  },
+  {
+   "text": "Wow!",
+   "start": 2.465,
+   "end": 2.914
+  },
+  {
+   "text": "Die vier Deckel zeigen die vier Söhne des Horus: Mensch, Pavian, Schakal und Falke.",
+   "start": 3.254,
+   "end": 7.983
+  },
+  {
+   "text": "In den Krügen lagen die Organe: Leber, Lunge, Magen und Darm.",
+   "start": 8.223,
+   "end": 11.845
+  },
+  {
+   "text": "Die Ägypter glaubten, dass jeder Sohn des Horus ein Organ beschützt.",
+   "start": 12.085,
+   "end": 15.736
+  },
+  {
+   "text": "Die Deckel waren beschriftet und bemalt.",
+   "start": 15.976,
+   "end": 18.032
+  }
+ ],
+ "card_leinenbinden": [
+  {
+   "text": "Leinenbinden.",
+   "start": 0.12,
+   "end": 1.088
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.508,
+   "end": 2.635
+  },
+  {
+   "text": "Wow!",
+   "start": 2.875,
+   "end": 3.324
+  },
+  {
+   "text": "Leinen wird aus Flachs gemacht.",
+   "start": 3.664,
+   "end": 5.251
+  },
+  {
+   "text": "Die Fasern sind sehr reißfest.",
+   "start": 5.491,
+   "end": 7.217
+  },
+  {
+   "text": "Zum Schluss wickelte man den Körper in viele Lagen Leinen.",
+   "start": 7.457,
+   "end": 10.25
+  },
+  {
+   "text": "Zwischen den Lagen legte man Amulette.",
+   "start": 10.49,
+   "end": 12.436
+  },
+  {
+   "text": "Auch Priester sprachen dabei Gebete.",
+   "start": 12.676,
+   "end": 14.651
+  }
+ ],
+ "card_herzskarabaeus": [
+  {
+   "text": "Skarabäus.",
+   "start": 0.12,
+   "end": 0.988
+  },
+  {
+   "text": "Ab dem Neuen Reich.",
+   "start": 1.408,
+   "end": 2.436
+  },
+  {
+   "text": "Wow!",
+   "start": 2.676,
+   "end": 3.125
+  },
+  {
+   "text": "Auf dem Herzskarabäus stand ein Spruch: Das Herz soll nicht gegen den Toten aussagen.",
+   "start": 3.465,
+   "end": 7.545
+  },
+  {
+   "text": "Ein Herzskarabäus ist ein Käfer-Amulett aus Stein.",
+   "start": 7.785,
+   "end": 10.694
+  },
+  {
+   "text": "Man legte ihn über das Herz der Mumie.",
+   "start": 10.934,
+   "end": 12.69
+  },
+  {
+   "text": "Er sollte beim Totengericht helfen.",
+   "start": 12.93,
+   "end": 14.596
+  }
+ ],
+ "card_mumie_bahre": [
+  {
+   "text": "Bahre.",
+   "start": 0.12,
+   "end": 0.59
+  },
+  {
+   "text": "Neues Reich.",
+   "start": 1.01,
+   "end": 1.758
+  },
+  {
+   "text": "Wow!",
+   "start": 1.998,
+   "end": 2.447
+  },
+  {
+   "text": "Die Bahre hat die Form eines Löwen: Das Tier sollte den Toten beschützen.",
+   "start": 2.787,
+   "end": 6.199
+  },
+  {
+   "text": "Auf der Bahre lag der Verstorbene.",
+   "start": 6.439,
+   "end": 7.986
+  },
+  {
+   "text": "Hier gab es Gebete und Zeremonien.",
+   "start": 8.226,
+   "end": 10.211
+  },
+  {
+   "text": "In unserem Buch bleibt der Körper bedeckt: Das ist ein würdevoller Ort.",
+   "start": 10.451,
+   "end": 13.742
+  }
+ ],
+ "card_mumifizieren_versuch": [
+  {
+   "text": "Versuch: Apfel mumifizieren.",
+   "start": 0.12,
+   "end": 1.886
+  },
+  {
+   "text": "Für den Unterricht.",
+   "start": 2.306,
+   "end": 3.154
+  },
+  {
+   "text": "Wow!",
+   "start": 3.394,
+   "end": 3.843
+  },
+  {
+   "text": "Mit Natron, Kochsalz und Zucker verliert ein Apfelstück Wasser.",
+   "start": 4.183,
+   "end": 7.984
+  },
+  {
+   "text": "Man kann den Verlust wiegen!",
+   "start": 8.224,
+   "end": 9.492
+  },
+  {
+   "text": "Lege vier Apfelstücke in Becher: mit Soda oder Backnatron, mit Kochsalz, mit Zucker und ohne Zusatz.",
+   "start": 9.792,
+   "end": 15.499
+  },
+  {
+   "text": "Wiege sie jeden Tag und trage den Gewichtsverlust in ein Diagramm ein.",
+   "start": 15.739,
+   "end": 19.45
+  },
+  {
+   "text": "Beobachte: Was passiert mit dem Stück ohne Salz?",
+   "start": 19.69,
+   "end": 22.274
+  }
+ ],
+ "card_udjat": [
+  {
+   "text": "Udjat.",
+   "start": 0.12,
+   "end": 0.699
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.119,
+   "end": 2.246
+  },
+  {
+   "text": "Wow!",
+   "start": 2.486,
+   "end": 2.935
+  },
+  {
+   "text": "Das Horusauge sollte heilen und schützen.",
+   "start": 3.275,
+   "end": 5.347
+  },
+  {
+   "text": "Die Teile des Zeichens standen sogar für Bruchteile in der Mathematik.",
+   "start": 5.587,
+   "end": 9.349
+  },
+  {
+   "text": "Der Sage nach verlor Horus im Kampf sein Auge.",
+   "start": 9.589,
+   "end": 12.073
+  },
+  {
+   "text": "Es wurde heil gemacht.",
+   "start": 12.313,
+   "end": 13.451
+  },
+  {
+   "text": "Deshalb galt das Udjat-Auge als Zeichen für Heilung, Schutz und Ganzheit.",
+   "start": 13.691,
+   "end": 17.801
+  },
+  {
+   "text": "Man trug es als Amulett.",
+   "start": 18.041,
+   "end": 19.358
+  }
+ ],
+ "card_ankh": [
+  {
+   "text": "Anch.",
+   "start": 0.12,
+   "end": 0.539
+  },
+  {
+   "text": "Der Name bedeutet: Leben.",
+   "start": 0.959,
+   "end": 2.276
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 2.516,
+   "end": 3.643
+  },
+  {
+   "text": "Wow!",
+   "start": 3.883,
+   "end": 4.332
+  },
+  {
+   "text": "Das Anch sieht aus wie ein Kreuz mit einer Schlaufe.",
+   "start": 4.672,
+   "end": 6.935
+  },
+  {
+   "text": "Götter halten es oft dem König an die Nase.",
+   "start": 7.175,
+   "end": 9.315
+  },
+  {
+   "text": "Das Anch ist das Zeichen für Leben.",
+   "start": 9.555,
+   "end": 11.261
+  },
+  {
+   "text": "Es ist ein Hieroglyphenzeichen und zugleich ein Symbol, das man überall findet: in der Hand der Götter, auf Särgen und auf Schmuck.",
+   "start": 11.501,
+   "end": 17.268
+  }
+ ],
+ "card_djed": [
+  {
+   "text": "Djed.",
+   "start": 0.12,
+   "end": 0.659
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.079,
+   "end": 2.206
+  },
+  {
+   "text": "Wow!",
+   "start": 2.446,
+   "end": 2.895
+  },
+  {
+   "text": "Der Djed-Pfeiler gehört zu Osiris.",
+   "start": 3.235,
+   "end": 5.31
+  },
+  {
+   "text": "Er stand für Stärke und Dauer.",
+   "start": 5.55,
+   "end": 6.927
+  },
+  {
+   "text": "Der Pfeiler hat vier Querbalken am oberen Ende.",
+   "start": 7.167,
+   "end": 9.732
+  },
+  {
+   "text": "Er ist ein Zeichen für Beständigkeit.",
+   "start": 9.972,
+   "end": 11.751
+  },
+  {
+   "text": "Man legte kleine Djed-Pfeiler als Amulett mit ins Grab.",
+   "start": 11.991,
+   "end": 14.834
+  }
+ ],
+ "card_harzkrug": [
+  {
+   "text": "Salbgefäße.",
+   "start": 0.12,
+   "end": 1.007
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.427,
+   "end": 2.555
+  },
+  {
+   "text": "Wow!",
+   "start": 2.795,
+   "end": 3.244
+  },
+  {
+   "text": "Harze aus Bäumen duften und halten Wasser ab.",
+   "start": 3.584,
+   "end": 6.188
+  },
+  {
+   "text": "Man verwendete sie bei Mumien, aber auch als Weihrauch.",
+   "start": 6.428,
+   "end": 9.451
+  },
+  {
+   "text": "In den Krügen standen Öle, Salben und Harze.",
+   "start": 9.691,
+   "end": 12.086
+  },
+  {
+   "text": "Aus Zedernholz, Myrrhe und anderen Pflanzen stellte man sie her.",
+   "start": 12.326,
+   "end": 15.838
+  },
+  {
+   "text": "Das Harz dichtete die Binden ab und machte den Körper haltbarer.",
+   "start": 16.078,
+   "end": 19.53
+  }
+ ],
+ "card_priester": [
+  {
+   "text": "Priester.",
+   "start": 0.12,
+   "end": 0.692
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.112,
+   "end": 2.24
+  },
+  {
+   "text": "Wow!",
+   "start": 2.48,
+   "end": 2.929
+  },
+  {
+   "text": "Priester rasierten sich den Kopf und den Körper und wuschen sich mehrmals am Tag.",
+   "start": 3.269,
+   "end": 7.26
+  },
+  {
+   "text": "Priester kümmerten sich um die Tempel und die Götter.",
+   "start": 7.5,
+   "end": 9.994
+  },
+  {
+   "text": "Bei Totenfeiern sprachen sie Gebete.",
+   "start": 10.234,
+   "end": 12.289
+  },
+  {
+   "text": "Ein Leopardenfell zeigte oft einen besonderen Rang.",
+   "start": 12.529,
+   "end": 15.243
+  }
+ ],
+ "card_deir_el_medina": [
+  {
+   "text": "Dair el Medina.",
+   "start": 0.12,
+   "end": 1.218
+  },
+  {
+   "text": "Ca.",
+   "start": 1.638,
+   "end": 1.993
+  },
+  {
+   "text": "1500 bis 1100 vor Christus.",
+   "start": 2.233,
+   "end": 4.593
+  },
+  {
+   "text": "Wow!",
+   "start": 4.833,
+   "end": 5.282
+  },
+  {
+   "text": "Hier wohnten die Handwerker, die die Königsgräber im Tal der Könige bauten.",
+   "start": 5.622,
+   "end": 9.314
+  },
+  {
+   "text": "Das Arbeiterdorf lag in einem Tal, nah an den Gräbern.",
+   "start": 9.554,
+   "end": 12.676
+  },
+  {
+   "text": "Die Handwerker bekamen Getreide als Lohn.",
+   "start": 12.916,
+   "end": 15.032
+  },
+  {
+   "text": "Sie hinterließen sehr viele Briefe und Notizen auf Scherben und Papyrus.",
+   "start": 15.272,
+   "end": 19.412
+  },
+  {
+   "text": "So kennen wir ihren Alltag gut.",
+   "start": 19.652,
+   "end": 21.152
+  }
+ ],
+ "card_streik": [
+  {
+   "text": "Der erste bekannte Streik.",
+   "start": 0.12,
+   "end": 1.455
+  },
+  {
+   "text": "Um 1157 vor Christus.",
+   "start": 1.875,
+   "end": 4.329
+  },
+  {
+   "text": "Wow!",
+   "start": 4.569,
+   "end": 5.018
+  },
+  {
+   "text": "Die Arbeiter bekamen ihre Getreide-Rationen nicht rechtzeitig und legten die Arbeit nieder.",
+   "start": 5.358,
+   "end": 10.227
+  },
+  {
+   "text": "Ein Papyrus berichtet davon.",
+   "start": 10.467,
+   "end": 12.273
+  },
+  {
+   "text": "Die Arbeiter zogen aus dem Dorf und setzten sich vor einen Tempel.",
+   "start": 12.513,
+   "end": 16.005
+  },
+  {
+   "text": "Sie forderten ihren Lohn.",
+   "start": 16.245,
+   "end": 17.582
+  },
+  {
+   "text": "Es ist der älteste bekannte Streik der Geschichte.",
+   "start": 17.822,
+   "end": 20.346
+  }
+ ],
+ "card_baeckerin": [
+  {
+   "text": "Bäckerin.",
+   "start": 0.12,
+   "end": 0.729
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.149,
+   "end": 2.276
+  },
+  {
+   "text": "Wow!",
+   "start": 2.516,
+   "end": 2.965
+  },
+  {
+   "text": "Brot war so wichtig, dass Brot im Alltag oft Essen bedeutete.",
+   "start": 3.305,
+   "end": 6.528
+  },
+  {
+   "text": "Brot gehörte zu jeder Mahlzeit.",
+   "start": 6.768,
+   "end": 8.544
+  },
+  {
+   "text": "Der Teig wurde aus Emmer-Mehl und Wasser geknetet.",
+   "start": 8.784,
+   "end": 11.617
+  },
+  {
+   "text": "Man ließ ihn aufgehen und backte ihn in Formen im Ofen.",
+   "start": 11.857,
+   "end": 14.94
+  },
+  {
+   "text": "Oft war Sand im Mehl.",
+   "start": 15.18,
+   "end": 16.298
+  },
+  {
+   "text": "Das sieht man an den abgenutzten Zähnen der Mumien.",
+   "start": 16.538,
+   "end": 19.232
+  }
+ ],
+ "card_braeuerin": [
+  {
+   "text": "Brauerin.",
+   "start": 0.12,
+   "end": 0.729
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.149,
+   "end": 2.276
+  },
+  {
+   "text": "Wow!",
+   "start": 2.516,
+   "end": 2.965
+  },
+  {
+   "text": "Bier galt als nahrhaftes Getränk.",
+   "start": 3.305,
+   "end": 5.071
+  },
+  {
+   "text": "Arbeiter bekamen es als Teil ihres Lohns.",
+   "start": 5.311,
+   "end": 7.586
+  },
+  {
+   "text": "Das ägyptische Bier war dick und nahrhaft.",
+   "start": 7.826,
+   "end": 10.33
+  },
+  {
+   "text": "Man braute aus Gerste und Wasser einen Brei.",
+   "start": 10.57,
+   "end": 12.875
+  },
+  {
+   "text": "Hefe machte aus Zucker Alkohol und Kohlenstoffdioxid.",
+   "start": 13.115,
+   "end": 16.328
+  },
+  {
+   "text": "Heute würde man es kaum wie Bier erkennen.",
+   "start": 16.568,
+   "end": 18.563
+  }
+ ],
+ "card_kind": [
+  {
+   "text": "Kind.",
+   "start": 0.12,
+   "end": 0.589
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.009,
+   "end": 2.136
+  },
+  {
+   "text": "Wow!",
+   "start": 2.376,
+   "end": 2.825
+  },
+  {
+   "text": "Kinder trugen als Frisur eine Jugendlocke an der Seite des Kopfes.",
+   "start": 3.165,
+   "end": 6.674
+  },
+  {
+   "text": "Kinder spielten mit Bällen, Puppen und Holztieren.",
+   "start": 6.914,
+   "end": 9.608
+  },
+  {
+   "text": "Mit etwa vier Jahren halfen viele schon im Haushalt mit.",
+   "start": 9.848,
+   "end": 12.877
+  },
+  {
+   "text": "Wer Glück hatte, ging in die Schule und lernte lesen und schreiben.",
+   "start": 13.117,
+   "end": 16.489
+  }
+ ],
+ "card_katze": [
+  {
+   "text": "Hauskatze.",
+   "start": 0.12,
+   "end": 0.893
+  },
+  {
+   "text": "Seit dem Mittleren Reich im Haus.",
+   "start": 1.313,
+   "end": 2.939
+  },
+  {
+   "text": "Wow!",
+   "start": 3.179,
+   "end": 3.628
+  },
+  {
+   "text": "Katzen waren so beliebt, dass man sie als Mumien beisetzte.",
+   "start": 3.968,
+   "end": 6.842
+  },
+  {
+   "text": "Die Katze beschützte die Vorräte vor Mäusen.",
+   "start": 7.082,
+   "end": 9.387
+  },
+  {
+   "text": "Man hielt sie als Haustier.",
+   "start": 9.627,
+   "end": 10.874
+  },
+  {
+   "text": "Wenn eine Katze starb, trauerte die Familie.",
+   "start": 11.114,
+   "end": 13.289
+  },
+  {
+   "text": "Die Göttin Bastet wurde mit Katzenkopf dargestellt.",
+   "start": 13.529,
+   "end": 16.083
+  }
+ ],
+ "card_papyrusrolle": [
+  {
+   "text": "Papüruss.",
+   "start": 0.12,
+   "end": 0.818
+  },
+  {
+   "text": "Seit der Frühzeit.",
+   "start": 1.238,
+   "end": 2.326
+  },
+  {
+   "text": "Wow!",
+   "start": 2.566,
+   "end": 3.015
+  },
+  {
+   "text": "Papyrusrollen waren teuer.",
+   "start": 3.355,
+   "end": 4.891
+  },
+  {
+   "text": "Für Notizen benutzte man oft Scherben, sogenannte Ostraka.",
+   "start": 5.131,
+   "end": 8.333
+  },
+  {
+   "text": "Auf einer Papyrusrolle schrieb man Briefe, Zauberbücher, Geschichten und Listen.",
+   "start": 8.573,
+   "end": 13.046
+  },
+  {
+   "text": "Die Rolle wurde zusammengerollt und aufbewahrt.",
+   "start": 13.286,
+   "end": 15.78
+  },
+  {
+   "text": "Manche sind über 3000 Jahre alt und noch lesbar.",
+   "start": 16.02,
+   "end": 19.013
+  }
+ ],
+ "card_hieroglyphen": [
+  {
+   "text": "Hieroglüfen.",
+   "start": 0.12,
+   "end": 0.878
+  },
+  {
+   "text": "Der Name bedeutet: heilige Zeichen (griechisch).",
+   "start": 1.298,
+   "end": 3.922
+  },
+  {
+   "text": "Ab circa 3200 vor Christus bis ins 4.",
+   "start": 4.162,
+   "end": 7.388
+  },
+  {
+   "text": "Jahrhundert nach Christus.",
+   "start": 7.628,
+   "end": 8.895
+  },
+  {
+   "text": "Wow!",
+   "start": 9.135,
+   "end": 9.584
+  },
+  {
+   "text": "Es gibt Zeichen für einzelne Laute, für ganze Wörter und Zeichen, die man nicht liest, sondern die erklären.",
+   "start": 9.924,
+   "end": 15.492
+  },
+  {
+   "text": "Hieroglyphen sind Bilderzeichen.",
+   "start": 15.732,
+   "end": 17.458
+  },
+  {
+   "text": "Ein Zeichen kann einen Laut meinen (wie ein Buchstabe), ein ganzes Wort oder eine Wortart.",
+   "start": 17.698,
+   "end": 22.257
+  },
+  {
+   "text": "Es gibt 24 Zeichen für einzelne Konsonanten.",
+   "start": 22.497,
+   "end": 25.54
+  },
+  {
+   "text": "Vokale schrieb man nicht.",
+   "start": 25.78,
+   "end": 27.027
+  }
+ ],
+ "card_mahlstein": [
+  {
+   "text": "Mahlstein.",
+   "start": 0.12,
+   "end": 0.998
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.418,
+   "end": 2.545
+  },
+  {
+   "text": "Wow!",
+   "start": 2.785,
+   "end": 3.234
+  },
+  {
+   "text": "Im Mehl war oft Steinstaub.",
+   "start": 3.574,
+   "end": 5.114
+  },
+  {
+   "text": "Daran sieht man heute, wie stark die Zähne der Ägypter abgenutzt waren.",
+   "start": 5.354,
+   "end": 8.985
+  },
+  {
+   "text": "Getreide wurde auf dem Mahlstein zerrieben.",
+   "start": 9.225,
+   "end": 11.261
+  },
+  {
+   "text": "Man kniete davor und schob einen kleinen Stein hin und her.",
+   "start": 11.501,
+   "end": 14.384
+  },
+  {
+   "text": "Das war anstrengende Arbeit.",
+   "start": 14.624,
+   "end": 16.046
+  }
+ ],
+ "card_senet": [
+  {
+   "text": "Senet.",
+   "start": 0.12,
+   "end": 0.619
+  },
+  {
+   "text": "Seit etwa 3000 vor Christus.",
+   "start": 1.039,
+   "end": 3.024
+  },
+  {
+   "text": "Wow!",
+   "start": 3.264,
+   "end": 3.713
+  },
+  {
+   "text": "Senet ist eines der ältesten bekannten Brettspiele der Welt.",
+   "start": 4.053,
+   "end": 7.116
+  },
+  {
+   "text": "Senet spielte man auf einem Brett mit 30 Feldern.",
+   "start": 7.356,
+   "end": 10.01
+  },
+  {
+   "text": "Jeder hatte Spielsteine, gewürfelt wurde mit Stäbchen.",
+   "start": 10.25,
+   "end": 13.106
+  },
+  {
+   "text": "Wer zuerst alle Steine vom Brett brachte, gewann.",
+   "start": 13.346,
+   "end": 15.98
+  },
+  {
+   "text": "Später sah man darin ein Bild für den Weg ins Jenseits.",
+   "start": 16.22,
+   "end": 19.26
+  }
+ ],
+ "card_bierbrot": [
+  {
+   "text": "Brot und Bier.",
+   "start": 0.12,
+   "end": 1.048
+  },
+  {
+   "text": "In allen Epochen.",
+   "start": 1.468,
+   "end": 2.595
+  },
+  {
+   "text": "Wow!",
+   "start": 2.835,
+   "end": 3.284
+  },
+  {
+   "text": "Auch für die Toten gab man Brot und Bier mit: im Grab sollten sie nicht hungern.",
+   "start": 3.624,
+   "end": 7.615
+  },
+  {
+   "text": "Brot und Bier waren die Grundnahrung.",
+   "start": 7.855,
+   "end": 9.721
+  },
+  {
+   "text": "Die Arbeiter bekamen sie als Lohn.",
+   "start": 9.961,
+   "end": 11.557
+  },
+  {
+   "text": "Dazu gab es Zwiebeln, Linsen, Fisch und Früchte.",
+   "start": 11.797,
+   "end": 14.421
+  }
+ ],
+ "card_tal_der_koenige": [
+  {
+   "text": "Tal der Könige.",
+   "start": 0.12,
+   "end": 0.903
+  },
+  {
+   "text": "Ca.",
+   "start": 1.323,
+   "end": 1.678
+  },
+  {
+   "text": "1539 bis 1075 vor Christus.",
+   "start": 1.918,
+   "end": 6.298
+  },
+  {
+   "text": "Wow!",
+   "start": 6.538,
+   "end": 6.987
+  },
+  {
+   "text": "Über der Schlucht ragt ein Berg, der aussieht wie eine natürliche Pyramide.",
+   "start": 7.327,
+   "end": 11.129
+  },
+  {
+   "text": "Im Tal der Könige liegen über 60 Gräber von Pharaonen und hohen Beamten.",
+   "start": 11.369,
+   "end": 15.839
+  },
+  {
+   "text": "Die Gräber sind tief in den Felsen gehauen.",
+   "start": 16.079,
+   "end": 18.433
+  },
+  {
+   "text": "Die Wände sind bemalt.",
+   "start": 18.673,
+   "end": 19.96
+  },
+  {
+   "text": "Man wollte Räuber abschrecken: Der Eingang wurde versteckt.",
+   "start": 20.2,
+   "end": 22.974
+  }
+ ],
+ "card_tutanchamun": [
+  {
+   "text": "Tutanchamun.",
+   "start": 0.12,
+   "end": 0.928
+  },
+  {
+   "text": "Der Name bedeutet: lebendes Abbild des Amun.",
+   "start": 1.348,
+   "end": 3.663
+  },
+  {
+   "text": "Regierte circa 1332 bis 1323 vor Christus.",
+   "start": 3.903,
+   "end": 9.174
+  },
+  {
+   "text": "Wow!",
+   "start": 9.414,
+   "end": 9.863
+  },
+  {
+   "text": "Er starb mit etwa 18 bis 19 Jahren.",
+   "start": 10.203,
+   "end": 12.887
+  },
+  {
+   "text": "Sein Grab ist das am besten erhaltene Königsgrab, das man kennt.",
+   "start": 13.127,
+   "end": 16.529
+  },
+  {
+   "text": "Tutanchamun wurde mit etwa 9 Jahren König.",
+   "start": 16.769,
+   "end": 19.413
+  },
+  {
+   "text": "Er war nicht besonders bedeutend.",
+   "start": 19.653,
+   "end": 21.15
+  },
+  {
+   "text": "Berühmt wurde er, weil sein Grab fast unberührt blieb.",
+   "start": 21.39,
+   "end": 24.034
+  },
+  {
+   "text": "Darin lagen mehr als 5000 Gegenstände.",
+   "start": 24.274,
+   "end": 26.938
+  }
+ ],
+ "card_tutmaske": [
+  {
+   "text": "Goldmaske.",
+   "start": 0.12,
+   "end": 0.878
+  },
+  {
+   "text": "Um 1323 vor Christus.",
+   "start": 1.298,
+   "end": 3.942
+  },
+  {
+   "text": "Wow!",
+   "start": 4.182,
+   "end": 4.631
+  },
+  {
+   "text": "Die Maske wiegt über 10 Kilogramm.",
+   "start": 4.971,
+   "end": 6.857
+  },
+  {
+   "text": "Augen und Streifen sind mit Edelsteinen und Glas eingelegt.",
+   "start": 7.097,
+   "end": 10.329
+  },
+  {
+   "text": "Die Maske lag auf dem Gesicht der Mumie.",
+   "start": 10.569,
+   "end": 12.285
+  },
+  {
+   "text": "Auf der Stirn sitzen ein Geier und eine Kobra.",
+   "start": 12.525,
+   "end": 14.81
+  },
+  {
+   "text": "Sie sind die Schutzgöttinnen von Ober- und Unterägypten.",
+   "start": 15.05,
+   "end": 17.993
+  },
+  {
+   "text": "Das Kopftuch hat blaue Streifen aus Glas und Halbedelstein.",
+   "start": 18.233,
+   "end": 21.812
+  }
+ ],
+ "card_thron": [
+  {
+   "text": "Thron.",
+   "start": 0.12,
+   "end": 0.579
+  },
+  {
+   "text": "Um 1330 vor Christus.",
+   "start": 0.999,
+   "end": 3.413
+  },
+  {
+   "text": "Wow!",
+   "start": 3.653,
+   "end": 4.102
+  },
+  {
+   "text": "Auf der Lehne sieht man den jungen König und seine Frau Anchesenamun.",
+   "start": 4.442,
+   "end": 8.124
+  },
+  {
+   "text": "Der Thron ist aus Holz und mit Gold und Silber überzogen.",
+   "start": 8.364,
+   "end": 11.647
+  },
+  {
+   "text": "Die Armlehnen haben die Form von Schlangen.",
+   "start": 11.887,
+   "end": 13.932
+  },
+  {
+   "text": "Die Füße sind wie Löwenpfoten geformt.",
+   "start": 14.172,
+   "end": 16.267
+  }
+ ],
+ "card_sarg": [
+  {
+   "text": "Särge.",
+   "start": 0.12,
+   "end": 0.699
+  },
+  {
+   "text": "Um 1323 vor Christus.",
+   "start": 1.119,
+   "end": 3.763
+  },
+  {
+   "text": "Wow!",
+   "start": 4.003,
+   "end": 4.452
+  },
+  {
+   "text": "Der innerste Sarg ist aus massivem Gold und wiegt über 100 Kilogramm.",
+   "start": 4.792,
+   "end": 8.523
+  },
+  {
+   "text": "Tutanchamuns Mumie lag in drei ineinander gesteckten Särgen.",
+   "start": 8.763,
+   "end": 12.305
+  },
+  {
+   "text": "Die beiden äußeren sind aus Holz mit Gold.",
+   "start": 12.545,
+   "end": 14.8
+  },
+  {
+   "text": "Der innere ist aus Gold.",
+   "start": 15.04,
+   "end": 16.377
+  },
+  {
+   "text": "Alle drei steckten in einem Steinsarkophag.",
+   "start": 16.617,
+   "end": 19.061
+  },
+  {
+   "text": "Darüber standen vier vergoldete Schreine.",
+   "start": 19.301,
+   "end": 21.486
+  }
+ ],
+ "card_schrein": [
+  {
+   "text": "Schreine.",
+   "start": 0.12,
+   "end": 0.749
+  },
+  {
+   "text": "Um 1323 vor Christus.",
+   "start": 1.169,
+   "end": 3.813
+  },
+  {
+   "text": "Wow!",
+   "start": 4.053,
+   "end": 4.502
+  },
+  {
+   "text": "Die vier Schreine passen wie russische Matroschka-Puppen ineinander.",
+   "start": 4.842,
+   "end": 8.284
+  },
+  {
+   "text": "Die Schreine standen um den Steinsarkophag.",
+   "start": 8.524,
+   "end": 10.669
+  },
+  {
+   "text": "Sie waren aus Holz und mit Blattgold belegt.",
+   "start": 10.909,
+   "end": 13.722
+  },
+  {
+   "text": "Auf den Wänden stehen Zaubersprüche aus dem Totenbuch.",
+   "start": 13.962,
+   "end": 16.576
+  }
+ ],
+ "card_streitwagen": [
+  {
+   "text": "Streitwagen.",
+   "start": 0.12,
+   "end": 1.028
+  },
+  {
+   "text": "Neues Reich.",
+   "start": 1.448,
+   "end": 2.196
+  },
+  {
+   "text": "Wow!",
+   "start": 2.436,
+   "end": 2.885
+  },
+  {
+   "text": "Im Grab standen sechs Streitwagen, auseinandergebaut.",
+   "start": 3.225,
+   "end": 6.059
+  },
+  {
+   "text": "Streitwagen kamen um 1600 vor Christus nach Ägypten, wohl mit den Hyksos.",
+   "start": 6.299,
+   "end": 10.569
+  },
+  {
+   "text": "Sie waren schnell und leicht.",
+   "start": 10.809,
+   "end": 12.336
+  },
+  {
+   "text": "Gezogen wurden sie von Pferden.",
+   "start": 12.576,
+   "end": 14.282
+  },
+  {
+   "text": "Damit jagte man auch.",
+   "start": 14.522,
+   "end": 15.689
+  }
+ ],
+ "card_dolch": [
+  {
+   "text": "Dolch.",
+   "start": 0.12,
+   "end": 0.579
+  },
+  {
+   "text": "Um 1323 vor Christus.",
+   "start": 0.999,
+   "end": 3.643
+  },
+  {
+   "text": "Wow!",
+   "start": 3.883,
+   "end": 4.332
+  },
+  {
+   "text": "Die Klinge besteht aus Eisen, das vom Himmel kam, aus einem Meteoriten.",
+   "start": 4.672,
+   "end": 8.493
+  },
+  {
+   "text": "Eisen war damals sehr selten und wertvoll.",
+   "start": 8.733,
+   "end": 10.911
+  },
+  {
+   "text": "Man hat den Dolch untersucht: Sein Metall enthält viel Nickel.",
+   "start": 11.151,
+   "end": 14.072
+  },
+  {
+   "text": "Das passt zu Eisen aus Meteoriten.",
+   "start": 14.312,
+   "end": 16.227
+  },
+  {
+   "text": "Der Griff ist aus Gold.",
+   "start": 16.467,
+   "end": 17.705
+  }
+ ],
+ "card_carter": [
+  {
+   "text": "Hauard Karter.",
+   "start": 0.12,
+   "end": 1.008
+  },
+  {
+   "text": "1874 bis 1939.",
+   "start": 1.428,
+   "end": 4.92
+  },
+  {
+   "text": "Wow!",
+   "start": 5.16,
+   "end": 5.609
+  },
+  {
+   "text": "Er suchte jahrelang vergeblich, dann fand er am 4.",
+   "start": 5.949,
+   "end": 8.613
+  },
+  {
+   "text": "November 1922 eine Stufe.",
+   "start": 8.853,
+   "end": 11.706
+  },
+  {
+   "text": "Howard Carter suchte im Tal der Könige nach dem Grab von Tutanchamun.",
+   "start": 11.946,
+   "end": 15.738
+  },
+  {
+   "text": "Sein Geldgeber war Lord Carnarvon.",
+   "start": 15.978,
+   "end": 18.073
+  },
+  {
+   "text": "Am 26.",
+   "start": 18.313,
+   "end": 19.54
+  },
+  {
+   "text": "November 1922 sah er das erste Mal in die Vorkammer.",
+   "start": 19.78,
+   "end": 23.834
+  },
+  {
+   "text": "Dort lagen Truhen, Betten und Statuen voller Gold.",
+   "start": 24.074,
+   "end": 26.999
+  },
+  {
+   "text": "Die Ausgrabung dauerte rund zehn Jahre.",
+   "start": 27.239,
+   "end": 29.394
+  }
+ ],
+ "card_truhe": [
+  {
+   "text": "Truhe.",
+   "start": 0.12,
+   "end": 0.589
+  },
+  {
+   "text": "Um 1323 vor Christus.",
+   "start": 1.009,
+   "end": 3.653
+  },
+  {
+   "text": "Wow!",
+   "start": 3.893,
+   "end": 4.342
+  },
+  {
+   "text": "In Truhen wie dieser lagen Kleidung, Schmuck und Salbgefäße für das Leben nach dem Tod.",
+   "start": 4.682,
+   "end": 9.172
+  },
+  {
+   "text": "Die Truhe ist aus Holz und mit Lotos- und Papyruspflanzen bemalt.",
+   "start": 9.412,
+   "end": 13.702
+  },
+  {
+   "text": "Im Grab fanden Forscher Dutzende solcher Kisten.",
+   "start": 13.942,
+   "end": 16.506
+  },
+  {
+   "text": "Sie enthielten Gewänder, Schmuck und vieles mehr.",
+   "start": 16.746,
+   "end": 19.364
+  }
+ ],
+ "card_traeger": [
+  {
+   "text": "Sargträger.",
+   "start": 0.12,
+   "end": 0.888
+  },
+  {
+   "text": "Neues Reich.",
+   "start": 1.308,
+   "end": 2.057
+  },
+  {
+   "text": "Wow!",
+   "start": 2.297,
+   "end": 2.746
+  },
+  {
+   "text": "Der Weg zum Grab war ein feierlicher Zug über den Nil und durch die Wüste.",
+   "start": 3.086,
+   "end": 6.927
+  },
+  {
+   "text": "Zur Beisetzung zog eine Prozession zum Tal.",
+   "start": 7.167,
+   "end": 9.609
+  },
+  {
+   "text": "Männer trugen den Sarg auf Stangen auf den Schultern.",
+   "start": 9.849,
+   "end": 12.253
+  },
+  {
+   "text": "Dahinter gingen Priester, Familie und Klagefrauen.",
+   "start": 12.493,
+   "end": 15.447
+  }
+ ],
+ "card_hatschepsut": [
+  {
+   "text": "Hatschepsut.",
+   "start": 0.12,
+   "end": 0.988
+  },
+  {
+   "text": "Der Name bedeutet: Die Erste unter den edlen Damen.",
+   "start": 1.408,
+   "end": 4.092
+  },
+  {
+   "text": "Regierte circa 1479 bis 1458 vor Christus.",
+   "start": 4.332,
+   "end": 9.468
+  },
+  {
+   "text": "Wow!",
+   "start": 9.708,
+   "end": 10.157
+  },
+  {
+   "text": "Sie war eine der wenigen Frauen, die als Pharao regierte.",
+   "start": 10.497,
+   "end": 13.281
+  },
+  {
+   "text": "Auf Bildern trägt sie oft einen falschen Bart.",
+   "start": 13.521,
+   "end": 15.766
+  },
+  {
+   "text": "Hatschepsut regierte zuerst für ihren jungen Stiefsohn Thutmosis der Dritte, dann als Pharao.",
+   "start": 16.006,
+   "end": 20.825
+  },
+  {
+   "text": "Sie ließ eine Handelsreise in das Land Punt schicken.",
+   "start": 21.065,
+   "end": 23.769
+  },
+  {
+   "text": "Von dort brachte man Weihrauch, Gold und Bäume.",
+   "start": 24.009,
+   "end": 26.773
+  },
+  {
+   "text": "Ihr Totentempel liegt in Terrassen vor einer Felswand.",
+   "start": 27.013,
+   "end": 30.046
+  }
+ ],
+ "card_ramses": [
+  {
+   "text": "Ramses der Zweite.",
+   "start": 0.12,
+   "end": 1.218
+  },
+  {
+   "text": "Regierte circa 1279 bis 1213 vor Christus.",
+   "start": 1.638,
+   "end": 6.147
+  },
+  {
+   "text": "Wow!",
+   "start": 6.387,
+   "end": 6.836
+  },
+  {
+   "text": "Er regierte rund 66 Jahre lang, länger als fast alle Pharaonen.",
+   "start": 7.176,
+   "end": 11.367
+  },
+  {
+   "text": "Ramses der Zweite baute viele Tempel, darunter Abu Simbel mit vier riesigen Statuen.",
+   "start": 11.607,
+   "end": 16.206
+  },
+  {
+   "text": "Er führte Kriege und schloss später einen Friedensvertrag mit den Hethitern.",
+   "start": 16.446,
+   "end": 20.427
+  },
+  {
+   "text": "Er war berühmt und regierte sehr lange.",
+   "start": 20.667,
+   "end": 22.782
+  }
+ ],
+ "card_kleopatra": [
+  {
+   "text": "Kleopatra die Siebte.",
+   "start": 0.12,
+   "end": 1.507
+  },
+  {
+   "text": "69 bis 30 vor Christus.",
+   "start": 1.927,
+   "end": 4.202
+  },
+  {
+   "text": "Wow!",
+   "start": 4.442,
+   "end": 4.891
+  },
+  {
+   "text": "Kleopatra sprach mehrere Sprachen.",
+   "start": 5.231,
+   "end": 7.195
+  },
+  {
+   "text": "Sie war die erste Herrscherin ihrer Familie, die auch Ägyptisch lernte.",
+   "start": 7.435,
+   "end": 10.977
+  },
+  {
+   "text": "Kleopatra stammte aus der Familie der Ptolemäer.",
+   "start": 11.217,
+   "end": 13.951
+  },
+  {
+   "text": "Sie sprach Griechisch und lernte Ägyptisch.",
+   "start": 14.191,
+   "end": 16.408
+  },
+  {
+   "text": "Sie versuchte, Ägypten unabhängig zu halten.",
+   "start": 16.648,
+   "end": 19.073
+  },
+  {
+   "text": "Nach ihrem Tod im Jahr 30 vor Christus wurde Ägypten eine römische Provinz.",
+   "start": 19.313,
+   "end": 23.693
+  }
+ ],
+ "card_alexandria": [
+  {
+   "text": "Alexandria.",
+   "start": 0.12,
+   "end": 1.028
+  },
+  {
+   "text": "Gegründet 331 vor Christus.",
+   "start": 1.448,
+   "end": 4.149
+  },
+  {
+   "text": "Wow!",
+   "start": 4.389,
+   "end": 4.838
+  },
+  {
+   "text": "Die Stadt wurde von Alexander dem Großen gegründet und trägt seinen Namen.",
+   "start": 5.178,
+   "end": 8.79
+  },
+  {
+   "text": "Alexandria wurde zur größten Stadt am Mittelmeer.",
+   "start": 9.03,
+   "end": 11.794
+  },
+  {
+   "text": "Dort lagen ein großer Hafen, der Leuchtturm Pharos und die berühmte Bibliothek.",
+   "start": 12.034,
+   "end": 16.504
+  },
+  {
+   "text": "Gelehrte aus vielen Ländern forschten und schrieben hier.",
+   "start": 16.744,
+   "end": 19.528
+  }
+ ],
+ "card_leuchtturm": [
+  {
+   "text": "Leuchtturm.",
+   "start": 0.12,
+   "end": 0.689
+  },
+  {
+   "text": "Um 280 vor Christus fertig.",
+   "start": 1.109,
+   "end": 3.473
+  },
+  {
+   "text": "Wow!",
+   "start": 3.713,
+   "end": 4.162
+  },
+  {
+   "text": "Er gehörte zu den sieben Weltwundern.",
+   "start": 4.502,
+   "end": 6.431
+  },
+  {
+   "text": "Ein Erdbeben ließ ihn im Mittelalter einstürzen.",
+   "start": 6.671,
+   "end": 9.359
+  },
+  {
+   "text": "Auf der Spitze brannte ein Feuer.",
+   "start": 9.599,
+   "end": 11.325
+  },
+  {
+   "text": "Ein Spiegel sollte das Licht weit auf das Meer werfen.",
+   "start": 11.565,
+   "end": 14.259
+  },
+  {
+   "text": "Im Französischen und Italienischen heißt Leuchtturm bis heute nach der Insel phare und faro.",
+   "start": 14.499,
+   "end": 19.697
+  }
+ ],
+ "card_bibliothek": [
+  {
+   "text": "Bibliothek von Alexandria.",
+   "start": 0.12,
+   "end": 1.976
+  },
+  {
+   "text": "Ab circa 290 vor Christus.",
+   "start": 2.396,
+   "end": 4.72
+  },
+  {
+   "text": "Wow!",
+   "start": 4.96,
+   "end": 5.409
+  },
+  {
+   "text": "Sie sollte alle Schriften der Welt sammeln.",
+   "start": 5.749,
+   "end": 7.625
+  },
+  {
+   "text": "Der Überlieferung nach mussten Schiffe ihre Bücher zum Abschreiben abgeben.",
+   "start": 7.865,
+   "end": 11.637
+  },
+  {
+   "text": "In der Bibliothek lagen Hunderttausende Papyrusrollen.",
+   "start": 11.877,
+   "end": 14.69
+  },
+  {
+   "text": "Gelehrte wie Euklid arbeiteten in Alexandria.",
+   "start": 14.93,
+   "end": 17.504
+  },
+  {
+   "text": "Die Bibliothek verfiel mit der Zeit und wurde nicht an einem einzigen Tag verbrannt.",
+   "start": 17.744,
+   "end": 22.194
+  }
+ ],
+ "card_rosetta": [
+  {
+   "text": "Rosette.",
+   "start": 0.12,
+   "end": 0.729
+  },
+  {
+   "text": "Beschriftet 196 vor Christus, gefunden 1799.",
+   "start": 1.149,
+   "end": 5.858
+  },
+  {
+   "text": "Wow!",
+   "start": 6.098,
+   "end": 6.547
+  },
+  {
+   "text": "Der Text steht dreimal auf dem Stein: in Hieroglyphen, in Demotisch und auf Griechisch.",
+   "start": 6.887,
+   "end": 11.546
+  },
+  {
+   "text": "Griechisch konnten Forscher lesen.",
+   "start": 11.786,
+   "end": 13.492
+  },
+  {
+   "text": "So ließ sich der Text mit den beiden ägyptischen Schriften vergleichen.",
+   "start": 13.732,
+   "end": 17.065
+  },
+  {
+   "text": "Der Stein ist aus dunklem Granodiorit.",
+   "start": 17.305,
+   "end": 19.51
+  },
+  {
+   "text": "Er trägt einen Erlass des Königs Ptolemaios der Fünfte.",
+   "start": 19.75,
+   "end": 22.773
+  }
+ ],
+ "card_champollion": [
+  {
+   "text": "Schampoljon.",
+   "start": 0.12,
+   "end": 1.008
+  },
+  {
+   "text": "1790 bis 1832.",
+   "start": 1.428,
+   "end": 4.661
+  },
+  {
+   "text": "Wow!",
+   "start": 4.901,
+   "end": 5.35
+  },
+  {
+   "text": "Er lernte schon als Kind viele Sprachen.",
+   "start": 5.69,
+   "end": 7.505
+  },
+  {
+   "text": "1822 gelang es ihm, die Hieroglyphen zu entziffern.",
+   "start": 7.745,
+   "end": 11.627
+  },
+  {
+   "text": "Champollion verglich die Namen in Kartuschen.",
+   "start": 11.867,
+   "end": 14.261
+  },
+  {
+   "text": "Zum Beispiel Ptolemaios auf dem Stein.",
+   "start": 14.501,
+   "end": 16.796
+  },
+  {
+   "text": "Er erkannte: Hieroglyphen sind Laut- und Bildzeichen zugleich.",
+   "start": 17.036,
+   "end": 20.259
+  },
+  {
+   "text": "Ein Vorgänger, Thomas Young, hatte 1814 schon einige Zeichen richtig gedeutet.",
+   "start": 20.499,
+   "end": 25.488
+  }
+ ],
+ "card_ptolemaios": [
+  {
+   "text": "Ptolemaios.",
+   "start": 0.12,
+   "end": 0.878
+  },
+  {
+   "text": "Auf dem Stein von Rosette.",
+   "start": 1.298,
+   "end": 2.685
+  },
+  {
+   "text": "Wow!",
+   "start": 2.925,
+   "end": 3.374
+  },
+  {
+   "text": "Eine Kartusche ist ein Namensring.",
+   "start": 3.714,
+   "end": 5.43
+  },
+  {
+   "text": "Darin standen die Namen von Königen.",
+   "start": 5.67,
+   "end": 7.606
+  },
+  {
+   "text": "Der Name Ptolemaios kommt auf dem Stein mehrmals vor, auf Griechisch und in Hieroglyphen.",
+   "start": 7.846,
+   "end": 13.014
+  },
+  {
+   "text": "So konnte man Zeichen und Laute zuordnen: p, t, o, l, m, i, s.",
+   "start": 13.254,
+   "end": 17.973
+  }
+ ],
+ "card_segelschiff": [
+  {
+   "text": "Handelsschiff.",
+   "start": 0.12,
+   "end": 0.848
+  },
+  {
+   "text": "Ptolemäerzeit.",
+   "start": 1.268,
+   "end": 2.186
+  },
+  {
+   "text": "Wow!",
+   "start": 2.426,
+   "end": 2.875
+  },
+  {
+   "text": "Ägypten lieferte Getreide an die Städte rund um das Mittelmeer.",
+   "start": 3.215,
+   "end": 6.169
+  },
+  {
+   "text": "Von Alexandria aus segelten Schiffe nach Griechenland und Rom.",
+   "start": 6.409,
+   "end": 10.0
+  },
+  {
+   "text": "Sie brachten Getreide, Papyrus und Glas.",
+   "start": 10.24,
+   "end": 12.874
+  },
+  {
+   "text": "Auf dem Rückweg hatten sie Wein, Öl und Metall an Bord.",
+   "start": 13.114,
+   "end": 16.128
+  }
+ ],
+ "card_zeitrad": [
+  {
+   "text": "Das Zeitrad der Sonne.",
+   "start": 0.12,
+   "end": 1.377
+  },
+  {
+   "text": "Wow!",
+   "start": 1.797,
+   "end": 2.246
+  },
+  {
+   "text": "Das alte Ägypten dauerte länger als alle Reiche, die wir heute kennen: rund 3000 Jahre.",
+   "start": 2.586,
+   "end": 7.615
+  },
+  {
+   "text": "Das Zeitrad zeigt die Epochen des alten Ägypten von circa 3100 vor Christus bis 30 vor Christus: Frühzeit, Altes Reich, Mittleres Reich, Neues Reich, Späte Zeit und die Zeit der Ptolemäer.",
+   "start": 7.855,
+   "end": 19.139
+  },
+  {
+   "text": "Wenn du den Zeiger drehst, siehst du im Zeitfenster eine passende Szene.",
+   "start": 19.379,
+   "end": 22.841
+  }
+ ],
+ "card_album": [
+  {
+   "text": "Die Käfersammlung.",
+   "start": 0.12,
+   "end": 1.178
+  },
+  {
+   "text": "Wow!",
+   "start": 1.598,
+   "end": 2.047
+  },
+  {
+   "text": "Der Skarabäus war für die Ägypter ein Glücksbringer.",
+   "start": 2.387,
+   "end": 4.98
+  },
+  {
+   "text": "Das sind die versteckten Sonnenkäfer, die du gefunden hast.",
+   "start": 5.22,
+   "end": 8.263
+  },
+  {
+   "text": "Die Ägypter sahen im Pillendreher-Käfer ein Bild für die aufgehende Sonne: Wie der Käfer die Kugel rollt, so schiebt der Gott Chepre die Sonne über den Himmel.",
+   "start": 8.503,
+   "end": 15.817
+  }
+ ],
+ "card_zeitluecke": [
+  {
+   "text": "Die große Zeitspanne.",
+   "start": 0.12,
+   "end": 1.397
+  },
+  {
+   "text": "Wow!",
+   "start": 1.817,
+   "end": 2.266
+  },
+  {
+   "text": "Zwischen Cheops und Kleopatra liegen mehr Jahre als zwischen Kleopatra und heute.",
+   "start": 2.606,
+   "end": 7.535
+  },
+  {
+   "text": "Die Cheops-Pyramide entstand um 2600 vor Christus Kleopatra starb 30 vor Christus Dazwischen liegen etwa 2500 Jahre.",
+   "start": 7.775,
+   "end": 16.445
+  },
+  {
+   "text": "Von Kleopatra bis heute sind es gut 2050 Jahre.",
+   "start": 16.685,
+   "end": 20.447
+  }
+ ]
+}

@@ -1,0 +1,494 @@
+{
+ "cover": {
+  "seconds": 6.48,
+  "bytes": 19617
+ },
+ "page0": {
+  "seconds": 12.23,
+  "bytes": 36858
+ },
+ "page1": {
+  "seconds": 11.83,
+  "bytes": 35683
+ },
+ "page2": {
+  "seconds": 12.8,
+  "bytes": 38582
+ },
+ "page3": {
+  "seconds": 13.37,
+  "bytes": 40306
+ },
+ "page4": {
+  "seconds": 11.57,
+  "bytes": 34899
+ },
+ "page5": {
+  "seconds": 10.48,
+  "bytes": 31607
+ },
+ "page6": {
+  "seconds": 10.48,
+  "bytes": 31607
+ },
+ "page7": {
+  "seconds": 9.87,
+  "bytes": 29805
+ },
+ "page8": {
+  "seconds": 14.65,
+  "bytes": 44146
+ },
+ "card_skarab1": {
+  "seconds": 16.09,
+  "bytes": 48456
+ },
+ "card_skarab2": {
+  "seconds": 17.06,
+  "bytes": 51356
+ },
+ "card_skarab3": {
+  "seconds": 19.2,
+  "bytes": 57782
+ },
+ "card_skarab4": {
+  "seconds": 18.21,
+  "bytes": 54804
+ },
+ "card_skarab5": {
+  "seconds": 20.14,
+  "bytes": 60603
+ },
+ "card_skarab6": {
+  "seconds": 19.41,
+  "bytes": 58409
+ },
+ "card_skarab7": {
+  "seconds": 18.78,
+  "bytes": 56528
+ },
+ "card_skarab8": {
+  "seconds": 22.94,
+  "bytes": 68989
+ },
+ "card_skarab9": {
+  "seconds": 16.95,
+  "bytes": 51043
+ },
+ "card_pyramiden": {
+  "seconds": 21.19,
+  "bytes": 63738
+ },
+ "card_obelisk": {
+  "seconds": 16.85,
+  "bytes": 50729
+ },
+ "card_sonnenscheibe": {
+  "seconds": 15.96,
+  "bytes": 48065
+ },
+ "card_barke": {
+  "seconds": 15.75,
+  "bytes": 47438
+ },
+ "card_nilpferd": {
+  "seconds": 21.97,
+  "bytes": 66089
+ },
+ "card_krokodil": {
+  "seconds": 16.25,
+  "bytes": 48927
+ },
+ "card_ibis": {
+  "seconds": 16.82,
+  "bytes": 50651
+ },
+ "card_fischer": {
+  "seconds": 14.39,
+  "bytes": 43363
+ },
+ "card_bauer": {
+  "seconds": 18.57,
+  "bytes": 55901
+ },
+ "card_papyrus": {
+  "seconds": 19.88,
+  "bytes": 59820
+ },
+ "card_schaduf": {
+  "seconds": 15.75,
+  "bytes": 47438
+ },
+ "card_nilometer": {
+  "seconds": 18.36,
+  "bytes": 55274
+ },
+ "card_nilflut": {
+  "seconds": 21.63,
+  "bytes": 65070
+ },
+ "card_schwarzes_land": {
+  "seconds": 18.16,
+  "bytes": 54647
+ },
+ "card_reiher": {
+  "seconds": 16.69,
+  "bytes": 50259
+ },
+ "card_fisch": {
+  "seconds": 18.6,
+  "bytes": 55980
+ },
+ "card_wasservogel": {
+  "seconds": 18.18,
+  "bytes": 54726
+ },
+ "card_lotus": {
+  "seconds": 18.13,
+  "bytes": 54569
+ },
+ "card_schilfboot": {
+  "seconds": 16.95,
+  "bytes": 51043
+ },
+ "card_netz": {
+  "seconds": 17.68,
+  "bytes": 53237
+ },
+ "card_pharao": {
+  "seconds": 23.28,
+  "bytes": 70007
+ },
+ "card_rote_krone": {
+  "seconds": 14.81,
+  "bytes": 44616
+ },
+ "card_weisse_krone": {
+  "seconds": 15.31,
+  "bytes": 46105
+ },
+ "card_doppelkrone": {
+  "seconds": 14.84,
+  "bytes": 44695
+ },
+ "card_narmer_palette": {
+  "seconds": 18.23,
+  "bytes": 54883
+ },
+ "card_kobra": {
+  "seconds": 15.78,
+  "bytes": 47516
+ },
+ "card_wesir": {
+  "seconds": 14.94,
+  "bytes": 45008
+ },
+ "card_schreiber": {
+  "seconds": 18.34,
+  "bytes": 55196
+ },
+ "card_stufenpyramide": {
+  "seconds": 22.57,
+  "bytes": 67892
+ },
+ "card_falke": {
+  "seconds": 16.04,
+  "bytes": 48300
+ },
+ "card_cheops": {
+  "seconds": 21.11,
+  "bytes": 63503
+ },
+ "card_sphinx": {
+  "seconds": 17.37,
+  "bytes": 52296
+ },
+ "card_baumeister": {
+  "seconds": 19.54,
+  "bytes": 58801
+ },
+ "card_steinmetz": {
+  "seconds": 17.08,
+  "bytes": 51434
+ },
+ "card_arbeiter": {
+  "seconds": 19.75,
+  "bytes": 59428
+ },
+ "card_ochse": {
+  "seconds": 16.54,
+  "bytes": 49789
+ },
+ "card_schlitten": {
+  "seconds": 20.43,
+  "bytes": 61465
+ },
+ "card_kupfermeissel": {
+  "seconds": 17.5,
+  "bytes": 52688
+ },
+ "card_holzschlaegel": {
+  "seconds": 17.37,
+  "bytes": 52296
+ },
+ "card_arbeitersiedlung": {
+  "seconds": 19.49,
+  "bytes": 58644
+ },
+ "card_ra": {
+  "seconds": 16.33,
+  "bytes": 49162
+ },
+ "card_osiris": {
+  "seconds": 16.35,
+  "bytes": 49240
+ },
+ "card_isis": {
+  "seconds": 16.46,
+  "bytes": 49554
+ },
+ "card_horus": {
+  "seconds": 15.65,
+  "bytes": 47124
+ },
+ "card_anubis": {
+  "seconds": 17.16,
+  "bytes": 51669
+ },
+ "card_thot": {
+  "seconds": 13.04,
+  "bytes": 39287
+ },
+ "card_maat": {
+  "seconds": 13.71,
+  "bytes": 41325
+ },
+ "card_hathor": {
+  "seconds": 14.86,
+  "bytes": 44773
+ },
+ "card_bastet": {
+  "seconds": 15.33,
+  "bytes": 46184
+ },
+ "card_sobek": {
+  "seconds": 15.57,
+  "bytes": 46889
+ },
+ "card_ammit": {
+  "seconds": 17.32,
+  "bytes": 52140
+ },
+ "card_waage": {
+  "seconds": 19.23,
+  "bytes": 57860
+ },
+ "card_herz": {
+  "seconds": 16.17,
+  "bytes": 48692
+ },
+ "card_tor_unterwelt": {
+  "seconds": 14.42,
+  "bytes": 43441
+ },
+ "card_sonnenbarke": {
+  "seconds": 19.98,
+  "bytes": 60133
+ },
+ "card_nut": {
+  "seconds": 15.39,
+  "bytes": 46340
+ },
+ "card_mumifizierung": {
+  "seconds": 26.31,
+  "bytes": 79098
+ },
+ "card_einbalsamierer": {
+  "seconds": 16.51,
+  "bytes": 49710
+ },
+ "card_natron": {
+  "seconds": 21.92,
+  "bytes": 65932
+ },
+ "card_kanopen": {
+  "seconds": 18.21,
+  "bytes": 54804
+ },
+ "card_leinenbinden": {
+  "seconds": 14.84,
+  "bytes": 44695
+ },
+ "card_herzskarabaeus": {
+  "seconds": 14.79,
+  "bytes": 44538
+ },
+ "card_mumie_bahre": {
+  "seconds": 13.92,
+  "bytes": 41952
+ },
+ "card_mumifizieren_versuch": {
+  "seconds": 22.47,
+  "bytes": 67578
+ },
+ "card_udjat": {
+  "seconds": 19.54,
+  "bytes": 58801
+ },
+ "card_ankh": {
+  "seconds": 17.45,
+  "bytes": 52532
+ },
+ "card_djed": {
+  "seconds": 15.02,
+  "bytes": 45243
+ },
+ "card_harzkrug": {
+  "seconds": 19.72,
+  "bytes": 59349
+ },
+ "card_priester": {
+  "seconds": 15.44,
+  "bytes": 46497
+ },
+ "card_deir_el_medina": {
+  "seconds": 21.34,
+  "bytes": 64208
+ },
+ "card_streik": {
+  "seconds": 20.53,
+  "bytes": 61779
+ },
+ "card_baeckerin": {
+  "seconds": 19.41,
+  "bytes": 58409
+ },
+ "card_braeuerin": {
+  "seconds": 18.76,
+  "bytes": 56450
+ },
+ "card_kind": {
+  "seconds": 16.67,
+  "bytes": 50180
+ },
+ "card_katze": {
+  "seconds": 16.27,
+  "bytes": 49005
+ },
+ "card_papyrusrolle": {
+  "seconds": 19.2,
+  "bytes": 57782
+ },
+ "card_hieroglyphen": {
+  "seconds": 27.22,
+  "bytes": 81841
+ },
+ "card_mahlstein": {
+  "seconds": 16.22,
+  "bytes": 48848
+ },
+ "card_senet": {
+  "seconds": 19.44,
+  "bytes": 58487
+ },
+ "card_bierbrot": {
+  "seconds": 14.6,
+  "bytes": 43989
+ },
+ "card_tal_der_koenige": {
+  "seconds": 23.17,
+  "bytes": 69694
+ },
+ "card_tutanchamun": {
+  "seconds": 27.12,
+  "bytes": 81527
+ },
+ "card_tutmaske": {
+  "seconds": 22.0,
+  "bytes": 66167
+ },
+ "card_thron": {
+  "seconds": 16.46,
+  "bytes": 49554
+ },
+ "card_sarg": {
+  "seconds": 21.68,
+  "bytes": 65227
+ },
+ "card_schrein": {
+  "seconds": 16.77,
+  "bytes": 50494
+ },
+ "card_streitwagen": {
+  "seconds": 15.88,
+  "bytes": 47829
+ },
+ "card_dolch": {
+  "seconds": 17.89,
+  "bytes": 53864
+ },
+ "card_carter": {
+  "seconds": 29.57,
+  "bytes": 88894
+ },
+ "card_truhe": {
+  "seconds": 19.54,
+  "bytes": 58801
+ },
+ "card_traeger": {
+  "seconds": 15.62,
+  "bytes": 47046
+ },
+ "card_hatschepsut": {
+  "seconds": 30.22,
+  "bytes": 90853
+ },
+ "card_ramses": {
+  "seconds": 22.96,
+  "bytes": 69067
+ },
+ "card_kleopatra": {
+  "seconds": 23.88,
+  "bytes": 71810
+ },
+ "card_alexandria": {
+  "seconds": 19.72,
+  "bytes": 59349
+ },
+ "card_leuchtturm": {
+  "seconds": 19.88,
+  "bytes": 59820
+ },
+ "card_bibliothek": {
+  "seconds": 22.39,
+  "bytes": 67343
+ },
+ "card_rosetta": {
+  "seconds": 22.96,
+  "bytes": 69067
+ },
+ "card_champollion": {
+  "seconds": 25.68,
+  "bytes": 77217
+ },
+ "card_ptolemaios": {
+  "seconds": 18.16,
+  "bytes": 54647
+ },
+ "card_segelschiff": {
+  "seconds": 16.3,
+  "bytes": 49083
+ },
+ "card_zeitrad": {
+  "seconds": 23.01,
+  "bytes": 69224
+ },
+ "card_album": {
+  "seconds": 16.01,
+  "bytes": 48221
+ },
+ "card_zeitluecke": {
+  "seconds": 20.64,
+  "bytes": 62092
+ }
+}

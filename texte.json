@@ -1,0 +1,3087 @@
+{
+  "titel": "Das große Ägypten-Popup-Buch – alle Texte",
+  "zielgruppe": "Klasse 5/6 (einfache, kurze Sätze; Du-Ansprache)",
+  "hinweis": "Jahreszahlen sind gerundet („ca.“) und entsprechen dem Stand, der in facts.md belegt ist. Die Erzähltexte werden im Buch von einer Neuro-TTS-Stimme gesprochen.",
+  "seiten": [
+    {
+      "station": 0,
+      "id": "zeitrad",
+      "kapitel": "Willkommen und Zeitrad",
+      "epoche": "Willkommen",
+      "jahre": "ca. 3100 v. Chr. bis 30 v. Chr.",
+      "titel": "Hallo, kleine Forscherin, hallo, kleiner Forscher!",
+      "kicker": "Willkommen",
+      "kartentext": "Willkommen im großen Ägypten-Popup-Buch! Das alte Ägypten gab es über 3000 Jahre lang. Wir reisen durch alle Epochen und besuchen Pharaonen, Götter und Handwerker. Zieh an den Laschen, tippe die Figuren an und finde die versteckten Sonnenkäfer.",
+      "erzaehltext": "Willkommen im großen Ägypten-Popup-Buch! Wir reisen gemeinsam durch dreitausend Jahre. Zuerst schauen wir auf das Zeitrad der Sonne. Zieh an der Lasche und dreh den Zeiger, dann siehst du, wie sich Ägypten verändert.",
+      "bedienhinweis": "Dreh den Zeiger und schau ins Zeitfenster • zieh SONNE! und die Barke • tippe die Pyramide • fass die Seite an und zieh sie zum Umblättern",
+      "karten": [
+        "skarab1",
+        "pyramiden",
+        "obelisk",
+        "sonnenscheibe",
+        "barke",
+        "zeitrad"
+      ]
+    },
+    {
+      "station": 1,
+      "id": "nil",
+      "kapitel": "Das Geschenk des Nil",
+      "epoche": "Vor den Pharaonen",
+      "jahre": "bis ca. 3100 v. Chr.",
+      "titel": "Das Geschenk des Nil",
+      "kicker": "Der Nil",
+      "kartentext": "Ägypten liegt in der Wüste. Ohne den Nil gäbe es hier kein Leben. Jedes Jahr trat der Fluss über die Ufer. Er ließ fruchtbaren Schlamm zurück, und darin wuchsen Getreide und Gemüse. Die Ägypter nannten das gute Land „das Schwarze Land“, die Wüste „das Rote Land“.",
+      "erzaehltext": "Das hier ist der Nil. Ringsum ist Wüste, aber am Fluss ist es grün. Jedes Jahr kam die Flut, und danach war der Boden fruchtbar. Zieh am Schieber Flut und sieh, wie das Wasser steigt. Tippe auf die Tiere am Ufer.",
+      "bedienhinweis": "Schiebe FLUT! • öffne den NILOMETER • zieh SCHÖPFEN • tippe ein Tier • fass die Seite an und zieh sie zum Umblättern",
+      "karten": [
+        "skarab2",
+        "nilpferd",
+        "krokodil",
+        "ibis",
+        "fischer",
+        "bauer",
+        "papyrus",
+        "schaduf",
+        "nilometer",
+        "nilflut",
+        "schwarzes_land",
+        "reiher",
+        "fisch",
+        "wasservogel",
+        "lotus",
+        "schilfboot",
+        "netz"
+      ]
+    },
+    {
+      "station": 2,
+      "id": "reich",
+      "kapitel": "Ein Pharao, zwei Länder",
+      "epoche": "Frühzeit",
+      "jahre": "ca. 3100 bis 2650 v. Chr.",
+      "titel": "Ein Pharao, zwei Länder",
+      "kicker": "Das geeinte Reich",
+      "kartentext": "Ägypten bestand aus zwei Teilen: Unterägypten im Norden (am Delta) und Oberägypten im Süden (am Fluss). Vor etwa 5000 Jahren wurden sie ein Reich. Der Pharao trug eine Doppelkrone aus der roten und der weißen Krone.",
+      "erzaehltext": "Hier siehst du zwei Länder. Links liegt Unterägypten mit der roten Krone, rechts Oberägypten mit der weißen Krone. Zieh an den beiden Laschen Nord und Süd. Wenn beide Kronen zusammenkommen, wird daraus die Doppelkrone des Pharaos.",
+      "bedienhinweis": "Zieh NORD und SÜD • schiebe DATUM • tippe eine Figur • fass die Seite an und zieh sie zum Umblättern",
+      "karten": [
+        "skarab3",
+        "pharao",
+        "rote_krone",
+        "weisse_krone",
+        "doppelkrone",
+        "narmer_palette",
+        "kobra",
+        "wesir",
+        "schreiber",
+        "stufenpyramide",
+        "falke"
+      ]
+    },
+    {
+      "station": 3,
+      "id": "gizeh",
+      "kapitel": "Die Pyramiden von Gizeh",
+      "epoche": "Altes Reich",
+      "jahre": "ca. 2600 bis 2500 v. Chr.",
+      "titel": "Die Pyramiden von Gizeh",
+      "kicker": "Das Alte Reich",
+      "kartentext": "Die Cheops-Pyramide ist das größte Bauwerk aus dieser Zeit. Sie wurde in rund 26 Jahren gebaut, aus etwa 2,3 Millionen Steinblöcken. Gebaut haben sie Tausende bezahlte Arbeiter. Sie bekamen Essen, und sie wurden sogar in Gräbern neben den Pyramiden beigesetzt.",
+      "erzaehltext": "Das hier ist Gizeh, vor über viertausendfünfhundert Jahren. Diese riesigen Pyramiden wurden von Arbeitern gebaut, nicht von Sklaven. Zieh am Hebel Bauen und sieh die Pyramide wachsen. Mit Schnitt klappst du sie auf und schaust hinein.",
+      "bedienhinweis": "Zieh BAUEN! • öffne SCHNITT • zieh den SCHLITTEN • tippe eine Figur • fass die Seite an und zieh sie zum Umblättern",
+      "karten": [
+        "skarab4",
+        "cheops",
+        "sphinx",
+        "baumeister",
+        "steinmetz",
+        "arbeiter",
+        "ochse",
+        "schlitten",
+        "kupfermeissel",
+        "holzschlaegel",
+        "arbeitersiedlung"
+      ]
+    },
+    {
+      "station": 4,
+      "id": "goetter",
+      "kapitel": "Götter und das Totengericht",
+      "epoche": "Mittleres Reich",
+      "jahre": "ca. 2000 bis 1700 v. Chr.",
+      "titel": "Götter und das Totengericht",
+      "kicker": "Der Glaube",
+      "kartentext": "Die Ägypter verehrten viele Götter. Ra war der Sonnengott, Osiris herrschte über das Totenreich. Viele Ägypter glaubten: Nach dem Tod wird das Herz gegen eine Feder gewogen. Die Feder steht für die Wahrheit.",
+      "erzaehltext": "Wir sind in einem Tempel voller Götter. Viele Ägypter glaubten, dass im Totenreich das Herz gewogen wird. Auf der anderen Waagschale liegt eine Feder, die Feder der Wahrheit. Zieh am Schieber Waage und sieh zu.",
+      "bedienhinweis": "Schiebe WAAGE • zieh TOR • zieh die BARKE • tippe einen Gott • fass die Seite an und zieh sie zum Umblättern",
+      "karten": [
+        "skarab5",
+        "ra",
+        "osiris",
+        "isis",
+        "horus",
+        "anubis",
+        "thot",
+        "maat",
+        "hathor",
+        "bastet",
+        "sobek",
+        "ammit",
+        "waage",
+        "herz",
+        "tor_unterwelt",
+        "sonnenbarke",
+        "nut"
+      ]
+    },
+    {
+      "station": 5,
+      "id": "mumie",
+      "kapitel": "Die Mumienwerkstatt",
+      "epoche": "Neues Reich",
+      "jahre": "ca. 1500 bis 1100 v. Chr.",
+      "titel": "Die Mumienwerkstatt",
+      "kicker": "Chemie für die Ewigkeit",
+      "kartentext": "Die Ägypter wollten, dass der Körper nach dem Tod erhalten bleibt. Dafür legten sie ihn in Natron, ein Salz. Das Salz entzieht dem Körper das Wasser. Ohne Wasser können Bakterien nicht wachsen, und nichts verfault.",
+      "erzaehltext": "Das hier ist eine Mumienwerkstatt. Die Ägypter wussten schon viel über Salz und Wasser. Zieh am Schieber Tage und sieh, wie die Zeit vergeht. Mit der Lasche Natron streust du das Salz auf.",
+      "bedienhinweis": "Schiebe TAGE • zieh NATRON • öffne KANOPEN • tippe etwas an • fass die Seite an und zieh sie zum Umblättern",
+      "karten": [
+        "skarab6",
+        "mumifizierung",
+        "einbalsamierer",
+        "natron",
+        "kanopen",
+        "leinenbinden",
+        "herzskarabaeus",
+        "mumie_bahre",
+        "mumifizieren_versuch",
+        "udjat",
+        "ankh",
+        "djed",
+        "harzkrug",
+        "priester"
+      ]
+    },
+    {
+      "station": 6,
+      "id": "alltag",
+      "kapitel": "Alltag, Schrift und Papyrus",
+      "epoche": "Neues Reich",
+      "jahre": "ca. 1300 bis 1100 v. Chr.",
+      "titel": "Alltag, Schrift und Papyrus",
+      "kicker": "Das Arbeiterdorf",
+      "kartentext": "In Deir el-Medina wohnten die Handwerker, die die Gräber im Tal der Könige bauten. Wir wissen viel über sie, weil sie schrieben: Briefe, Einkaufslisten und Beschwerden, sogar den ersten bekannten Streik. Als Schreibzeug diente Papyrus.",
+      "erzaehltext": "Wir schauen in ein Haus im Arbeiterdorf. Hier wird gebacken, geschrieben und gespielt. Zieh am Schieber Schreiben, dann schreibt der Schreiber Hieroglyphen. Mit Zeichen siehst du, was sie bedeuten.",
+      "bedienhinweis": "Schiebe SCHREIBEN • zieh ZEICHEN • zieh MAHLEN • öffne SENET • tippe etwas an • fass die Seite an und zieh sie zum Umblättern",
+      "karten": [
+        "skarab7",
+        "deir_el_medina",
+        "streik",
+        "baeckerin",
+        "braeuerin",
+        "kind",
+        "katze",
+        "papyrusrolle",
+        "hieroglyphen",
+        "mahlstein",
+        "senet",
+        "bierbrot"
+      ]
+    },
+    {
+      "station": 7,
+      "id": "tal",
+      "kapitel": "Tal der Könige",
+      "epoche": "Neues Reich",
+      "jahre": "ca. 1500 bis 1200 v. Chr.",
+      "titel": "Tal der Könige und Tutanchamun",
+      "kicker": "Das Königsgrab",
+      "kartentext": "Im Tal der Könige wurden die Pharaonen des Neuen Reiches beigesetzt. Das Grab von Tutanchamun blieb fast unberührt. Howard Carter entdeckte es im November 1922. Darin lagen mehr als fünftausend Gegenstände, auch eine Goldmaske.",
+      "erzaehltext": "Das hier ist das Tal der Könige. Zieh an der Lasche Tür und öffne das Grab von Tutanchamun. Mit dem Schieber Schätze siehst du, was die Ägypter ihrem jungen König mitgegeben haben.",
+      "bedienhinweis": "Zieh TÜR • schiebe SCHÄTZE • zieh TRAGEN • tippe etwas an • fass die Seite an und zieh sie zum Umblättern",
+      "karten": [
+        "skarab8",
+        "tal_der_koenige",
+        "tutanchamun",
+        "tutmaske",
+        "thron",
+        "sarg",
+        "schrein",
+        "streitwagen",
+        "dolch",
+        "carter",
+        "truhe",
+        "traeger",
+        "hatschepsut",
+        "ramses"
+      ]
+    },
+    {
+      "station": 8,
+      "id": "finale",
+      "kapitel": "Kleopatra und der Stein von Rosette",
+      "epoche": "Ptolemäerzeit",
+      "jahre": "332 v. Chr. bis heute",
+      "titel": "Der Stein, der Hieroglyphen lesbar machte",
+      "kicker": "Die letzte Seite",
+      "kartentext": "Alexandria war die große Hafenstadt am Meer. Dort herrschte Kleopatra VII. als letzte Königin, bis 30 v. Chr. Später vergaß man, wie man Hieroglyphen liest. Erst der Stein von Rosette half: Er trägt denselben Text in drei Schriften.",
+      "erzaehltext": "Das ist die letzte Seite. Links liegt Alexandria mit dem Leuchtturm. Rechts sitzt ein Gelehrter und studiert den Stein von Rosette. Schiebe 3 Sprachen und sieh, wie aus Zeichen Wörter werden. Mit Finale fährt die Sonnenbarke noch einmal an allem vorbei.",
+      "bedienhinweis": "Schiebe 3 SPRACHEN • zieh LEUCHTTURM • zieh FINALE • tippe etwas an • fass die Seite an und zieh sie zum Umblättern",
+      "karten": [
+        "skarab9",
+        "kleopatra",
+        "alexandria",
+        "leuchtturm",
+        "bibliothek",
+        "rosetta",
+        "champollion",
+        "ptolemaios",
+        "segelschiff",
+        "album",
+        "zeitluecke"
+      ]
+    }
+  ],
+  "karten": [
+    {
+      "id": "skarab1",
+      "typ": "versteckter Sonnenkäfer",
+      "station": 0,
+      "name": "Sonnenkäfer Nr. 1",
+      "zusatzname": "Skarabäus (ägyptisch: Cheper)",
+      "aussprache": "sprich: ska-ra-BÄ-us",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": "so groß wie eine Münze (2 bis 3 cm)",
+      "aufgabeOderNahrung": null,
+      "ort": null,
+      "wow": "Der Käfer formt eine Kugel aus Dung, rollt sie weg und legt seine Eier hinein.",
+      "text": "Du hast einen Sonnenkäfer gefunden! Das ist ein Pillendreher. Er rollt Dungkugeln rückwärts über den Boden. In der Kugel wächst später seine Brut heran.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Skarabäus",
+        "Glück"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was macht ein Pillendreher mit der Kugel?"
+      ]
+    },
+    {
+      "id": "skarab2",
+      "typ": "versteckter Sonnenkäfer",
+      "station": 1,
+      "name": "Sonnenkäfer Nr. 2",
+      "zusatzname": "Skarabäus (ägyptisch: Cheper)",
+      "aussprache": "sprich: ska-ra-BÄ-us",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": "so groß wie eine Münze (2 bis 3 cm)",
+      "aufgabeOderNahrung": null,
+      "ort": null,
+      "wow": "Die Ägypter sahen im rollenden Käfer ein Bild für die Sonne, die über den Himmel wandert.",
+      "text": "Der Gott Chepre trug einen Käfer auf dem Kopf oder hatte einen Käferkopf. Er stand für die Morgensonne: Wie der Käfer die Kugel schiebt, so schiebt Chepre die Sonne in den neuen Tag.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Skarabäus",
+        "Glück"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Welcher Gott gehörte zur Morgensonne?"
+      ]
+    },
+    {
+      "id": "skarab3",
+      "typ": "versteckter Sonnenkäfer",
+      "station": 2,
+      "name": "Sonnenkäfer Nr. 3",
+      "zusatzname": "Skarabäus (ägyptisch: Cheper)",
+      "aussprache": "sprich: ska-ra-BÄ-us",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": "so groß wie eine Münze (2 bis 3 cm)",
+      "aufgabeOderNahrung": null,
+      "ort": null,
+      "wow": "Manche Skarabäus-Amulette haben auf der Unterseite Namen und Zeichen. Man benutzte sie als Siegel.",
+      "text": "Aus Stein oder Fayence schnitt man kleine Käfer. Auf der flachen Unterseite standen Hieroglyphen. Man drückte sie in Ton oder Lehm und siegelte so Krüge, Kisten und Briefe.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Skarabäus",
+        "Glück"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wofür benutzte man Skarabäus-Siegel?"
+      ]
+    },
+    {
+      "id": "skarab4",
+      "typ": "versteckter Sonnenkäfer",
+      "station": 3,
+      "name": "Sonnenkäfer Nr. 4",
+      "zusatzname": "Skarabäus (ägyptisch: Cheper)",
+      "aussprache": "sprich: ska-ra-BÄ-us",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": "so groß wie eine Münze (2 bis 3 cm)",
+      "aufgabeOderNahrung": null,
+      "ort": null,
+      "wow": "Auf manche Mumien legte man einen Herzskarabäus. Er sollte beim Totengericht helfen.",
+      "text": "Das Herz war für die Ägypter der Sitz von Gedanken und Gefühlen. Beim Totengericht wurde es gewogen. Der Herzskarabäus sollte dafür sorgen, dass das Herz nichts Schlechtes verrät.",
+      "hinweisUnsicherheit": "Das ist der Glaube der Ägypter, so steht es in den Totenbuch-Sprüchen.",
+      "stichworte": [
+        "Skarabäus",
+        "Glück"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was wurde beim Totengericht gewogen?"
+      ]
+    },
+    {
+      "id": "skarab5",
+      "typ": "versteckter Sonnenkäfer",
+      "station": 4,
+      "name": "Sonnenkäfer Nr. 5",
+      "zusatzname": "Skarabäus (ägyptisch: Cheper)",
+      "aussprache": "sprich: ska-ra-BÄ-us",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": "so groß wie eine Münze (2 bis 3 cm)",
+      "aufgabeOderNahrung": null,
+      "ort": null,
+      "wow": "Echte Pillendreher finden ihren Weg nachts mit Hilfe der Milchstraße.",
+      "text": "Forscher zeigten 2013: Afrikanische Pillendreher laufen auch in sternklaren Nächten geradeaus. Sie orientieren sich am hellen Band der Milchstraße. Damit rollen sie ihre Kugel schnell von anderen Käfern weg.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Skarabäus",
+        "Glück"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Woran orientieren sich Pillendreher nachts?"
+      ]
+    },
+    {
+      "id": "skarab6",
+      "typ": "versteckter Sonnenkäfer",
+      "station": 5,
+      "name": "Sonnenkäfer Nr. 6",
+      "zusatzname": "Skarabäus (ägyptisch: Cheper)",
+      "aussprache": "sprich: ska-ra-BÄ-us",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": "so groß wie eine Münze (2 bis 3 cm)",
+      "aufgabeOderNahrung": null,
+      "ort": null,
+      "wow": "Skarabäus-Amulette gab es aus Fayence, Speckstein, Halbedelstein und sogar aus Gold.",
+      "text": "Fayence ist eine Art Keramik mit glasiger, oft blauer oder grüner Oberfläche. Die Ägypter machten damit viel Schmuck. Der Käfer war ein beliebtes Muster, weil er Glück bringen sollte.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Skarabäus",
+        "Glück"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Aus welchen Materialien machte man Skarabäen?"
+      ]
+    },
+    {
+      "id": "skarab7",
+      "typ": "versteckter Sonnenkäfer",
+      "station": 6,
+      "name": "Sonnenkäfer Nr. 7",
+      "zusatzname": "Skarabäus (ägyptisch: Cheper)",
+      "aussprache": "sprich: ska-ra-BÄ-us",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": "so groß wie eine Münze (2 bis 3 cm)",
+      "aufgabeOderNahrung": null,
+      "ort": null,
+      "wow": "Manche Pharaonen ließen große Gedenk-Skarabäen mit Nachrichten herstellen und verschicken.",
+      "text": "Unter Amenophis III. gab es Skarabäen, auf denen besondere Ereignisse standen, zum Beispiel eine Hochzeit oder eine Jagd. Man verschickte sie wohl an Beamte und Verbündete.",
+      "hinweisUnsicherheit": "Wie viele davon verschickt wurden und an wen, wissen wir nicht genau.",
+      "stichworte": [
+        "Skarabäus",
+        "Glück"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wofür nutzte man Gedenk-Skarabäen?"
+      ]
+    },
+    {
+      "id": "skarab8",
+      "typ": "versteckter Sonnenkäfer",
+      "station": 7,
+      "name": "Sonnenkäfer Nr. 8",
+      "zusatzname": "Skarabäus (ägyptisch: Cheper)",
+      "aussprache": "sprich: ska-ra-BÄ-us",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": "so groß wie eine Münze (2 bis 3 cm)",
+      "aufgabeOderNahrung": null,
+      "ort": null,
+      "wow": "Auch heute arbeiten Pillendreher als Müllabfuhr: In Australien setzte man sie gezielt gegen Kuhdung ein.",
+      "text": "Pillendreher vergraben Dung und düngen so den Boden. In Australien gab es zu viel Kuhdung, weil die einheimischen Käfer ihn nicht beseitigen konnten. Deshalb brachte man ab den 1960er Jahren passende Dungkäfer ins Land.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Skarabäus",
+        "Glück"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie helfen Dungkäfer der Natur?"
+      ]
+    },
+    {
+      "id": "skarab9",
+      "typ": "versteckter Sonnenkäfer",
+      "station": 8,
+      "name": "Sonnenkäfer Nr. 9",
+      "zusatzname": "Skarabäus (ägyptisch: Cheper)",
+      "aussprache": "sprich: ska-ra-BÄ-us",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": "so groß wie eine Münze (2 bis 3 cm)",
+      "aufgabeOderNahrung": null,
+      "ort": null,
+      "wow": "Der Käfer ist sogar ein Hieroglyphenzeichen. Es bedeutet „werden“ und „entstehen“.",
+      "text": "Das Zeichen für „Cheper“ zeigt einen Käfer. Das ägyptische Wort bedeutet „werden, entstehen, sein“. So passt das Zeichen zur Sonne, die jeden Morgen neu entsteht.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Skarabäus",
+        "Glück"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was bedeutet das Käfer-Zeichen in Hieroglyphen?"
+      ]
+    },
+    {
+      "id": "pyramiden",
+      "typ": "karte",
+      "station": 0,
+      "name": "Die Pyramiden von Gizeh",
+      "zusatzname": null,
+      "aussprache": "sprich: GI-seh",
+      "bedeutung": null,
+      "zeit": "um 2600 bis 2500 v. Chr.",
+      "epoche": "Altes Reich",
+      "groesse": "Cheops-Pyramide: ursprünglich 146,6 m hoch",
+      "aufgabeOderNahrung": null,
+      "ort": "bei Kairo, Ägypten",
+      "wow": "Die Cheops-Pyramide war über 3800 Jahre lang das höchste Bauwerk der Welt.",
+      "text": "In Gizeh stehen drei große Pyramiden: für die Könige Cheops, Chephren und Mykerinos. Sie sind Gräber. Vor den Pyramiden stehen die Sphinx und viele kleinere Gräber.",
+      "hinweisUnsicherheit": "Wie genau man die Blöcke hochgebracht hat, wissen Forscher nicht sicher.",
+      "stichworte": [
+        "Pyramide",
+        "Altes Reich"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Für welche drei Könige wurden die Pyramiden von Gizeh gebaut?"
+      ]
+    },
+    {
+      "id": "obelisk",
+      "typ": "karte",
+      "station": 0,
+      "name": "Obelisk",
+      "zusatzname": null,
+      "aussprache": "sprich: o-be-LISK",
+      "bedeutung": null,
+      "zeit": "ab dem Alten Reich",
+      "epoche": "bis in die Spätzeit",
+      "groesse": "bis über 30 m hoch, aus einem Stück Granit",
+      "aufgabeOderNahrung": null,
+      "ort": "vor Tempeln, z. B. in Luxor und Karnak",
+      "wow": "Manche Obelisken wiegen mehrere hundert Tonnen und wurden in einem Stück aus dem Stein gehauen.",
+      "text": "Ein Obelisk ist eine hohe, spitze Steinnadel. Die Spitze war oft vergoldet. Sie fing die ersten Strahlen der Sonne ein. Er war ein Zeichen für den Sonnengott Ra.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Bauwerk",
+        "Sonne"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wofür stand ein Obelisk?"
+      ]
+    },
+    {
+      "id": "sonnenscheibe",
+      "typ": "karte",
+      "station": 0,
+      "name": "Die Sonne (Ra)",
+      "zusatzname": null,
+      "aussprache": "sprich: RA",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "am Himmel über Ägypten",
+      "wow": "Die Ägypter glaubten: Die Sonne fährt jeden Tag mit einer Barke über den Himmel.",
+      "text": "Ra war der Sonnengott. Am Morgen fuhr er mit seiner Barke in den Himmel hinein, abends versank er im Westen. Nachts reiste er durch die Unterwelt, bis es wieder Morgen wurde.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Sonne",
+        "Götter"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie erklärten die Ägypter den Lauf der Sonne?"
+      ]
+    },
+    {
+      "id": "barke",
+      "typ": "karte",
+      "station": 0,
+      "name": "Barke",
+      "zusatzname": null,
+      "aussprache": "sprich: BAR-ke",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "auf dem Nil",
+      "wow": "Der Nil war die wichtigste Straße Ägyptens: Fast alles reiste auf dem Wasser.",
+      "text": "Eine Barke ist ein Schiff. Mit der Strömung fuhr man nach Norden, mit dem Wind und dem Segel zurück nach Süden. Der Wind weht in Ägypten meistens von Norden.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Nil",
+        "Schiff"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Warum fuhr man auf dem Nil mit dem Wind nach Süden?"
+      ]
+    },
+    {
+      "id": "nilpferd",
+      "typ": "karte",
+      "station": 1,
+      "name": "Nilpferd",
+      "zusatzname": "Flusspferd, Hippopotamus amphibius",
+      "aussprache": "sprich: NIL-pferd",
+      "bedeutung": null,
+      "zeit": "lebt dort seit Urzeiten, heute weiter im Süden",
+      "epoche": null,
+      "groesse": "bis 4 m lang · bis über 1,5 Tonnen",
+      "aufgabeOderNahrung": "Gras (nachts an Land)",
+      "ort": "Nil und Seen in Afrika",
+      "wow": "Ein Nilpferd kann bis zu fünf Minuten tauchen. Mit dem riesigen Maul kann es sehr weit gähnen.",
+      "text": "Im alten Ägypten gab es Nilpferde im Fluss. Sie waren gefährlich, wenn man ihnen zu nah kam. Die Ägypter verehrten aber auch die Göttin Taweret. Sie war nilpferdgestaltig und beschützte Mütter und Kinder.",
+      "hinweisUnsicherheit": "In Ägypten selbst gibt es seit dem 19. Jahrhundert keine wilden Nilpferde mehr. Sie leben weiter südlich.",
+      "stichworte": [
+        "Tier",
+        "Nil"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wovon ernährt sich ein Nilpferd?",
+        "Welche Göttin sah aus wie ein Nilpferd?"
+      ]
+    },
+    {
+      "id": "krokodil",
+      "typ": "karte",
+      "station": 1,
+      "name": "Nilkrokodil",
+      "zusatzname": "Crocodylus niloticus",
+      "aussprache": "sprich: kro-ko-DIEL",
+      "bedeutung": null,
+      "zeit": "lebt dort seit Urzeiten",
+      "epoche": null,
+      "groesse": "bis 5 m lang · bis über 500 kg",
+      "aufgabeOderNahrung": "Fische und größere Tiere am Ufer",
+      "ort": "Nil und Seen in Afrika",
+      "wow": "Eine Krokodilmutter trägt ihre Jungen im Maul vorsichtig zum Wasser.",
+      "text": "Krokodile lagen am Ufer in der Sonne. Die Ägypter hatten Respekt vor ihnen. Der Gott Sobek hatte einen Krokodilkopf. Er stand für die Kraft des Nils.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Tier",
+        "Nil",
+        "Götter"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Welcher Gott hatte einen Krokodilkopf?"
+      ]
+    },
+    {
+      "id": "ibis",
+      "typ": "karte",
+      "station": 1,
+      "name": "Heiliger Ibis",
+      "zusatzname": "Threskiornis aethiopicus",
+      "aussprache": "sprich: I-bis",
+      "bedeutung": null,
+      "zeit": "lebt dort seit Urzeiten",
+      "epoche": null,
+      "groesse": "etwa 75 cm hoch",
+      "aufgabeOderNahrung": "Würmer, Insekten, kleine Tiere",
+      "ort": "Feuchtgebiete in Afrika",
+      "wow": "In Sakkara fand man Millionen Ibis-Mumien. Sie waren Opfergaben für den Gott Thot.",
+      "text": "Der Ibis hat einen langen, gebogenen Schnabel und einen schwarzen Kopf. Der Gott Thot hatte einen Ibiskopf. Er war der Gott der Schrift und des Wissens.",
+      "hinweisUnsicherheit": "Heute ist der Heilige Ibis in Ägypten selten.",
+      "stichworte": [
+        "Tier",
+        "Götter"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Welcher Gott hatte einen Ibiskopf?"
+      ]
+    },
+    {
+      "id": "fischer",
+      "typ": "karte",
+      "station": 1,
+      "name": "Fischer",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "fing Fische mit Netz, Speer und Angel",
+      "ort": "am Nil und im Delta",
+      "wow": "Auf Papyrusbooten stehend warfen Fischer ihre Netze aus.",
+      "text": "Fische gehörten zu den wichtigsten Nahrungsmitteln. Das Boot war aus gebündeltem Papyrus gebaut. Es war leicht und glitt gut durch das flache Wasser.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Beruf",
+        "Nil"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Woraus bestand ein einfaches Boot?"
+      ]
+    },
+    {
+      "id": "bauer",
+      "typ": "karte",
+      "station": 1,
+      "name": "Bauer",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "baute Getreide, Gemüse und Flachs an",
+      "ort": "auf den Feldern am Nil",
+      "wow": "Das ägyptische Jahr hatte drei Jahreszeiten: Überschwemmung, Wachsen und Ernte.",
+      "text": "Während der Flut ruhte die Feldarbeit. Danach säte man auf dem Schlamm. Man baute vor allem Emmer und Gerste an. Aus ihnen machte man Brot und Bier. Auch Flachs für Leinenkleidung wuchs auf den Feldern.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Beruf",
+        "Landwirtschaft"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie hießen die drei Jahreszeiten im alten Ägypten?"
+      ]
+    },
+    {
+      "id": "papyrus",
+      "typ": "karte",
+      "station": 1,
+      "name": "Papyrus",
+      "zusatzname": "Cyperus papyrus",
+      "aussprache": "sprich: pa-PÜ-rus",
+      "bedeutung": null,
+      "zeit": "wächst dort seit Urzeiten",
+      "epoche": null,
+      "groesse": "bis 4 m hoch",
+      "aufgabeOderNahrung": null,
+      "ort": "Sumpfgebiete am Nil, vor allem im Delta",
+      "wow": "Aus Papyrus machte man nicht nur Schreibpapier, sondern auch Boote, Seile, Matten und Sandalen.",
+      "text": "Der Papyrus wächst im Sumpf. Für Schreibblätter schnitt man das Mark in dünne Streifen. Man legte sie kreuzweise übereinander und presste sie. Der Pflanzensaft klebte die Schichten zusammen.",
+      "hinweisUnsicherheit": "Unser Wort „Papier“ kommt von „Papyrus“.",
+      "stichworte": [
+        "Pflanze",
+        "Schrift"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie machte man ein Blatt aus Papyrus?"
+      ]
+    },
+    {
+      "id": "schaduf",
+      "typ": "karte",
+      "station": 1,
+      "name": "Schaduf",
+      "zusatzname": null,
+      "aussprache": "sprich: scha-DUF",
+      "bedeutung": null,
+      "zeit": "seit dem Neuen Reich",
+      "epoche": "ca. 1500 v. Chr.",
+      "groesse": "etwa 3 m hoch",
+      "aufgabeOderNahrung": null,
+      "ort": "an Kanälen und am Nil",
+      "wow": "Mit einem Gegengewicht am Balken war das Wasserschöpfen viel leichter.",
+      "text": "Ein Schaduf ist ein Schwengelbrunnen. An einem langen Balken hängt ein Eimer, am anderen Ende ein schwerer Stein. So hebt man Wasser vom Fluss auf höher gelegene Felder.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Technik",
+        "Landwirtschaft"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wozu hängte man einen Stein an das andere Ende des Balkens?"
+      ]
+    },
+    {
+      "id": "nilometer",
+      "typ": "karte",
+      "station": 1,
+      "name": "Nilometer",
+      "zusatzname": null,
+      "aussprache": "sprich: nil-o-ME-ter",
+      "bedeutung": null,
+      "zeit": "seit dem Alten Reich bekannt",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "z. B. auf der Insel Elephantine",
+      "wow": "Am Nilometer sah man schon vorher, wie gut die Ernte werden würde.",
+      "text": "Ein Nilometer ist eine Treppe oder ein Schacht mit Markierungen. Daran las man den Wasserstand des Nils ab. Bei einer hohen Flut gab es eine gute Ernte. Danach richteten die Beamten die Steuern aus.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Technik",
+        "Nil"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wozu brauchte man einen Nilometer?"
+      ]
+    },
+    {
+      "id": "nilflut",
+      "typ": "karte",
+      "station": 1,
+      "name": "Die Nilflut",
+      "zusatzname": null,
+      "aussprache": "sprich: NIL-flut",
+      "bedeutung": null,
+      "zeit": "jedes Jahr, etwa Juli bis Oktober",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Nil in Ägypten",
+      "wow": "Seit dem Bau des Assuan-Staudamms (Hochdamm 1970) gibt es keine natürliche Nilflut mehr.",
+      "text": "Im Sommer regnete es weit im Süden, in Äthiopien, sehr stark. Das Wasser floss den Nil hinunter und trat in Ägypten über die Ufer. Danach blieb dunkler, fruchtbarer Schlamm auf den Feldern liegen.",
+      "hinweisUnsicherheit": "Beginn und Höhe der Flut schwankten von Jahr zu Jahr.",
+      "stichworte": [
+        "Nil",
+        "Landwirtschaft"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Warum war die Nilflut so wichtig?"
+      ]
+    },
+    {
+      "id": "schwarzes_land",
+      "typ": "karte",
+      "station": 1,
+      "name": "Das Schwarze und das Rote Land",
+      "zusatzname": null,
+      "aussprache": "sprich: Ke-met und Desch-ret",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Ägypten",
+      "wow": "Die Ägypter nannten ihr Land „Kemet“, das Schwarze Land, nach dem dunklen Nilschlamm.",
+      "text": "Am Fluss lag das fruchtbare, schwarze Land. Dahinter begann die Wüste. Die Ägypter nannten sie das „rote Land“, Deschret. Dort wohnte kaum jemand, und dort fand man Gold und Steine.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Landschaft"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was bedeutet „Kemet“?"
+      ]
+    },
+    {
+      "id": "reiher",
+      "typ": "karte",
+      "station": 1,
+      "name": "Graureiher",
+      "zusatzname": "Ardea cinerea",
+      "aussprache": "sprich: GRAU-rai-her",
+      "bedeutung": null,
+      "zeit": "lebt dort seit Urzeiten",
+      "epoche": null,
+      "groesse": "etwa 1 m hoch",
+      "aufgabeOderNahrung": "Fische, Frösche, kleine Tiere",
+      "ort": "Ufer und Sümpfe am Nil",
+      "wow": "Ein Reiher steht oft minutenlang bewegungslos im Wasser, dann stößt er blitzschnell zu.",
+      "text": "Reiher haben lange Beine und einen langen Hals. Die Ägypter sahen in einem ähnlichen Vogel, dem Bennu, ein Zeichen für Sonnenaufgang und neues Leben.",
+      "hinweisUnsicherheit": "Wie genau der Bennu-Vogel aussah, ist nicht sicher. Man zeigt ihn oft wie einen Reiher.",
+      "stichworte": [
+        "Tier",
+        "Nil"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie jagt ein Reiher?"
+      ]
+    },
+    {
+      "id": "fisch",
+      "typ": "karte",
+      "station": 1,
+      "name": "Nilbarsch und Tilapia",
+      "zusatzname": "Lates niloticus, Oreochromis niloticus",
+      "aussprache": "sprich: NIL-barsch",
+      "bedeutung": null,
+      "zeit": "leben dort seit Urzeiten",
+      "epoche": null,
+      "groesse": "Barsch: bis über 1 m · Tilapia: etwa 30 bis 40 cm",
+      "aufgabeOderNahrung": "kleine Fische, Pflanzen",
+      "ort": "Nil und Seen in Afrika",
+      "wow": "Fische gehörten zu den wichtigsten Speisen. Man trocknete und salzte sie, damit sie lange hielten.",
+      "text": "Im Nil lebten viele Fischarten. Wandbilder zeigen, wie Fischer mit Netzen und Speeren arbeiteten. Die Tilapia, auch Buntbarsch genannt, kommt in vielen Bildern vor.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Tier",
+        "Nil",
+        "Essen"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie machte man Fisch haltbar?"
+      ]
+    },
+    {
+      "id": "wasservogel",
+      "typ": "karte",
+      "station": 1,
+      "name": "Nilgans",
+      "zusatzname": "Alopochen aegyptiaca",
+      "aussprache": "sprich: NIL-gans",
+      "bedeutung": null,
+      "zeit": "lebt dort seit Urzeiten",
+      "epoche": null,
+      "groesse": "etwa 70 cm lang",
+      "aufgabeOderNahrung": "Gras, Samen, Wasserpflanzen",
+      "ort": "Ufer des Nils",
+      "wow": "Die Nilgans ist hellbraun mit einem dunklen Fleck um das Auge. Man sieht sie auf vielen Wandbildern.",
+      "text": "Gänse und Enten wurden gefangen und gehalten. Sie gaben Fleisch und Eier. Auf Grabbildern zeigen Jäger mit Wurfhölzern und Netzen, wie sie Wasservögel fangen.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Tier",
+        "Nil"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wozu hielt man Gänse?"
+      ]
+    },
+    {
+      "id": "lotus",
+      "typ": "karte",
+      "station": 1,
+      "name": "Lotos",
+      "zusatzname": "Nymphaea",
+      "aussprache": "sprich: LO-tos",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": "Blüte etwa 10 bis 15 cm",
+      "aufgabeOderNahrung": null,
+      "ort": "ruhige Gewässer am Nil",
+      "wow": "Die Blüte öffnet sich morgens und schließt sich am Abend. Deshalb war sie ein Zeichen für die Sonne und für neues Leben.",
+      "text": "Der blaue und der weiße Lotos schwimmen auf dem Wasser. Die Ägypter malten ihn auf Wände und in Gräber. Er war auch das Wappenzeichen von Oberägypten.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Pflanze",
+        "Symbol"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Für welchen Landesteil stand der Lotos?"
+      ]
+    },
+    {
+      "id": "schilfboot",
+      "typ": "karte",
+      "station": 1,
+      "name": "Das Papyrusboot",
+      "zusatzname": null,
+      "aussprache": "sprich: pa-PÜ-rus-boot",
+      "bedeutung": null,
+      "zeit": "seit der Frühzeit",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Sümpfe und Nil",
+      "wow": "Die ältesten Schiffe der Welt waren wohl Boote aus gebündelten Pflanzenstängeln.",
+      "text": "Das Boot besteht aus fest verschnürten Papyrusbündeln. Es ist leicht und schwimmt auch in sehr flachem Wasser. Es war ideal für Fischer und Vogeljäger im Sumpf.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Schiff",
+        "Nil"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie baute man ein Papyrusboot?"
+      ]
+    },
+    {
+      "id": "netz",
+      "typ": "karte",
+      "station": 1,
+      "name": "Das Fischernetz",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "am Nil",
+      "wow": "Netze waren aus Leinenfäden geknüpft. Steine und Schwimmer sorgten dafür, dass das Netz richtig im Wasser hängt.",
+      "text": "Zwei Fischer zogen ein großes Netz durch das Wasser. Kleine Steine zogen die untere Kante nach unten, leichte Holzstücke hielten die obere Kante oben.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Werkzeug",
+        "Nil"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wozu dienten Steine und Schwimmer am Netz?"
+      ]
+    },
+    {
+      "id": "pharao",
+      "typ": "karte",
+      "station": 2,
+      "name": "Der Pharao",
+      "zusatzname": null,
+      "aussprache": "sprich: FA-ra-o",
+      "bedeutung": "Bedeutung: „Großes Haus“ (so nannte man den Palast, später den König).",
+      "zeit": "vom Beginn bis zum Ende",
+      "epoche": null,
+      "groesse": "meist etwa so groß wie ein Mensch",
+      "aufgabeOderNahrung": "Herrscher, Priester und Richter zugleich",
+      "ort": "Ägypten",
+      "wow": "Die Ägypter sahen den König als lebenden Horus. Er sollte für Ordnung und Wahrheit sorgen.",
+      "text": "Der Pharao herrschte über ganz Ägypten. Krummstab und Wedel waren seine Zeichen. Der Krummstab stand für den Hirten, der sein Volk führt. Das Wort „Pharao“ wurde erst später für den König üblich.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Herrscher"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Welche zwei Zeichen trug der Pharao in den Händen?"
+      ]
+    },
+    {
+      "id": "rote_krone",
+      "typ": "karte",
+      "station": 2,
+      "name": "Rote Krone",
+      "zusatzname": null,
+      "aussprache": "sprich: Desch-ret",
+      "bedeutung": null,
+      "zeit": "seit der Frühzeit",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "für Unterägypten (Delta)",
+      "wow": "Die rote Krone hat vorn eine kleine Spirale, wie ein Fühler.",
+      "text": "Die rote Krone gehörte zu Unterägypten im Norden. Dort breitet sich der Nil zum Delta aus. Das Zeichen der Region war die Papyruspflanze.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Krone"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Zu welchem Landesteil gehörte die rote Krone?"
+      ]
+    },
+    {
+      "id": "weisse_krone",
+      "typ": "karte",
+      "station": 2,
+      "name": "Weiße Krone",
+      "zusatzname": null,
+      "aussprache": "sprich: Hed-jet",
+      "bedeutung": null,
+      "zeit": "seit der Frühzeit",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "für Oberägypten (Niltal)",
+      "wow": "Die weiße Krone sieht aus wie eine hohe Kegelmütze mit einer Kugel oben.",
+      "text": "Die weiße Krone gehörte zu Oberägypten im Süden. Dort fließt der Nil durch ein schmales Tal. Das Zeichen der Region war die Lotosblume.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Krone"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Zu welchem Landesteil gehörte die weiße Krone?"
+      ]
+    },
+    {
+      "id": "doppelkrone",
+      "typ": "karte",
+      "station": 2,
+      "name": "Doppelkrone",
+      "zusatzname": null,
+      "aussprache": "sprich: PSCHENT",
+      "bedeutung": null,
+      "zeit": "seit der Frühzeit",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "für ganz Ägypten",
+      "wow": "Die Doppelkrone zeigte: Ober- und Unterägypten sind ein Reich.",
+      "text": "Die Doppelkrone besteht aus der weißen Krone, die in der roten steckt. Sie war das Zeichen für das ganze Reich. Der Pharao nannte sich „Herr der Beiden Länder“.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Krone"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Woraus besteht die Doppelkrone?"
+      ]
+    },
+    {
+      "id": "narmer_palette",
+      "typ": "karte",
+      "station": 2,
+      "name": "Narmer-Palette",
+      "zusatzname": null,
+      "aussprache": "sprich: NAR-mer",
+      "bedeutung": null,
+      "zeit": "um 3100 v. Chr.",
+      "epoche": "Frühzeit",
+      "groesse": "etwa 64 cm hoch",
+      "aufgabeOderNahrung": null,
+      "ort": "Hierakonpolis, gefunden 1898",
+      "wow": "Auf der Palette trägt der König auf einer Seite die weiße, auf der anderen die rote Krone.",
+      "text": "Die Palette ist eine Steinplatte aus Schiefer. Sie gehört dem König Narmer. Die Bilder zeigen ihn mit beiden Kronen. Man sieht darin einen Hinweis auf die Einigung des Landes.",
+      "hinweisUnsicherheit": "Ob Narmer und Menes dieselbe Person sind, ist unter Forschern umstritten. Die Einigung war wohl ein längerer Prozess.",
+      "stichworte": [
+        "Frühzeit",
+        "Einigung"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Woran erkennt man auf der Palette, dass Ägypten geeint ist?"
+      ]
+    },
+    {
+      "id": "kobra",
+      "typ": "karte",
+      "station": 2,
+      "name": "Uräus-Schlange",
+      "zusatzname": "Ägyptische Kobra",
+      "aussprache": "sprich: u-RÄ-us",
+      "bedeutung": null,
+      "zeit": "seit der Frühzeit",
+      "epoche": null,
+      "groesse": "etwa 40 cm hoch dargestellt",
+      "aufgabeOderNahrung": "Schutz des Königs",
+      "ort": "an der Stirn des Pharaos",
+      "wow": "Die aufgerichtete Kobra auf der Stirn sollte Feinde abwehren, so glaubte man.",
+      "text": "Die Kobra war die Göttin Wadjet. Sie sollte den König schützen. Deshalb trug er eine kleine Kobra an der Krone oder am Kopftuch. Das ist der Uräus.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Tier",
+        "Schutz"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wozu trug der Pharao die Kobra an der Stirn?"
+      ]
+    },
+    {
+      "id": "wesir",
+      "typ": "karte",
+      "station": 2,
+      "name": "Der Wesir",
+      "zusatzname": null,
+      "aussprache": "sprich: we-SIR",
+      "bedeutung": null,
+      "zeit": "seit dem Alten Reich",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "höchster Beamter nach dem König",
+      "ort": "am Hof",
+      "wow": "Der Wesir war oberster Richter und kümmerte sich um Steuern und Bauwerke.",
+      "text": "Der Pharao konnte nicht alles allein regeln. Der Wesir leitete die Verwaltung des Landes. Er trug ein langes Leinengewand und einen Stab.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Beruf",
+        "Verwaltung"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was waren Aufgaben des Wesirs?"
+      ]
+    },
+    {
+      "id": "schreiber",
+      "typ": "karte",
+      "station": 2,
+      "name": "Der Schreiber",
+      "zusatzname": null,
+      "aussprache": "sprich: SCHREI-ber",
+      "bedeutung": null,
+      "zeit": "seit der Frühzeit",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "schrieb Listen, Briefe und Verträge",
+      "ort": "am Hof, im Tempel und in der Verwaltung",
+      "wow": "Schreiber mussten jahrelang lernen und waren sehr angesehen. Sie saßen im Schneidersitz mit der Papyrusrolle auf dem Knie.",
+      "text": "Nur wenige Menschen konnten lesen und schreiben. Ein Schreiber hatte deshalb einen guten Beruf. Er zählte Getreide, führte Listen und schrieb Briefe.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Beruf",
+        "Schrift"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Warum waren Schreiber so wichtig?"
+      ]
+    },
+    {
+      "id": "stufenpyramide",
+      "typ": "karte",
+      "station": 2,
+      "name": "Die Stufenpyramide",
+      "zusatzname": null,
+      "aussprache": "sprich: STU-fen-pü-ra-mi-de",
+      "bedeutung": null,
+      "zeit": "um 2650 v. Chr.",
+      "epoche": "Altes Reich",
+      "groesse": "etwa 60 m hoch, sechs Stufen",
+      "aufgabeOderNahrung": null,
+      "ort": "Sakkara, bei Memphis",
+      "wow": "Sie ist die älteste große Steinpyramide. Als Baumeister gilt Imhotep.",
+      "text": "König Djoser ließ sich in Sakkara eine Stufenpyramide bauen. Vorher baute man Gräber nur aus Lehmziegeln. Hier benutzte man zum ersten Mal Stein in großem Stil. Das Grab sieht aus wie sechs übereinandergestapelte Gräber.",
+      "hinweisUnsicherheit": "Ob Imhotep die Pyramide wirklich entworfen hat, ist nicht ganz sicher.",
+      "stichworte": [
+        "Pyramide",
+        "Altes Reich"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie viele Stufen hat die Stufenpyramide?"
+      ]
+    },
+    {
+      "id": "falke",
+      "typ": "karte",
+      "station": 2,
+      "name": "Falke (Horus)",
+      "zusatzname": "Falke",
+      "aussprache": "sprich: HO-rus",
+      "bedeutung": null,
+      "zeit": "seit der Frühzeit",
+      "epoche": null,
+      "groesse": "etwa 40 cm",
+      "aufgabeOderNahrung": "Vögel und kleine Tiere",
+      "ort": "Ägypten",
+      "wow": "Jeder König hatte einen „Horusnamen“. Der Falke saß auf dem Königsnamen.",
+      "text": "Der Falke war das Tier des Himmelsgottes Horus. Die Ägypter sahen im König einen lebenden Horus. Deshalb zeigte man den Falken oft hinter oder über dem König.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Tier",
+        "Götter"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Welcher Gott war ein Falke?"
+      ]
+    },
+    {
+      "id": "cheops",
+      "typ": "karte",
+      "station": 3,
+      "name": "Die Cheops-Pyramide",
+      "zusatzname": null,
+      "aussprache": "sprich: CHE-ops",
+      "bedeutung": null,
+      "zeit": "um 2600 v. Chr.",
+      "epoche": "Altes Reich",
+      "groesse": "ursprünglich 146,6 m hoch (heute rund 138,5 m)",
+      "aufgabeOderNahrung": null,
+      "ort": "Gizeh bei Kairo",
+      "wow": "Etwa 2,3 Millionen Steinblöcke und rund 26 Jahre Bauzeit.",
+      "text": "Die Pyramide des Königs Cheops ist die größte von Gizeh. Sie wurde aus Kalkstein gebaut. Innen liegen die Königskammer, die Große Galerie und enge Schächte. Heute fehlt die glatte Außenschicht aus feinem Kalkstein.",
+      "hinweisUnsicherheit": "Die Zahl der Blöcke und die Bauzeit sind Schätzungen. Wie man die Blöcke nach oben brachte, ist nicht sicher geklärt: Rampen, Hebel, mehrere Verfahren.",
+      "stichworte": [
+        "Pyramide",
+        "Altes Reich"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie hoch war die Cheops-Pyramide ursprünglich?",
+        "Wie viele Blöcke wurden verbaut (Schätzung)?"
+      ]
+    },
+    {
+      "id": "sphinx",
+      "typ": "karte",
+      "station": 3,
+      "name": "Die Sphinx",
+      "zusatzname": null,
+      "aussprache": "sprich: SFINKS",
+      "bedeutung": null,
+      "zeit": "um 2500 v. Chr.",
+      "epoche": "Altes Reich",
+      "groesse": "rund 73 m lang, 20 m hoch",
+      "aufgabeOderNahrung": null,
+      "ort": "Gizeh bei Kairo",
+      "wow": "Sie ist aus dem Kalkstein des Felsens gehauen, nicht aus einzelnen Blöcken gebaut.",
+      "text": "Die Sphinx hat den Körper eines Löwen und den Kopf eines Königs. Sie bewacht den Weg zu den Pyramiden. Man nimmt an, dass sie das Gesicht des Königs Chephren trägt.",
+      "hinweisUnsicherheit": "Wessen Gesicht die Sphinx zeigt, ist nicht ganz sicher.",
+      "stichworte": [
+        "Bauwerk"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie sieht eine Sphinx aus?"
+      ]
+    },
+    {
+      "id": "baumeister",
+      "typ": "karte",
+      "station": 3,
+      "name": "Der Baumeister",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "Altes Reich",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "plante und leitete den Bau",
+      "ort": "auf der Baustelle",
+      "wow": "Die Pyramidenseiten sind fast genau nach den Himmelsrichtungen ausgerichtet.",
+      "text": "Der Baumeister plante die Pyramide. Er musste Winkel messen, Mengen berechnen und die Arbeit einteilen. Messleine und Winkelmaß waren seine Werkzeuge. Als Leiter des Baus der Cheops-Pyramide gilt wohl Hemiunu.",
+      "hinweisUnsicherheit": "Dass Hemiunu die Cheops-Pyramide leitete, ist wahrscheinlich, aber nicht sicher.",
+      "stichworte": [
+        "Beruf",
+        "Pyramide"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Welche Werkzeuge nutzte ein Baumeister?"
+      ]
+    },
+    {
+      "id": "steinmetz",
+      "typ": "karte",
+      "station": 3,
+      "name": "Der Steinmetz",
+      "zusatzname": null,
+      "aussprache": "sprich: STEIN-mets",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "bearbeitete Steinblöcke",
+      "ort": "im Steinbruch und auf der Baustelle",
+      "wow": "Kalkstein schnitt man mit Kupferwerkzeugen. Für den harten Granit nahm man Steinkugeln aus Dolerit.",
+      "text": "Der Steinmetz schlug mit Holzschlägel und Meißel Blöcke aus dem Fels. Danach glättete er sie. Wichtig war, dass die Quader genau aufeinander passten.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Beruf",
+        "Pyramide"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Womit bearbeitete man Kalkstein?"
+      ]
+    },
+    {
+      "id": "arbeiter",
+      "typ": "karte",
+      "station": 3,
+      "name": "Der Arbeiter",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "Altes Reich",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Brot, Bier, Fleisch und Gemüse",
+      "ort": "Arbeitersiedlung bei Gizeh",
+      "wow": "Die Arbeitsgruppen gaben sich Namen wie „Freunde des Cheops“. Man fand sie als Zeichen in den Steinen.",
+      "text": "Die Pyramiden bauten bezahlte Arbeiter. Sie waren in Gruppen eingeteilt, bekamen Essen und konnten sich ausruhen. Sie wurden nicht als Sklaven gehalten. Am Rand der Pyramiden fand man ihre Gräber.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Beruf",
+        "Pyramide"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Woher weiß man, dass die Pyramiden-Arbeiter keine Sklaven waren?"
+      ]
+    },
+    {
+      "id": "ochse",
+      "typ": "karte",
+      "station": 3,
+      "name": "Ochse",
+      "zusatzname": "Hausrind",
+      "aussprache": "sprich: OCH-se",
+      "bedeutung": null,
+      "zeit": "seit der Frühzeit",
+      "epoche": null,
+      "groesse": "etwa 2,4 m lang",
+      "aufgabeOderNahrung": "Gras und Futter",
+      "ort": "Ägypten",
+      "wow": "Rinder lieferten Fleisch, Milch und Leder und zogen Pflüge und Schlitten.",
+      "text": "Rinder waren sehr wertvoll. Für die Arbeiter der Pyramiden wurden viele Rinder gehalten. Aus Funden von Knochen weiß man, dass dort viel Fleisch gegessen wurde.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Tier"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wozu nutzte man Rinder?"
+      ]
+    },
+    {
+      "id": "schlitten",
+      "typ": "karte",
+      "station": 3,
+      "name": "Der Schlitten",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "Altes Reich",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "auf der Baustelle",
+      "wow": "Feuchter Sand ist fester als trockener Sand. Auf ihm gleitet ein Schlitten viel leichter.",
+      "text": "Ein Wandbild zeigt: Eine Statue wird auf einem Schlitten gezogen, und ein Mann gießt Wasser vor die Kufen. Forscher haben das 2014 nachgemessen. Mit der richtigen Wassermenge brauchte man nur etwa halb so viel Zugkraft.",
+      "hinweisUnsicherheit": "Das Bild stammt aus einem Grab des Mittleren Reiches. Ob man bei den Pyramiden genauso arbeitete, ist nicht sicher.",
+      "stichworte": [
+        "Technik",
+        "Physik"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Warum goss man Wasser vor den Schlitten?"
+      ]
+    },
+    {
+      "id": "kupfermeissel",
+      "typ": "karte",
+      "station": 3,
+      "name": "Kupfermeißel",
+      "zusatzname": null,
+      "aussprache": "sprich: KUP-fer-mei-ßel",
+      "bedeutung": null,
+      "zeit": "seit der Frühzeit",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Steinbruch, Werkstatt",
+      "wow": "Kupfer ist weich. Mit Sand und Wasser als Schleifmittel schneidet es trotzdem Stein.",
+      "text": "Kupfer war das wichtigste Metall der frühen Ägypter. Werkzeuge schmiedete man aus Kupfer. Später mischte man Zinn dazu. So entstand Bronze, die härter ist.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Werkzeug",
+        "Metall"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was entsteht, wenn man Kupfer mit Zinn mischt?"
+      ]
+    },
+    {
+      "id": "holzschlaegel",
+      "typ": "karte",
+      "station": 3,
+      "name": "Der Holzschlägel",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Steinbruch, Werkstatt",
+      "wow": "Mit dem Holzschlägel schlug man auf Meißel, ohne das Werkzeug zu beschädigen.",
+      "text": "Der Schlägel besteht aus hartem Holz. Der Steinmetz hielt den Meißel in der einen Hand und schlug mit dem Schlägel darauf. So entstanden Rillen im Stein, und Blöcke ließen sich herauslösen.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Werkzeug"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wozu benutzte der Steinmetz den Holzschlägel?"
+      ]
+    },
+    {
+      "id": "arbeitersiedlung",
+      "typ": "karte",
+      "station": 3,
+      "name": "Die Arbeitersiedlung",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "um 2500 v. Chr.",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Heit el-Ghurab bei Gizeh, ausgegraben ab den 1990er Jahren",
+      "wow": "Archäologen fanden Bäckereien, Brauereien und Wohnräume für Tausende Arbeiter.",
+      "text": "Südlich der Pyramiden lagen Häuser, Bäckereien und Werkstätten. Hier lebten und aßen die Bauarbeiter. Auch Gräber von Arbeitern und Baumeistern hat man gefunden.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Pyramide",
+        "Alltag"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was fand man in der Arbeitersiedlung bei Gizeh?"
+      ]
+    },
+    {
+      "id": "ra",
+      "typ": "karte",
+      "station": 4,
+      "name": "Ra, der Sonnengott",
+      "zusatzname": null,
+      "aussprache": "sprich: RA",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Sonne, Licht, Ordnung",
+      "ort": "Himmel, Unterwelt, Tempel in Heliopolis",
+      "wow": "Jeden Morgen, so glaubte man, wird die Sonne neu geboren.",
+      "text": "Ra hat einen Falkenkopf mit einer Sonnenscheibe. Am Tag fährt er in der Tagesbarke über den Himmel, in der Nacht in der Nachtbarke durch die Unterwelt. Viele Pharaonen nannten sich „Sohn des Ra“.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Götter",
+        "Sonne"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wofür ist Ra zuständig?"
+      ]
+    },
+    {
+      "id": "osiris",
+      "typ": "karte",
+      "station": 4,
+      "name": "Osiris, Herr der Toten",
+      "zusatzname": null,
+      "aussprache": "sprich: o-SI-ris",
+      "bedeutung": null,
+      "zeit": "seit dem Alten Reich",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Totenreich und Wiedergeburt",
+      "ort": "Totenreich, Abydos",
+      "wow": "Seine Haut ist grün, wie frisches Getreide: Zeichen für neues Leben.",
+      "text": "Osiris war ein Gott der Toten. Er wird als Mumie mit Krone, Krummstab und Wedel gezeigt. Viele Ägypter hofften, nach dem Tod wie Osiris weiterzuleben.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Götter",
+        "Tod"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Warum ist Osiris grün dargestellt?"
+      ]
+    },
+    {
+      "id": "isis",
+      "typ": "karte",
+      "station": 4,
+      "name": "Isis",
+      "zusatzname": null,
+      "aussprache": "sprich: I-sis",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Magie, Heilung, Familie",
+      "ort": "Philae, ganz Ägypten",
+      "wow": "Auf dem Kopf trägt sie einen Thron: Das ist ihr Name in Zeichen.",
+      "text": "Isis ist die Frau des Osiris und die Mutter des Horus. Sie schützte Familien und konnte nach dem Glauben der Ägypter heilen. Später verehrte man sie auch in Griechenland und Rom.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Götter"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wer war die Mutter des Horus?"
+      ]
+    },
+    {
+      "id": "horus",
+      "typ": "karte",
+      "station": 4,
+      "name": "Horus",
+      "zusatzname": null,
+      "aussprache": "sprich: HO-rus",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Himmel und Königtum",
+      "ort": "Edfu, ganz Ägypten",
+      "wow": "Sein Auge, das Udjat, galt als Glücks- und Heilzeichen.",
+      "text": "Horus hat einen Falkenkopf. Er ist der Sohn von Isis und Osiris. Der König sollte ein lebender Horus sein. Deshalb trug Horus oft die Doppelkrone.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Götter",
+        "König"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was bedeutet das Horusauge?"
+      ]
+    },
+    {
+      "id": "anubis",
+      "typ": "karte",
+      "station": 4,
+      "name": "Anubis",
+      "zusatzname": null,
+      "aussprache": "sprich: a-NU-bis",
+      "bedeutung": null,
+      "zeit": "seit der Frühzeit",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Einbalsamierer und Wächter der Toten",
+      "ort": "Friedhöfe",
+      "wow": "Die Ägypter wählten den Schakal, weil diese Tiere oft an Friedhöfen herumstreiften.",
+      "text": "Anubis hat den Kopf eines Schakals. Er führt die Toten zum Totengericht und bewacht die Waage. Die Einbalsamierer trugen bei Zeremonien manchmal seine Maske.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Götter",
+        "Tod"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Welche Aufgabe hatte Anubis?"
+      ]
+    },
+    {
+      "id": "thot",
+      "typ": "karte",
+      "station": 4,
+      "name": "Thot",
+      "zusatzname": null,
+      "aussprache": "sprich: TOT",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Schrift, Wissen, Mond",
+      "ort": "Hermopolis",
+      "wow": "Thot schreibt das Ergebnis des Totengerichts auf.",
+      "text": "Thot hat den Kopf eines Ibis oder war ein Pavian. Er war der Gott der Schreiber. Die Ägypter sagten: Er hat die Schrift erfunden.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Götter",
+        "Schrift"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wofür war Thot zuständig?"
+      ]
+    },
+    {
+      "id": "maat",
+      "typ": "karte",
+      "station": 4,
+      "name": "Ma’at",
+      "zusatzname": null,
+      "aussprache": "sprich: ma-AT",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Wahrheit, Gerechtigkeit, Ordnung",
+      "ort": "ganz Ägypten",
+      "wow": "Die Straußenfeder der Ma’at war das Gegengewicht zum Herzen.",
+      "text": "Ma’at stand für Wahrheit, Recht und Gleichgewicht. Auf dem Kopf trägt sie eine Feder. Der Pharao sollte dafür sorgen, dass Ma’at im Land herrscht.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Götter",
+        "Wahrheit"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wofür steht die Feder der Ma’at?"
+      ]
+    },
+    {
+      "id": "hathor",
+      "typ": "karte",
+      "station": 4,
+      "name": "Hathor",
+      "zusatzname": null,
+      "aussprache": "sprich: HA-thor",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Freude, Musik, Liebe",
+      "ort": "Dendera",
+      "wow": "Hathor wird oft als Kuh oder als Frau mit Kuhohren gezeigt.",
+      "text": "Hathor war die Göttin der Freude, des Tanzes und der Musik. Zwischen ihren Hörnern sitzt die Sonnenscheibe. Man verehrte sie auch als Beschützerin der Frauen.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Götter"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Woran erkennt man Hathor?"
+      ]
+    },
+    {
+      "id": "bastet",
+      "typ": "karte",
+      "station": 4,
+      "name": "Bastet",
+      "zusatzname": null,
+      "aussprache": "sprich: BAS-tet",
+      "bedeutung": null,
+      "zeit": "seit der Frühzeit",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Schutz des Hauses, Familie",
+      "ort": "Bubastis im Delta",
+      "wow": "In Bubastis fand man viele Katzenmumien, die man der Göttin geweiht hatte.",
+      "text": "Bastet hat den Kopf einer Katze. Sie schützte das Haus und die Familie. Deshalb liebten die Ägypter ihre Hauskatzen. Sie fingen Mäuse und Schlangen.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Götter",
+        "Tier"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Warum waren Katzen den Ägyptern heilig?"
+      ]
+    },
+    {
+      "id": "sobek",
+      "typ": "karte",
+      "station": 4,
+      "name": "Sobek",
+      "zusatzname": null,
+      "aussprache": "sprich: SO-bek",
+      "bedeutung": null,
+      "zeit": "seit dem Alten Reich",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Nil, Kraft, Fruchtbarkeit",
+      "ort": "Fajum, Kom Ombo",
+      "wow": "In Kom Ombo teilte sich Sobek einen Tempel mit dem Falkengott Haroeris.",
+      "text": "Sobek hat den Kopf eines Krokodils. Er gehörte zum Nil und zur Fruchtbarkeit. Die Ägypter hofften, dass er sie vor den echten Krokodilen schützt.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Götter",
+        "Nil"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wofür war Sobek zuständig?"
+      ]
+    },
+    {
+      "id": "ammit",
+      "typ": "karte",
+      "station": 4,
+      "name": "Ammit",
+      "zusatzname": null,
+      "aussprache": "sprich: AM-mit",
+      "bedeutung": "Bedeutung: „Fresserin der Toten“.",
+      "zeit": "im Neuen Reich bekannt",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "wartet beim Totengericht",
+      "ort": "Totenreich",
+      "wow": "Ammit ist aus drei Tieren gemischt: Krokodil, Löwe und Nilpferd.",
+      "text": "Ammit saß neben der Waage. Wenn das Herz schwerer war als die Feder, so glaubten die Ägypter, sollte Ammit es fressen. Dann gab es kein Leben nach dem Tod.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Götter",
+        "Tod"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Aus welchen Tieren besteht Ammit?"
+      ]
+    },
+    {
+      "id": "waage",
+      "typ": "karte",
+      "station": 4,
+      "name": "Die Waage des Totengerichts",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "ab dem Neuen Reich bekannt",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Totenreich (Totenbuch)",
+      "wow": "Beim Totengericht sagte der Tote: „Ich habe nicht gestohlen. Ich habe nicht gelogen.“",
+      "text": "Das Totenbuch beschreibt eine Waage. In der einen Schale liegt das Herz des Toten, in der anderen die Feder der Ma’at. Waren sie gleich schwer, durfte der Tote ins Jenseits. Thot schrieb das Ergebnis auf.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Tod",
+        "Glaube"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was wurde beim Totengericht gewogen?"
+      ]
+    },
+    {
+      "id": "herz",
+      "typ": "karte",
+      "station": 4,
+      "name": "Das Herz",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "in der Brust des Menschen",
+      "wow": "Die Ägypter hielten das Herz für den Sitz von Gedanken und Gefühlen, nicht das Gehirn.",
+      "text": "Bei einer Mumie ließ man das Herz im Körper. Die Ägypter glaubten, dass der Tote es beim Totengericht brauchte. Das Gehirn dagegen nahm man heraus.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Körper",
+        "Glaube"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was hielten die Ägypter für den Sitz der Gedanken?"
+      ]
+    },
+    {
+      "id": "tor_unterwelt",
+      "typ": "karte",
+      "station": 4,
+      "name": "Das Tor der Unterwelt",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "ab dem Neuen Reich bekannt",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Totenreich (Totenbuch)",
+      "wow": "Im Totenbuch muss der Tote durch viele Tore. Er muss ihre Namen kennen.",
+      "text": "Im Totenbuch führt der Weg durch Tore, die von Wächtern bewacht werden. Wer die Zaubersprüche kennt, kommt hindurch.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Tod",
+        "Glaube"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was musste man am Tor der Unterwelt wissen?"
+      ]
+    },
+    {
+      "id": "sonnenbarke",
+      "typ": "karte",
+      "station": 4,
+      "name": "Die Sonnenbarke",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Himmel und Unterwelt",
+      "wow": "Neben der Cheops-Pyramide fand man ein echtes Schiff aus Zedernholz, 43 m lang.",
+      "text": "Die Sonnenbarke ist das Schiff des Ra. In der Nacht fährt sie durch die Unterwelt und am Morgen in den neuen Tag. Auch der Pharao wollte nach dem Tod mit ihr fahren. Deshalb legte man ihm Boote ins Grab.",
+      "hinweisUnsicherheit": "Dass das Schiff bei Cheops zum Totenglauben gehörte, ist wahrscheinlich, aber nicht sicher.",
+      "stichworte": [
+        "Schiff",
+        "Sonne"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wer fuhr mit der Sonnenbarke?"
+      ]
+    },
+    {
+      "id": "nut",
+      "typ": "karte",
+      "station": 4,
+      "name": "Nut, die Himmelsgöttin",
+      "zusatzname": null,
+      "aussprache": "sprich: NUT",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Himmel und Sterne",
+      "ort": "Decken von Tempeln und Gräbern",
+      "wow": "Auf Tempeldecken wölbt sich Nut als Frau über der Erde, ihr Körper ist mit Sternen bedeckt.",
+      "text": "Nach dem Glauben der Ägypter verschluckt Nut abends die Sonne und gebiert sie morgens neu. Deshalb malte man sie an Sargdeckel und Tempeldecken.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Götter",
+        "Himmel"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wofür steht Nut?"
+      ]
+    },
+    {
+      "id": "mumifizierung",
+      "typ": "karte",
+      "station": 5,
+      "name": "Mumifizieren",
+      "zusatzname": null,
+      "aussprache": "sprich: mu-mi-fi-ZIE-ren",
+      "bedeutung": null,
+      "zeit": "ca. 2600 v. Chr. bis in die römische Zeit",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Einbalsamierungs-Werkstätten (das „Schöne Haus“)",
+      "wow": "Das ganze Verfahren dauerte etwa 70 Tage. Das ist durch Herodot überliefert, neuere Darstellungen nennen 40 Tage für das Trocknen.",
+      "text": "Zuerst wurde der Körper gereinigt. Die Organe kamen getrennt in Krüge, das Herz blieb im Körper. Dann trocknete man den Körper lange mit Natron aus. Danach salbte man ihn mit Ölen und Harzen und wickelte ihn in Leinen.",
+      "hinweisUnsicherheit": "Es gab einfache und teure Verfahren. Wie genau man vorging, änderte sich über die Jahrhunderte. Die wichtigsten Berichte stammen von Herodot im 5. Jahrhundert v. Chr.",
+      "stichworte": [
+        "Mumie",
+        "Chemie"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie lange dauerte das Mumifizieren?",
+        "Warum bleibt ein Körper mit Natron erhalten?"
+      ]
+    },
+    {
+      "id": "einbalsamierer",
+      "typ": "karte",
+      "station": 5,
+      "name": "Der Einbalsamierer",
+      "zusatzname": null,
+      "aussprache": "sprich: ein-bal-SA-mie-rer",
+      "bedeutung": null,
+      "zeit": "Neues Reich",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "bereitete Verstorbene für das Jenseits vor",
+      "ort": "das „Schöne Haus“ (Werkstatt)",
+      "wow": "Bei der Zeremonie trug ein Priester die Maske des Schakalgottes Anubis.",
+      "text": "Einbalsamierer waren Handwerker und Priester. Sie kannten Salze, Harze und Öle. Ihr Wissen gaben sie in der Familie weiter. Die Arbeit galt als heilig.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Beruf",
+        "Mumie"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was gehörte zur Arbeit eines Einbalsamierers?"
+      ]
+    },
+    {
+      "id": "natron",
+      "typ": "karte",
+      "station": 5,
+      "name": "Natron",
+      "zusatzname": null,
+      "aussprache": "sprich: NA-tron",
+      "bedeutung": null,
+      "zeit": "seit der Frühzeit",
+      "epoche": null,
+      "groesse": "weißes Salz",
+      "aufgabeOderNahrung": null,
+      "ort": "Wadi Natrun, Ägypten",
+      "wow": "Natron zieht Wasser an. Ohne Wasser können Bakterien und Pilze nicht wachsen.",
+      "text": "Natron ist ein Salzgemisch aus trockenen Seen. Es besteht vor allem aus Natriumcarbonat (Soda). Es ist wasseranziehend (hygroskopisch) und leicht alkalisch. Beides hemmt Bakterien. Die Ägypter benutzten Natron auch zum Reinigen.",
+      "hinweisUnsicherheit": "Vorsicht, Namen: Das Mineral „Natron“ ist Natriumcarbonat-Decahydrat (Soda). Im Haushalt heißt „Natron“ dagegen Natriumhydrogencarbonat (Backnatron).",
+      "stichworte": [
+        "Chemie",
+        "Mumie"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Warum bleibt ein Körper mit Natron erhalten?",
+        "Welches Salz steckt vor allem im Natron?"
+      ]
+    },
+    {
+      "id": "kanopen",
+      "typ": "karte",
+      "station": 5,
+      "name": "Die vier Kanopenkrüge",
+      "zusatzname": null,
+      "aussprache": "sprich: ka-NO-pen",
+      "bedeutung": null,
+      "zeit": "ab dem Alten Reich",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "neben dem Sarg in der Grabkammer",
+      "wow": "Die vier Deckel zeigen die vier Söhne des Horus: Mensch, Pavian, Schakal und Falke.",
+      "text": "In den Krügen lagen die Organe: Leber, Lunge, Magen und Darm. Die Ägypter glaubten, dass jeder Sohn des Horus ein Organ beschützt. Die Deckel waren beschriftet und bemalt.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Mumie",
+        "Glaube"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Welche vier Köpfe haben die Deckel der Kanopenkrüge?"
+      ]
+    },
+    {
+      "id": "leinenbinden",
+      "typ": "karte",
+      "station": 5,
+      "name": "Leinenbinden",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Werkstatt",
+      "wow": "Leinen wird aus Flachs gemacht. Die Fasern sind sehr reißfest.",
+      "text": "Zum Schluss wickelte man den Körper in viele Lagen Leinen. Zwischen den Lagen legte man Amulette. Auch Priester sprachen dabei Gebete.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Mumie",
+        "Handwerk"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Woraus wird Leinen gemacht?"
+      ]
+    },
+    {
+      "id": "herzskarabaeus",
+      "typ": "karte",
+      "station": 5,
+      "name": "Der Herzskarabäus",
+      "zusatzname": null,
+      "aussprache": "sprich: ska-ra-BÄ-us",
+      "bedeutung": null,
+      "zeit": "ab dem Neuen Reich",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "auf der Brust der Mumie",
+      "wow": "Auf dem Herzskarabäus stand ein Spruch: Das Herz soll nicht gegen den Toten aussagen.",
+      "text": "Ein Herzskarabäus ist ein Käfer-Amulett aus Stein. Man legte ihn über das Herz der Mumie. Er sollte beim Totengericht helfen.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Mumie",
+        "Amulett"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wozu dient ein Herzskarabäus?"
+      ]
+    },
+    {
+      "id": "mumie_bahre",
+      "typ": "karte",
+      "station": 5,
+      "name": "Die Bahre",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "Neues Reich",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Werkstatt",
+      "wow": "Die Bahre hat die Form eines Löwen: Das Tier sollte den Toten beschützen.",
+      "text": "Auf der Bahre lag der Verstorbene. Hier gab es Gebete und Zeremonien. In unserem Buch bleibt der Körper bedeckt: Das ist ein würdevoller Ort.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Mumie"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wozu diente die Bahre?"
+      ]
+    },
+    {
+      "id": "mumifizieren_versuch",
+      "typ": "karte",
+      "station": 5,
+      "name": "Versuch: Apfel „mumifizieren“",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "für den Unterricht",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Klassenzimmer",
+      "wow": "Mit Natron, Kochsalz und Zucker verliert ein Apfelstück Wasser. Man kann den Verlust wiegen!",
+      "text": "Lege vier Apfelstücke in Becher: mit Soda oder Backnatron, mit Kochsalz, mit Zucker und ohne Zusatz. Wiege sie jeden Tag und trage den Gewichtsverlust in ein Diagramm ein. Beobachte: Was passiert mit dem Stück ohne Salz?",
+      "hinweisUnsicherheit": "Nur unter Aufsicht, nichts essen. Becher abdecken, damit keine Fliegen kommen.",
+      "stichworte": [
+        "Chemie",
+        "Versuch"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Welcher Zusatz entzieht dem Apfel das meiste Wasser?",
+        "Warum faulen die Stücke mit Salz langsamer?"
+      ]
+    },
+    {
+      "id": "udjat",
+      "typ": "karte",
+      "station": 5,
+      "name": "Das Udjat-Auge",
+      "zusatzname": null,
+      "aussprache": "sprich: u-DJAT",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Amulette, Särge, Wände",
+      "wow": "Das Horusauge sollte heilen und schützen. Die Teile des Zeichens standen sogar für Bruchteile in der Mathematik.",
+      "text": "Der Sage nach verlor Horus im Kampf sein Auge. Es wurde heil gemacht. Deshalb galt das Udjat-Auge als Zeichen für Heilung, Schutz und Ganzheit. Man trug es als Amulett.",
+      "hinweisUnsicherheit": "Das ist der Glaube der alten Ägypter.",
+      "stichworte": [
+        "Amulett",
+        "Götter"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wofür stand das Udjat-Auge?"
+      ]
+    },
+    {
+      "id": "ankh",
+      "typ": "karte",
+      "station": 5,
+      "name": "Das Anch",
+      "zusatzname": null,
+      "aussprache": "sprich: ANCH",
+      "bedeutung": "Bedeutung: „Leben“.",
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "in der Hand von Göttern, auf Wänden und Amuletten",
+      "wow": "Das Anch sieht aus wie ein Kreuz mit einer Schlaufe. Götter halten es oft dem König an die Nase.",
+      "text": "Das Anch ist das Zeichen für Leben. Es ist ein Hieroglyphenzeichen und zugleich ein Symbol, das man überall findet: in der Hand der Götter, auf Särgen und auf Schmuck.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Symbol",
+        "Schrift"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was bedeutet das Anch?"
+      ]
+    },
+    {
+      "id": "djed",
+      "typ": "karte",
+      "station": 5,
+      "name": "Der Djed-Pfeiler",
+      "zusatzname": null,
+      "aussprache": "sprich: DJED",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Amulette, Tempelwände",
+      "wow": "Der Djed-Pfeiler gehört zu Osiris. Er stand für Stärke und Dauer.",
+      "text": "Der Pfeiler hat vier Querbalken am oberen Ende. Er ist ein Zeichen für Beständigkeit. Man legte kleine Djed-Pfeiler als Amulett mit ins Grab.",
+      "hinweisUnsicherheit": "Was der Pfeiler ursprünglich darstellte, ist unter Forschern nicht ganz geklärt.",
+      "stichworte": [
+        "Symbol",
+        "Amulett"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wofür stand der Djed-Pfeiler?"
+      ]
+    },
+    {
+      "id": "harzkrug",
+      "typ": "karte",
+      "station": 5,
+      "name": "Harz- und Salbgefäße",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Werkstatt und Gräber",
+      "wow": "Harze aus Bäumen duften und halten Wasser ab. Man verwendete sie bei Mumien, aber auch als Weihrauch.",
+      "text": "In den Krügen standen Öle, Salben und Harze. Aus Zedernholz, Myrrhe und anderen Pflanzen stellte man sie her. Das Harz dichtete die Binden ab und machte den Körper haltbarer.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Mumie",
+        "Handwerk"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wozu brauchte man Harze bei der Mumifizierung?"
+      ]
+    },
+    {
+      "id": "priester",
+      "typ": "karte",
+      "station": 5,
+      "name": "Der Priester",
+      "zusatzname": null,
+      "aussprache": "sprich: PRIES-ter",
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Tempeldienst, Opfer, Gebete",
+      "ort": "Tempel und Grabstätten",
+      "wow": "Priester rasierten sich den Kopf und den Körper und wuschen sich mehrmals am Tag.",
+      "text": "Priester kümmerten sich um die Tempel und die Götter. Bei Totenfeiern sprachen sie Gebete. Ein Leopardenfell zeigte oft einen besonderen Rang.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Beruf",
+        "Glaube"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Welche Aufgaben hatte ein Priester?"
+      ]
+    },
+    {
+      "id": "deir_el_medina",
+      "typ": "karte",
+      "station": 6,
+      "name": "Deir el-Medina",
+      "zusatzname": null,
+      "aussprache": "sprich: Deir el-Me-DI-na",
+      "bedeutung": null,
+      "zeit": "ca. 1500 bis 1100 v. Chr.",
+      "epoche": "Neues Reich",
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "am Westufer des Nils bei Theben (Luxor)",
+      "wow": "Hier wohnten die Handwerker, die die Königsgräber im Tal der Könige bauten.",
+      "text": "Das Arbeiterdorf lag in einem Tal, nah an den Gräbern. Die Handwerker bekamen Getreide als Lohn. Sie hinterließen sehr viele Briefe und Notizen auf Scherben und Papyrus. So kennen wir ihren Alltag gut.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Alltag",
+        "Dorf"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Warum weiß man so viel über das Leben in Deir el-Medina?"
+      ]
+    },
+    {
+      "id": "streik",
+      "typ": "karte",
+      "station": 6,
+      "name": "Der erste bekannte Streik",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "um 1157 v. Chr.",
+      "epoche": "Regierungszeit Ramses’ III.",
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Deir el-Medina",
+      "wow": "Die Arbeiter bekamen ihre Getreide-Rationen nicht rechtzeitig und legten die Arbeit nieder.",
+      "text": "Ein Papyrus berichtet davon. Die Arbeiter zogen aus dem Dorf und setzten sich vor einen Tempel. Sie forderten ihren Lohn. Es ist der älteste bekannte Streik der Geschichte.",
+      "hinweisUnsicherheit": "Das Datum ist ungefähr. Das Wort „Streik“ ist modern, aber das Verhalten war ähnlich.",
+      "stichworte": [
+        "Alltag",
+        "Geschichte"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Warum streikten die Arbeiter?"
+      ]
+    },
+    {
+      "id": "baeckerin",
+      "typ": "karte",
+      "station": 6,
+      "name": "Die Bäckerin",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "backte Brot im Lehmofen",
+      "ort": "Backstube im Haus",
+      "wow": "Brot war so wichtig, dass „Brot“ im Alltag oft „Essen“ bedeutete.",
+      "text": "Brot gehörte zu jeder Mahlzeit. Der Teig wurde aus Emmer-Mehl und Wasser geknetet. Man ließ ihn aufgehen und backte ihn in Formen im Ofen. Oft war Sand im Mehl. Das sieht man an den abgenutzten Zähnen der Mumien.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Beruf",
+        "Essen"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie wurde Brot gebacken?"
+      ]
+    },
+    {
+      "id": "braeuerin",
+      "typ": "karte",
+      "station": 6,
+      "name": "Die Bierbrauerin",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "braute Bier aus Gerste",
+      "ort": "Haus, Brauerei",
+      "wow": "Bier galt als nahrhaftes Getränk. Arbeiter bekamen es als Teil ihres Lohns.",
+      "text": "Das ägyptische Bier war dick und nahrhaft. Man braute aus Gerste und Wasser einen Brei. Hefe machte aus Zucker Alkohol und Kohlenstoffdioxid. Heute würde man es kaum wie Bier erkennen.",
+      "hinweisUnsicherheit": "Wie stark das Bier war, ist nicht ganz klar. Es war wohl eher mild.",
+      "stichworte": [
+        "Beruf",
+        "Essen"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Woraus braute man Bier?"
+      ]
+    },
+    {
+      "id": "kind",
+      "typ": "karte",
+      "station": 6,
+      "name": "Ein Kind",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "spielte, half im Haus, lernte",
+      "ort": "im Dorf",
+      "wow": "Kinder trugen als Frisur eine „Jugendlocke“ an der Seite des Kopfes.",
+      "text": "Kinder spielten mit Bällen, Puppen und Holztieren. Mit etwa vier Jahren halfen viele schon im Haushalt mit. Wer Glück hatte, ging in die Schule und lernte lesen und schreiben.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Alltag"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Womit spielten ägyptische Kinder?"
+      ]
+    },
+    {
+      "id": "katze",
+      "typ": "karte",
+      "station": 6,
+      "name": "Hauskatze",
+      "zusatzname": "Felis catus",
+      "aussprache": "sprich: HAUS-kat-ze",
+      "bedeutung": null,
+      "zeit": "seit dem Mittleren Reich im Haus",
+      "epoche": null,
+      "groesse": "etwa 55 cm lang",
+      "aufgabeOderNahrung": "Mäuse, Ratten, kleine Vögel",
+      "ort": "Häuser und Felder",
+      "wow": "Katzen waren so beliebt, dass man sie als Mumien beisetzte.",
+      "text": "Die Katze beschützte die Vorräte vor Mäusen. Man hielt sie als Haustier. Wenn eine Katze starb, trauerte die Familie. Die Göttin Bastet wurde mit Katzenkopf dargestellt.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Tier",
+        "Alltag"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wozu hielt man Katzen?"
+      ]
+    },
+    {
+      "id": "papyrusrolle",
+      "typ": "karte",
+      "station": 6,
+      "name": "Die Papyrusrolle",
+      "zusatzname": null,
+      "aussprache": "sprich: pa-PÜ-rus",
+      "bedeutung": null,
+      "zeit": "seit der Frühzeit",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Schreibstube, Tempel, Verwaltung",
+      "wow": "Papyrusrollen waren teuer. Für Notizen benutzte man oft Scherben, sogenannte Ostraka.",
+      "text": "Auf einer Papyrusrolle schrieb man Briefe, Zauberbücher, Geschichten und Listen. Die Rolle wurde zusammengerollt und aufbewahrt. Manche sind über 3000 Jahre alt und noch lesbar.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Schrift"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was schrieb man auf Papyrus, was auf Scherben?"
+      ]
+    },
+    {
+      "id": "hieroglyphen",
+      "typ": "karte",
+      "station": 6,
+      "name": "Hieroglyphen",
+      "zusatzname": null,
+      "aussprache": "sprich: hi-e-ro-GLÜ-fen",
+      "bedeutung": "Bedeutung: „heilige Zeichen“ (griechisch).",
+      "zeit": "ab ca. 3200 v. Chr. bis ins 4. Jahrhundert n. Chr.",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Tempel, Gräber, Papyri",
+      "wow": "Es gibt Zeichen für einzelne Laute, für ganze Wörter und Zeichen, die man nicht liest, sondern die erklären.",
+      "text": "Hieroglyphen sind Bilderzeichen. Ein Zeichen kann einen Laut meinen (wie ein Buchstabe), ein ganzes Wort oder eine Wortart. Es gibt 24 Zeichen für einzelne Konsonanten. Vokale schrieb man nicht.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Schrift"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was bedeutet das Wort „Hieroglyphe“?",
+        "Wie viele Einkonsonantenzeichen gibt es?"
+      ]
+    },
+    {
+      "id": "mahlstein",
+      "typ": "karte",
+      "station": 6,
+      "name": "Der Mahlstein",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "in jedem Haushalt",
+      "wow": "Im Mehl war oft Steinstaub. Daran sieht man heute, wie stark die Zähne der Ägypter abgenutzt waren.",
+      "text": "Getreide wurde auf dem Mahlstein zerrieben. Man kniete davor und schob einen kleinen Stein hin und her. Das war anstrengende Arbeit.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Alltag",
+        "Essen"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie machte man Mehl?"
+      ]
+    },
+    {
+      "id": "senet",
+      "typ": "karte",
+      "station": 6,
+      "name": "Senet",
+      "zusatzname": null,
+      "aussprache": "sprich: SE-net",
+      "bedeutung": null,
+      "zeit": "seit etwa 3000 v. Chr.",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Haushalt und Gräber",
+      "wow": "Senet ist eines der ältesten bekannten Brettspiele der Welt.",
+      "text": "Senet spielte man auf einem Brett mit 30 Feldern. Jeder hatte Spielsteine, gewürfelt wurde mit Stäbchen. Wer zuerst alle Steine vom Brett brachte, gewann. Später sah man darin ein Bild für den Weg ins Jenseits.",
+      "hinweisUnsicherheit": "Die genauen Regeln kennen wir nicht. Heutige Regeln sind Vorschläge von Forschern.",
+      "stichworte": [
+        "Spiel"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie viele Felder hat ein Senet-Brett?"
+      ]
+    },
+    {
+      "id": "bierbrot",
+      "typ": "karte",
+      "station": 6,
+      "name": "Brot und Bier",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "in allen Epochen",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "in jedem Haus",
+      "wow": "Auch für die Toten gab man Brot und Bier mit: im Grab sollten sie nicht hungern.",
+      "text": "Brot und Bier waren die Grundnahrung. Die Arbeiter bekamen sie als Lohn. Dazu gab es Zwiebeln, Linsen, Fisch und Früchte.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Essen",
+        "Alltag"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was waren die wichtigsten Nahrungsmittel?"
+      ]
+    },
+    {
+      "id": "tal_der_koenige",
+      "typ": "karte",
+      "station": 7,
+      "name": "Das Tal der Könige",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "ca. 1539 bis 1075 v. Chr.",
+      "epoche": "Neues Reich",
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "am Westufer des Nils bei Theben (Luxor)",
+      "wow": "Über der Schlucht ragt ein Berg, der aussieht wie eine natürliche Pyramide.",
+      "text": "Im Tal der Könige liegen über 60 Gräber von Pharaonen und hohen Beamten. Die Gräber sind tief in den Felsen gehauen. Die Wände sind bemalt. Man wollte Räuber abschrecken: Der Eingang wurde versteckt.",
+      "hinweisUnsicherheit": "Fast alle Gräber wurden schon im Altertum ausgeraubt.",
+      "stichworte": [
+        "Grab",
+        "Neues Reich"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Warum baute man die Königsgräber im Tal und nicht als Pyramiden?"
+      ]
+    },
+    {
+      "id": "tutanchamun",
+      "typ": "karte",
+      "station": 7,
+      "name": "Tutanchamun",
+      "zusatzname": null,
+      "aussprache": "sprich: tut-an-CHA-mun",
+      "bedeutung": "Bedeutung: „lebendes Abbild des Amun“.",
+      "zeit": "regierte ca. 1332 bis 1323 v. Chr.",
+      "epoche": "Neues Reich",
+      "groesse": "etwa 1,6 m",
+      "aufgabeOderNahrung": "Pharao, noch ein Kind bei Amtsantritt",
+      "ort": "Theben, Grab KV62",
+      "wow": "Er starb mit etwa 18 bis 19 Jahren. Sein Grab ist das am besten erhaltene Königsgrab, das man kennt.",
+      "text": "Tutanchamun wurde mit etwa 9 Jahren König. Er war nicht besonders bedeutend. Berühmt wurde er, weil sein Grab fast unberührt blieb. Darin lagen mehr als 5000 Gegenstände.",
+      "hinweisUnsicherheit": "Die Todesursache ist nicht endgültig geklärt: Wahrscheinlich waren Komplikationen eines Beinbruchs im Spiel, Malaria wurde nachgewiesen.",
+      "stichworte": [
+        "Pharao",
+        "Grab"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Warum ist Tutanchamun so berühmt?"
+      ]
+    },
+    {
+      "id": "tutmaske",
+      "typ": "karte",
+      "station": 7,
+      "name": "Die Goldmaske",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "um 1323 v. Chr.",
+      "epoche": "Neues Reich",
+      "groesse": "etwa 54 cm hoch · 10 kg Gold",
+      "aufgabeOderNahrung": null,
+      "ort": "Grab KV62, heute im Museum in Kairo",
+      "wow": "Die Maske wiegt über 10 Kilogramm. Augen und Streifen sind mit Edelsteinen und Glas eingelegt.",
+      "text": "Die Maske lag auf dem Gesicht der Mumie. Auf der Stirn sitzen ein Geier und eine Kobra. Sie sind die Schutzgöttinnen von Ober- und Unterägypten. Das Kopftuch hat blaue Streifen aus Glas und Halbedelstein.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Schatz",
+        "Grab"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Woraus besteht die Goldmaske?"
+      ]
+    },
+    {
+      "id": "thron",
+      "typ": "karte",
+      "station": 7,
+      "name": "Der Goldene Thron",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "um 1330 v. Chr.",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Grab KV62",
+      "wow": "Auf der Lehne sieht man den jungen König und seine Frau Anchesenamun.",
+      "text": "Der Thron ist aus Holz und mit Gold und Silber überzogen. Die Armlehnen haben die Form von Schlangen. Die Füße sind wie Löwenpfoten geformt.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Schatz"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Welche Tiere sind am Thron abgebildet?"
+      ]
+    },
+    {
+      "id": "sarg",
+      "typ": "karte",
+      "station": 7,
+      "name": "Die drei Särge",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "um 1323 v. Chr.",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Grab KV62",
+      "wow": "Der innerste Sarg ist aus massivem Gold und wiegt über 100 Kilogramm.",
+      "text": "Tutanchamuns Mumie lag in drei ineinander gesteckten Särgen. Die beiden äußeren sind aus Holz mit Gold. Der innere ist aus Gold. Alle drei steckten in einem Steinsarkophag. Darüber standen vier vergoldete Schreine.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Schatz",
+        "Grab"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie viele Särge waren ineinander geschachtelt?"
+      ]
+    },
+    {
+      "id": "schrein",
+      "typ": "karte",
+      "station": 7,
+      "name": "Die goldenen Schreine",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "um 1323 v. Chr.",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Grab KV62",
+      "wow": "Die vier Schreine passen wie russische Matroschka-Puppen ineinander.",
+      "text": "Die Schreine standen um den Steinsarkophag. Sie waren aus Holz und mit Blattgold belegt. Auf den Wänden stehen Zaubersprüche aus dem Totenbuch.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Schatz",
+        "Grab"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was stand um den Steinsarkophag?"
+      ]
+    },
+    {
+      "id": "streitwagen",
+      "typ": "karte",
+      "station": 7,
+      "name": "Der Streitwagen",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "Neues Reich",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Grab KV62 (sechs Wagen)",
+      "wow": "Im Grab standen sechs Streitwagen, auseinandergebaut.",
+      "text": "Streitwagen kamen um 1600 v. Chr. nach Ägypten, wohl mit den Hyksos. Sie waren schnell und leicht. Gezogen wurden sie von Pferden. Damit jagte man auch.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Schatz",
+        "Technik"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Woher kamen die Streitwagen?"
+      ]
+    },
+    {
+      "id": "dolch",
+      "typ": "karte",
+      "station": 7,
+      "name": "Der Dolch aus Meteoriteneisen",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "um 1323 v. Chr.",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Grab KV62",
+      "wow": "Die Klinge besteht aus Eisen, das vom Himmel kam, aus einem Meteoriten.",
+      "text": "Eisen war damals sehr selten und wertvoll. Man hat den Dolch untersucht: Sein Metall enthält viel Nickel. Das passt zu Eisen aus Meteoriten. Der Griff ist aus Gold.",
+      "hinweisUnsicherheit": "Das Ergebnis stammt aus einer Untersuchung von 2016. Die Herkunft ist sehr wahrscheinlich, aber nicht hundertprozentig sicher.",
+      "stichworte": [
+        "Schatz",
+        "Metall"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Woher stammte das Eisen des Dolches?"
+      ]
+    },
+    {
+      "id": "carter",
+      "typ": "karte",
+      "station": 7,
+      "name": "Howard Carter",
+      "zusatzname": null,
+      "aussprache": "sprich: HAU-ard KAR-ter",
+      "bedeutung": null,
+      "zeit": "1874 bis 1939",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Archäologe",
+      "ort": "Tal der Könige",
+      "wow": "Er suchte jahrelang vergeblich, dann fand er am 4. November 1922 eine Stufe.",
+      "text": "Howard Carter suchte im Tal der Könige nach dem Grab von Tutanchamun. Sein Geldgeber war Lord Carnarvon. Am 26. November 1922 sah er das erste Mal in die Vorkammer. Dort lagen Truhen, Betten und Statuen voller Gold. Die Ausgrabung dauerte rund zehn Jahre.",
+      "hinweisUnsicherheit": "Ein „Fluch der Pharaonen“ ist eine Erfindung von Zeitungen.",
+      "stichworte": [
+        "Archäologie"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wann entdeckte Howard Carter das Grab?"
+      ]
+    },
+    {
+      "id": "truhe",
+      "typ": "karte",
+      "station": 7,
+      "name": "Die bemalte Truhe",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "um 1323 v. Chr.",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Grab KV62",
+      "wow": "In Truhen wie dieser lagen Kleidung, Schmuck und Salbgefäße für das Leben nach dem Tod.",
+      "text": "Die Truhe ist aus Holz und mit Lotos- und Papyruspflanzen bemalt. Im Grab fanden Forscher Dutzende solcher Kisten. Sie enthielten Gewänder, Schmuck und vieles mehr.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Schatz",
+        "Grab"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was lag in den Truhen im Grab?"
+      ]
+    },
+    {
+      "id": "traeger",
+      "typ": "karte",
+      "station": 7,
+      "name": "Die Sargträger",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "Neues Reich",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "trugen den Sarg zum Grab",
+      "ort": "Totenzug zum Westufer",
+      "wow": "Der Weg zum Grab war ein feierlicher Zug über den Nil und durch die Wüste.",
+      "text": "Zur Beisetzung zog eine Prozession zum Tal. Männer trugen den Sarg auf Stangen auf den Schultern. Dahinter gingen Priester, Familie und Klagefrauen.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Beruf",
+        "Grab"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie kam der Sarg zum Grab?"
+      ]
+    },
+    {
+      "id": "hatschepsut",
+      "typ": "karte",
+      "station": 7,
+      "name": "Hatschepsut",
+      "zusatzname": null,
+      "aussprache": "sprich: hat-SCHEP-sut",
+      "bedeutung": "Bedeutung: „Die Erste unter den edlen Damen“.",
+      "zeit": "regierte ca. 1479 bis 1458 v. Chr.",
+      "epoche": "Neues Reich",
+      "groesse": null,
+      "aufgabeOderNahrung": "Pharao",
+      "ort": "Theben, Totentempel Deir el-Bahari",
+      "wow": "Sie war eine der wenigen Frauen, die als Pharao regierte. Auf Bildern trägt sie oft einen falschen Bart.",
+      "text": "Hatschepsut regierte zuerst für ihren jungen Stiefsohn Thutmosis III., dann als Pharao. Sie ließ eine Handelsreise in das Land Punt schicken. Von dort brachte man Weihrauch, Gold und Bäume. Ihr Totentempel liegt in Terrassen vor einer Felswand.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Pharao",
+        "Neues Reich"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was brachte die Reise nach Punt?"
+      ]
+    },
+    {
+      "id": "ramses",
+      "typ": "karte",
+      "station": 7,
+      "name": "Ramses II.",
+      "zusatzname": null,
+      "aussprache": "sprich: RAM-ses",
+      "bedeutung": null,
+      "zeit": "regierte ca. 1279 bis 1213 v. Chr.",
+      "epoche": "Neues Reich",
+      "groesse": null,
+      "aufgabeOderNahrung": "Pharao",
+      "ort": "Pi-Ramesse, Abu Simbel",
+      "wow": "Er regierte rund 66 Jahre lang, länger als fast alle Pharaonen.",
+      "text": "Ramses II. baute viele Tempel, darunter Abu Simbel mit vier riesigen Statuen. Er führte Kriege und schloss später einen Friedensvertrag mit den Hethitern. Er war berühmt und regierte sehr lange.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Pharao",
+        "Neues Reich"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie lange regierte Ramses II.?"
+      ]
+    },
+    {
+      "id": "kleopatra",
+      "typ": "karte",
+      "station": 8,
+      "name": "Kleopatra VII.",
+      "zusatzname": null,
+      "aussprache": "sprich: kle-o-PA-tra",
+      "bedeutung": null,
+      "zeit": "69 bis 30 v. Chr.",
+      "epoche": "Ptolemäerzeit",
+      "groesse": null,
+      "aufgabeOderNahrung": "letzte Königin von Ägypten",
+      "ort": "Alexandria",
+      "wow": "Kleopatra sprach mehrere Sprachen. Sie war die erste Herrscherin ihrer Familie, die auch Ägyptisch lernte.",
+      "text": "Kleopatra stammte aus der Familie der Ptolemäer. Sie sprach Griechisch und lernte Ägyptisch. Sie versuchte, Ägypten unabhängig zu halten. Nach ihrem Tod im Jahr 30 v. Chr. wurde Ägypten eine römische Provinz.",
+      "hinweisUnsicherheit": "Wir kennen ihre Geschichte vor allem aus römischen Berichten. Die waren nicht neutral.",
+      "stichworte": [
+        "Königin",
+        "Ptolemäer"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Welche Sprachen sprach Kleopatra?"
+      ]
+    },
+    {
+      "id": "alexandria",
+      "typ": "karte",
+      "station": 8,
+      "name": "Alexandria",
+      "zusatzname": null,
+      "aussprache": "sprich: a-lek-SAN-dri-a",
+      "bedeutung": null,
+      "zeit": "gegründet 331 v. Chr.",
+      "epoche": "Ptolemäerzeit",
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "am Mittelmeer, Nildelta",
+      "wow": "Die Stadt wurde von Alexander dem Großen gegründet und trägt seinen Namen.",
+      "text": "Alexandria wurde zur größten Stadt am Mittelmeer. Dort lagen ein großer Hafen, der Leuchtturm Pharos und die berühmte Bibliothek. Gelehrte aus vielen Ländern forschten und schrieben hier.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Stadt"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wer gründete Alexandria?"
+      ]
+    },
+    {
+      "id": "leuchtturm",
+      "typ": "karte",
+      "station": 8,
+      "name": "Der Leuchtturm von Alexandria",
+      "zusatzname": null,
+      "aussprache": "sprich: LOICH-turm",
+      "bedeutung": null,
+      "zeit": "um 280 v. Chr. fertig",
+      "epoche": null,
+      "groesse": "über 100 m hoch (Schätzungen)",
+      "aufgabeOderNahrung": null,
+      "ort": "Insel Pharos vor Alexandria",
+      "wow": "Er gehörte zu den sieben Weltwundern. Ein Erdbeben ließ ihn im Mittelalter einstürzen.",
+      "text": "Auf der Spitze brannte ein Feuer. Ein Spiegel sollte das Licht weit auf das Meer werfen. Im Französischen und Italienischen heißt „Leuchtturm“ bis heute nach der Insel „phare“ und „faro“.",
+      "hinweisUnsicherheit": "Wie genau der Leuchtturm aussah und wie hoch er war, wissen wir nicht sicher.",
+      "stichworte": [
+        "Bauwerk"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wozu diente der Leuchtturm?"
+      ]
+    },
+    {
+      "id": "bibliothek",
+      "typ": "karte",
+      "station": 8,
+      "name": "Die Bibliothek von Alexandria",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "ab ca. 290 v. Chr.",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Alexandria",
+      "wow": "Sie sollte alle Schriften der Welt sammeln. Der Überlieferung nach mussten Schiffe ihre Bücher zum Abschreiben abgeben.",
+      "text": "In der Bibliothek lagen Hunderttausende Papyrusrollen. Gelehrte wie Euklid arbeiteten in Alexandria. Die Bibliothek verfiel mit der Zeit und wurde nicht an einem einzigen Tag verbrannt.",
+      "hinweisUnsicherheit": "Wie viele Rollen es genau gab, wissen wir nicht. Die Zahl „700 000“ ist eine antike Schätzung.",
+      "stichworte": [
+        "Wissen"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was sammelte die Bibliothek von Alexandria?"
+      ]
+    },
+    {
+      "id": "rosetta",
+      "typ": "karte",
+      "station": 8,
+      "name": "Der Stein von Rosette",
+      "zusatzname": "Rosetta-Stein",
+      "aussprache": "sprich: ro-SET-te",
+      "bedeutung": null,
+      "zeit": "beschriftet 196 v. Chr., gefunden 1799",
+      "epoche": null,
+      "groesse": "etwa 1,1 m hoch",
+      "aufgabeOderNahrung": null,
+      "ort": "Britisches Museum, London",
+      "wow": "Der Text steht dreimal auf dem Stein: in Hieroglyphen, in Demotisch und auf Griechisch.",
+      "text": "Griechisch konnten Forscher lesen. So ließ sich der Text mit den beiden ägyptischen Schriften vergleichen. Der Stein ist aus dunklem Granodiorit. Er trägt einen Erlass des Königs Ptolemaios V.",
+      "hinweisUnsicherheit": "Ägypten wünscht sich den Stein zurück. Darüber wird gestritten.",
+      "stichworte": [
+        "Schrift",
+        "Entdeckung"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Welche drei Schriften stehen auf dem Stein?"
+      ]
+    },
+    {
+      "id": "champollion",
+      "typ": "karte",
+      "station": 8,
+      "name": "Jean-François Champollion",
+      "zusatzname": null,
+      "aussprache": "sprich: schampo-li-ON",
+      "bedeutung": null,
+      "zeit": "1790 bis 1832",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": "Sprachforscher aus Frankreich",
+      "ort": "Paris",
+      "wow": "Er lernte schon als Kind viele Sprachen. 1822 gelang es ihm, die Hieroglyphen zu entziffern.",
+      "text": "Champollion verglich die Namen in Kartuschen. Zum Beispiel „Ptolemaios“ auf dem Stein. Er erkannte: Hieroglyphen sind Laut- und Bildzeichen zugleich. Ein Vorgänger, Thomas Young, hatte 1814 schon einige Zeichen richtig gedeutet.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Schrift",
+        "Entdeckung"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wann entzifferte Champollion die Hieroglyphen?"
+      ]
+    },
+    {
+      "id": "ptolemaios",
+      "typ": "karte",
+      "station": 8,
+      "name": "Die Kartusche „Ptolemaios“",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "auf dem Stein von Rosette",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Stein von Rosette",
+      "wow": "Eine Kartusche ist ein Namensring. Darin standen die Namen von Königen.",
+      "text": "Der Name Ptolemaios kommt auf dem Stein mehrmals vor, auf Griechisch und in Hieroglyphen. So konnte man Zeichen und Laute zuordnen: p, t, o, l, m, i, s.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Schrift"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wozu dienten Kartuschen?"
+      ]
+    },
+    {
+      "id": "segelschiff",
+      "typ": "karte",
+      "station": 8,
+      "name": "Das Handelsschiff",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": "Ptolemäerzeit",
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": "Hafen von Alexandria",
+      "wow": "Ägypten lieferte Getreide an die Städte rund um das Mittelmeer.",
+      "text": "Von Alexandria aus segelten Schiffe nach Griechenland und Rom. Sie brachten Getreide, Papyrus und Glas. Auf dem Rückweg hatten sie Wein, Öl und Metall an Bord.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Schiff",
+        "Handel"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Was lieferte Ägypten über das Meer?"
+      ]
+    },
+    {
+      "id": "zeitrad",
+      "typ": "info",
+      "station": 0,
+      "name": "Das Zeitrad der Sonne",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": null,
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": null,
+      "wow": "Das alte Ägypten dauerte länger als alle Reiche, die wir heute kennen: rund 3000 Jahre.",
+      "text": "Das Zeitrad zeigt die Epochen des alten Ägypten von ca. 3100 v. Chr. bis 30 v. Chr.: Frühzeit, Altes Reich, Mittleres Reich, Neues Reich, Späte Zeit und die Zeit der Ptolemäer. Wenn du den Zeiger drehst, siehst du im Zeitfenster eine passende Szene.",
+      "hinweisUnsicherheit": "Die Jahreszahlen vor 664 v. Chr. sind ungefähr: Forscher streiten über Jahrzehnte. Deshalb steht oft „ca.“.",
+      "stichworte": [
+        "Zeit"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie lange dauerte das alte Ägypten ungefähr?"
+      ]
+    },
+    {
+      "id": "album",
+      "typ": "info",
+      "station": 8,
+      "name": "Die Käfersammlung",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": null,
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": null,
+      "wow": "Der Skarabäus war für die Ägypter ein Glücksbringer.",
+      "text": "Das sind die versteckten Sonnenkäfer, die du gefunden hast. Die Ägypter sahen im Pillendreher-Käfer ein Bild für die aufgehende Sonne: Wie der Käfer die Kugel rollt, so schiebt der Gott Chepre die Sonne über den Himmel.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Skarabäus"
+      ],
+      "fragenFuerArbeitsblatt": []
+    },
+    {
+      "id": "zeitluecke",
+      "typ": "info",
+      "station": 8,
+      "name": "Die große Zeitspanne",
+      "zusatzname": null,
+      "aussprache": null,
+      "bedeutung": null,
+      "zeit": null,
+      "epoche": null,
+      "groesse": null,
+      "aufgabeOderNahrung": null,
+      "ort": null,
+      "wow": "Zwischen Cheops und Kleopatra liegen mehr Jahre als zwischen Kleopatra und heute.",
+      "text": "Die Cheops-Pyramide entstand um 2600 v. Chr. Kleopatra starb 30 v. Chr. Dazwischen liegen etwa 2500 Jahre. Von Kleopatra bis heute sind es gut 2050 Jahre.",
+      "hinweisUnsicherheit": null,
+      "stichworte": [
+        "Zeit"
+      ],
+      "fragenFuerArbeitsblatt": [
+        "Wie viele Jahre liegen zwischen dem Bau der Cheops-Pyramide und Kleopatras Tod?"
+      ]
+    }
+  ],
+  "zeitfenster": [
+    {
+      "id": "siedlung",
+      "zeit": "ca. 3300 v. Chr.",
+      "epoche": "Frühzeit",
+      "titel": "Dörfer am Nil",
+      "text": "Die Menschen leben in Dörfern am Fluss. Sie bauen Hütten aus Schilf und fangen Fische im Nil.",
+      "merksatz": "Jedes Jahr überschwemmt der Nil das Land und lässt fruchtbaren Schlamm für die Felder zurück.",
+      "jahrVChr": 3300
+    },
+    {
+      "id": "zweilaender",
+      "zeit": "ca. 3100 v. Chr.",
+      "epoche": "Frühzeit",
+      "titel": "Zwei Länder werden eins",
+      "text": "Unterägypten im Norden trägt die rote Krone, Oberägypten im Süden die weiße. Ein König vereint beide Länder und trägt nun die Doppelkrone.",
+      "merksatz": "Oft wird König Narmer als erster König genannt, doch die Forscher sind sich nicht ganz sicher.",
+      "jahrVChr": 3100
+    },
+    {
+      "id": "stufenpyramide",
+      "zeit": "ca. 2650 v. Chr.",
+      "epoche": "Altes Reich",
+      "titel": "Stufe um Stufe nach oben",
+      "text": "König Djoser lässt in Sakkara die erste große Steinpyramide bauen. Aus einem flachen Grab wächst Stufe um Stufe ein Turm.",
+      "merksatz": "Die Stufenpyramide hat sechs Stufen und ist rund 60 Meter hoch.",
+      "jahrVChr": 2650
+    },
+    {
+      "id": "pyramidenbau",
+      "zeit": "ca. 2600–2560 v. Chr.",
+      "epoche": "Altes Reich",
+      "titel": "Der Bau einer Pyramide",
+      "text": "Viele Arbeiter ziehen Steinblöcke auf Schlitten eine Rampe hinauf. Es waren keine Sklaven: Sie bekamen Essen, Bier und ein Dach über dem Kopf.",
+      "merksatz": "Die Cheops-Pyramide besteht nach Schätzungen aus etwa 2,3 Millionen Steinblöcken.",
+      "jahrVChr": 2560
+    },
+    {
+      "id": "punt",
+      "zeit": "ca. 2000 v. Chr.",
+      "epoche": "Mittleres Reich",
+      "titel": "Weihrauch aus Punt",
+      "text": "Schiffe bringen Weihrauch aus dem Land Punt. Es lag weit im Süden, wohl in Ostafrika. Die Ägypter brauchen den Duft für ihre Tempel.",
+      "merksatz": "Weihrauch ist das Harz von Bäumen und duftet, wenn man es verbrennt.",
+      "jahrVChr": 2000
+    },
+    {
+      "id": "streitwagen",
+      "zeit": "ca. 1700 v. Chr.",
+      "epoche": "Mittleres Reich",
+      "titel": "Pferd und Wagen kommen",
+      "text": "Um diese Zeit kommen Menschen aus dem Nahen Osten ins Nildelta. Man nennt sie Hyksos. Mit ihnen werden Pferd und Wagen in Ägypten üblich.",
+      "merksatz": "Ein Rad mit Speichen ist leichter als eine volle Scheibe und macht den Wagen schnell.",
+      "jahrVChr": 1700
+    },
+    {
+      "id": "hatschepsut",
+      "zeit": "ca. 1470 v. Chr.",
+      "epoche": "Neues Reich",
+      "titel": "Hatschepsuts Flotte",
+      "text": "Hatschepsut regiert Ägypten als Pharao. Sie schickt Schiffe nach Punt, um Weihrauch und andere Schätze zu holen.",
+      "merksatz": "Auf den Wänden ihres Tempels in Deir el-Bahari ist die Reise abgebildet, sogar mit Bäumen auf den Schiffen.",
+      "jahrVChr": 1470
+    },
+    {
+      "id": "aton",
+      "zeit": "ca. 1350 v. Chr.",
+      "epoche": "Neues Reich",
+      "titel": "Echnaton und die Sonne",
+      "text": "Pharao Echnaton verehrt nur noch einen Gott: die Sonnenscheibe Aton. Für sie baut er eine neue Hauptstadt in der Wüste.",
+      "merksatz": "Auf Bildern streckt die Sonne ihre Strahlen mit kleinen Händen zur Königsfamilie aus.",
+      "jahrVChr": 1350
+    },
+    {
+      "id": "tutanchamun",
+      "zeit": "ca. 1332–1323 v. Chr.",
+      "epoche": "Neues Reich",
+      "titel": "Ein König als Kind",
+      "text": "Tutanchamun wird mit etwa neun Jahren Pharao. Er sitzt auf einem Thron aus Holz und Gold.",
+      "merksatz": "Er wurde nur etwa 18 oder 19 Jahre alt.",
+      "jahrVChr": 1323
+    },
+    {
+      "id": "abusimbel",
+      "zeit": "ca. 1260 v. Chr.",
+      "epoche": "Neues Reich",
+      "titel": "Der Felsentempel von Abu Simbel",
+      "text": "Ramses II. lässt einen Tempel in den Felsen hauen. Vier riesige Statuen von ihm sitzen vor dem Eingang.",
+      "merksatz": "Jede der vier Statuen ist etwa 20 Meter hoch.",
+      "jahrVChr": 1260
+    },
+    {
+      "id": "alexandria",
+      "zeit": "331 v. Chr.",
+      "epoche": "Ptolemäer",
+      "titel": "Alexandria entsteht",
+      "text": "Alexander der Große kommt 332 v. Chr. nach Ägypten und gründet 331 v. Chr. am Meer die Stadt Alexandria. Der Leuchtturm kommt erst später dazu.",
+      "merksatz": "Alexandria wird später durch seine große Bibliothek berühmt.",
+      "jahrVChr": 331
+    },
+    {
+      "id": "kleopatra",
+      "zeit": "30 v. Chr.",
+      "epoche": "Ptolemäer",
+      "titel": "Kleopatra, die letzte Herrscherin",
+      "text": "Kleopatra VII. ist die letzte Herrscherin des alten Ägypten. Sie lebt in Alexandria und soll viele Sprachen gesprochen haben.",
+      "merksatz": "Nach ihrem Tod 30 v. Chr. wird Ägypten eine Provinz des Römischen Reiches.",
+      "jahrVChr": 30
+    }
+  ],
+  "arbeitsblattIdeen": [
+    {
+      "thema": "Zeitstrahl",
+      "aufgabe": "Ordne Epochen, Bauwerke und Herrscher auf einem Zeitstrahl von 3100 bis 30 v. Chr. (Karten: Feld zeit)."
+    },
+    {
+      "thema": "Pyramiden-Rechnung",
+      "aufgabe": "Die Cheops-Pyramide hat etwa 2,3 Millionen Blöcke und wurde in rund 26 Jahren gebaut. Wie viele Blöcke sind das pro Tag? Pro Stunde bei 10 Stunden Arbeit?"
+    },
+    {
+      "thema": "Natron und Wasser (Chemie)",
+      "aufgabe": "Schulversuch „Apfel mumifizieren“ (Karte mumifizieren_versuch): Gewichtsverlust täglich messen, Diagramm zeichnen, Ergebnis erklären (Salz zieht Wasser an; ohne Wasser keine Bakterien)."
+    },
+    {
+      "thema": "Hieroglyphen",
+      "aufgabe": "Schreibe deinen Namen mit den Einkonsonantenzeichen (Karte hieroglyphen). Vokale lässt man weg."
+    },
+    {
+      "thema": "Schlitten und Sand (Physik)",
+      "aufgabe": "Warum braucht man weniger Kraft, wenn man den Sand vor dem Schlitten befeuchtet? Plane einen Versuch (Karte schlitten)."
+    },
+    {
+      "thema": "Totengericht",
+      "aufgabe": "Welche Regeln sprach der Tote? Welche würden heute noch passen? (Karte waage)"
+    },
+    {
+      "thema": "Zeitspanne",
+      "aufgabe": "Wie viele Jahre liegen zwischen Cheops und Kleopatra, wie viele zwischen Kleopatra und heute? (Karte zeitluecke)"
+    },
+    {
+      "thema": "Museumsschild",
+      "aufgabe": "Schreibe ein Museumsschild für einen Fund aus dem Grab des Tutanchamun (Karten tutmaske, dolch, thron)."
+    }
+  ],
+  "lizenz": "Texte: eigene Formulierung, frei für den Unterricht."
+}
