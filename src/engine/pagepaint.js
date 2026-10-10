@@ -264,12 +264,12 @@ export function paintCover({ pxW = 1536, specs }) {
   const ctx = c.getContext('2d');
   const m = makeMap(ctx, rect, S);
   // cloth
-  const base = ctx.createLinearGradient(0, 0, c.width, c.height); base.addColorStop(0, '#2f6b52'); base.addColorStop(1, '#1f4d3b');
+  const base = ctx.createLinearGradient(0, 0, c.width, c.height); base.addColorStop(0, '#24508f'); base.addColorStop(1, '#16315e');
   ctx.fillStyle = base; ctx.fillRect(0, 0, c.width, c.height);
   const r = mulberry32(77);
   ctx.globalAlpha = 0.16;
-  for (let y = 0; y < c.height; y += 3) { ctx.fillStyle = r() > 0.5 ? '#0c2a1e' : '#6bb08a'; ctx.fillRect(0, y, c.width, 1.4); }
-  for (let x = 0; x < c.width; x += 3) { ctx.fillStyle = r() > 0.5 ? '#0c2a1e' : '#6bb08a'; ctx.fillRect(x, 0, 1.4, c.height); }
+  for (let y = 0; y < c.height; y += 3) { ctx.fillStyle = r() > 0.5 ? '#0a1a38' : '#6f93c9'; ctx.fillRect(0, y, c.width, 1.4); }
+  for (let x = 0; x < c.width; x += 3) { ctx.fillStyle = r() > 0.5 ? '#0a1a38' : '#6f93c9'; ctx.fillRect(x, 0, 1.4, c.height); }
   ctx.globalAlpha = 1;
   // vignette
   const vg = ctx.createRadialGradient(c.width * 0.5, c.height * 0.5, c.height * 0.2, c.width * 0.5, c.height * 0.5, c.width * 0.65); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,.4)');
@@ -280,23 +280,26 @@ export function paintCover({ pxW = 1536, specs }) {
   fr(0.38, 0.05, 1); fr(0.55, 0.02, 0.9);
   // corner ornaments
   ctx.fillStyle = gold;
-  for (const [cx, cy] of [[0.38, 0.38], [(wW - 0.38), 0.38], [0.38, hW - 0.38], [wW - 0.38, hW - 0.38]]) { ctx.beginPath(); ctx.arc(cx * S, cy * S, 0.13 * S, 0, TAU); ctx.fill(); ctx.fillStyle = '#1f4d3b'; ctx.beginPath(); ctx.arc(cx * S, cy * S, 0.06 * S, 0, TAU); ctx.fill(); ctx.fillStyle = gold; }
-  // emblem: gold silhouettes of three dinosaurs at the bottom
-  if (specs) {
-    const place = (spec, cx, base, h, flip) => {
-      const polys = silhouettePolys(spec);
-      let x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9; for (const p of polys) for (const [x, y] of p) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
-      const sc = (h * S) / (y1 - y0);
-      const tf = (x, y) => [c.width * cx + ((x - (x0 + x1) / 2) * (flip ? -1 : 1)) * sc, base * S - (y - y0) * sc];
-      ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.55)'; ctx.shadowBlur = 0.12 * S; ctx.shadowOffsetY = 0.06 * S;
-      fillPolys(ctx, polys, tf); ctx.fillStyle = goldGradient(ctx, 0, (base - h) * S, c.width, base * S); ctx.fill('nonzero'); ctx.restore();
-      ctx.save(); fillPolys(ctx, polys, tf); ctx.strokeStyle = 'rgba(255,240,170,.55)'; ctx.lineWidth = Math.max(1, 0.012 * S); ctx.stroke(); ctx.restore();
-    };
-    place(specs.brachio, 0.27, hW - 1.0, 3.5, false);
-    place(specs.trex, 0.62, hW - 1.0, 2.35, true);
-    place(specs.stego, 0.84, hW - 1.0, 1.5, false);
-    // ground line
-    ctx.strokeStyle = gold; ctx.lineWidth = 0.04 * S; ctx.beginPath(); ctx.moveTo(1.1 * S, (hW - 1.0) * S); ctx.lineTo((wW - 1.1) * S, (hW - 1.0) * S); ctx.stroke();
+  for (const [cx, cy] of [[0.38, 0.38], [(wW - 0.38), 0.38], [0.38, hW - 0.38], [wW - 0.38, hW - 0.38]]) { ctx.beginPath(); ctx.arc(cx * S, cy * S, 0.13 * S, 0, TAU); ctx.fill(); ctx.fillStyle = '#16315e'; ctx.beginPath(); ctx.arc(cx * S, cy * S, 0.06 * S, 0, TAU); ctx.fill(); ctx.fillStyle = gold; }
+  // emblem: goldene Pyramiden, Sonne und Obelisk unten
+  {
+    const base = hW - 1.0;
+    const gradG = goldGradient(ctx, 0, (base - 3.6) * S, c.width, base * S);
+    const tri = (cx, w, h) => { ctx.beginPath(); ctx.moveTo((cx - w / 2) * S, base * S); ctx.lineTo(cx * S, (base - h) * S); ctx.lineTo((cx + w / 2) * S, base * S); ctx.closePath(); };
+    ctx.save(); ctx.shadowColor = 'rgba(0,0,0,.55)'; ctx.shadowBlur = 0.12 * S; ctx.shadowOffsetY = 0.06 * S;
+    // Sonne hinter den Pyramiden
+    ctx.fillStyle = gradG; ctx.beginPath(); ctx.arc(wW * 0.5 * S, (base - 2.3) * S, 0.85 * S, 0, TAU); ctx.fill();
+    for (let k = 0; k < 16; k++) { const a = k / 16 * TAU; ctx.beginPath(); ctx.moveTo(wW * 0.5 * S + Math.cos(a - 0.07) * 1.0 * S, (base - 2.3) * S + Math.sin(a - 0.07) * 1.0 * S); ctx.lineTo(wW * 0.5 * S + Math.cos(a) * 1.45 * S, (base - 2.3) * S + Math.sin(a) * 1.45 * S); ctx.lineTo(wW * 0.5 * S + Math.cos(a + 0.07) * 1.0 * S, (base - 2.3) * S + Math.sin(a + 0.07) * 1.0 * S); ctx.closePath(); ctx.fill(); }
+    ctx.fillStyle = gradG; tri(wW * 0.36, 2.6, 2.1); ctx.fill(); tri(wW * 0.63, 3.2, 2.6); ctx.fill(); tri(wW * 0.82, 1.5, 1.2); ctx.fill();
+    // Obelisk links
+    ctx.beginPath(); ctx.moveTo((wW * 0.17 - 0.2) * S, base * S); ctx.lineTo((wW * 0.17 - 0.14) * S, (base - 2.2) * S); ctx.lineTo(wW * 0.17 * S, (base - 2.6) * S); ctx.lineTo((wW * 0.17 + 0.14) * S, (base - 2.2) * S); ctx.lineTo((wW * 0.17 + 0.2) * S, base * S); ctx.closePath(); ctx.fill();
+    ctx.restore();
+    // Lichtkanten auf den Pyramiden
+    ctx.save(); ctx.strokeStyle = 'rgba(255,240,170,.6)'; ctx.lineWidth = Math.max(1, 0.012 * S);
+    for (const [cx, w, h] of [[wW * 0.36, 2.6, 2.1], [wW * 0.63, 3.2, 2.6], [wW * 0.82, 1.5, 1.2]]) { tri(cx, w, h); ctx.stroke(); ctx.beginPath(); ctx.moveTo(cx * S, (base - h) * S); ctx.lineTo((cx + w * 0.16) * S, base * S); ctx.stroke(); }
+    ctx.restore();
+    // Boden
+    ctx.strokeStyle = gold; ctx.lineWidth = 0.04 * S; ctx.beginPath(); ctx.moveTo(1.1 * S, base * S); ctx.lineTo((wW - 1.1) * S, base * S); ctx.stroke();
   }
   // title
   ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
@@ -307,9 +310,9 @@ export function paintCover({ pxW = 1536, specs }) {
     ctx.save(); ctx.strokeStyle = 'rgba(255,235,160,.5)'; ctx.lineWidth = Math.max(1, 0.008 * S); ctx.strokeText(txt, c.width / 2, y * S); ctx.restore();
   };
   tt('Das große', 1.75, 0.62, 'italic');
-  tt('DINOSAURIER', 2.95, 1.0);
+  tt('ÄGYPTEN', 2.95, 1.05);
   tt('POP-UP-BUCH', 3.95, 0.96);
   ctx.strokeStyle = gold; ctx.lineWidth = 0.025 * S; ctx.beginPath(); ctx.moveTo(c.width * 0.22, 4.28 * S); ctx.lineTo(c.width * 0.78, 4.28 * S); ctx.stroke();
-  tt('Eine Reise durch die Erdzeitalter', 4.85, 0.42, 'italic');
+  tt('Eine Reise durch 3000 Jahre', 4.85, 0.42, 'italic');
   return { canvas: c, m };
 }

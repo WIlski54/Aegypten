@@ -28,7 +28,7 @@ export function cardSpeechParts(id) {
 }
 export const cardSpeech = (id) => cardSpeechParts(id).map((p) => stop(normalizeForSpeech(p))).join(' ');
 export const pageSpeech = (i) => normalizeForSpeech(PAGES_DE[i].narr);
-export const COVER_SPEECH = 'Das große Dinosaurier-Pop-up-Buch. Eine Reise durch die Erdzeitalter. Tippe auf das Buch, dann geht es los!';
+export const COVER_SPEECH = 'Das große Ägypten-Pop-up-Buch. Eine Reise durch dreitausend Jahre. Tippe auf das Buch, dann geht es los!';
 
 // alle Clips in fester Reihenfolge
 export function allSpeechItems() {

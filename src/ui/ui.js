@@ -31,7 +31,7 @@ export class UI {
     this.root = root; this.h = handlers; this.cardOpen = false;
     root.innerHTML = '';
     // brand
-    this.brand = el('div', 'brand', '<span class="brand-ico">' + SVG.book + '</span><span>Das große Dinosaurier-Popup-Buch</span>');
+    this.brand = el('div', 'brand', '<span class="brand-ico">' + SVG.book + '</span><span>Das große Ägypten-Popup-Buch</span>');
     // tools
     this.tools = el('div', 'tools');
     this.btnWeather = this.mkBtn('Wetter ändern (jetzt: klar)', SVG.wx_clear, () => handlers.weather && handlers.weather(), 'round');
@@ -45,8 +45,8 @@ export class UI {
     // era header (top centre)
     this.header = el('div', 'era'); this.header.setAttribute('aria-live', 'polite');
     // found counter
-    this.found = el('div', 'found', SVG.mouse + '<span class="fc">0/5</span>'); this.found.title = 'Versteckte Säugetiere gefunden'; this.found.setAttribute('role', 'button'); this.found.tabIndex = 0;
-    this.found.setAttribute('aria-label', 'Versteckte Säugetiere: 0 von 5 gefunden'); this.found.style.display = 'none';
+    this.found = el('div', 'found', SVG.mouse + '<span class="fc">0/9</span>'); this.found.title = 'Versteckte Sonnenkäfer gefunden'; this.found.setAttribute('role', 'button'); this.found.tabIndex = 0;
+    this.found.setAttribute('aria-label', 'Versteckte Sonnenkäfer: 0 von 9 gefunden'); this.found.style.display = 'none';
     this.found.addEventListener('click', () => handlers.album && handlers.album());
     this.found.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handlers.album && handlers.album(); } });
     // caption
@@ -65,7 +65,7 @@ export class UI {
     this.card = el('div', 'card'); this.card.setAttribute('role', 'dialog'); this.card.setAttribute('aria-modal', 'false'); this.card.style.display = 'none';
     this.help = el('div', 'help'); this.help.style.display = 'none'; this.help.setAttribute('role', 'dialog'); this.help.setAttribute('aria-modal', 'true'); this.help.setAttribute('aria-label', 'So liest man dieses Buch');
     this.toast = el('div', 'toast'); this.toast.style.display = 'none';
-    this.loading = el('div', 'loading', '<div class="ld-book">' + SVG.book + '</div><div class="ld-title">Das große Dinosaurier-Popup-Buch</div><div class="ld-text">Das Buch wird gefaltet …</div><div class="ld-bar"><i></i></div>');
+    this.loading = el('div', 'loading', '<div class="ld-book">' + SVG.book + '</div><div class="ld-title">Das große Ägypten-Popup-Buch</div><div class="ld-text">Das Buch wird gefaltet …</div><div class="ld-bar"><i></i></div>');
     root.append(this.brand, this.header, this.tools, this.found, this.caption, this.hint, this.navWrap, this.card, this.help, this.toast, this.loading);
     this.buildHelp();
     addEventListener('keydown', (e) => this.onKey(e));
@@ -101,7 +101,7 @@ export class UI {
     this.stops = stops; this.dots.innerHTML = '';
     stops.forEach((s, i) => {
       const b = el('button', 'dot'); b.type = 'button'; b.style.setProperty('--c', s.color);
-      b.setAttribute('aria-label', `${i === 0 ? 'Titel und Erduhr' : 'Seite ' + i + ': ' + s.name}`);
+      b.setAttribute('aria-label', `${i === 0 ? 'Titel und Zeitrad' : 'Seite ' + i + ': ' + s.name}`);
       b.innerHTML = `<i></i><span class="tip">${s.name}</span>`;
       b.addEventListener('click', (e) => { e.stopPropagation(); this.h.go(i); });
       b.addEventListener('pointerdown', (e) => e.stopPropagation());
@@ -129,7 +129,7 @@ export class UI {
   setSound(on) { this.btnSound.innerHTML = on ? SVG.sound : SVG.mute; this.btnSound.setAttribute('aria-pressed', on ? 'true' : 'false'); }
   setSpeaking(on) { this.btnSpeak.classList.toggle('on', on); this.btnSpeak.innerHTML = (on ? SVG.stop : SVG.speak) + '<span>' + (on ? 'Stopp' : 'Vorlesen') + '</span>'; }
   showCaption(text) { if (!text) { this.caption.style.display = 'none'; return; } this.caption.textContent = text; this.caption.style.display = 'block'; }
-  setFound(n, total) { this.found.style.display = 'flex'; this.found.querySelector('.fc').textContent = `${n}/${total}`; this.found.setAttribute('aria-label', `Versteckte Säugetiere: ${n} von ${total} gefunden`); this.found.classList.add('bump'); setTimeout(() => this.found.classList.remove('bump'), 700); }
+  setFound(n, total) { this.found.style.display = 'flex'; this.found.querySelector('.fc').textContent = `${n}/${total}`; this.found.setAttribute('aria-label', `Versteckte Sonnenkäfer: ${n} von ${total} gefunden`); this.found.classList.add('bump'); setTimeout(() => this.found.classList.remove('bump'), 700); }
   showToast(t, ms = 2600) { this.toast.textContent = t; this.toast.style.display = 'block'; this.toast.classList.remove('in'); void this.toast.offsetWidth; this.toast.classList.add('in'); clearTimeout(this._tt); this._tt = setTimeout(() => { this.toast.style.display = 'none'; }, ms); }
 
   // ----- info card
@@ -139,7 +139,7 @@ export class UI {
     const fact = (k, v) => v ? `<div class="fact"><b>${k}</b><span>${v}</span></div>` : '';
     c.innerHTML = `
       <button class="x" aria-label="Karte schließen">${SVG.close}</button>
-      ${d.hidden ? '<div class="ribbon">Gefunden! Ein verstecktes Säugetier</div>' : ''}
+      ${d.hidden ? '<div class="ribbon">Gefunden! Ein versteckter Sonnenkäfer</div>' : ''}
       <div class="head">
         <canvas class="cmp" width="320" height="170" aria-hidden="true"></canvas>
         <div class="names">
@@ -150,10 +150,10 @@ export class UI {
         </div>
       </div>
       <div class="facts">
-        ${fact('Lebte', d.when ? d.when + (d.period ? ' · ' + d.period : '') : d.period)}
+        ${fact('Zeit', d.when ? d.when + (d.period ? ' · ' + d.period : '') : d.period)}
         ${fact('Größe', d.size || [d.length, d.mass].filter(Boolean).join(' · '))}
-        ${fact('Nahrung', d.diet)}
-        ${fact('Fundort', d.where)}
+        ${fact(d.dietLabel || 'Nahrung', d.diet)}
+        ${fact(d.whereLabel || 'Ort', d.where)}
       </div>
       ${d.wow ? `<div class="wow"><b>Wow!</b> ${d.wow}</div>` : ''}
       ${d.text ? `<p class="body">${d.text}</p>` : ''}
@@ -212,17 +212,17 @@ export class UI {
         <li><b>Umblättern:</b> Fass die Seite einfach an und zieh sie zur Seite, wie bei einem echten Buch. Oder zieh an der umgeknickten Ecke, tippe auf die Pfeile oder auf die Punkte. Tasten ← und →.</li>
         <li><b>Laschen und Schieber:</b> Greif die bunten Laschen und zieh sie. Manche springen zurück, manche bleiben stehen.</li>
         <li><b>Tiere antippen:</b> Sie wachen auf und erzählen dir etwas auf einer Info-Karte. Mit dem Lautsprecher-Knopf liest sie dir jemand vor.</li>
-        <li><b>Zeitfenster:</b> Auf der ersten Seite zeigt ein frei auf dem Tisch schwebendes Bild neben dem Buch (auf dem iPad links oben, Bild und Text je nach Platz nebeneinander oder untereinander), was auf der Erde zur Uhrzeit des Zeigers los war. Mit den Pfeilen oder den Punkten springst du zur nächsten Szene. Auf dem iPad blendet ein Tipp aufs Bild den Text ein.</li>
+        <li><b>Zeitfenster:</b> Auf der ersten Seite zeigt ein frei auf dem Tisch schwebendes Bild neben dem Buch (auf dem iPad links oben), was in Ägypten zur Zeit des Zeigers los war. Mit den Pfeilen oder den Punkten springst du zur nächsten Szene. Das Minus-Zeichen klappt das Fenster ein.</li>
         <li><b>Lesen und Umschauen:</b> Mit zwei Fingern kannst du das Buch verschieben und zoomen, um Texte groß zu lesen (Maus: Mausrad zoomt, Umschalt-Taste oder rechte Maustaste beim Ziehen verschiebt). Der Hand-Knopf (Taste <kbd>V</kbd>) lässt dich schon mit einem Finger verschieben. Zieh auf dem Tisch neben dem Buch, dann dreht sich die Kamera. Der Knopf mit den Ecken (Taste <kbd>0</kbd>) setzt die Ansicht zurück, das Auge (<kbd>R</kbd>) zeigt das Buch von oben.</li>
-        <li><b>Wetter:</b> Der Wolken-Knopf oder die Taste <kbd>W</kbd> lässt es regnen, stürmen oder dunsten. Auf der Einschlag-Seite macht der Himmel etwas ganz anderes.</li>
+        <li><b>Wetter:</b> Der Wolken-Knopf oder die Taste <kbd>W</kbd> lässt es regnen, stürmen oder dunsten. </li>
         <li><b>Ton:</b> Taste <kbd>M</kbd> oder der Lautsprecher schaltet um.</li>
         <li><b>Karte schließen:</b> X, <kbd>Esc</kbd> oder neben die Karte tippen.</li>
-        <li><b>Such sie!</b> Auf manchen Seiten versteckt sich ein winziges frühes Säugetier.</li>
+        <li><b>Such sie!</b> Auf jeder Seite versteckt sich ein winziger Sonnenkäfer (Skarabäus). Der Zähler oben rechts zeigt, wie viele du schon gefunden hast.</li>
       </ul>
       <div class="opts">
         <label>Lautstärke <input id="vol" type="range" min="0" max="100" value="60" aria-label="Lautstärke"></label>
         <label class="chk"><input id="calm" type="checkbox"> Ruhiger Modus (weniger Wackeln und Blitze)</label>
-        <label class="chk"><input id="cine" type="checkbox"> Kino-Brüllen statt Brummen und Grollen</label>
+        <label class="chk"><input id="cine" type="checkbox"> Kräftigere Tierstimmen</label>
         <label class="chk"><input id="auto" type="checkbox" checked> Jede Seite am Anfang kurz vorlesen</label>
         <label class="chk"><input id="cap" type="checkbox" checked> Vorgelesenen Text als Untertitel zeigen</label>
       </div>

@@ -1,4 +1,4 @@
-// Das große Dinosaurier-Popup-Buch – Hauptprogramm
+// Das große Ägypten-Popup-Buch – Hauptprogramm
 import * as THREE from 'three';
 import { Stage, TIERS, PAGE_W as W, PAGE_D as D } from './engine/scene.js';
 import { CamRig } from './engine/camera.js';
@@ -116,8 +116,7 @@ class App {
 
   // ------------------------------------------------------------ cover
   paintCoverArt() {
-    const specs = { brachio: ANIMALS.brachiosaurus(), trex: ANIMALS.trex(), stego: ANIMALS.stegosaurus() };
-    const { canvas } = paintCover({ pxW: Math.min(2048, this.q.pageTex * 1.3), specs });
+    const { canvas } = paintCover({ pxW: Math.min(2048, this.q.pageTex * 1.3) });
     const tex = toTexture(canvas, { aniso: this.maxAniso });
     this.book.setFaceTexture(0, 'front', tex);
     this.coverTex = tex;
