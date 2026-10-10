@@ -248,7 +248,6 @@ export default {
     const cl2 = ctx.prop('cloud_b', { x: 7.5, y: 4.0, z: -3.85, len: 2.4, delay: 0.25, cast: false });
     ctx.onUpdate((dt, t) => { if (app.calm) return; cl1.group.position.x = -5.5 + Math.sin(t * 0.05) * 1.5; cl2.group.position.x = 7.5 + Math.sin(t * 0.04 + 1) * 1.3; });
     ctx.prop('wuestenduene', { x: 6.1, z: -3.0, len: 11.2, delay: 0.08, variant: { seed: 2 } });
-    ctx.prop('cliff_layers', { x: 11.0, z: -2.9, h: 3.9, delay: 0.14 });
     ctx.prop('dattelpalme', { x: 3.3, z: -2.7, h: 3.5, delay: 0.2, facing: -1 });
     ctx.prop('palm', { x: -11.0, z: -2.5, h: 3.7, delay: 0.2 });
     ctx.prop('palm', { x: -7.2, z: -2.9, h: 3.0, delay: 0.22, facing: -1 });
@@ -288,7 +287,7 @@ export default {
     // ---------------------------------------------------------------- Kronen (hängen am Körper des Pharao: folgen Atmen und Hüpfen)
     const HS = 1, RS = 1.45;                                         // Kronenmaßstab relativ zur Pharaofigur (Modell-Meter)
     const mkCrown = (id, k, h) => { const f = makeFigure(id, { h: h * pfig.ws * k * HS, thickness: 0.03, border: 0.012 }); f.meta.k = k; pfig.root.add(f.group); R.own(f); return f; };
-    const crownR = mkCrown('rote_krone', 1, 0.36), crownW = mkCrown('weisse_krone', 1, 0.40), crownD = mkCrown('doppelkrone', 1, 0.44);
+    const crownR = mkCrown('rote_krone', 1, 0.36), crownW = mkCrown('weisse_krone', 1, 0.40), crownD = mkCrown('doppelkrone', 1, 0.5);
     const anchorBase = (f) => { const b = f.anchors.base; return b ? b.x : 0; };
     const setCrown = (f, x, y, z, rot = 0, sc = 1) => { f.group.position.set(x - anchorBase(f) * sc, y, z); f.group.rotation.z = rot; f.group.scale.set(sc, sc, sc); f.group.rotation.order = 'ZYX'; };
     // Koordinaten in Figur-Raum: Seite x -> localX
@@ -396,8 +395,8 @@ export default {
     yield;
 
     // ---------------------------------------------------------------- verstecktes Käferchen: am Fuß der Stufenpyramide, halb hinter einem Stein
-    const rock = ctx.prop('boulder', { x: 11.05, z: -0.35, len: 1.35, delay: 0.5, variant: { seed: 4 } });
-    const kaefer = ctx.stand('skarab3', { x: 10.5, z: -0.62, len: 0.95, facing: 1, delay: 0.56, hidden: true, hint: false, hitPad: 0.25 });
+    const rock = ctx.prop('boulder', { x: 11.0, z: -0.2, len: 1.5, delay: 0.5, variant: { seed: 4 } });
+    const kaefer = ctx.stand('skarab3', { x: 10.95, y: 0.3, z: -0.6, len: 0.95, facing: 1, delay: 0.56, hidden: true, hint: false, hitPad: 0.25 });
     kaefer.onWake = (a) => { a.tw.add(0.7, (t) => { a.hop = Math.sin(t * Math.PI) * 0.35; }, { done: () => { a.hop = 0; } }); app.audio.voice('skarabaeus'); };
     kaefer.cover = rock;
     ctx.spread.reset = () => { nord.setValue(0); sued.setValue(0); datum.setValue(0); };
