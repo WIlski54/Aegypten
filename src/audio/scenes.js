@@ -1,7 +1,8 @@
-// scenes.js – Atmosphären je Zeitalter (Schleifen, die überblenden), Ereignisströme (Tropfen, Rufe, Zirpen …)
-// und die globalen ctl-Schichten (Spannung, Zeitraffer, Wind, Unterwasser).
-import { clamp, mtof, LEVELS_LIN } from './synth.js';
+// scenes.js – Atmosphären je Seite (Schleifen, die überblenden), Ereignisströme (Frösche, Hämmern, Rufe, Glöckchen …)
+// und die globalen ctl-Schichten (Erwartung, Zeitraffer, Wind, Unterwasser, Regen).
+import { clamp, mtof, env, LEVELS_LIN } from './synth.js';
 import { playVoice, playBird } from './voices.js';
+import { degMidi, pluck, ney, horn, rattle } from './inst.js';
 
 const PI2 = Math.PI / 2;
 /** Gleichleistungs-Überblendung in 6 Linienstücken (hoch: 0→1, runter: aktuell→0); überschreibt noch ausstehende Rampen. */
@@ -73,13 +74,6 @@ function insects(S, { n, f0, spread = 0.5, lvl, am = [30, 70], slow = [0.07, 0.2
     S.lfo(slow[0] + r() * (slow[1] - slow[0]), 0.5, ga.gain, r() * 3); S.lfo(am[0] + r() * (am[1] - am[0]), 0.5, gb.gain, r());
   }
 }
-/** Grillen: Sinusträger, gepulst im Zirp-Takt (Pulsfolge ≈ 32 Hz, Zirpen ≈ 2.4×/s) – Wellenformen per PeriodicWave. */
-function crickets(S, { n, f0, lvl, dest }) {
-  for (let i = 0; i < n; i++) {
-    const r = S.R.rng, car = S.osc('sine', f0 * (0.93 + r() * 0.14), r()), gp = S.pulseGate(30 + r() * 6, 0.5, r()), gc = S.pulseGate(2.1 + r() * 0.7, 0.45, r() * 1.2), out = S.g(lvl);
-    car.connect(gp); gp.connect(gc); gc.connect(out); out.connect(dest || S.body);
-  }
-}
 /** Brandung: Rauschen, dessen Pegel und Tiefpass einer asymmetrischen Welle folgen (schneller Anstieg, langes Ausrollen) + Gischt. */
 function surf(S, { lvl, rate }) {
   const s = S.loop('pink'), lp = S.f('lowpass', 900, 0.6), g = S.g(lvl * 0.56), w = S.c.createOscillator(), wg = S.g(lvl * 0.49), wf = S.g(630);
@@ -89,7 +83,46 @@ function surf(S, { lvl, rate }) {
   w2.setPeriodicWave(S.R.surf()); w2.frequency.value = rate; w2.start(S.t0 + 0.8); S.srcs.push(w2);
   fs.connect(hp); hp.connect(fl); fl.connect(fg); fg.connect(S.body); w2.connect(w2g); w2g.connect(fg.gain);
 }
+/** Wasser: Rauschen mit langsam wogendem Tiefpass + feines Glitzern; gibt {g, lp, sg} zurück (ctl `flood` verstärkt). */
+function water(S, { lvl, f = 800, spark = 0.03, rate = 1, dest }) {
+  const s = S.loop('pink'), lp = S.f('lowpass', f, 0.6), g = S.g(lvl); s.connect(lp); lp.connect(g); g.connect(dest || S.body);
+  S.lfo(0.33 * rate, lvl * 0.4, g.gain); S.lfo(0.21 * rate, lvl * 0.27, g.gain, 1.3); S.lfo(0.17 * rate, f * 0.3, lp.frequency);
+  const sp = S.loop('white'), hp = S.f('highpass', 3500, 0.5), sg = S.g(spark); sp.connect(hp); hp.connect(sg); sg.connect(dest || S.body); S.lfo(0.29 * rate, spark * 0.6, sg.gain);
+  return { g, lp, sg };
+}
+/** Formantisches Murmeln (Menschen aus der Ferne, Rezitation): Rauschen → zwei Bandpässe (Vokalfarbe wandert) → Silbentakt → Phrasenatmung. Gibt den Ausgangs-Gain zurück. */
+function murmur(S, { n = 3, lvl, f1 = 520, f2 = 1500, syl = 3.6, lp = 3000, dest }) {
+  const out = S.g(lvl), r = S.R.rng; out.connect(dest || S.body);
+  for (let i = 0; i < n; i++) {
+    const s = S.loop('pink'), b1 = S.f('bandpass', f1 * (0.8 + 0.4 * r()), 4), b2 = S.f('bandpass', f2 * (0.8 + 0.4 * r()), 5), mix = S.g(1), sy = S.g(0.5), ph = S.g(0.6), l = S.f('lowpass', lp, 0.5);
+    s.connect(b1); s.connect(b2); b1.connect(mix); b2.connect(mix); mix.connect(sy); sy.connect(ph); ph.connect(l); l.connect(out);
+    S.lfo(syl * (0.8 + 0.4 * r()), 0.42, sy.gain, r()); S.lfo(syl * 1.37 * (0.85 + 0.3 * r()), 0.15, sy.gain, r());
+    S.lfo(0.25 + 0.3 * r(), 0.4, ph.gain, r() * 2); S.lfo(0.4 + 0.3 * r(), f1 * 0.25, b1.frequency); S.lfo(0.33 + 0.3 * r(), f2 * 0.2, b2.frequency);
+  }
+  return out;
+}
+/** Feuerbett: gleichmäßiges Prasseln (hell, unregelmäßig moduliert) + warmes Brodeln; gibt den Ausgangs-Gain zurück. */
+function fireBed(S, { lvl, dest }) {
+  const out = S.g(lvl), n = S.loop('pink'), hp = S.f('highpass', 1400, 0.5), ga = S.g(0.3); n.connect(hp); hp.connect(ga); ga.connect(out); out.connect(dest || S.body);
+  S.lfo(7.3, 0.2, ga.gain); S.lfo(11.7, 0.15, ga.gain, 0.3); S.lfo(3.1, 0.08, ga.gain, 0.7);
+  const lo = S.loop('brown'), lf = S.f('lowpass', 200, 0.5), lg = S.g(0.5); lo.connect(lf); lf.connect(lg); lg.connect(out); S.lfo(0.7, 0.2, lg.gain);
+  return out;
+}
+/** Sandrieseln: körniges, helles Rauschen aus drei unrunden Modulationen. */
+function sandBed(S, { lvl, dest }) {
+  const out = S.g(lvl), n = S.loop('white'), hp = S.f('highpass', 3200, 0.5), bp = S.f('bandpass', 5200, 0.8), ga = S.g(0.5); n.connect(hp); hp.connect(bp); bp.connect(ga); ga.connect(out); out.connect(dest || S.body);
+  S.lfo(13, 0.15, ga.gain); S.lfo(19.7, 0.15, ga.gain, 0.2); S.lfo(29.3, 0.12, ga.gain, 0.5);
+  return out;
+}
+/** Mahlstein: kratzendes Hin und Her (≈ 1.6 Hz) mit tiefem Rumpeln. */
+function quernBed(S, { lvl, dest }) {
+  const out = S.g(lvl), n = S.loop('pink'), bp = S.f('bandpass', 900, 1.1), ga = S.g(0.5); n.connect(bp); bp.connect(ga); ga.connect(out); out.connect(dest || S.body); S.lfo(1.6, 0.45, ga.gain);
+  const w = S.loop('white'), hp = S.f('highpass', 3200, 0.5), wg = S.g(0.08); w.connect(hp); hp.connect(wg); wg.connect(out); S.lfo(1.6, 0.07, wg.gain);
+  const lo = S.loop('brown'), lf = S.f('lowpass', 220, 0.7), lg = S.g(0.4); lo.connect(lf); lf.connect(lg); lg.connect(out); S.lfo(1.6, 0.3, lg.gain);
+  return out;
+}
 const pan = (S, v) => { if (S.c.createStereoPanner) v.panTo(S.R.rng() * 1.6 - 0.8); };
+const lv = (x) => (typeof x === 'function' ? x() : x);
 
 // ---- Ereignisse (jeweils ein kurzer Voice im Ziel `S.body`, niedrige Priorität)
 const drop = (S, lvl) => (t) => { const v = S.voice(); if (!v) return; const f = 900 + S.R.rng() * 1500; v.tone(t, { f, f2: f * 1.25, gl: 0.03, a: 0.002, d: 0.09, peak: lvl }); v.send(0.4 * S.trim); pan(S, v); };
@@ -97,94 +130,138 @@ const plop = (S, lvl) => (t) => { const v = S.voice(); if (!v) return; const f =
 const far = (S, ids, dist) => (t) => { const v = playVoice(S.R, ids[(S.R.rng() * ids.length) | 0], t, { dest: S.body, dist, prio: 0, sendScale: S.trim }); if (v) pan(S, v); };
 const birds = (S, kinds, rev = 0.25, dest) => (t) => { const v = playBird(S.R, t, { dest: dest || S.body, prio: 0, kind: kinds[(S.R.rng() * kinds.length) | 0], rev: rev * S.trim }); if (v) pan(S, v); };
 const rustleEv = (S, lvl) => (t) => { const v = S.voice(); if (!v) return; v.nz(t, { kind: 'white', f: 2400 + S.R.rng() * 2200, q: 2.2, a: 0.012, d: 0.05 + S.R.rng() * 0.1, peak: lvl }); pan(S, v); };
-const peepEv = (S, lvl) => (t) => {
-  const v = S.voice(); if (!v) return; const n = 1 + ((S.R.rng() * 3) | 0), f0 = 2400 + S.R.rng() * 1100;
-  for (let i = 0; i < n; i++) { const s = t + i * 0.2, p = v.tone(s, { f: f0, f2: f0 * 1.18, gl: 0.05, a: 0.01, d: 0.1, peak: lvl }); v.vib(p, 9, 40, s, s + 0.16); }
+const flapEv = (S, lvl) => (t) => { const v = S.voice(); if (!v) return; for (let i = 0; i < 3; i++) v.nz(t + i * (0.14 + i * 0.02), { type: 'lowpass', f: 1100, f2: 450, a: 0.03, d: 0.1, peak: lvl }); pan(S, v); };
+const frogEv = (S, lvl) => (t) => { // Froschchor: kurze Quaker durch einen Bandpass
+  const v = S.voice(); if (!v) return; const r = S.R.rng, bp = v.f('bandpass', 900 + r() * 500, 3), n = 1 + ((r() * 4) | 0), f = 280 + r() * 160; bp.connect(v.out);
+  for (let i = 0; i < n; i++) v.tone(t + i * 0.1, { w: 'sawtooth', f, f2: f * 1.12, gl: 0.04, a: 0.004, d: 0.06, peak: lvl, dest: bp });
   pan(S, v);
 };
-const flapEv = (S, lvl) => (t) => { const v = S.voice(); if (!v) return; for (let i = 0; i < 3; i++) v.nz(t + i * (0.14 + i * 0.02), { type: 'lowpass', f: 1100, f2: 450, a: 0.03, d: 0.1, peak: lvl }); pan(S, v); };
+const neyEv = (S, root, sc, vel) => (t) => { // ferne Rohrflöte: 2…4 lange Töne, gedämpft und mit Hall
+  const v = S.voice(); if (!v) return; const r = S.R.rng, lp = v.f('lowpass', 1800, 0.6), n = 2 + ((r() * 3) | 0), pool = [0, 2, 4, 5, 7]; let tt = t; lp.connect(v.out);
+  for (let i = 0; i < n; i++) { let m = degMidi(pool[(r() * pool.length) | 0], root, sc); if (m < 66) m += 12; const d = 1.1 + r() * 1.3; ney(v, tt, m, d, vel, lp); tt += d * 0.8 + 0.3; }
+  v.send(0.55 * S.trim); pan(S, v);
+};
+const bellEv = (S, lvl, rev, lo = 7) => (t) => { // Windspiel / Weihrauch-Glöckchen: helle Töne mit langem Ausklang
+  const v = S.voice(); if (!v) return; const r = S.R.rng, n = 1 + ((r() * 3) | 0);
+  for (let i = 0; i < n; i++) v.bell(t + i * (0.12 + r() * 0.2), mtof(degMidi(lo + ((r() * 7) | 0), 74, 'phryg')), [[1, 1, 2.2], [2.76, 0.45, 1.2], [5.4, 0.18, 0.5]], lvl);
+  v.send(rev * S.trim); pan(S, v);
+};
+const hornEv = (S, lvl, f = 87) => (t) => { const v = S.voice(); if (!v) return; horn(v, t, f, 2 + S.R.rng(), lvl, v.out); v.send(0.7 * S.trim); pan(S, v); }; // tiefer Hornton, selten
+const fanfareEv = (S, lvl) => (t) => { // Fanfarenrest aus der Ferne: zwei weiche Hornstöße
+  const v = S.voice(); if (!v) return; const lp = v.f('lowpass', 1100, 0.6); lp.connect(v.out);
+  horn(v, t, 294, 0.35, lvl, lp); horn(v, t + 0.5, 392, 1.1, lvl, lp); v.send(0.8 * S.trim); pan(S, v);
+};
+const hammerEv = (S, lvl, p = 1) => (t) => { // Hammer/Meißel auf Stein
+  const v = S.voice(); if (!v) return; const l = lv(lvl), q = p * (0.95 + S.R.rng() * 0.1);
+  v.bell(t, 1850 * q, [[1, 1, 0.08], [1.62, 0.5, 0.05]], l * 0.6); v.tone(t, { f: 230 * q, f2: 140 * q, a: 0.002, d: 0.07, peak: l * 0.7 }); v.nz(t, { kind: 'white', f: 3300, q: 1.6, a: 0.001, d: 0.015, peak: l * 0.5 });
+  v.send(0.25 * S.trim); pan(S, v);
+};
+const crackleEv = (S, lvl) => (t) => { // einzelne Knister/Funken
+  const v = S.voice(); if (!v) return; const r = S.R.rng, l = lv(lvl), n = 1 + ((r() * 3) | 0);
+  for (let i = 0; i < n; i++) v.nz(t + i * (0.03 + r() * 0.07), { kind: 'white', f: 2500 + r() * 3500, q: 3, a: 0.001, d: 0.006 + r() * 0.014, peak: l * (0.4 + 0.6 * r()) });
+  pan(S, v);
+};
+const tickEv = (S, lvl) => { let par = 0; return (t) => { // Waagen-Ticken, abwechselnd hoch/tief
+  const v = S.voice(); if (!v) return; par ^= 1; v.bell(t, par ? 2900 : 2500, [[1, 1, 0.05], [2.4, 0.4, 0.03]], lvl); v.send(0.5 * S.trim); pan(S, v);
+}; };
+const sistrumEv = (S, lvl) => (t) => { const v = S.voice(); if (!v) return; rattle(v, t, lvl, v.out, 9, 0.5); v.send(0.6 * S.trim); pan(S, v); };
+const luteEv = (S, vel) => (t) => { // ein paar Laute-Töne aus dem Nachbarhaus (gedämpft)
+  const v = S.voice(); if (!v) return; const r = S.R.rng, lp = v.f('lowpass', 2200, 0.6), n = 3 + ((r() * 3) | 0); let tt = t, d = (r() * 4) | 0; lp.connect(v.out);
+  for (let i = 0; i < n; i++) { pluck(v, tt, degMidi(d, 60, 'phryg'), vel * (0.7 + 0.3 * r()), lp, 'lute'); d = clamp(d + [-1, 1, 1, 2, -2][(r() * 5) | 0], 0, 8); tt += 0.3 + r() * 0.25; }
+  v.send(0.35 * S.trim); pan(S, v);
+};
+/** Rufe aus der Ferne (Markt, Hafen, Arbeitsgruppen): 1…2 kurze Silben mit Vokalfarbe, tiefpassgefiltert. */
+const callEv = (S, vel, f0, vowels = [[450, 800], [750, 1200]]) => (t) => {
+  const v = S.voice(); if (!v) return; const r = S.R.rng, lp = v.f('lowpass', 1500, 0.6), n = 1 + ((r() * 2) | 0); lp.connect(v.out);
+  for (let i = 0; i < n; i++) shout(v, t + i * 0.34, f0 * (0.85 + r() * 0.3), 0.22 + r() * 0.1, vowels[(r() * vowels.length) | 0], lp, vel);
+  v.send(0.6 * S.trim); pan(S, v);
+};
+/** Kinderlachen aus der Ferne: „ha-ha-ha“, hoch, fallende Tonhöhe, stark gedämpft. */
+const laughEv = (S, vel) => (t) => {
+  const v = S.voice(); if (!v) return; const r = S.R.rng, lp = v.f('lowpass', 1800, 0.6), n = 3 + ((r() * 3) | 0), f = 520 + r() * 120; lp.connect(v.out);
+  for (let i = 0; i < n; i++) shout(v, t + i * 0.15, f * (1 - i * 0.04), 0.08, [850, 1300], lp, vel * (1 - i * 0.1));
+  v.send(0.6 * S.trim); pan(S, v);
+};
+function shout(v, s, f, d, vowel, dest, vel) {
+  const o = v.osc('sawtooth', f, s, s + d + 0.05), g = v.g(0), b1 = v.f('bandpass', vowel[0], 5), b2 = v.f('bandpass', vowel[1], 5), mix = v.g(1);
+  o.frequency.setValueAtTime(f, s); o.frequency.linearRampToValueAtTime(f * 0.85, s + d);
+  o.connect(b1); o.connect(b2); b1.connect(mix); b2.connect(mix); mix.connect(g); g.connect(dest);
+  env(g.gain, s, [[0, 0], [0.04, vel], [d * 0.7, vel * 0.8], [d, 0]]);
+}
 
 // ------------------------------------------------------------------ Szenen (Builder: S → Dauerquellen und Ströme einrichten)
 export const BUILD = {
-  cover(S) { // fast still: dunkler Raumton
-    const s = S.loop('brown'), lp = S.f('lowpass', 220, 0.5), g = S.g(0.6); s.connect(lp); lp.connect(g); g.connect(S.body);
-    const h = S.osc('sine', 62), hg = S.g(0.012); h.connect(hg); hg.connect(S.body);
+  cover(S) { // fast still: warmer Raumton (Grundton D und Quinte, kaum hörbar)
+    const s = S.loop('brown'), lp = S.f('lowpass', 260, 0.5), g = S.g(0.6); s.connect(lp); lp.connect(g); g.connect(S.body); S.lfo(0.11, 0.15, g.gain);
+    const h = S.osc('sine', 73.4), hg = S.g(0.012), h2 = S.osc('sine', 110.1), hg2 = S.g(0.006); h.connect(hg); hg.connect(S.body); h2.connect(hg2); hg2.connect(S.body);
   },
-  erduhr(S) { // leises Tick-Tack + Raumton
-    const s = S.loop('brown'), lp = S.f('lowpass', 300, 0.5), g = S.g(0.9); s.connect(lp); lp.connect(g); g.connect(S.body);
-    const h = S.osc('sine', 100), hg = S.g(0.015), h2 = S.osc('sine', 150.3), hg2 = S.g(0.008); h.connect(hg); hg.connect(S.body); h2.connect(hg2); hg2.connect(S.body);
-    let par = 0;
-    S.stream((t) => {
-      par ^= 1; const v = S.voice(); if (!v) return; const k = par ? 1 : 0.78;
-      v.tone(t, { f: 2300 * k, f2: 1800 * k, a: 0.0015, d: 0.02, peak: 0.5 }); v.nz(t, { kind: 'white', f: 3600 * k, q: 3, a: 0.0015, d: 0.013, peak: 0.35 }); v.tone(t, { f: 480 * k, a: 0.002, d: 0.04, peak: 0.2 }); v.send(0.12 * S.trim);
-    }, 0.5, 0.5, null, 0.1);
+  zeitrad(S) { // leises Plätschern, Zikaden, ferne Flöte
+    water(S, { lvl: 0.2, f: 700, spark: 0.02 });
+    insects(S, { n: 3, f0: 4800, spread: 0.4, lvl: 0.1, am: [40, 75], slow: [0.06, 0.16] });
+    wind(S, { lvl: 0.08, f: 600, q: 0.5, type: 'lowpass', gust: 0.5, rate: 0.1 });
+    S.stream(neyEv(S, 62, 'phryg', 0.6), 12, 24);
   },
-  trias(S) { // trockener Wind + Zikaden
-    wind(S, { lvl: 0.5, f: 700, q: 0.5, gust: 0.55, rate: 0.1 });
-    wind(S, { lvl: 0.12, f: 2300, q: 1.2, gust: 0.6, rate: 0.17 });
-    insects(S, { n: 3, f0: 5200, spread: 0.45, lvl: 0.3, am: [62, 96], slow: [0.06, 0.16] });
-  },
-  'jura-wald'(S) { // feuchter Wald: Blätterwind, Insektenchor, Tropfen, ferne tiefe Rufe
-    wind(S, { lvl: 0.4, f: 900, q: 0.5, type: 'lowpass', gust: 0.4, rate: 0.09 });
-    wind(S, { lvl: 0.09, f: 3200, q: 0.8, gust: 0.6, rate: 0.13 });
-    insects(S, { n: 4, f0: 3400, spread: 1, lvl: 0.2, am: [36, 72], slow: [0.1, 0.3] });
-    S.stream(drop(S, 0.22), 1.6, 5.5); S.stream(far(S, ['brachiosaurus', 'plateosaurus'], 0.85), 14, 28);
-  },
-  'jura-lagune'(S) { // sanftes Plätschern, ferne Insekten, gelegentlich Flügelschlag
-    const s = S.loop('pink'), lp = S.f('lowpass', 800, 0.6), g = S.g(0.3); s.connect(lp); lp.connect(g); g.connect(S.body); S.lfo(0.33, 0.12, g.gain); S.lfo(0.21, 0.08, g.gain, 1.3); S.lfo(0.17, 250, lp.frequency);
-    const sp = S.loop('white'), hp = S.f('highpass', 3500, 0.5), sg = S.g(0.03); sp.connect(hp); hp.connect(sg); sg.connect(S.body); S.lfo(0.29, 0.02, sg.gain);
-    wind(S, { lvl: 0.1, f: 600, q: 0.5, type: 'lowpass', gust: 0.5, rate: 0.1 });
-    insects(S, { n: 2, f0: 6200, spread: 0.3, lvl: 0.08, am: [50, 80] });
-    S.stream(plop(S, 0.1), 0.25, 0.8); S.stream(flapEv(S, 0.16), 7, 15);
-  },
-  'kreide-meer'(S) { // Brandung, Wind, ferne Flugsaurier-Rufe
-    surf(S, { lvl: 0.6, rate: 0.115 }); surf(S, { lvl: 0.25, rate: 0.083 });
-    wind(S, { lvl: 0.22, f: 650, q: 0.5, gust: 0.5, rate: 0.11 });
-    S.stream(far(S, ['pteranodon', 'rhamphorhynchus', 'pteranodon'], 0.7), 9, 20);
-  },
-  spaetkreide(S) { // dumpfes Grollen (Sub), dunkler Wind, vereinzelt tiefe Rufe
-    const s = S.loop('brown'), lp = S.f('lowpass', 60, 0.7), g = S.g(1.2); s.connect(lp); lp.connect(g); g.connect(S.body); S.lfo(0.13, 0.35, g.gain);
-    const a = S.osc('sine', 38), b = S.osc('sine', 41.5), ag = S.g(0.25); a.connect(ag); b.connect(ag); ag.connect(S.body);
-    wind(S, { lvl: 0.3, f: 600, q: 0.5, type: 'lowpass', gust: 0.5, rate: 0.08 });
-    S.stream(far(S, ['triceratops', 'trex', 'ankylosaurus'], 0.8), 12, 25);
-  },
-  nest(S) { // Rascheln, Piepsen, warmes tiefes Brummen, Abendgrillen
-    const bases = [[55, 0.3], [110, 0.2], [165, 0.07]], hum = S.g(0.5), lp = S.f('lowpass', 420, 0.5);
-    for (const [f, a] of bases) { const o = S.osc('sine', f), g = S.g(a); o.connect(g); g.connect(lp); } lp.connect(hum); hum.connect(S.body); S.lfo(0.22, 0.2, hum.gain);
-    wind(S, { lvl: 0.1, f: 800, q: 0.5, type: 'lowpass', gust: 0.5, rate: 0.1 });
-    crickets(S, { n: 2, f0: 4300, lvl: 0.012 });
-    S.stream(rustleEv(S, 0.1), 0.2, 0.6); S.stream(peepEv(S, 0.12), 1.5, 5);
-  },
-  einschlag(S) { // unruhiger Wind und Vogelrufe; Spannung (ctl) und Einschlag (sfx) steuern, danach fast Stille
-    const R = S.R, wg = wind(S, { lvl: 0.3, f: 520, q: 0.6, gust: 0.6, rate: 0.16 });
-    const s = S.loop('brown'), lp = S.f('lowpass', 50, 0.7), rg = S.g(0); s.connect(lp); lp.connect(rg); rg.connect(S.body); // ferne Vulkane
-    const tn = () => S.cv.tension || 0;
-    let post = false, base = 0.3;
-    S.onCtl.tension = (v, now) => { const k = post ? 0 : v; wg.gain.setTargetAtTime(base * (1 + 1.1 * k), now, 0.5); rg.gain.setTargetAtTime(1.0 * k * k, now, 0.4); };
-    S.stream(birds(S, [0, 1, 2, 3], 0.3), 2.5, 6, () => (post || tn() > 0.8 ? -1 : 1 / (1 + 4 * tn()))); // je unruhiger, desto öfter – kurz vor dem Einschlag verstummen sie
-    S.stream(flapEv(S, 0.2), 6, 12, () => (post || tn() < 0.15 ? -1 : 0.5));
-    S.onEvent = (name, t) => {
-      if (name !== 'impact') return;
-      post = true; base = 0.07; wg.gain.cancelScheduledValues(t); wg.gain.setTargetAtTime(base, t + 1.5, 2.5); rg.gain.setTargetAtTime(0, t, 2);
-      S.stream(birds(S, [4], 0.5), 1e6, 1e6, null, t - S.t0 + 11 + R.rng() * 2); // ein einzelner Vogelruf, lange danach
+  nil(S) { // Wasser, Frösche, Wasservögel, Wind im Schilf; ctl flood 0…1: mehr und schnelleres Wasser
+    const w = water(S, { lvl: 0.4, f: 900, spark: 0.04 });
+    const reeds = wind(S, { lvl: 0.12, f: 2200, q: 0.8, gust: 0.6, rate: 0.12 });
+    wind(S, { lvl: 0.1, f: 500, q: 0.5, type: 'lowpass', gust: 0.5, rate: 0.09 });
+    S.stream(frogEv(S, 0.16), 0.5, 2.2); S.stream(plop(S, 0.07), 1.5, 5);
+    S.stream(far(S, ['wasservogel', 'ibis', 'reiher', 'wasservogel'], 0.7), 5, 12);
+    S.onCtl.flood = (v, now) => {
+      w.g.gain.setTargetAtTime(0.4 * (1 + 1.5 * v), now, 0.6); w.lp.frequency.setTargetAtTime(900 * (1 + v), now, 0.6); w.sg.gain.setTargetAtTime(0.04 * (1 + 1.5 * v), now, 0.6); reeds.gain.setTargetAtTime(0.12 * (1 + 0.6 * v), now, 0.6);
     };
   },
-  finale(S) { // warme Atmosphäre: Vögel, weicher Wind, später Savannengrillen, leiser Regen (ctl)
-    const fG = S.g(1), sG = S.g(0), cG = S.g(0), rG = S.g(0);
-    fG.connect(S.body); sG.connect(S.body); cG.connect(S.body); rG.connect(S.body);
-    wind(S, { lvl: 0.22, f: 700, q: 0.5, type: 'lowpass', gust: 0.45, rate: 0.09 });
-    wind(S, { lvl: 0.1, f: 1500, q: 0.6, gust: 0.6, rate: 0.12, dest: sG }); // trockener, helle Savanne
-    insects(S, { n: 3, f0: 3600, spread: 0.7, lvl: 0.13, am: [34, 60], dest: fG });
-    crickets(S, { n: 4, f0: 4600, lvl: 0.05, dest: cG });
-    const rn = S.loop('white'), rh = S.f('highpass', 1400, 0.5), rl = S.f('lowpass', 8500, 0.5), rp = S.g(0.5); rn.connect(rh); rh.connect(rl); rl.connect(rp); rp.connect(rG);
-    S.stream(birds(S, [0, 1, 2, 3], 0.3, fG), 1.4, 4.2, () => { const w = Math.cos((S.cv.timeLapse || 0) * PI2); return w < 0.1 ? -1 : 1 / w; });
-    S.stream(birds(S, [1, 4, 3], 0.4, sG), 4, 9, () => { const w = Math.sin((S.cv.timeLapse || 0) * PI2); return w < 0.1 ? -1 : 1 / w; });
-    S.stream(drop(S, 0.12), 0.07, 0.3, () => ((S.cv.rain || 0) > 0.05 ? 1 : -1));
-    S.onCtl.timeLapse = (v, now) => {
-      const sm = clamp((v - 0.5) / 0.5, 0, 1);
-      fG.gain.setTargetAtTime(Math.cos(v * PI2), now, 0.35); sG.gain.setTargetAtTime(Math.sin(v * PI2), now, 0.35); cG.gain.setTargetAtTime(sm * sm * (3 - 2 * sm), now, 0.5);
-    };
-    S.onCtl.rain = (v, now) => rG.gain.setTargetAtTime(v * 0.9, now, 0.6);
+  reich(S) { // Markt aus der Ferne, Fanfarenrest, Windspiel, Wind
+    murmur(S, { n: 3, lvl: 0.3, f1: 500, f2: 1400, syl: 3.4, lp: 1600 });
+    wind(S, { lvl: 0.12, f: 700, q: 0.5, gust: 0.5, rate: 0.1 });
+    S.stream(callEv(S, 0.5, 190), 3, 8); S.stream(far(S, ['esel', 'ochse'], 0.85), 22, 40);
+    S.stream(bellEv(S, 0.1, 0.6), 4, 10); S.stream(fanfareEv(S, 0.7), 24, 42);
+  },
+  gizeh(S) { // Hämmern im Takt, Rufe der Arbeitsgruppen als dumpfes Murmeln, Wüstenwind; ctl build 0…1: mehr Arbeiter
+    const b = () => S.cv.build || 0;
+    wind(S, { lvl: 0.22, f: 600, q: 0.5, type: 'lowpass', gust: 0.5, rate: 0.09 }); wind(S, { lvl: 0.07, f: 1800, q: 0.8, gust: 0.6, rate: 0.14 });
+    const mm = murmur(S, { n: 3, lvl: 0.25, f1: 380, f2: 900, syl: 2.8, lp: 1100 });
+    S.stream(hammerEv(S, () => 0.45 + 0.3 * b(), 1), 0.8, 0.8, () => 1 / (1 + 0.35 * b()), 0.2);
+    S.stream(hammerEv(S, () => 0.4 + 0.3 * b(), 0.85), 1.2, 1.2, () => (b() < 0.25 ? -1 : 1 / (1 + 0.35 * b())), 0.7);
+    S.stream(hammerEv(S, () => 0.35 + 0.3 * b(), 1.2), 0.97, 0.97, () => (b() < 0.6 ? -1 : 1 / (1 + 0.35 * b())), 0.4);
+    S.stream(callEv(S, 0.4, 150, [[450, 800]]), 6, 14, () => (b() < 0.15 ? -1 : 1)); S.stream(far(S, ['ochse'], 0.85), 22, 40);
+    S.onCtl.build = (v, now) => mm.gain.setTargetAtTime(0.25 * (0.4 + 0.9 * v), now, 0.6);
+  },
+  goetter(S) { // Tempelhalle: Hall, tiefer Chorton, Weihrauch-Glöckchen, Sistrum; ctl scale 0…1: sanftes Ticken der Waage
+    const s = S.loop('pink'), lp = S.f('lowpass', 400, 0.5), g = S.g(0.16); s.connect(lp); lp.connect(g); g.connect(S.body);
+    const f1 = S.f('bandpass', 420, 4), f2 = S.f('bandpass', 800, 5), ch = S.g(0.5), cl = S.f('lowpass', 1100, 0.5);
+    for (const [f, a] of [[55, 0.5], [55.3, 0.4], [82.4, 0.35], [82.0, 0.3], [110.2, 0.25], [109.8, 0.2]]) { const o = S.osc('sawtooth', f), og = S.g(a); o.connect(og); og.connect(f1); og.connect(f2); }
+    f1.connect(ch); f2.connect(ch); ch.connect(cl); cl.connect(S.body); S.lfo(0.07, 0.25, ch.gain); S.lfo(0.11, 50, f1.frequency); S.lfo(0.09, 90, f2.frequency);
+    S.stream(bellEv(S, 0.1, 1.0, 9), 5, 11); S.stream(sistrumEv(S, 0.5), 12, 24);
+    S.stream(tickEv(S, 0.3), 0.55, 0.75, () => ((S.cv.scale || 0) < 0.02 ? -1 : 1 / (0.6 + 0.9 * S.cv.scale)));
+  },
+  mumie(S) { // gedeckter Raum, leises Murmeln (Rezitation), Sandrieseln; ctl salt 0…1: mehr Rieseln
+    const s = S.loop('brown'), lp = S.f('lowpass', 280, 0.5), g = S.g(0.7); s.connect(lp); lp.connect(g); g.connect(S.body);
+    const p = S.loop('pink'), bp = S.f('bandpass', 600, 0.6), pg = S.g(0.1); p.connect(bp); bp.connect(pg); pg.connect(S.body);
+    murmur(S, { n: 2, lvl: 0.3, f1: 450, f2: 1100, syl: 3.8, lp: 1800 });
+    const sd = sandBed(S, { lvl: 0.12 }); S.stream(rustleEv(S, 0.05), 4, 10);
+    S.onCtl.salt = (v, now) => sd.gain.setTargetAtTime(0.12 + 0.55 * v, now, 0.5);
+  },
+  alltag(S) { // Mahlen, Schnattern, Kinderlachen aus der Ferne, Lautenklang, Backofen-Knistern
+    quernBed(S, { lvl: 0.35 }); fireBed(S, { lvl: 0.15 });
+    wind(S, { lvl: 0.05, f: 700, q: 0.5, type: 'lowpass', gust: 0.5, rate: 0.1 });
+    S.stream(crackleEv(S, 0.25), 0.3, 1.2); S.stream(far(S, ['wasservogel', 'wasservogel', 'esel'], 0.75), 7, 15);
+    S.stream(laughEv(S, 0.4), 14, 30); S.stream(luteEv(S, 0.5), 9, 18);
+  },
+  tal(S) { // Fackelknistern, Tropfen, tiefer Hornton, Wüstenwind; ctl torch 0…1: Fackeln lodern stärker
+    const t = () => S.cv.torch || 0;
+    wind(S, { lvl: 0.25, f: 500, q: 0.5, type: 'lowpass', gust: 0.5, rate: 0.08 }); wind(S, { lvl: 0.06, f: 1700, q: 0.8, gust: 0.6, rate: 0.12 });
+    const lo = S.loop('brown'), lf = S.f('lowpass', 120, 0.5), lg = S.g(0.6); lo.connect(lf); lf.connect(lg); lg.connect(S.body);
+    const fb = fireBed(S, { lvl: 0.12 }); S.stream(crackleEv(S, () => 0.2 + 0.2 * t()), 0.5, 1.8, () => 1 / (1 + 2 * t()));
+    S.stream(drop(S, 0.22), 3, 9); S.stream(hornEv(S, 0.5), 28, 50);
+    S.onCtl.torch = (v, now) => fb.gain.setTargetAtTime(0.12 * (1 + 2.2 * v), now, 0.4);
+  },
+  finale(S) { // Meer, Wellen, ferne Hafenrufe; ctl parade 0…1: Jubel der Parade (das volle Titelthema liegt in music.js)
+    surf(S, { lvl: 0.55, rate: 0.1 }); surf(S, { lvl: 0.2, rate: 0.07 });
+    wind(S, { lvl: 0.15, f: 650, q: 0.5, gust: 0.5, rate: 0.1 });
+    const cr = murmur(S, { n: 2, lvl: 0, f1: 520, f2: 1500, syl: 3.2, lp: 2200 });
+    S.stream(callEv(S, 0.4, 170), 8, 16); S.stream(far(S, ['wasservogel'], 0.8), 10, 20); S.stream(flapEv(S, 0.12), 7, 14);
+    S.onCtl.parade = (v, now) => cr.gain.setTargetAtTime(0.3 * v, now, 0.8);
   },
 };
 export const SCENE_IDS = Object.keys(BUILD);
@@ -210,7 +287,6 @@ export class Scenes {
 }
 
 // ------------------------------------------------------------------ ctl-Schichten (unabhängig von der Szene)
-const PENT = [0, 2, 4, 7, 9];
 export class Layers {
   constructor(R) { this.R = R; this.v = { tension: 0, timeLapse: 0, wind: 0, underwater: 0, rainfall: 0 }; this.tn = null; this.tl = null; this.wd = null; this.rn = null; this.nextDrop = 0; this.prev = 0; this.act = 0; this.lastA = -1; this.arp = 0; this.nextArp = 0; this.nextBub = 0; this.idle = { tn: 0, tl: 0, wd: 0, rn: 0 }; }
   mk(extra) { // gemeinsame Hülle: Ausgangs-Gain auf dem Atmo-Bus, Quellenliste
@@ -229,19 +305,17 @@ export class Layers {
     const R = this.R, c = R.ctx; now = now ?? c.currentTime; this.v[name] = v;
     if (name === 'tension') {
       if (!this.tn && v < 0.002) return;
-      if (!this.tn) { // Pfeifen (zwei leicht verstimmte Sinus), Drohnen (Sägezahn tief), Luftrauschen
+      if (!this.tn) { // Erwartung: tiefer Bordun (Grundton + Quinte, Sägezähne durch Tiefpass) und ein Hauch Luft – kein Pfeifen
         const L = (this.tn = this.mk({})), t = now; L.out.connect(R.bus.atmo);
-        L.w1 = this.src(L, c.createOscillator(), t); L.w2 = this.src(L, c.createOscillator(), t); L.wg = this.node(L, c.createGain()); L.wg.gain.value = 0;
-        L.w1.connect(L.wg); L.w2.connect(L.wg); L.wg.connect(L.out); L.w1.frequency.value = 500; L.w2.frequency.value = 503;
-        const vb = this.src(L, c.createOscillator(), t), vg = this.node(L, c.createGain()); vb.frequency.value = 5.5; vg.gain.value = 7; vb.connect(vg); vg.connect(L.w1.frequency);
-        L.dr = this.src(L, c.createOscillator(), t); L.dr.type = 'sawtooth'; L.dr.frequency.value = 55; const dl = this.node(L, c.createBiquadFilter()); dl.type = 'lowpass'; dl.frequency.value = 170; L.dg = this.node(L, c.createGain()); L.dg.gain.value = 0;
-        L.dr.connect(dl); dl.connect(L.dg); L.dg.connect(L.out);
+        L.dr = this.src(L, c.createOscillator(), t); L.dr.type = 'sawtooth'; L.dr.frequency.value = 55; L.dr2 = this.src(L, c.createOscillator(), t); L.dr2.type = 'sawtooth'; L.dr2.frequency.value = 82.5;
+        const dl = this.node(L, c.createBiquadFilter()); dl.type = 'lowpass'; dl.frequency.value = 170; L.dg = this.node(L, c.createGain()); L.dg.gain.value = 0;
+        L.dr.connect(dl); L.dr2.connect(dl); dl.connect(L.dg); L.dg.connect(L.out);
         const ns = this.noiseNode(L, 'white', t); L.bp = this.node(L, c.createBiquadFilter()); L.bp.type = 'bandpass'; L.bp.Q.value = 2; L.bp.frequency.value = 900; L.hg = this.node(L, c.createGain()); L.hg.gain.value = 0;
         ns.connect(L.bp); L.bp.connect(L.hg); L.hg.connect(L.out); L.out.gain.setTargetAtTime(1, now, 0.1);
       }
-      const L = this.tn, f = 500 * Math.pow(7, v);
-      L.w1.frequency.setTargetAtTime(f, now, 0.15); L.w2.frequency.setTargetAtTime(f * 1.006, now, 0.15); L.bp.frequency.setTargetAtTime(f * 1.5, now, 0.15); L.dr.frequency.setTargetAtTime(52 + 22 * v, now, 0.3);
-      L.wg.gain.setTargetAtTime(0.05 * Math.pow(v, 1.4), now, 0.2); L.dg.gain.setTargetAtTime(0.15 * Math.pow(v, 1.2), now, 0.3); L.hg.gain.setTargetAtTime(0.06 * Math.pow(v, 2.2), now, 0.25);
+      const L = this.tn;
+      L.bp.frequency.setTargetAtTime(700 + 900 * v, now, 0.15); L.dr.frequency.setTargetAtTime(52 + 22 * v, now, 0.3); L.dr2.frequency.setTargetAtTime((52 + 22 * v) * 1.5, now, 0.3);
+      L.dg.gain.setTargetAtTime(0.15 * Math.pow(v, 1.2), now, 0.3); L.hg.gain.setTargetAtTime(0.05 * Math.pow(v, 2), now, 0.25);
     } else if (name === 'wind') {
       if (!this.wd && v < 0.002) return;
       if (!this.wd) {
@@ -297,7 +371,7 @@ export class Layers {
     if (this.tl && this.act > 0.1) {
       while (this.nextArp < to) {
         const t = Math.max(this.nextArp, from), i = this.arp++, v = R.voice(0, 'fx', 'sfx:chime');
-        if (v) { const lvl = 0.10 + 0.08 * this.v.timeLapse; v.bell(t, mtof(60 + PENT[i % 5] + 12 * (((i / 5) | 0) % 3) + Math.round(this.v.timeLapse * 5)), [[1, 1, 0.35], [4, 0.2, 0.08]], lvl); }
+        if (v) { const lvl = 0.10 + 0.08 * this.v.timeLapse; v.bell(t, mtof(degMidi((i % 7) + 7 * ((i / 7 | 0) % 3) + Math.round(this.v.timeLapse * 5), 60, 'phryg')), [[1, 1, 0.35], [4, 0.2, 0.08]], lvl); }
         this.nextArp = t + 1 / (7 + 9 * this.act);
       }
     } else { this.nextArp = Math.max(this.nextArp, from); this.arp = 0; }

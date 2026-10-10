@@ -1,5 +1,5 @@
-// audio.js – Klangmaschine des Dinosaurier-Popup-Buchs (reines Web Audio, keine Audiodateien außer den eingebetteten Erzähl-Clips).
-// Öffentliche API: siehe docs/AUDIO.md. Module: synth (Kern/Pool), sfx, voices, scenes (Atmo + ctl-Schichten), music, narration.
+// audio.js – Klangmaschine des Ägypten-Popup-Buchs (reines Web Audio, keine Audiodateien außer den eingebetteten Erzähl-Clips).
+// Öffentliche API: siehe docs/AUDIO.md. Module: synth (Kern/Pool), inst (Instrumente/Tonleitern), sfx, voices, scenes (Atmo + ctl-Schichten), music, narration.
 import { Rig, clamp } from './synth.js';
 import { SFX, SFX_NAMES, GAP } from './sfx.js';
 import { playVoice, VOICE_IDS } from './voices.js';
@@ -98,9 +98,8 @@ export class AudioEngine {
     if (now - (this.last[name] ?? -9) < gap) return; this.last[name] = now;
     this.rig.calm = !!(this.app && this.app.calm);
     try { fn(this.rig, now + 0.012, o); } catch (e) { this._warn(name, e); }
-    if (name === 'impact') this.scenes.event('impact', now + 0.012);
   }
-  /** Tierstimme (Actor-id); gleiche Tiere unterbrechen sich, unbekannte ids → leises Blip. */
+  /** Tierstimme (Actor-id; Götter-ids: kurzer Harfenklang); gleiche Tiere unterbrechen sich, unbekannte ids → leises Blip. */
   voice(id) {
     if (!this.live()) return;
     const now = this.ctx.currentTime; if (now - (this.vlast[id] ?? -9) < 0.25) return; this.vlast[id] = now;
@@ -114,7 +113,7 @@ export class AudioEngine {
     const t = this.ctx.currentTime + 0.02;
     if (this.scenes.set(id, t, 1.2)) this.music.setScene(id, t, 1.2);
   }
-  /** Kontinuierliche Parameter 0…1: underwater tension timeLapse hush wind rainfall (+ rain für das Finale). */
+  /** Kontinuierliche Parameter 0…1: underwater tension timeLapse hush wind rainfall; szenenbezogen: flood (nil) build (gizeh) scale (goetter) salt (mumie) torch (tal) parade (finale). */
   ctl(name, v) {
     v = clamp(+v || 0, 0, 1);
     if (Math.abs((this.cv[name] ?? -1) - v) < 0.003) return;
@@ -125,7 +124,7 @@ export class AudioEngine {
     if (name === 'hush') { if (now >= this.silUntil) this.rig.lull.gain.setTargetAtTime(1 - v, now, 0.25); }
     else {
       if (this.enabled || name === 'underwater') this.layers.set(name, v, now);
-      this.scenes.ctl(name, v);
+      this.scenes.ctl(name, v); this.music.ctl(name, v, now);
     }
   }
   /** Alle Busse außer Stimme sanft auf ~0 (0.5 s), sec Sekunden halten, dann 1.8 s zurück. delay: Verzögerung in s. */
@@ -190,7 +189,7 @@ export class AudioEngine {
       if (!S.set(name, t, 0.03)) throw new Error('unbekannte Szene: ' + name);
       for (const [en, et] of o.events || []) S.event(en, et);
       S.tick(0, seconds + 0.1);
-    } else if (kind === 'music') { const M = new Music(R); M.setScene(name, t, 0); M.tick(0, seconds + 0.1); }
+    } else if (kind === 'music') { const M = new Music(R); M.setScene(name, t, 0); for (const k in o.ctl || {}) M.ctl(k, o.ctl[k], 0); M.tick(0, seconds + 0.1); }
     else if (kind === 'ctl') { // Steuerwert linear von o.from nach o.to fahren (60 Bilder/s) – simuliert die Frame-Schleife
       const L = new Layers(R), a = o.from ?? 0, b = o.to ?? 1, n = Math.floor(seconds * 60);
       for (let i = 0; i <= n; i++) { const now = i / 60; L.set(name, a + (b - a) * (i / n), now); L.update(1 / 60, now); L.tick(now, now + LOOK); }

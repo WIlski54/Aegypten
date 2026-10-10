@@ -16,15 +16,17 @@ const ROOT = path.resolve('.'), HTML = path.join(OUT, LITE ? 'lite.html' : 'inde
 fs.mkdirSync(path.join(OUT, 'wav'), { recursive: true });
 
 // ------------------------------------------------------------------ Ziele
-const PEAK_T = { impact: -5, tinnitus: -27, slide: -11, footstep: -11, tapp: -12, tick: -10, bubble: -12, rustle: -11, musicbox: -10, chime: -10, ping: -10, lift: -10, grab: -10, snap: -9, flapOpen: -9, flapClose: -9, card: -11, splinter: -10, peep: -10, pop: -9 };
-const SC_T = { cover: -46, erduhr: -32, einschlag: -30, spaetkreide: -27 }, SC_R = { cover: [-54, -40], erduhr: [-36, -28], einschlag: [-36, -26] };
-const MU_T = { cover: -37, spaetkreide: -36, finale: -33 };
-const SFX_SEC = { musicbox: 24, tinnitus: 10, gong: 9, impact: 8, rumble: 5, fossil: 4, found: 4, chime: 4, ping: 3, wave: 4, horn: 4, default: 3.5 };
-const SFX_VARIANTS = [['stomp', { big: false }], ['splash', { big: true }], ['land', { cover: true }], ['turn', { steps: 3, fwd: false }], ['footstep', { big: true }], ['tick', { fast: true, rate: 0.6 }], ['slide', { v: 0.1 }], ['slide', { v: 0.95 }], ['card', { close: true }], ['rumble', { dur: 3 }]];
+const PEAK_T = { slide: -11, footstep: -11, tapp: -12, tick: -10, bubble: -12, rustle: -11, musicbox: -10, chime: -10, ping: -10, lift: -10, grab: -10, snap: -10, flapOpen: -10, flapClose: -10, card: -11, splinter: -10, peep: -10, pop: -10,
+  chisel: -10, seal: -10, scale: -11, sand: -11, bread: -10, fire: -11, sistrum: -11, thud: -10, woodcrack: -10, crack: -10, stomp: -10, door: -10, torch: -10 }, PEAK_DEF = -9;
+const SC_T = { cover: -46 }, SC_R = { cover: [-54, -40] };
+const MU_T = { cover: -37, finale: -33 };
+const SFX_SEC = { musicbox: 24, gong: 9, rumble: 5, found: 4, chime: 4, ping: 3, wave: 4, horn: 5, door: 4.5, sand: 3, quern: 3, harp: 4, gold: 3, torch: 3, fire: 3, sistrum: 3, water: 3, sail: 3, default: 3.5 };
+const SFX_VARIANTS = [['stomp', { big: false }], ['splash', { big: true }], ['land', { cover: true }], ['turn', { steps: 3, fwd: false }], ['footstep', { big: true }], ['tick', { fast: true, rate: 0.6 }], ['slide', { v: 0.1 }], ['slide', { v: 0.95 }], ['card', { close: true }], ['rumble', { dur: 3 }],
+  ['chisel', { n: 4 }], ['harp', { note: -4 }], ['harp', { note: 9, inst: 'lute' }], ['fire', { v: 1, dur: 3 }], ['door', { v: 1, dur: 3 }], ['scale', { tick: true }], ['sand', { dur: 5, v: 1 }], ['bread', { n: 5 }], ['sail', { v: 1 }], ['sistrum', { n: 24 }], ['oar', { big: true }]];
 
 function jobs(cat) {
   const J = [];
-  for (const n of cat.sfx) J.push({ kind: 'sfx', name: n, sec: SFX_SEC[n] || SFX_SEC.default, o: { opts: n === 'slide' ? { v: 0.5 } : n === 'footstep' ? { v: 0.5 } : n === 'tick' ? { rate: 0.3 } : {} }, key: 'sfx:' + n, tp: PEAK_T[n] ?? -8, base: true });
+  for (const n of cat.sfx) J.push({ kind: 'sfx', name: n, sec: SFX_SEC[n] || SFX_SEC.default, o: { opts: n === 'slide' ? { v: 0.5 } : n === 'footstep' ? { v: 0.5 } : n === 'tick' ? { rate: 0.3 } : {} }, key: 'sfx:' + n, tp: PEAK_T[n] ?? PEAK_DEF, base: true });
   for (const [n, op] of SFX_VARIANTS) J.push({ kind: 'sfx', name: n, sec: SFX_SEC[n] || SFX_SEC.default, o: { opts: op }, label: n + JSON.stringify(op).replace(/"/g, ''), tp: null });
   for (const n of [...cat.voices, 'zzz_unbekannt']) {
     const unk = n === 'zzz_unbekannt';
@@ -32,17 +34,21 @@ function jobs(cat) {
     J.push({ kind: 'voice', name: n, sec: 4.5, o: { cine: true }, label: n + ' (cine)', key: 'voice:' + n + ':cine', tp: -7, base: !unk });
   }
   for (const n of cat.scenes) J.push({ kind: 'scene', name: n, sec: 12, o: {}, key: 'scene:' + n, tr: SC_T[n] ?? -28, range: SC_R[n] || [-32, -24], base: true });
-  J.push({ kind: 'scene', name: 'einschlag', sec: 14, o: { ctl: { tension: 0.6 } }, label: 'einschlag (Spannung 0.6)', tr: null, range: [-40, -20] });
-  J.push({ kind: 'scene', name: 'einschlag', sec: 20, o: { events: [['impact', 3]] }, label: 'einschlag (nach Einschlag)', tr: null, range: [-60, -20] });
-  J.push({ kind: 'scene', name: 'finale', sec: 12, o: { ctl: { timeLapse: 1, rain: 0.8 } }, label: 'finale (Savanne+Regen)', tr: null, range: [-40, -20] });
-  J.push({ kind: 'scene', name: 'jura-lagune', sec: 8, o: { layers: { underwater: 0.9 } }, label: 'jura-lagune (unter Wasser)', tr: null, range: [-45, -20] });
+  for (const [n, ctl] of [['nil', 'flood'], ['gizeh', 'build'], ['goetter', 'scale'], ['mumie', 'salt'], ['tal', 'torch'], ['finale', 'parade']]) {
+    if (!cat.scenes.includes(n)) continue;
+    J.push({ kind: 'scene', name: n, sec: 12, o: { ctl: { [ctl]: 1 } }, label: `${n} (${ctl} 1)`, tr: null, range: [-40, -18] });
+    J.push({ kind: 'scene', name: n, sec: 12, o: { ctl: { [ctl]: 0.4 } }, label: `${n} (${ctl} 0.4)`, tr: null, range: [-40, -18] });
+  }
+  J.push({ kind: 'scene', name: 'nil', sec: 8, o: { layers: { underwater: 0.9 } }, label: 'nil (unter Wasser)', tr: null, range: [-45, -20] });
   for (const n of cat.music) J.push({ kind: 'music', name: n, sec: 32, o: {}, key: 'music:' + n, tr: MU_T[n] ?? -34, range: [-38, -30], base: true });
+  J.push({ kind: 'music', name: 'finale', sec: 32, o: { ctl: { parade: 1 } }, label: 'music finale (parade 1)', tr: null, range: [-38, -28] });
   J.push({ kind: 'ctl', name: 'tension', sec: 10, o: { from: 0, to: 1 }, label: 'ctl tension 0→1', tr: null, range: [-60, -16] });
   J.push({ kind: 'ctl', name: 'timeLapse', sec: 6, o: { from: 0, to: 1 }, label: 'ctl timeLapse 0→1', tr: null, range: [-60, -10] });
   J.push({ kind: 'ctl', name: 'wind', sec: 6, o: { from: 1, to: 1 }, label: 'ctl wind 1', tr: null, range: [-45, -15] });
-  J.push({ kind: 'sfx', name: 'impact', sec: 9, o: { master: true, volume: 1, at: 1 }, label: 'impact über Master (Volume 1.0)', tr: null, master: true });
   J.push({ kind: 'sfx', name: 'found', sec: 5, o: { master: true, volume: 1, at: 1 }, label: 'found über Master (Volume 1.0)', tr: null, master: true });
-  J.push({ kind: 'voice', name: 'trex', sec: 6, o: { cine: true, master: true, volume: 1, at: 1 }, label: 'trex cine über Master (Volume 1.0)', tr: null, master: true });
+  J.push({ kind: 'sfx', name: 'door', sec: 6, o: { master: true, volume: 1, at: 1 }, label: 'door über Master (Volume 1.0)', tr: null, master: true });
+  J.push({ kind: 'sfx', name: 'gong', sec: 9, o: { master: true, volume: 1, at: 1 }, label: 'gong über Master (Volume 1.0)', tr: null, master: true });
+  J.push({ kind: 'voice', name: 'nilpferd', sec: 6, o: { cine: true, master: true, volume: 1, at: 1 }, label: 'nilpferd cine über Master (Volume 1.0)', tr: null, master: true });
   return ONLY ? J.filter((j) => (j.label || j.name).includes(ONLY) || j.kind === ONLY) : J;
 }
 
@@ -80,11 +86,11 @@ function judge(j, m) {
   if (m.nan) bad.push('NaN'); if (m.clip) bad.push('Clipping'); if (m.peak > -1) bad.push('Spitze>-1'); if (m.peak < -40 && j.kind !== 'ctl') bad.push('unhörbar<-40');
   if (Math.abs(m.dc) > 0.01) bad.push('DC'); if (m.startClick) bad.push('Klick-Anfang'); if (m.endClick) bad.push('Klick-Ende'); if (m.tailOpen) bad.push('Ende offen'); if (m.sceneStart) bad.push('Klick-Anfang');
   if (m.jumpS > 2) warn.push('Sprünge-Anfang'); if (m.jumpE > 2) warn.push('Sprünge-Ende');
-  if (j.kind === 'sfx' && !j.master) { const t = j.name; if (t === 'impact' && (m.peak > -3 || m.peak < -9)) warn.push('impact-Pegel'); else if (t === 'tinnitus' && (m.peak > -24 || m.peak < -40)) warn.push('tinnitus-Pegel'); else if (t !== 'impact' && t !== 'tinnitus' && j.base && (m.peak > -3.5 || m.peak < -12.5)) warn.push('Pegel ausserhalb -12..-4'); }
-  if (j.kind === 'voice' && !j.master && (m.peak > -3.5 || m.peak < -12.5)) warn.push('Pegel ausserhalb -12..-4');
+  if (j.kind === 'sfx' && !j.master && j.base && (m.peak > -6 || m.peak < -12.5)) warn.push('Pegel ausserhalb -12..-6');
+  if (j.kind === 'sfx' && !j.master && !j.base && m.peak > -6) warn.push('Variante lauter als -6');
+  if (j.kind === 'voice' && !j.master && (m.peak > -5.5 || m.peak < -12.5)) warn.push('Pegel ausserhalb -12..-5.5');
   if (j.range && (j.kind === 'scene' || j.kind === 'music') && (m.rms < j.range[0] - 0.5 || m.rms > j.range[1] + 0.5)) warn.push(`RMS ausserhalb ${j.range[0]}..${j.range[1]}`);
   if (j.master && m.peak > -1) bad.push('Limiter greift nicht');
-  if (j.master && j.name === 'impact' && m.peak > -3) bad.push('impact am Ausgang > -3 dBFS');
   return { bad, warn };
 }
 function wav(x) {
@@ -145,11 +151,11 @@ function writeLevels(rows, cur) {
     const { j, m } = r; if (!m || !j.key || !j.base) continue;
     if (j.kind === 'sfx' || j.kind === 'voice') adj(j.key, j.tp - m.peak);
     else if (j.kind === 'scene') adj(j.key, j.tr - m.rms);
-    else if (j.kind === 'music') { const d = j.tr - m.rms; if (j.name === 'finale') { adj('music:pad', d); adj('music:flute', d); } else adj(j.key, d); }
+    else if (j.kind === 'music') { const d = j.tr - m.rms; adj(j.key, d); if (j.name === 'finale') adj('music:finale:pad', d); }
   }
   const keys = Object.keys(L).sort();
   const body = keys.map((k) => `  '${k}': ${L[k]},`).join('\n');
-  fs.writeFileSync(path.join(ROOT, 'src/audio/levels.js'), `// Pegelkorrekturen in dB je Klang (Schlüssel: 'sfx:<name>', 'voice:<id>', 'scene:<id>', 'music:<id>').\n// Erzeugt von \`node tools/audio-check.mjs --calibrate\` (Ziele: SFX-Spitze ≈ −8 dBFS, Stimmen −9, Atmo-RMS ≈ −28, Musik-RMS ≈ −34); von Hand nur grob ändern.\nexport const LEVELS = {\n${body}\n};\n`);
+  fs.writeFileSync(path.join(ROOT, 'src/audio/levels.js'), `// Pegelkorrekturen in dB je Klang (Schlüssel: 'sfx:<name>', 'voice:<id>', 'scene:<id>', 'music:<id>').\n// Erzeugt von \`node tools/audio-check.mjs --calibrate\` (Ziele: SFX-Spitze ≈ −9 dBFS, Stimmen −9, Atmo-RMS ≈ −28, Musik-RMS ≈ −34); von Hand nur grob ändern.\nexport const LEVELS = {\n${body}\n};\n`);
   return L;
 }
 async function readLevels() { try { const m = await import('file://' + path.join(ROOT, 'src/audio/levels.js') + '?t=' + Date.now()); return { ...m.LEVELS }; } catch (e) { return {}; } }
@@ -173,8 +179,8 @@ async function liveTest(page, logs) {
     A.sfx('gibt_es_nicht'); A.voice('gibt_es_nicht'); A.setScene('gibt_es_nicht'); A.ctl('unbekannt', 0.5);
     await wait(0.3); out.maxVoicesStorm = maxVoices; out.calls = calls;
     // ctl-Parameter
-    for (const [n, v] of [['tension', 0.7], ['timeLapse', 0.3], ['timeLapse', 0.6], ['wind', 0.8], ['underwater', 0.9], ['hush', 0.5], ['rain', 0.6]]) { A.ctl(n, v); await wait(0.25); }
-    for (const n of ['tension', 'timeLapse', 'wind', 'underwater', 'hush', 'rain']) A.ctl(n, 0);
+    for (const [n, v] of [['tension', 0.7], ['timeLapse', 0.3], ['timeLapse', 0.6], ['wind', 0.8], ['underwater', 0.9], ['hush', 0.5], ['flood', 0.7], ['build', 0.6], ['scale', 0.5], ['salt', 0.8], ['torch', 0.9], ['parade', 0.9]]) { A.ctl(n, v); await wait(0.25); }
+    for (const n of ['tension', 'timeLapse', 'wind', 'underwater', 'hush', 'flood', 'build', 'scale', 'salt', 'torch', 'parade']) A.ctl(n, 0);
     A.silence(0.8); await wait(0.5);
     clearInterval(mon); out.maxVoices = maxVoices;
     // alles ausklingen lassen: Pool muss wieder (fast) leer sein
@@ -201,7 +207,7 @@ async function liveTest(page, logs) {
     caps.length = 0; spk.length = 0; const p3 = A.narrate({ id: 'seite_ohne_clip', text: 'Kurz. Noch kurz.' }); await Promise.race([p3, wait(14)]); out.fallback = { caps: caps.slice(), spk: spk.slice(), speaking: A.speaking, ms: Math.round(performance.now() - t0) };
     // Ton aus / an
     A.setEnabled(false); await wait(0.6); out.offState = A.ctx.state; A.sfx('snap'); const offVoices = A.stats().voices; A.setEnabled(true); await wait(0.4); out.onState = A.ctx.state; out.offVoices = offVoices;
-    A.setScene('trias'); await wait(1.5); out.finalScene = A.stats().scene;
+    A.setScene('nil'); await wait(1.5); out.finalScene = A.stats().scene;
     return out;
   }).catch((e) => ({ error: String(e) }));
   if (st.error) { ok('Live-Test lief durch', false, st.error); return { R, st }; }
@@ -216,7 +222,7 @@ async function liveTest(page, logs) {
   ok(st.mp3.id ? `Echter MP3-Clip (${st.mp3.id}, ${st.mp3.n} eingebettet) wird dekodiert und gespielt` : 'Echte MP3-Clips: keine eingebettet (Rückfall Sprachsynthese)', !st.mp3.id || (st.mp3.mode === 'buf' && st.mp3.total > 1 && st.mp3.speaking && !st.mp3.after && st.mp3.caps > 0), JSON.stringify(st.mp3));
   ok('Rückfall (ohne Clip): Untertitel laufen, speaking true→false', st.fallback.caps.length >= 2 && st.fallback.caps.at(-1) === '' && !st.fallback.speaking, JSON.stringify(st.fallback));
   ok('Ton aus: Kontext wird angehalten, sfx() erzeugt nichts', st.offState === 'suspended' && st.offVoices === 0, `${st.offState}, Stimmen ${st.offVoices}`);
-  ok('Ton wieder an: Kontext läuft, Szene wieder aktiv', st.onState === 'running' && st.finalScene === 'trias', `${st.onState}, ${st.finalScene}`);
+  ok('Ton wieder an: Kontext läuft, Szene wieder aktiv', st.onState === 'running' && st.finalScene === 'nil', `${st.onState}, ${st.finalScene}`);
   const errs = logs.filter((l) => /\[(pageerror|error)\]|\[audio\]/.test(l) && !/WebGL|GPU|swiftshader|favicon/i.test(l));
   ok('Keine Fehler/Warnungen der Klangmaschine in der Konsole', errs.length === 0, errs.slice(0, 5).join(' || '));
   return { R, st };
