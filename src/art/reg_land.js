@@ -24,14 +24,4 @@ export default {
   dattelpalme: (o) => dattelpalme(o),
   sykomore: (o) => sykomore(o),
   oase: (o) => oase(o),
-  // PREVIEW (wird vor Abgabe entfernt)
-  pv_duene2: (o) => wuestenduene({ seed: 2, ...o }),
-  pv_nil_d: (o) => nil_wasser({ tone: 'dunkel', ...o }),
-  pv_feld0: (o) => feld_getreide({ stage: 0, ...o }),
-  pv_feld2: (o) => feld_getreide({ stage: 0.2, ...o }),
-  pv_feld5: (o) => feld_getreide({ stage: 0.5, ...o }),
-  pv_feld8: (o) => feld_getreide({ stage: 0.8, ...o }),
-  pv_sphinx_b: (o) => sphinx({ paint: 'bunt', ...o }),
-  pv_papyrus2: (o) => papyrus({ seed: 2, ...o }),
-  pv_papyrus3: (o) => papyrus({ seed: 3, ...o }),
 };
