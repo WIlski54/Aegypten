@@ -5,7 +5,7 @@
 import * as THREE from 'three';
 import { mood } from '../engine/scene.js';
 import { printLabel, pebbles, grassTufts, blotches } from '../engine/pagepaint.js';
-import { poseAmt, makeFigure } from '../engine/popup.js';
+import { makeFigure } from '../engine/popup.js';
 import { softTexture } from '../engine/effects.js';
 import { lerp, clamp, smooth, TAU, mulberry32 } from '../engine/util.js';
 import { panelPart, cracks, leftCard, dither, softLight } from './common.js';
@@ -52,8 +52,8 @@ export default {
           grassTufts(m, { x0: 0.8, x1: 11.2, z0: -2.0, z1: 3.8, n: 5, seed: 15, color: '#a89050', h: 0.26 });
           // Sandfläche vor der Grabtreppe (Ausgrabung)
           ctx.save(); ctx.fillStyle = 'rgba(252,236,196,.38)'; ctx.beginPath(); ctx.ellipse(m.x(3.3), m.z(1.7), 2.6 * m.S, 1.2 * m.S, 0, 0, TAU); ctx.fill(); ctx.restore();
-          printLabel(m, 'Vorkammer', 6.9, 1.62, { size: 0.21, color: 'rgba(107,74,42,.9)', italic: true, bold: false });
-          printLabel(m, 'Sargkammer', 9.75, 1.62, { size: 0.21, color: 'rgba(107,74,42,.9)', italic: true, bold: false });
+          printLabel(m, 'Vorkammer', 6.9, 1.62, { size: 0.24, color: 'rgba(95,62,32,.95)', italic: true, bold: false });
+          printLabel(m, 'Sargkammer', 9.75, 1.62, { size: 0.24, color: 'rgba(95,62,32,.95)', italic: true, bold: false });
         },
       },
     };
@@ -229,7 +229,7 @@ export default {
     schaetzeCtl.onGrab = () => { sfx('grab'); if (tuerCtl.v < 0.6) tuerCtl.setValue(1); };   // ohne Licht keine Schätze: die Tür geht von selbst auf
 
     // ============================================================ Zustand und Aktualisierung
-    const S = { door: 0, light: -1, doorSnd: false, goldSnd: [false, false, false], prevCarry: 0, carryX: CX0, mask: 0, sp: 0 };
+    const S = { door: 0, torchSent: 0, light: -1, doorSnd: false, goldSnd: [false, false, false], prevCarry: 0, carryX: CX0, mask: 0, sp: 0 };
     let tSpark = 0;
     const emitGlow = (x, y, z, n, o = {}) => {
       const w = ctx.world(x, y, z);
@@ -261,7 +261,7 @@ export default {
       if (Math.abs(kLight - S.light) > 0.002) { S.light = kLight; applyLight(kLight); }
       if (tv > 0.1 && !S.doorSnd) { S.doorSnd = true; sfx('door'); sfx('torch'); }
       if (tv < 0.04 && S.doorSnd) S.doorSnd = false;
-      ac('torch', kLight);
+      if (Math.abs(kLight - S.torchSent) > 0.01 || (kLight < 0.002 && S.torchSent > 0)) { S.torchSent = kLight; ac('torch', kLight); }
       kGlint.material.opacity = kLight > 0.5 ? (0.45 + (calm ? 0 : 0.2 * Math.sin(t * TAU * 0.8))) * (kLight) : 0; kGlint.visible = kGlint.material.opacity > 0.01;
       // Funken am Fackelschaft (nur sichtbar, solange die Seite aktiv ist)
       tSpark -= dt;
@@ -325,7 +325,7 @@ export default {
     ctx.onUpdate(update);
 
     spread._p7 = {
-      reset() { for (const c of [tuerCtl, schaetzeCtl, tragenCtl]) { c.setValue(0); c.touched = false; } S.doorSnd = false; S.goldSnd = [false, false, false]; ac('torch', 0); },
+      reset() { for (const c of [tuerCtl, schaetzeCtl, tragenCtl]) { c.setValue(0); c.touched = false; } S.doorSnd = false; S.goldSnd = [false, false, false]; },
     };
   },
   onDeactivate(ctx) { if (ctx.spread._p7) ctx.spread._p7.reset(); },
