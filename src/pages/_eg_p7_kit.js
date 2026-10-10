@@ -1,7 +1,8 @@
 // Station 7 (Tal der Könige): eigene Kulissen-Parts (Sockel, Wände der Grabkammer, Schild) und Texturen.
 // Alle Maße in Welteinheiten (ws = 1), Ursprung der Parts: Mitte unten (x = 0, y = 0).
 import * as THREE from 'three';
-import { C, rect, crumbleTop, fr, blocks, plaster, vGrad, sideLight, vignette, starCeiling, stripeBand, glyphRow, fillPoly, strokePoly, curve, blob, rngOf, mix, star5 } from '../art/props/_eg_arch_kit.js';
+import { C, rect, crumbleTop, fr, blocks, plaster, vGrad, sideLight, vignette, starCeiling, stripeBand, glyphRow, fillPoly, strokePoly, curve, blob, rngOf, mix, star5, volume } from '../art/props/_eg_arch_kit.js';
+import { rock } from '../art/props/_e_kit.js';
 import { SERIF } from '../engine/pagepaint.js';
 
 // Sandstein-Sockel für Statuen
@@ -64,7 +65,7 @@ export function kammerSidePart(D, H, seed = 4) {
         plaster(c, x0, 0, x1, H, '#c9a06a', { seed: 7, n: 60, alpha: 0.1 });
         stripeBand(c, x0, x1, H - 0.5, H - 0.22, [C.carn, C.lapis, C.nile, C.gold], { step: 0.13 });
         fr(c, x0, H - 0.54, x1, H - 0.5, '#e0b040'); fr(c, x0, H - 0.22, x1, H - 0.18, '#e0b040');
-        glyphRow(c, x0 + 0.3, x1 - 0.3, 1.5, 0.4, ['ankh', 'was', 'djed'], [C.goldDk, C.carnDk], { pitch: 0.6, lw: 0.02 });
+        glyphRow(c, x0 + 0.3, x1 - 0.3, H * 0.34, 0.34, ['ankh', 'was', 'djed'], [C.goldDk, C.carnDk], { pitch: 0.6, lw: 0.02 });
         fr(c, x0, 0, x1, 0.14, '#8f6a3e');
         vGrad(c, x0, 0, x1, H, 'rgba(0,0,0,0)', 'rgba(50,25,5,.3)');
       },
@@ -81,6 +82,21 @@ export function sillPart(W, h = 0.3) {
       deco(c) {
         blocks(c, x0, 0, x1, h, { ch: h / 2, bw: 0.9, base: '#dcbf84', seed: 6 });
         vGrad(c, x0, 0, x1, h, 'rgba(255,245,210,.25)', 'rgba(70,40,10,.3)');
+      },
+    }],
+  };
+}
+
+// Sandsteinbrocken (Kulisse, ersetzt die graue Standard-Felsen)
+export function rockPart(w, h, seed = 1) {
+  const r = rngOf(seed, 3);
+  return {
+    layers: [{
+      shapes: [rock(0, h / 2, w / 2, h / 2, { seed: 11 + seed, n: 11, rough: 0.16, smooth: 2 })], fill: { top: '#e2c48c', bottom: '#a47c4c' },
+      deco(c, bb) {
+        volume(c, bb, { dark: 'rgba(70,40,10,.38)', light: 'rgba(255,245,215,.3)' });
+        for (let i = 0; i < 3; i++) { const x = bb.x0 + bb.w * (0.2 + r() * 0.6), y = bb.y0 + bb.h * (0.25 + r() * 0.5); curve(c, [[x, y], [x + 0.08 * w, y - 0.1 * h], [x + 0.14 * w, y + 0.02 * h]], 'rgba(90,55,20,.45)', 0.012, { alpha: 1 }); }
+        for (let i = 0; i < 14; i++) fillPoly(c, blob(bb.x0 + r() * bb.w, bb.y0 + r() * bb.h, 0.012 + r() * 0.02, 0.01 + r() * 0.015, 0, 6), r() < 0.5 ? 'rgba(255,245,220,.4)' : 'rgba(60,35,10,.3)');
       },
     }],
   };

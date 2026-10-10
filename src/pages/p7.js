@@ -9,7 +9,7 @@ import { poseAmt, makeFigure } from '../engine/popup.js';
 import { softTexture } from '../engine/effects.js';
 import { lerp, clamp, smooth, TAU, mulberry32 } from '../engine/util.js';
 import { panelPart, cracks, leftCard, dither, softLight } from './common.js';
-import { plinthPart, kammerWandPart, kammerSidePart, sillPart, signPart, floorCanvas, glowPlane } from './_eg_p7_kit.js';
+import { rockPart, plinthPart, kammerWandPart, kammerSidePart, sillPart, signPart, floorCanvas, glowPlane } from './_eg_p7_kit.js';
 
 const IDX = 7;
 
@@ -17,7 +17,7 @@ const IDX = 7;
 const TX = 3.45, TH = 3.3;                                   // Mitte und Höhe der Grabtreppe
 const RX0 = 5.45, RX1 = 11.05, RZB = -0.95, RZF = 1.15, RH = 3.0;   // Grabkammer: x-Bereich, hinten, vorn, Wandhöhe
 const LANE = -0.9;                                           // Weg des Sargzuges (z)
-const CX0 = -9.7, CX1 = -5.9;                                // Mitte des Zuges: Start und Ziel
+const CX0 = -9.1, CX1 = -5.5;                                // Mitte des Zuges: Start und Ziel
 
 export default {
   id: 'tal',
@@ -52,6 +52,8 @@ export default {
           grassTufts(m, { x0: 0.8, x1: 11.2, z0: -2.0, z1: 3.8, n: 5, seed: 15, color: '#a89050', h: 0.26 });
           // Sandfläche vor der Grabtreppe (Ausgrabung)
           ctx.save(); ctx.fillStyle = 'rgba(252,236,196,.38)'; ctx.beginPath(); ctx.ellipse(m.x(3.3), m.z(1.7), 2.6 * m.S, 1.2 * m.S, 0, 0, TAU); ctx.fill(); ctx.restore();
+          printLabel(m, 'Vorkammer', 6.9, 1.62, { size: 0.21, color: 'rgba(107,74,42,.9)', italic: true, bold: false });
+          printLabel(m, 'Sargkammer', 9.75, 1.62, { size: 0.21, color: 'rgba(107,74,42,.9)', italic: true, bold: false });
         },
       },
     };
@@ -85,11 +87,8 @@ export default {
     ctx.prop('wuestenduene', { x: -6, z: -2.35, len: 11.6, delay: 0.14, variant: { seed: 1 } });
     ctx.prop('wuestenduene', { x: 6, z: -2.2, len: 11.6, delay: 0.14, variant: { seed: 2 } });
     yield;
-    // Felsen und dürre Büsche
-    ctx.prop('boulder', { x: -10.3, z: -1.5, len: 1.4, delay: 0.2, variant: { seed: 3 } });
-    ctx.prop('boulder', { x: -0.9, z: -0.1, len: 1.1, delay: 0.22, facing: -1, variant: { seed: 2 } });
-    ctx.prop('bush', { x: 11.2, z: 0.2, len: 1.1, delay: 0.24, facing: -1 });
-    ctx.prop('boulder', { x: 0.9, z: 2.4, len: 1.0, delay: 0.24, variant: { seed: 5 } });
+    // Sandsteinbrocken (Kulisse)
+    for (const [x, z, w, h, sd] of [[-10.3, -1.3, 1.1, 0.62, 1], [-0.7, 0.0, 0.9, 0.5, 2], [0.8, 2.5, 0.8, 0.45, 3], [11.45, 1.5, 0.8, 0.5, 4], [-4.2, 2.6, 0.8, 0.42, 5]]) ctx.flat(rockPart(w, h, sd), { x, z, name: 'fels' + sd, delay: 0.2 + sd * 0.01, ppu: 120, border: 0.025 });
     yield;
 
     // ============================================================ Statuen auf Sandstein-Sockeln
@@ -103,7 +102,7 @@ export default {
       return a;
     };
     const hat = statue('hatschepsut', 0.95, -1.4, 1.85, 'hatschepsut', { facing: 1 });
-    const ram = statue('ramses', -1.25, -1.9, 2.05, 'ramses', { facing: -1 });
+    const ram = statue('ramses', -0.95, -1.95, 2.05, 'ramses', { facing: -1 });
     const tut = statue('tutanchamun', -2.5, 1.3, 1.62, 'tutanchamun', { facing: 1 });
     yield;
 
@@ -149,20 +148,20 @@ export default {
     floor.rotation.x = -Math.PI / 2; floor.position.set((RX0 + RX1) / 2, 0.012, (RZB + RZF) / 2); floor.receiveShadow = true; R.add(floor);
     litAdd(floor, (RX0 + RX1) / 2, { base: 0.12 });
     const back = ctx.flat(kammerWandPart(RW, RH), { x: (RX0 + RX1) / 2, z: RZB, name: 'kwand', delay: 0.32, ppu: 90, border: 0.03 });
-    const wallL = ctx.flat(kammerSidePart(RD, RH, 4), { x: RX0, z: (RZB + RZF) / 2, yaw: Math.PI / 2, name: 'kwandL', delay: 0.34, ppu: 80, border: 0.03 });
+    const wallL = ctx.flat(kammerSidePart(RD, 1.55, 4), { x: RX0, z: (RZB + RZF) / 2, yaw: Math.PI / 2, name: 'kwandL', delay: 0.34, ppu: 80, border: 0.03 });
     const wallR = ctx.flat(kammerSidePart(RD, RH, 6), { x: RX1, z: (RZB + RZF) / 2, yaw: -Math.PI / 2, name: 'kwandR', delay: 0.34, ppu: 80, border: 0.03 });
     litAdd(back, (RX0 + RX1) / 2); litAdd(wallL, RX0, { base: 0.08 }); litAdd(wallR, RX1, { base: 0.08 });
     const sill = ctx.flat(sillPart(RW + 0.3, 0.3), { x: (RX0 + RX1) / 2, z: RZF + 0.02, name: 'sill', delay: 0.36, ppu: 90, border: 0.025 });
     yield;
     // Warmes Raumleuchten (additiv)
-    const roomGlow = glowPlane(soft, 0xffa850, RW * 1.25, RH * 1.2, 0); roomGlow.position.set((RX0 + RX1) / 2, RH * 0.5, RZB + 0.12); R.add(roomGlow);
-    const floorGlow = glowPlane(soft, 0xff9a40, 3.2, 1.6, 0); floorGlow.rotation.x = -Math.PI / 2; floorGlow.position.set(4.3, 0.03, 1.5); R.add(floorGlow);
+    const roomGlow = glowPlane(soft, 0xffa850, RW * 1.25, RH * 1.2, 0); roomGlow.position.set(0, RH * 0.5, 0.12); back.add(roomGlow);
+    const floorGlow = glowPlane(soft, 0xff9a40, 2.8, 1.4, 0); floorGlow.rotation.x = -Math.PI / 2; floorGlow.position.set(4.3, 0.03, 1.5); R.add(floorGlow);
 
     // Vorkammer
-    const thron = ctx.stand('thron_tut', { x: 6.25, z: -0.5, h: 1.45, delay: 0.4, card: 'thron', hint: false });
+    const thron = ctx.stand('thron_tut', { x: 6.45, z: -0.45, h: 1.45, delay: 0.4, card: 'thron', hint: false });
     const wagen = ctx.stand('streitwagen', { x: 7.7, z: -0.55, len: 2.0, delay: 0.42, card: 'streitwagen', hint: false });
-    const truhe = ctx.stand('truhe', { x: 6.95, z: 0.7, len: 1.0, delay: 0.44, card: null, hint: false });
-    const dolch = ctx.prop('dolch_eisen', { x: 6.9, z: 0.78, y: 0.8, len: 0.5, delay: 0.5 });
+    const truhe = ctx.stand('truhe', { x: 6.95, z: 0.7, len: 1.0, delay: 0.44, card: null, hint: false, hitPad: 0.05 });
+    const dolch = ctx.prop('dolch_eisen', { x: 6.9, z: 0.98, y: 0.8, len: 0.5, delay: 0.5 });
     tapPop(dolch, 'dolch');
     for (const a of [thron, wagen, truhe]) { litAdd(a, a.popup.group.position.x, { act: a }); a.hint = false; }
     litAdd(dolch, 6.9);
@@ -177,38 +176,38 @@ export default {
     const innerGlow = glowPlane(soft, 0xffc860, 1.4, 2.2, 0); innerGlow.position.set(0, 1.2, 0.012); schrein.fig.root.add(innerGlow);
     const sarg = ctx.stand('sarkophag_gold', { x: SX, z: SZ + 0.004, y: 0.2, h: 1.62, delay: 0.46, card: 'sarg', hint: false });
     sarg.fig.group.visible = false; sarg.hitMeshes = [];
-    const maske = ctx.prop('tutmaske', { x: SX, z: SZ + 0.1, y: 1.4, h: 0.95, delay: 0.5 });
+    const maske = ctx.prop('tutmaske', { x: SX, z: SZ + 0.1, y: 1.4, h: 1.15, delay: 0.5 });
     tapPop(maske, 'tutmaske'); maske.pivot.visible = false; maske.pickMeshes = [];
     const mGlow = glowPlane(soft, 0xffd070, 2.0, 2.0, 0); mGlow.position.set(0, 0.5, -0.02); maske.add(mGlow);
     litAdd(schrein, SX, { act: schrein }); litAdd(sarg, SX); litAdd(maske, SX);
-    const ush1 = ctx.prop('ushabti', { x: 8.05, z: 0.85, h: 0.5, delay: 0.52 });
-    const ush2 = ctx.prop('ushabti', { x: 10.6, z: 0.85, h: 0.5, delay: 0.54, facing: -1 });
-    litAdd(ush1, 8.05); litAdd(ush2, 10.6);
+    const ush1 = ctx.prop('ushabti', { x: 9.75, z: 0.95, h: 0.5, delay: 0.52 });
+    const ush2 = ctx.prop('ushabti', { x: 10.5, z: 0.95, h: 0.5, delay: 0.54, facing: -1 });
+    litAdd(ush1, 9.75); litAdd(ush2, 10.5);
     hopWake(schrein, 0.04); hopWake(sarg, 0.05);
     // verstecktes Käferchen: lugt rechts hinter der Truhe hervor (Rücken und Fühler)
-    const kaefer = ctx.stand('skarab8', { x: 7.55, z: 0.44, len: 0.95, facing: -1, delay: 0.56, hidden: true, hint: false, hitPad: 0.2 });
-    kaefer.setFacing(-1);
+    const kaefer = ctx.stand('skarab8', { x: 7.5, z: 0.44, len: 0.95, facing: 1, delay: 0.56, hidden: true, hint: false, hitPad: 0.2 });
+    kaefer.setFacing(1);
     kaefer.onWake = (a) => { a.tw.add(0.7, (k) => { a.hop = Math.sin(k * Math.PI) * 0.35; }, { done: () => { a.hop = 0; } }); audio.voice('skarabaeus'); };
-    litAdd(kaefer, 7.55, { base: 0.4 });
-    const kGlint = glowPlane(soft, 0xffe28a, 0.4, 0.4, 0); kGlint.position.set(0.2, 0.45, 0.1); kaefer.fig.root.add(kGlint);
+    litAdd(kaefer, 7.5, { base: 0.4 });
+    const kGlint = glowPlane(soft, 0xffe28a, 0.4, 0.4, 0); kGlint.position.set(0.45, 0.42, 0.1); kaefer.fig.root.add(kGlint);
     yield;
 
     // ============================================================ links: Zug der Sargträger
-    const stein = ctx.stand('sarkophag_stein', { x: -3.15, z: -1.55, len: 2.2, delay: 0.3, card: 'sarg', hint: false });
+    const stein = ctx.stand('sarkophag_stein', { x: -2.9, z: -1.55, len: 2.2, delay: 0.3, card: 'sarg', hint: false });
     const steinLid = stein.fig.parts.lid;
     const carriers = [];
     const defs = [
-      { dx: -0.78, dz: 0, far: false }, { dx: 0.78, dz: 0, far: false },
-      { dx: -0.45, dz: -0.3, far: true }, { dx: 1.1, dz: -0.3, far: true },
+      { dx: -0.95, dz: 0, far: false }, { dx: 0.95, dz: 0, far: false },
+      { dx: -0.55, dz: -0.3, far: true }, { dx: 1.3, dz: -0.3, far: true },
     ];
     defs.forEach((d, i) => {
-      const a = ctx.stand('traeger', { x: CX0 + d.dx, z: LANE + d.dz, h: 1.5, facing: 1, delay: 0.3 + i * 0.03, card: 'sarg', hint: false, hitPad: 0.2 });
+      const a = ctx.stand('traeger', { x: CX0 + d.dx, z: LANE + d.dz, h: 1.85, facing: 1, delay: 0.3 + i * 0.03, card: 'sarg', hint: false, hitPad: 0.2 });
       if (d.far) for (const m of a.mats) m.color.setRGB(0.82, 0.78, 0.74);
       a.cd = d; a.ci = i; a.step = 0; carriers.push(a);
       hopWake(a, 0.08);
     });
     // drei ineinander gesteckte Goldsärge (liegend, von außen nach innen kleiner)
-    const SCL = [1.0, 0.82, 0.64], TNT = [[0.8, 0.66, 0.5], [0.94, 0.84, 0.66], [1, 1, 1]], LEN = 1.7;
+    const SCL = [1.0, 0.82, 0.64], TNT = [[0.8, 0.66, 0.5], [0.94, 0.84, 0.66], [1, 1, 1]], LEN = 2.1;
     const coffins = SCL.map((s, i) => {
       const p = ctx.prop('sarkophag_gold', { x: CX0, z: LANE + 0.12 + i * 0.07, h: LEN * s, delay: 0.4 + i * 0.03 });
       p.pivot.rotation.z = -Math.PI / 2; p.cL = LEN * s;
@@ -257,7 +256,7 @@ export default {
       flame.rotation.z = calm ? 0 : Math.sin(t * TAU * 1.3) * 0.1;
       torchGlow.material.opacity = (0.28 + 0.5 * kLight + fl * 0.8); torchGlow.visible = true;
       gangGlow.material.opacity = (0.9 * kDoor + fl * kDoor); gangGlow.visible = kDoor > 0.01;
-      floorGlow.material.opacity = 0.42 * kLight * (1 + fl); floorGlow.visible = kLight > 0.01;
+      floorGlow.material.opacity = 0.34 * kLight * (1 + fl); floorGlow.visible = kLight > 0.01;
       roomGlow.material.opacity = 0.34 * kLight * (1 + fl * 0.6); roomGlow.visible = kLight > 0.01;
       if (Math.abs(kLight - S.light) > 0.002) { S.light = kLight; applyLight(kLight); }
       if (tv > 0.1 && !S.doorSnd) { S.doorSnd = true; sfx('door'); sfx('torch'); }
@@ -279,7 +278,7 @@ export default {
       const showCof = p1 > 0.03;
       sarg.fig.group.visible = showCof;
       if (showCof && kLight > 0.55) { if (!sarg.hitMeshes.length) sarg.hitMeshes = [sarg.proxy, ...sarg.fig.hit]; } else if (sarg.hitMeshes.length) sarg.hitMeshes = [];
-      const cs = 1 + 0.2 * p2, cx = lerp(SX, 8.95, p2), cz = lerp(SZ + 0.004, 0.75, p2), cy = lerp(0.2, 0, p2);
+      const cs = 1 + 0.2 * p2, cx = lerp(SX, 8.45, p2), cz = lerp(SZ + 0.004, 0.75, p2), cy = lerp(0.2, 0, p2);
       sarg.popup.group.position.set(cx, cy, cz); sarg.popup.group.scale.setScalar(cs);
       const headY = cy + 1.62 * cs * 0.93;
       maske.pivot.visible = p3 > 0.01;
@@ -300,7 +299,7 @@ export default {
         const d = a.cd; a.popup.group.position.x = xc + d.dx; a.popup.group.position.z = LANE + d.dz;
         if (a.tw.list.length === 0) {
           if (moving) {
-            const ph = xc * 3.4 + a.ci * 1.7 + (d.far ? 0.8 : 0);
+            const ph = xc * 5.0 + a.ci * 1.7 + (d.far ? 0.8 : 0);
             const sw = a.fig.meta.swing || {};
             for (const [p, off] of [['legA', 0], ['legB', Math.PI]]) { const r = sw[p] || [-0.34, 0.34]; a.fig.rotatePart(p, lerp(r[0], r[1], 0.5 + 0.5 * Math.sin(ph + off))); }
             a.hop = Math.abs(Math.sin(ph)) * (calm ? 0.03 : 0.06);
@@ -313,11 +312,11 @@ export default {
       }
       // Särge: bei der Ankunft schieben sich die drei Särge ineinander heraus
       const fan = smooth(clamp((cv - 0.88) / 0.12));
-      const axisY = 1.37 * carriers[0].fig.ws + 0.26;
+      const axisY = 1.38 * carriers[0].fig.ws + 0.3;
       coffins.forEach((p, i) => {
-        p.group.position.set(xc - p.cL / 2, axisY + fan * i * 0.62, LANE + 0.12 + i * 0.07);
+        p.group.position.set(xc - p.cL / 2, axisY + fan * i * 0.74, LANE + 0.12 + i * 0.07);
       });
-      steinLid.rotation.z = fan * 0.28;
+      steinLid.rotation.z = fan * 0.16;
     }
     const _v = new THREE.Vector3();
     function emitGlowAt(x, y, z, n) {
@@ -326,7 +325,7 @@ export default {
     ctx.onUpdate(update);
 
     spread._p7 = {
-      reset() { for (const c of [tuerCtl, schaetzeCtl, tragenCtl]) c.setValue(0, { snap: true }); S.doorSnd = false; S.goldSnd = [false, false, false]; ac('torch', 0); },
+      reset() { for (const c of [tuerCtl, schaetzeCtl, tragenCtl]) { c.setValue(0); c.touched = false; } S.doorSnd = false; S.goldSnd = [false, false, false]; ac('torch', 0); },
     };
   },
   onDeactivate(ctx) { if (ctx.spread._p7) ctx.spread._p7.reset(); },
