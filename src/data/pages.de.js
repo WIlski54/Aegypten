@@ -62,7 +62,7 @@ export const PAGES_DE = [
     hint: 'Zieh TÜR • schiebe SCHÄTZE • zieh TRAGEN • tippe etwas an • fass die Seite an und zieh sie zum Umblättern',
   },
   {
-    id: 'finale', name: 'Kleopatra und der Stein von Rosette', era: 'Späte Zeit', years: '332 v. Chr. bis heute', color: '#e9c46a',
+    id: 'finale', name: 'Kleopatra und der Stein von Rosette', era: 'Ptolemäerzeit', years: '332 v. Chr. bis heute', color: '#e9c46a',
     title: 'Der Stein, der Hieroglyphen lesbar machte', kicker: 'Die letzte Seite',
     card: 'Alexandria war die große Hafenstadt am Meer. Dort herrschte Kleopatra VII. als letzte Königin, bis 30 v. Chr. Später vergaß man, wie man Hieroglyphen liest. Erst der Stein von Rosette half: Er trägt denselben Text in drei Schriften.',
     narr: 'Das ist die letzte Seite. Links liegt Alexandria mit dem Leuchtturm. Rechts sitzt ein Gelehrter und studiert den Stein von Rosette. Schiebe 3 Sprachen und sieh, wie aus Zeichen Wörter werden. Mit Finale fährt die Sonnenbarke noch einmal an allem vorbei.',

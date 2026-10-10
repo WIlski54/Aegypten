@@ -96,6 +96,47 @@ export const CARDS_A = {
     tags: ['Landschaft'], fragen: ['Was bedeutet „Kemet“?'],
   },
 
+  reiher: {
+    name: 'Graureiher', sci: 'Ardea cinerea', say: 'sprich: GRAU-rai-her', tts: 'Graureiher', when: 'lebt dort seit Urzeiten', whereLabel: 'Ort', where: 'Ufer und Sümpfe am Nil',
+    size: 'etwa 1 m hoch', diet: 'Fische, Frösche, kleine Tiere', specId: 'reiher', sizeM: 1.0,
+    wow: 'Ein Reiher steht oft minutenlang bewegungslos im Wasser, dann stößt er blitzschnell zu.',
+    text: 'Reiher haben lange Beine und einen langen Hals. Die Ägypter sahen in einem ähnlichen Vogel, dem Bennu, ein Zeichen für Sonnenaufgang und neues Leben.',
+    note: 'Wie genau der Bennu-Vogel aussah, ist nicht sicher. Man zeigt ihn oft wie einen Reiher.', tags: ['Tier', 'Nil'], fragen: ['Wie jagt ein Reiher?'],
+  },
+  fisch: {
+    name: 'Nilbarsch und Tilapia', sci: 'Lates niloticus, Oreochromis niloticus', say: 'sprich: NIL-barsch', tts: 'Nielbarsch', when: 'leben dort seit Urzeiten', whereLabel: 'Ort', where: 'Nil und Seen in Afrika',
+    size: 'Barsch: bis über 1 m · Tilapia: etwa 30 bis 40 cm', diet: 'kleine Fische, Pflanzen', specId: 'fisch', sizeM: 0.8,
+    wow: 'Fische gehörten zu den wichtigsten Speisen. Man trocknete und salzte sie, damit sie lange hielten.',
+    text: 'Im Nil lebten viele Fischarten. Wandbilder zeigen, wie Fischer mit Netzen und Speeren arbeiteten. Die Tilapia, auch Buntbarsch genannt, kommt in vielen Bildern vor.',
+    tags: ['Tier', 'Nil', 'Essen'], fragen: ['Wie machte man Fisch haltbar?'],
+  },
+  wasservogel: {
+    name: 'Nilgans', sci: 'Alopochen aegyptiaca', say: 'sprich: NIL-gans', tts: 'Nielgans', when: 'lebt dort seit Urzeiten', whereLabel: 'Ort', where: 'Ufer des Nils',
+    size: 'etwa 70 cm lang', diet: 'Gras, Samen, Wasserpflanzen', specId: 'wasservogel', sizeM: 0.5,
+    wow: 'Die Nilgans ist hellbraun mit einem dunklen Fleck um das Auge. Man sieht sie auf vielen Wandbildern.',
+    text: 'Gänse und Enten wurden gefangen und gehalten. Sie gaben Fleisch und Eier. Auf Grabbildern zeigen Jäger mit Wurfhölzern und Netzen, wie sie Wasservögel fangen.',
+    tags: ['Tier', 'Nil'], fragen: ['Wozu hielt man Gänse?'],
+  },
+  lotus: {
+    name: 'Lotos', sci: 'Nymphaea', say: 'sprich: LO-tos', tts: 'Lotos', when: 'in allen Epochen', whereLabel: 'Ort', where: 'ruhige Gewässer am Nil',
+    size: 'Blüte etwa 10 bis 15 cm',
+    wow: 'Die Blüte öffnet sich morgens und schließt sich am Abend. Deshalb war sie ein Zeichen für die Sonne und für neues Leben.',
+    text: 'Der blaue und der weiße Lotos schwimmen auf dem Wasser. Die Ägypter malten ihn auf Wände und in Gräber. Er war auch das Wappenzeichen von Oberägypten.',
+    tags: ['Pflanze', 'Symbol'], fragen: ['Für welchen Landesteil stand der Lotos?'],
+  },
+  schilfboot: {
+    name: 'Das Papyrusboot', say: 'sprich: pa-PÜ-rus-boot', tts: 'Papyrusboot', when: 'seit der Frühzeit', whereLabel: 'Ort', where: 'Sümpfe und Nil', specId: 'schilfboot', sizeM: 3.5,
+    wow: 'Die ältesten Schiffe der Welt waren wohl Boote aus gebündelten Pflanzenstängeln.',
+    text: 'Das Boot besteht aus fest verschnürten Papyrusbündeln. Es ist leicht und schwimmt auch in sehr flachem Wasser. Es war ideal für Fischer und Vogeljäger im Sumpf.',
+    tags: ['Schiff', 'Nil'], fragen: ['Wie baute man ein Papyrusboot?'],
+  },
+  netz: {
+    name: 'Das Fischernetz', say: '', tts: 'Fischernetz', when: 'in allen Epochen', whereLabel: 'Ort', where: 'am Nil', specId: 'netz', sizeM: 1.0,
+    wow: 'Netze waren aus Leinenfäden geknüpft. Steine und Schwimmer sorgten dafür, dass das Netz richtig im Wasser hängt.',
+    text: 'Zwei Fischer zogen ein großes Netz durch das Wasser. Kleine Steine zogen die untere Kante nach unten, leichte Holzstücke hielten die obere Kante oben.',
+    tags: ['Werkzeug', 'Nil'], fragen: ['Wozu dienten Steine und Schwimmer am Netz?'],
+  },
+
   // ------------------------------------------------------------ Station 2: Zwei Länder
   pharao: {
     name: 'Der Pharao', say: 'sprich: FA-ra-o', tts: 'Pharao', meaning: 'Bedeutung: „Großes Haus“ (so nannte man den Palast, später den König).',
