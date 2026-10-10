@@ -62,7 +62,7 @@ export const CARDS_C = {
     tags: ['Pharao', 'Neues Reich'], fragen: ['Was brachte die Reise nach Punt?'],
   },
   ramses: {
-    name: 'Ramses II.', say: 'sprich: RAM-ses', tts: 'Ramses', when: 'regierte ca. 1279 bis 1213 v. Chr.', period: 'Neues Reich', dietLabel: 'Aufgabe', diet: 'Pharao', whereLabel: 'Ort', where: 'Pi-Ramesse, Abu Simbel', specId: 'ramses', sizeM: 1.75,
+    name: 'Ramses II.', say: 'sprich: RAM-ses', tts: 'Ramses der Zweite', when: 'regierte ca. 1279 bis 1213 v. Chr.', period: 'Neues Reich', dietLabel: 'Aufgabe', diet: 'Pharao', whereLabel: 'Ort', where: 'Pi-Ramesse, Abu Simbel', specId: 'ramses', sizeM: 1.75,
     wow: 'Er regierte rund 66 Jahre lang, länger als fast alle Pharaonen.',
     text: 'Ramses II. baute viele Tempel, darunter Abu Simbel mit vier riesigen Statuen. Er führte Kriege und schloss später einen Friedensvertrag mit den Hethitern. Er war berühmt und regierte sehr lange.',
     tags: ['Pharao', 'Neues Reich'], fragen: ['Wie lange regierte Ramses II.?'],
@@ -70,7 +70,7 @@ export const CARDS_C = {
 
   // ------------------------------------------------------------ Station 8: Kleopatra und Rosetta
   kleopatra: {
-    name: 'Kleopatra VII.', say: 'sprich: kle-o-PA-tra', tts: 'Kleopatra', when: '69 bis 30 v. Chr.', period: 'Ptolemäerzeit', dietLabel: 'Aufgabe', diet: 'letzte Königin von Ägypten', whereLabel: 'Ort', where: 'Alexandria', specId: 'kleopatra', sizeM: 1.6,
+    name: 'Kleopatra VII.', say: 'sprich: kle-o-PA-tra', tts: 'Kleopatra die Siebte', when: '69 bis 30 v. Chr.', period: 'Ptolemäerzeit', dietLabel: 'Aufgabe', diet: 'letzte Königin von Ägypten', whereLabel: 'Ort', where: 'Alexandria', specId: 'kleopatra', sizeM: 1.6,
     wow: 'Kleopatra sprach mehrere Sprachen. Sie war die erste Herrscherin ihrer Familie, die auch Ägyptisch lernte.',
     text: 'Kleopatra stammte aus der Familie der Ptolemäer. Sie sprach Griechisch und lernte Ägyptisch. Sie versuchte, Ägypten unabhängig zu halten. Nach ihrem Tod im Jahr 30 v. Chr. wurde Ägypten eine römische Provinz.',
     note: 'Wir kennen ihre Geschichte vor allem aus römischen Berichten. Die waren nicht neutral.', tags: ['Königin', 'Ptolemäer'], fragen: ['Welche Sprachen sprach Kleopatra?'],

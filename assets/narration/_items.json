@@ -1,0 +1,547 @@
+[
+ {
+  "id": "cover",
+  "kind": "cover",
+  "text": "Das große Ägypten-Pop-up-Buch. Eine Reise durch dreitausend Jahre. Tippe auf das Buch, dann geht es los!"
+ },
+ {
+  "id": "page0",
+  "kind": "page",
+  "text": "Willkommen im großen Ägypten-Popup-Buch! Wir reisen gemeinsam durch dreitausend Jahre. Zuerst schauen wir auf das Zeitrad der Sonne. Zieh an der Lasche und dreh den Zeiger, dann siehst du, wie sich Ägypten verändert."
+ },
+ {
+  "id": "page1",
+  "kind": "page",
+  "text": "Das hier ist der Nil. Ringsum ist Wüste, aber am Fluss ist es grün. Jedes Jahr kam die Flut, und danach war der Boden fruchtbar. Zieh am Schieber Flut und sieh, wie das Wasser steigt. Tippe auf die Tiere am Ufer."
+ },
+ {
+  "id": "page2",
+  "kind": "page",
+  "text": "Hier siehst du zwei Länder. Links liegt Unterägypten mit der roten Krone, rechts Oberägypten mit der weißen Krone. Zieh an den beiden Laschen Nord und Süd. Wenn beide Kronen zusammenkommen, wird daraus die Doppelkrone des Pharaos."
+ },
+ {
+  "id": "page3",
+  "kind": "page",
+  "text": "Das hier ist Gizeh, vor über viertausendfünfhundert Jahren. Diese riesigen Pyramiden wurden von Arbeitern gebaut, nicht von Sklaven. Zieh am Hebel Bauen und sieh die Pyramide wachsen. Mit Schnitt klappst du sie auf und schaust hinein."
+ },
+ {
+  "id": "page4",
+  "kind": "page",
+  "text": "Wir sind in einem Tempel voller Götter. Viele Ägypter glaubten, dass im Totenreich das Herz gewogen wird. Auf der anderen Waagschale liegt eine Feder, die Feder der Wahrheit. Zieh am Schieber Waage und sieh zu."
+ },
+ {
+  "id": "page5",
+  "kind": "page",
+  "text": "Das hier ist eine Mumienwerkstatt. Die Ägypter wussten schon viel über Salz und Wasser. Zieh am Schieber Tage und sieh, wie die Zeit vergeht. Mit der Lasche Natron streust du das Salz auf."
+ },
+ {
+  "id": "page6",
+  "kind": "page",
+  "text": "Wir schauen in ein Haus im Arbeiterdorf. Hier wird gebacken, geschrieben und gespielt. Zieh am Schieber Schreiben, dann schreibt der Schreiber Hieroglyphen. Mit Zeichen siehst du, was sie bedeuten."
+ },
+ {
+  "id": "page7",
+  "kind": "page",
+  "text": "Das hier ist das Tal der Könige. Zieh an der Lasche Tür und öffne das Grab von Tutanchamun. Mit dem Schieber Schätze siehst du, was die Ägypter ihrem jungen König mitgegeben haben."
+ },
+ {
+  "id": "page8",
+  "kind": "page",
+  "text": "Das ist die letzte Seite. Links liegt Alexandria mit dem Leuchtturm. Rechts sitzt ein Gelehrter und studiert den Stein von Rosette. Schiebe 3 Sprachen und sieh, wie aus Zeichen Wörter werden. Mit Finale fährt die Sonnenbarke noch einmal an allem vorbei."
+ },
+ {
+  "id": "card_skarab1",
+  "kind": "card",
+  "text": "Skarabäus. In allen Epochen. Wow! Der Käfer formt eine Kugel aus Dung, rollt sie weg und legt seine Eier hinein. Du hast einen Sonnenkäfer gefunden! Das ist ein Pillendreher. Er rollt Dungkugeln rückwärts über den Boden. In der Kugel wächst später seine Brut heran."
+ },
+ {
+  "id": "card_skarab2",
+  "kind": "card",
+  "text": "Skarabäus. In allen Epochen. Wow! Die Ägypter sahen im rollenden Käfer ein Bild für die Sonne, die über den Himmel wandert. Der Gott Chepre trug einen Käfer auf dem Kopf oder hatte einen Käferkopf. Er stand für die Morgensonne: Wie der Käfer die Kugel schiebt, so schiebt Chepre die Sonne in den neuen Tag."
+ },
+ {
+  "id": "card_skarab3",
+  "kind": "card",
+  "text": "Skarabäus. In allen Epochen. Wow! Manche Skarabäus-Amulette haben auf der Unterseite Namen und Zeichen. Man benutzte sie als Siegel. Aus Stein oder Fayence schnitt man kleine Käfer. Auf der flachen Unterseite standen Hieroglyphen. Man drückte sie in Ton oder Lehm und siegelte so Krüge, Kisten und Briefe."
+ },
+ {
+  "id": "card_skarab4",
+  "kind": "card",
+  "text": "Skarabäus. In allen Epochen. Wow! Auf manche Mumien legte man einen Herzskarabäus. Er sollte beim Totengericht helfen. Das Herz war für die Ägypter der Sitz von Gedanken und Gefühlen. Beim Totengericht wurde es gewogen. Der Herzskarabäus sollte dafür sorgen, dass das Herz nichts Schlechtes verrät."
+ },
+ {
+  "id": "card_skarab5",
+  "kind": "card",
+  "text": "Skarabäus. In allen Epochen. Wow! Echte Pillendreher finden ihren Weg nachts mit Hilfe der Milchstraße. Forscher zeigten 2013: Afrikanische Pillendreher laufen auch in sternklaren Nächten geradeaus. Sie orientieren sich am hellen Band der Milchstraße. Damit rollen sie ihre Kugel schnell von anderen Käfern weg."
+ },
+ {
+  "id": "card_skarab6",
+  "kind": "card",
+  "text": "Skarabäus. In allen Epochen. Wow! Skarabäus-Amulette gab es aus Fayence, Speckstein, Halbedelstein und sogar aus Gold. Fayence ist eine Art Keramik mit glasiger, oft blauer oder grüner Oberfläche. Die Ägypter machten damit viel Schmuck. Der Käfer war ein beliebtes Muster, weil er Glück bringen sollte."
+ },
+ {
+  "id": "card_skarab7",
+  "kind": "card",
+  "text": "Skarabäus. In allen Epochen. Wow! Manche Pharaonen ließen große Gedenk-Skarabäen mit Nachrichten herstellen und verschicken. Unter Amenophis der Dritte gab es Skarabäen, auf denen besondere Ereignisse standen, zum Beispiel eine Hochzeit oder eine Jagd. Man verschickte sie wohl an Beamte und Verbündete."
+ },
+ {
+  "id": "card_skarab8",
+  "kind": "card",
+  "text": "Skarabäus. In allen Epochen. Wow! Auch heute arbeiten Pillendreher als Müllabfuhr: In Australien setzte man sie gezielt gegen Kuhdung ein. Pillendreher vergraben Dung und düngen so den Boden. In Australien gab es zu viel Kuhdung, weil die einheimischen Käfer ihn nicht beseitigen konnten. Deshalb brachte man ab den 1960er Jahren passende Dungkäfer ins Land."
+ },
+ {
+  "id": "card_skarab9",
+  "kind": "card",
+  "text": "Skarabäus. In allen Epochen. Wow! Der Käfer ist sogar ein Hieroglyphenzeichen. Es bedeutet werden und entstehen. Das Zeichen für Cheper zeigt einen Käfer. Das ägyptische Wort bedeutet werden, entstehen, sein. So passt das Zeichen zur Sonne, die jeden Morgen neu entsteht."
+ },
+ {
+  "id": "card_pyramiden",
+  "kind": "card",
+  "text": "Gisseh. Um 2600 bis 2500 vor Christus. Wow! Die Cheops-Pyramide war über 3800 Jahre lang das höchste Bauwerk der Welt. In Gizeh stehen drei große Pyramiden: für die Könige Cheops, Chephren und Mykerinos. Sie sind Gräber. Vor den Pyramiden stehen die Sphinx und viele kleinere Gräber."
+ },
+ {
+  "id": "card_obelisk",
+  "kind": "card",
+  "text": "Obelisk. Ab dem Alten Reich. Wow! Manche Obelisken wiegen mehrere hundert Tonnen und wurden in einem Stück aus dem Stein gehauen. Ein Obelisk ist eine hohe, spitze Steinnadel. Die Spitze war oft vergoldet. Sie fing die ersten Strahlen der Sonne ein. Er war ein Zeichen für den Sonnengott Ra."
+ },
+ {
+  "id": "card_sonnenscheibe",
+  "kind": "card",
+  "text": "Ra. In allen Epochen. Wow! Die Ägypter glaubten: Die Sonne fährt jeden Tag mit einer Barke über den Himmel. Ra war der Sonnengott. Am Morgen fuhr er mit seiner Barke in den Himmel hinein, abends versank er im Westen. Nachts reiste er durch die Unterwelt, bis es wieder Morgen wurde."
+ },
+ {
+  "id": "card_barke",
+  "kind": "card",
+  "text": "Barke. In allen Epochen. Wow! Der Nil war die wichtigste Straße Ägyptens: Fast alles reiste auf dem Wasser. Eine Barke ist ein Schiff. Mit der Strömung fuhr man nach Norden, mit dem Wind und dem Segel zurück nach Süden. Der Wind weht in Ägypten meistens von Norden."
+ },
+ {
+  "id": "card_nilpferd",
+  "kind": "card",
+  "text": "Nielpferd. Lebt dort seit Urzeiten, heute weiter im Süden. Wow! Ein Nilpferd kann bis zu fünf Minuten tauchen. Mit dem riesigen Maul kann es sehr weit gähnen. Im alten Ägypten gab es Nilpferde im Fluss. Sie waren gefährlich, wenn man ihnen zu nah kam. Die Ägypter verehrten aber auch die Göttin Taweret. Sie war nilpferdgestaltig und beschützte Mütter und Kinder."
+ },
+ {
+  "id": "card_krokodil",
+  "kind": "card",
+  "text": "Krokodiel. Lebt dort seit Urzeiten. Wow! Eine Krokodilmutter trägt ihre Jungen im Maul vorsichtig zum Wasser. Krokodile lagen am Ufer in der Sonne. Die Ägypter hatten Respekt vor ihnen. Der Gott Sobek hatte einen Krokodilkopf. Er stand für die Kraft des Nils."
+ },
+ {
+  "id": "card_ibis",
+  "kind": "card",
+  "text": "Ibis. Lebt dort seit Urzeiten. Wow! In Sakkara fand man Millionen Ibis-Mumien. Sie waren Opfergaben für den Gott Thot. Der Ibis hat einen langen, gebogenen Schnabel und einen schwarzen Kopf. Der Gott Thot hatte einen Ibiskopf. Er war der Gott der Schrift und des Wissens."
+ },
+ {
+  "id": "card_fischer",
+  "kind": "card",
+  "text": "Fischer. In allen Epochen. Wow! Auf Papyrusbooten stehend warfen Fischer ihre Netze aus. Fische gehörten zu den wichtigsten Nahrungsmitteln. Das Boot war aus gebündeltem Papyrus gebaut. Es war leicht und glitt gut durch das flache Wasser."
+ },
+ {
+  "id": "card_bauer",
+  "kind": "card",
+  "text": "Bauer. In allen Epochen. Wow! Das ägyptische Jahr hatte drei Jahreszeiten: Überschwemmung, Wachsen und Ernte. Während der Flut ruhte die Feldarbeit. Danach säte man auf dem Schlamm. Man baute vor allem Emmer und Gerste an. Aus ihnen machte man Brot und Bier. Auch Flachs für Leinenkleidung wuchs auf den Feldern."
+ },
+ {
+  "id": "card_papyrus",
+  "kind": "card",
+  "text": "Papüruss. Wächst dort seit Urzeiten. Wow! Aus Papyrus machte man nicht nur Schreibpapier, sondern auch Boote, Seile, Matten und Sandalen. Der Papyrus wächst im Sumpf. Für Schreibblätter schnitt man das Mark in dünne Streifen. Man legte sie kreuzweise übereinander und presste sie. Der Pflanzensaft klebte die Schichten zusammen."
+ },
+ {
+  "id": "card_schaduf",
+  "kind": "card",
+  "text": "Schaduf. Seit dem Neuen Reich. Wow! Mit einem Gegengewicht am Balken war das Wasserschöpfen viel leichter. Ein Schaduf ist ein Schwengelbrunnen. An einem langen Balken hängt ein Eimer, am anderen Ende ein schwerer Stein. So hebt man Wasser vom Fluss auf höher gelegene Felder."
+ },
+ {
+  "id": "card_nilometer",
+  "kind": "card",
+  "text": "Niliometer. Seit dem Alten Reich bekannt. Wow! Am Nilometer sah man schon vorher, wie gut die Ernte werden würde. Ein Nilometer ist eine Treppe oder ein Schacht mit Markierungen. Daran las man den Wasserstand des Nils ab. Bei einer hohen Flut gab es eine gute Ernte. Danach richteten die Beamten die Steuern aus."
+ },
+ {
+  "id": "card_nilflut",
+  "kind": "card",
+  "text": "Nielflut. Jedes Jahr, etwa Juli bis Oktober. Wow! Seit dem Bau des Assuan-Staudamms (Hochdamm 1970) gibt es keine natürliche Nilflut mehr. Im Sommer regnete es weit im Süden, in Äthiopien, sehr stark. Das Wasser floss den Nil hinunter und trat in Ägypten über die Ufer. Danach blieb dunkler, fruchtbarer Schlamm auf den Feldern liegen."
+ },
+ {
+  "id": "card_schwarzes_land",
+  "kind": "card",
+  "text": "Kemet und Deschret. In allen Epochen. Wow! Die Ägypter nannten ihr Land Kemet, das Schwarze Land, nach dem dunklen Nilschlamm. Am Fluss lag das fruchtbare, schwarze Land. Dahinter begann die Wüste. Die Ägypter nannten sie das rote Land, Deschret. Dort wohnte kaum jemand, und dort fand man Gold und Steine."
+ },
+ {
+  "id": "card_pharao",
+  "kind": "card",
+  "text": "Pharao. Der Name bedeutet: Großes Haus (so nannte man den Palast, später den König). Vom Beginn bis zum Ende. Wow! Die Ägypter sahen den König als lebenden Horus. Er sollte für Ordnung und Wahrheit sorgen. Der Pharao herrschte über ganz Ägypten. Krummstab und Wedel waren seine Zeichen. Der Krummstab stand für den Hirten, der sein Volk führt. Das Wort Pharao wurde erst später für den König üblich."
+ },
+ {
+  "id": "card_rote_krone",
+  "kind": "card",
+  "text": "Deschret. Seit der Frühzeit. Wow! Die rote Krone hat vorn eine kleine Spirale, wie ein Fühler. Die rote Krone gehörte zu Unterägypten im Norden. Dort breitet sich der Nil zum Delta aus. Das Zeichen der Region war die Papyruspflanze."
+ },
+ {
+  "id": "card_weisse_krone",
+  "kind": "card",
+  "text": "Hedjet. Seit der Frühzeit. Wow! Die weiße Krone sieht aus wie eine hohe Kegelmütze mit einer Kugel oben. Die weiße Krone gehörte zu Oberägypten im Süden. Dort fließt der Nil durch ein schmales Tal. Das Zeichen der Region war die Lotosblume."
+ },
+ {
+  "id": "card_doppelkrone",
+  "kind": "card",
+  "text": "Pschent. Seit der Frühzeit. Wow! Die Doppelkrone zeigte: Ober- und Unterägypten sind ein Reich. Die Doppelkrone besteht aus der weißen Krone, die in der roten steckt. Sie war das Zeichen für das ganze Reich. Der Pharao nannte sich Herr der Beiden Länder."
+ },
+ {
+  "id": "card_narmer_palette",
+  "kind": "card",
+  "text": "Narmer. Um 3100 vor Christus. Wow! Auf der Palette trägt der König auf einer Seite die weiße, auf der anderen die rote Krone. Die Palette ist eine Steinplatte aus Schiefer. Sie gehört dem König Narmer. Die Bilder zeigen ihn mit beiden Kronen. Man sieht darin einen Hinweis auf die Einigung des Landes."
+ },
+ {
+  "id": "card_kobra",
+  "kind": "card",
+  "text": "Uräus. Seit der Frühzeit. Wow! Die aufgerichtete Kobra auf der Stirn sollte Feinde abwehren, so glaubte man. Die Kobra war die Göttin Wadjet. Sie sollte den König schützen. Deshalb trug er eine kleine Kobra an der Krone oder am Kopftuch. Das ist der Uräus."
+ },
+ {
+  "id": "card_wesir",
+  "kind": "card",
+  "text": "Wesir. Seit dem Alten Reich. Wow! Der Wesir war oberster Richter und kümmerte sich um Steuern und Bauwerke. Der Pharao konnte nicht alles allein regeln. Der Wesir leitete die Verwaltung des Landes. Er trug ein langes Leinengewand und einen Stab."
+ },
+ {
+  "id": "card_schreiber",
+  "kind": "card",
+  "text": "Schreiber. Seit der Frühzeit. Wow! Schreiber mussten jahrelang lernen und waren sehr angesehen. Sie saßen im Schneidersitz mit der Papyrusrolle auf dem Knie. Nur wenige Menschen konnten lesen und schreiben. Ein Schreiber hatte deshalb einen guten Beruf. Er zählte Getreide, führte Listen und schrieb Briefe."
+ },
+ {
+  "id": "card_stufenpyramide",
+  "kind": "card",
+  "text": "Stufenpüramide. Um 2650 vor Christus. Wow! Sie ist die älteste große Steinpyramide. Als Baumeister gilt Imhotep. König Djoser ließ sich in Sakkara eine Stufenpyramide bauen. Vorher baute man Gräber nur aus Lehmziegeln. Hier benutzte man zum ersten Mal Stein in großem Stil. Das Grab sieht aus wie sechs übereinandergestapelte Gräber."
+ },
+ {
+  "id": "card_falke",
+  "kind": "card",
+  "text": "Horus. Seit der Frühzeit. Wow! Jeder König hatte einen Horusnamen. Der Falke saß auf dem Königsnamen. Der Falke war das Tier des Himmelsgottes Horus. Die Ägypter sahen im König einen lebenden Horus. Deshalb zeigte man den Falken oft hinter oder über dem König."
+ },
+ {
+  "id": "card_cheops",
+  "kind": "card",
+  "text": "Cheops. Um 2600 vor Christus. Wow! Etwa 2,3 Millionen Steinblöcke und rund 26 Jahre Bauzeit. Die Pyramide des Königs Cheops ist die größte von Gizeh. Sie wurde aus Kalkstein gebaut. Innen liegen die Königskammer, die Große Galerie und enge Schächte. Heute fehlt die glatte Außenschicht aus feinem Kalkstein."
+ },
+ {
+  "id": "card_sphinx",
+  "kind": "card",
+  "text": "Sphinks. Um 2500 vor Christus. Wow! Sie ist aus dem Kalkstein des Felsens gehauen, nicht aus einzelnen Blöcken gebaut. Die Sphinx hat den Körper eines Löwen und den Kopf eines Königs. Sie bewacht den Weg zu den Pyramiden. Man nimmt an, dass sie das Gesicht des Königs Chephren trägt."
+ },
+ {
+  "id": "card_baumeister",
+  "kind": "card",
+  "text": "Baumeister. Altes Reich. Wow! Die Pyramidenseiten sind fast genau nach den Himmelsrichtungen ausgerichtet. Der Baumeister plante die Pyramide. Er musste Winkel messen, Mengen berechnen und die Arbeit einteilen. Messleine und Winkelmaß waren seine Werkzeuge. Als Leiter des Baus der Cheops-Pyramide gilt wohl Hemiunu."
+ },
+ {
+  "id": "card_steinmetz",
+  "kind": "card",
+  "text": "Steinmetz. In allen Epochen. Wow! Kalkstein schnitt man mit Kupferwerkzeugen. Für den harten Granit nahm man Steinkugeln aus Dolerit. Der Steinmetz schlug mit Holzschlägel und Meißel Blöcke aus dem Fels. Danach glättete er sie. Wichtig war, dass die Quader genau aufeinander passten."
+ },
+ {
+  "id": "card_arbeiter",
+  "kind": "card",
+  "text": "Arbeiter. Altes Reich. Wow! Die Arbeitsgruppen gaben sich Namen wie Freunde des Cheops. Man fand sie als Zeichen in den Steinen. Die Pyramiden bauten bezahlte Arbeiter. Sie waren in Gruppen eingeteilt, bekamen Essen und konnten sich ausruhen. Sie wurden nicht als Sklaven gehalten. Am Rand der Pyramiden fand man ihre Gräber."
+ },
+ {
+  "id": "card_ochse",
+  "kind": "card",
+  "text": "Ochse. Seit der Frühzeit. Wow! Rinder lieferten Fleisch, Milch und Leder und zogen Pflüge und Schlitten. Rinder waren sehr wertvoll. Für die Arbeiter der Pyramiden wurden viele Rinder gehalten. Aus Funden von Knochen weiß man, dass dort viel Fleisch gegessen wurde."
+ },
+ {
+  "id": "card_schlitten",
+  "kind": "card",
+  "text": "Schlitten. Altes Reich. Wow! Feuchter Sand ist fester als trockener Sand. Auf ihm gleitet ein Schlitten viel leichter. Ein Wandbild zeigt: Eine Statue wird auf einem Schlitten gezogen, und ein Mann gießt Wasser vor die Kufen. Forscher haben das 2014 nachgemessen. Mit der richtigen Wassermenge brauchte man nur etwa halb so viel Zugkraft."
+ },
+ {
+  "id": "card_kupfermeissel",
+  "kind": "card",
+  "text": "Kupfermeißel. Seit der Frühzeit. Wow! Kupfer ist weich. Mit Sand und Wasser als Schleifmittel schneidet es trotzdem Stein. Kupfer war das wichtigste Metall der frühen Ägypter. Werkzeuge schmiedete man aus Kupfer. Später mischte man Zinn dazu. So entstand Bronze, die härter ist."
+ },
+ {
+  "id": "card_arbeitersiedlung",
+  "kind": "card",
+  "text": "Arbeitersiedlung. Um 2500 vor Christus. Wow! Archäologen fanden Bäckereien, Brauereien und Wohnräume für Tausende Arbeiter. Südlich der Pyramiden lagen Häuser, Bäckereien und Werkstätten. Hier lebten und aßen die Bauarbeiter. Auch Gräber von Arbeitern und Baumeistern hat man gefunden."
+ },
+ {
+  "id": "card_ra",
+  "kind": "card",
+  "text": "Ra. In allen Epochen. Wow! Jeden Morgen, so glaubte man, wird die Sonne neu geboren. Ra hat einen Falkenkopf mit einer Sonnenscheibe. Am Tag fährt er in der Tagesbarke über den Himmel, in der Nacht in der Nachtbarke durch die Unterwelt. Viele Pharaonen nannten sich Sohn des Ra."
+ },
+ {
+  "id": "card_osiris",
+  "kind": "card",
+  "text": "Osiris. Seit dem Alten Reich. Wow! Seine Haut ist grün, wie frisches Getreide: Zeichen für neues Leben. Osiris war ein Gott der Toten. Er wird als Mumie mit Krone, Krummstab und Wedel gezeigt. Viele Ägypter hofften, nach dem Tod wie Osiris weiterzuleben."
+ },
+ {
+  "id": "card_isis",
+  "kind": "card",
+  "text": "Isis. In allen Epochen. Wow! Auf dem Kopf trägt sie einen Thron: Das ist ihr Name in Zeichen. Isis ist die Frau des Osiris und die Mutter des Horus. Sie schützte Familien und konnte nach dem Glauben der Ägypter heilen. Später verehrte man sie auch in Griechenland und Rom."
+ },
+ {
+  "id": "card_horus",
+  "kind": "card",
+  "text": "Horus. In allen Epochen. Wow! Sein Auge, das Udjat, galt als Glücks- und Heilzeichen. Horus hat einen Falkenkopf. Er ist der Sohn von Isis und Osiris. Der König sollte ein lebender Horus sein. Deshalb trug Horus oft die Doppelkrone."
+ },
+ {
+  "id": "card_anubis",
+  "kind": "card",
+  "text": "Anubis. Seit der Frühzeit. Wow! Die Ägypter wählten den Schakal, weil diese Tiere oft an Friedhöfen herumstreiften. Anubis hat den Kopf eines Schakals. Er führt die Toten zum Totengericht und bewacht die Waage. Die Einbalsamierer trugen bei Zeremonien manchmal seine Maske."
+ },
+ {
+  "id": "card_thot",
+  "kind": "card",
+  "text": "Thot. In allen Epochen. Wow! Thot schreibt das Ergebnis des Totengerichts auf. Thot hat den Kopf eines Ibis oder war ein Pavian. Er war der Gott der Schreiber. Die Ägypter sagten: Er hat die Schrift erfunden."
+ },
+ {
+  "id": "card_maat",
+  "kind": "card",
+  "text": "Maat. In allen Epochen. Wow! Die Straußenfeder der Maat war das Gegengewicht zum Herzen. Maat stand für Wahrheit, Recht und Gleichgewicht. Auf dem Kopf trägt sie eine Feder. Der Pharao sollte dafür sorgen, dass Maat im Land herrscht."
+ },
+ {
+  "id": "card_hathor",
+  "kind": "card",
+  "text": "Hator. In allen Epochen. Wow! Hathor wird oft als Kuh oder als Frau mit Kuhohren gezeigt. Hathor war die Göttin der Freude, des Tanzes und der Musik. Zwischen ihren Hörnern sitzt die Sonnenscheibe. Man verehrte sie auch als Beschützerin der Frauen."
+ },
+ {
+  "id": "card_bastet",
+  "kind": "card",
+  "text": "Bastet. Seit der Frühzeit. Wow! In Bubastis fand man viele Katzenmumien, die man der Göttin geweiht hatte. Bastet hat den Kopf einer Katze. Sie schützte das Haus und die Familie. Deshalb liebten die Ägypter ihre Hauskatzen. Sie fingen Mäuse und Schlangen."
+ },
+ {
+  "id": "card_sobek",
+  "kind": "card",
+  "text": "Sobek. Seit dem Alten Reich. Wow! In Kom Ombo teilte sich Sobek einen Tempel mit dem Falkengott Haroeris. Sobek hat den Kopf eines Krokodils. Er gehörte zum Nil und zur Fruchtbarkeit. Die Ägypter hofften, dass er sie vor den echten Krokodilen schützt."
+ },
+ {
+  "id": "card_ammit",
+  "kind": "card",
+  "text": "Ammit. Der Name bedeutet: Fresserin der Toten. Im Neuen Reich bekannt. Wow! Ammit ist aus drei Tieren gemischt: Krokodil, Löwe und Nilpferd. Ammit saß neben der Waage. Wenn das Herz schwerer war als die Feder, so glaubten die Ägypter, sollte Ammit es fressen. Dann gab es kein Leben nach dem Tod."
+ },
+ {
+  "id": "card_waage",
+  "kind": "card",
+  "text": "Waage. Ab dem Neuen Reich bekannt. Wow! Beim Totengericht sagte der Tote: Ich habe nicht gestohlen. Ich habe nicht gelogen. Das Totenbuch beschreibt eine Waage. In der einen Schale liegt das Herz des Toten, in der anderen die Feder der Maat. Waren sie gleich schwer, durfte der Tote ins Jenseits. Thot schrieb das Ergebnis auf."
+ },
+ {
+  "id": "card_herz",
+  "kind": "card",
+  "text": "Herz. In allen Epochen. Wow! Die Ägypter hielten das Herz für den Sitz von Gedanken und Gefühlen, nicht das Gehirn. Bei einer Mumie ließ man das Herz im Körper. Die Ägypter glaubten, dass der Tote es beim Totengericht brauchte. Das Gehirn dagegen nahm man heraus."
+ },
+ {
+  "id": "card_tor_unterwelt",
+  "kind": "card",
+  "text": "Tor der Unterwelt. Ab dem Neuen Reich bekannt. Wow! Im Totenbuch muss der Tote durch viele Tore. Er muss ihre Namen kennen. Im Totenbuch führt der Weg durch Tore, die von Wächtern bewacht werden. Wer die Zaubersprüche kennt, kommt hindurch."
+ },
+ {
+  "id": "card_sonnenbarke",
+  "kind": "card",
+  "text": "Sonnenbarke. In allen Epochen. Wow! Neben der Cheops-Pyramide fand man ein echtes Schiff aus Zedernholz, 43 Meter lang. Die Sonnenbarke ist das Schiff des Ra. In der Nacht fährt sie durch die Unterwelt und am Morgen in den neuen Tag. Auch der Pharao wollte nach dem Tod mit ihr fahren. Deshalb legte man ihm Boote ins Grab."
+ },
+ {
+  "id": "card_nut",
+  "kind": "card",
+  "text": "Nut. In allen Epochen. Wow! Auf Tempeldecken wölbt sich Nut als Frau über der Erde, ihr Körper ist mit Sternen bedeckt. Nach dem Glauben der Ägypter verschluckt Nut abends die Sonne und gebiert sie morgens neu. Deshalb malte man sie an Sargdeckel und Tempeldecken."
+ },
+ {
+  "id": "card_mumifizierung",
+  "kind": "card",
+  "text": "Mumifizieren. Ca. 2600 vor Christus bis in die römische Zeit. Wow! Das ganze Verfahren dauerte etwa 70 Tage. Das ist durch Herodot überliefert, neuere Darstellungen nennen 40 Tage für das Trocknen. Zuerst wurde der Körper gereinigt. Die Organe kamen getrennt in Krüge, das Herz blieb im Körper. Dann trocknete man den Körper lange mit Natron aus. Danach salbte man ihn mit Ölen und Harzen und wickelte ihn in Leinen."
+ },
+ {
+  "id": "card_einbalsamierer",
+  "kind": "card",
+  "text": "Einbalsamierer. Neues Reich. Wow! Bei der Zeremonie trug ein Priester die Maske des Schakalgottes Anubis. Einbalsamierer waren Handwerker und Priester. Sie kannten Salze, Harze und Öle. Ihr Wissen gaben sie in der Familie weiter. Die Arbeit galt als heilig."
+ },
+ {
+  "id": "card_natron",
+  "kind": "card",
+  "text": "Natron. Seit der Frühzeit. Wow! Natron zieht Wasser an. Ohne Wasser können Bakterien und Pilze nicht wachsen. Natron ist ein Salzgemisch aus trockenen Seen. Es besteht vor allem aus Natriumcarbonat (Soda). Es ist wasseranziehend (hygroskopisch) und leicht alkalisch. Beides hemmt Bakterien. Die Ägypter benutzten Natron auch zum Reinigen."
+ },
+ {
+  "id": "card_kanopen",
+  "kind": "card",
+  "text": "Kanopen. Ab dem Alten Reich. Wow! Die vier Deckel zeigen die vier Söhne des Horus: Mensch, Pavian, Schakal und Falke. In den Krügen lagen die Organe: Leber, Lunge, Magen und Darm. Die Ägypter glaubten, dass jeder Sohn des Horus ein Organ beschützt. Die Deckel waren beschriftet und bemalt."
+ },
+ {
+  "id": "card_leinenbinden",
+  "kind": "card",
+  "text": "Leinenbinden. In allen Epochen. Wow! Leinen wird aus Flachs gemacht. Die Fasern sind sehr reißfest. Zum Schluss wickelte man den Körper in viele Lagen Leinen. Zwischen den Lagen legte man Amulette. Auch Priester sprachen dabei Gebete."
+ },
+ {
+  "id": "card_herzskarabaeus",
+  "kind": "card",
+  "text": "Skarabäus. Ab dem Neuen Reich. Wow! Auf dem Herzskarabäus stand ein Spruch: Das Herz soll nicht gegen den Toten aussagen. Ein Herzskarabäus ist ein Käfer-Amulett aus Stein. Man legte ihn über das Herz der Mumie. Er sollte beim Totengericht helfen."
+ },
+ {
+  "id": "card_mumie_bahre",
+  "kind": "card",
+  "text": "Bahre. Neues Reich. Wow! Die Bahre hat die Form eines Löwen: Das Tier sollte den Toten beschützen. Auf der Bahre lag der Verstorbene. Hier gab es Gebete und Zeremonien. In unserem Buch bleibt der Körper bedeckt: Das ist ein würdevoller Ort."
+ },
+ {
+  "id": "card_mumifizieren_versuch",
+  "kind": "card",
+  "text": "Versuch: Apfel mumifizieren. Für den Unterricht. Wow! Mit Natron, Kochsalz und Zucker verliert ein Apfelstück Wasser. Man kann den Verlust wiegen! Lege vier Apfelstücke in Becher: mit Soda oder Backnatron, mit Kochsalz, mit Zucker und ohne Zusatz. Wiege sie jeden Tag und trage den Gewichtsverlust in ein Diagramm ein. Beobachte: Was passiert mit dem Stück ohne Salz?"
+ },
+ {
+  "id": "card_deir_el_medina",
+  "kind": "card",
+  "text": "Dair el Medina. Ca. 1500 bis 1100 vor Christus. Wow! Hier wohnten die Handwerker, die die Königsgräber im Tal der Könige bauten. Das Arbeiterdorf lag in einem Tal, nah an den Gräbern. Die Handwerker bekamen Getreide als Lohn. Sie hinterließen sehr viele Briefe und Notizen auf Scherben und Papyrus. So kennen wir ihren Alltag gut."
+ },
+ {
+  "id": "card_streik",
+  "kind": "card",
+  "text": "Der erste bekannte Streik. Um 1157 vor Christus. Wow! Die Arbeiter bekamen ihre Getreide-Rationen nicht rechtzeitig und legten die Arbeit nieder. Ein Papyrus berichtet davon. Die Arbeiter zogen aus dem Dorf und setzten sich vor einen Tempel. Sie forderten ihren Lohn. Es ist der älteste bekannte Streik der Geschichte."
+ },
+ {
+  "id": "card_baeckerin",
+  "kind": "card",
+  "text": "Bäckerin. In allen Epochen. Wow! Brot war so wichtig, dass Brot im Alltag oft Essen bedeutete. Brot gehörte zu jeder Mahlzeit. Der Teig wurde aus Emmer-Mehl und Wasser geknetet. Man ließ ihn aufgehen und backte ihn in Formen im Ofen. Oft war Sand im Mehl. Das sieht man an den abgenutzten Zähnen der Mumien."
+ },
+ {
+  "id": "card_braeuerin",
+  "kind": "card",
+  "text": "Brauerin. In allen Epochen. Wow! Bier galt als nahrhaftes Getränk. Arbeiter bekamen es als Teil ihres Lohns. Das ägyptische Bier war dick und nahrhaft. Man braute aus Gerste und Wasser einen Brei. Hefe machte aus Zucker Alkohol und Kohlenstoffdioxid. Heute würde man es kaum wie Bier erkennen."
+ },
+ {
+  "id": "card_kind",
+  "kind": "card",
+  "text": "Kind. In allen Epochen. Wow! Kinder trugen als Frisur eine Jugendlocke an der Seite des Kopfes. Kinder spielten mit Bällen, Puppen und Holztieren. Mit etwa vier Jahren halfen viele schon im Haushalt mit. Wer Glück hatte, ging in die Schule und lernte lesen und schreiben."
+ },
+ {
+  "id": "card_katze",
+  "kind": "card",
+  "text": "Hauskatze. Seit dem Mittleren Reich im Haus. Wow! Katzen waren so beliebt, dass man sie als Mumien beisetzte. Die Katze beschützte die Vorräte vor Mäusen. Man hielt sie als Haustier. Wenn eine Katze starb, trauerte die Familie. Die Göttin Bastet wurde mit Katzenkopf dargestellt."
+ },
+ {
+  "id": "card_papyrusrolle",
+  "kind": "card",
+  "text": "Papüruss. Seit der Frühzeit. Wow! Papyrusrollen waren teuer. Für Notizen benutzte man oft Scherben, sogenannte Ostraka. Auf einer Papyrusrolle schrieb man Briefe, Zauberbücher, Geschichten und Listen. Die Rolle wurde zusammengerollt und aufbewahrt. Manche sind über 3000 Jahre alt und noch lesbar."
+ },
+ {
+  "id": "card_hieroglyphen",
+  "kind": "card",
+  "text": "Hieroglüfen. Der Name bedeutet: heilige Zeichen (griechisch). Ab circa 3200 vor Christus bis ins 4. Jahrhundert nach Christus. Wow! Es gibt Zeichen für einzelne Laute, für ganze Wörter und Zeichen, die man nicht liest, sondern die erklären. Hieroglyphen sind Bilderzeichen. Ein Zeichen kann einen Laut meinen (wie ein Buchstabe), ein ganzes Wort oder eine Wortart. Es gibt 24 Zeichen für einzelne Konsonanten. Vokale schrieb man nicht."
+ },
+ {
+  "id": "card_mahlstein",
+  "kind": "card",
+  "text": "Mahlstein. In allen Epochen. Wow! Im Mehl war oft Steinstaub. Daran sieht man heute, wie stark die Zähne der Ägypter abgenutzt waren. Getreide wurde auf dem Mahlstein zerrieben. Man kniete davor und schob einen kleinen Stein hin und her. Das war anstrengende Arbeit."
+ },
+ {
+  "id": "card_senet",
+  "kind": "card",
+  "text": "Senet. Seit etwa 3000 vor Christus. Wow! Senet ist eines der ältesten bekannten Brettspiele der Welt. Senet spielte man auf einem Brett mit 30 Feldern. Jeder hatte Spielsteine, gewürfelt wurde mit Stäbchen. Wer zuerst alle Steine vom Brett brachte, gewann. Später sah man darin ein Bild für den Weg ins Jenseits."
+ },
+ {
+  "id": "card_bierbrot",
+  "kind": "card",
+  "text": "Brot und Bier. In allen Epochen. Wow! Auch für die Toten gab man Brot und Bier mit: im Grab sollten sie nicht hungern. Brot und Bier waren die Grundnahrung. Die Arbeiter bekamen sie als Lohn. Dazu gab es Zwiebeln, Linsen, Fisch und Früchte."
+ },
+ {
+  "id": "card_tal_der_koenige",
+  "kind": "card",
+  "text": "Tal der Könige. Ca. 1539 bis 1075 vor Christus. Wow! Über der Schlucht ragt ein Berg, der aussieht wie eine natürliche Pyramide. Im Tal der Könige liegen über 60 Gräber von Pharaonen und hohen Beamten. Die Gräber sind tief in den Felsen gehauen. Die Wände sind bemalt. Man wollte Räuber abschrecken: Der Eingang wurde versteckt."
+ },
+ {
+  "id": "card_tutanchamun",
+  "kind": "card",
+  "text": "Tutanchamun. Der Name bedeutet: lebendes Abbild des Amun. Regierte circa 1332 bis 1323 vor Christus. Wow! Er starb mit etwa 18 bis 19 Jahren. Sein Grab ist das am besten erhaltene Königsgrab, das man kennt. Tutanchamun wurde mit etwa 9 Jahren König. Er war nicht besonders bedeutend. Berühmt wurde er, weil sein Grab fast unberührt blieb. Darin lagen mehr als 5000 Gegenstände."
+ },
+ {
+  "id": "card_tutmaske",
+  "kind": "card",
+  "text": "Goldmaske. Um 1323 vor Christus. Wow! Die Maske wiegt über 10 Kilogramm. Augen und Streifen sind mit Edelsteinen und Glas eingelegt. Die Maske lag auf dem Gesicht der Mumie. Auf der Stirn sitzen ein Geier und eine Kobra. Sie sind die Schutzgöttinnen von Ober- und Unterägypten. Das Kopftuch hat blaue Streifen aus Glas und Halbedelstein."
+ },
+ {
+  "id": "card_thron",
+  "kind": "card",
+  "text": "Thron. Um 1330 vor Christus. Wow! Auf der Lehne sieht man den jungen König und seine Frau Anchesenamun. Der Thron ist aus Holz und mit Gold und Silber überzogen. Die Armlehnen haben die Form von Schlangen. Die Füße sind wie Löwenpfoten geformt."
+ },
+ {
+  "id": "card_sarg",
+  "kind": "card",
+  "text": "Särge. Um 1323 vor Christus. Wow! Der innerste Sarg ist aus massivem Gold und wiegt über 100 Kilogramm. Tutanchamuns Mumie lag in drei ineinander gesteckten Särgen. Die beiden äußeren sind aus Holz mit Gold. Der innere ist aus Gold. Alle drei steckten in einem Steinsarkophag. Darüber standen vier vergoldete Schreine."
+ },
+ {
+  "id": "card_schrein",
+  "kind": "card",
+  "text": "Schreine. Um 1323 vor Christus. Wow! Die vier Schreine passen wie russische Matroschka-Puppen ineinander. Die Schreine standen um den Steinsarkophag. Sie waren aus Holz und mit Blattgold belegt. Auf den Wänden stehen Zaubersprüche aus dem Totenbuch."
+ },
+ {
+  "id": "card_streitwagen",
+  "kind": "card",
+  "text": "Streitwagen. Neues Reich. Wow! Im Grab standen sechs Streitwagen, auseinandergebaut. Streitwagen kamen um 1600 vor Christus nach Ägypten, wohl mit den Hyksos. Sie waren schnell und leicht. Gezogen wurden sie von Pferden. Damit jagte man auch."
+ },
+ {
+  "id": "card_dolch",
+  "kind": "card",
+  "text": "Dolch. Um 1323 vor Christus. Wow! Die Klinge besteht aus Eisen, das vom Himmel kam, aus einem Meteoriten. Eisen war damals sehr selten und wertvoll. Man hat den Dolch untersucht: Sein Metall enthält viel Nickel. Das passt zu Eisen aus Meteoriten. Der Griff ist aus Gold."
+ },
+ {
+  "id": "card_carter",
+  "kind": "card",
+  "text": "Hauard Karter. 1874 bis 1939. Wow! Er suchte jahrelang vergeblich, dann fand er am 4. November 1922 eine Stufe. Howard Carter suchte im Tal der Könige nach dem Grab von Tutanchamun. Sein Geldgeber war Lord Carnarvon. Am 26. November 1922 sah er das erste Mal in die Vorkammer. Dort lagen Truhen, Betten und Statuen voller Gold. Die Ausgrabung dauerte rund zehn Jahre."
+ },
+ {
+  "id": "card_hatschepsut",
+  "kind": "card",
+  "text": "Hatschepsut. Der Name bedeutet: Die Erste unter den edlen Damen. Regierte circa 1479 bis 1458 vor Christus. Wow! Sie war eine der wenigen Frauen, die als Pharao regierte. Auf Bildern trägt sie oft einen falschen Bart. Hatschepsut regierte zuerst für ihren jungen Stiefsohn Thutmosis der Dritte, dann als Pharao. Sie ließ eine Handelsreise in das Land Punt schicken. Von dort brachte man Weihrauch, Gold und Bäume. Ihr Totentempel liegt in Terrassen vor einer Felswand."
+ },
+ {
+  "id": "card_ramses",
+  "kind": "card",
+  "text": "Ramses der Zweite. Regierte circa 1279 bis 1213 vor Christus. Wow! Er regierte rund 66 Jahre lang, länger als fast alle Pharaonen. Ramses der Zweite baute viele Tempel, darunter Abu Simbel mit vier riesigen Statuen. Er führte Kriege und schloss später einen Friedensvertrag mit den Hethitern. Er war berühmt und regierte sehr lange."
+ },
+ {
+  "id": "card_kleopatra",
+  "kind": "card",
+  "text": "Kleopatra die Siebte. 69 bis 30 vor Christus. Wow! Kleopatra sprach mehrere Sprachen. Sie war die erste Herrscherin ihrer Familie, die auch Ägyptisch lernte. Kleopatra stammte aus der Familie der Ptolemäer. Sie sprach Griechisch und lernte Ägyptisch. Sie versuchte, Ägypten unabhängig zu halten. Nach ihrem Tod im Jahr 30 vor Christus wurde Ägypten eine römische Provinz."
+ },
+ {
+  "id": "card_alexandria",
+  "kind": "card",
+  "text": "Alexandria. Gegründet 331 vor Christus. Wow! Die Stadt wurde von Alexander dem Großen gegründet und trägt seinen Namen. Alexandria wurde zur größten Stadt am Mittelmeer. Dort lagen ein großer Hafen, der Leuchtturm Pharos und die berühmte Bibliothek. Gelehrte aus vielen Ländern forschten und schrieben hier."
+ },
+ {
+  "id": "card_leuchtturm",
+  "kind": "card",
+  "text": "Leuchtturm. Um 280 vor Christus fertig. Wow! Er gehörte zu den sieben Weltwundern. Ein Erdbeben ließ ihn im Mittelalter einstürzen. Auf der Spitze brannte ein Feuer. Ein Spiegel sollte das Licht weit auf das Meer werfen. Im Französischen und Italienischen heißt Leuchtturm bis heute nach der Insel phare und faro."
+ },
+ {
+  "id": "card_bibliothek",
+  "kind": "card",
+  "text": "Bibliothek von Alexandria. Ab circa 290 vor Christus. Wow! Sie sollte alle Schriften der Welt sammeln. Der Überlieferung nach mussten Schiffe ihre Bücher zum Abschreiben abgeben. In der Bibliothek lagen Hunderttausende Papyrusrollen. Gelehrte wie Euklid arbeiteten in Alexandria. Die Bibliothek verfiel mit der Zeit und wurde nicht an einem einzigen Tag verbrannt."
+ },
+ {
+  "id": "card_rosetta",
+  "kind": "card",
+  "text": "Rosette. Beschriftet 196 vor Christus, gefunden 1799. Wow! Der Text steht dreimal auf dem Stein: in Hieroglyphen, in Demotisch und auf Griechisch. Griechisch konnten Forscher lesen. So ließ sich der Text mit den beiden ägyptischen Schriften vergleichen. Der Stein ist aus dunklem Granodiorit. Er trägt einen Erlass des Königs Ptolemaios der Fünfte."
+ },
+ {
+  "id": "card_champollion",
+  "kind": "card",
+  "text": "Schampoljon. 1790 bis 1832. Wow! Er lernte schon als Kind viele Sprachen. 1822 gelang es ihm, die Hieroglyphen zu entziffern. Champollion verglich die Namen in Kartuschen. Zum Beispiel Ptolemaios auf dem Stein. Er erkannte: Hieroglyphen sind Laut- und Bildzeichen zugleich. Ein Vorgänger, Thomas Young, hatte 1814 schon einige Zeichen richtig gedeutet."
+ },
+ {
+  "id": "card_ptolemaios",
+  "kind": "card",
+  "text": "Ptolemaios. Auf dem Stein von Rosette. Wow! Eine Kartusche ist ein Namensring. Darin standen die Namen von Königen. Der Name Ptolemaios kommt auf dem Stein mehrmals vor, auf Griechisch und in Hieroglyphen. So konnte man Zeichen und Laute zuordnen: p, t, o, l, m, i, s."
+ },
+ {
+  "id": "card_segelschiff",
+  "kind": "card",
+  "text": "Handelsschiff. Ptolemäerzeit. Wow! Ägypten lieferte Getreide an die Städte rund um das Mittelmeer. Von Alexandria aus segelten Schiffe nach Griechenland und Rom. Sie brachten Getreide, Papyrus und Glas. Auf dem Rückweg hatten sie Wein, Öl und Metall an Bord."
+ },
+ {
+  "id": "card_zeitrad",
+  "kind": "card",
+  "text": "Das Zeitrad der Sonne. Wow! Das alte Ägypten dauerte länger als alle Reiche, die wir heute kennen: rund 3000 Jahre. Das Zeitrad zeigt die Epochen des alten Ägypten von circa 3100 vor Christus bis 30 vor Christus: Frühzeit, Altes Reich, Mittleres Reich, Neues Reich, Späte Zeit und die Zeit der Ptolemäer. Wenn du den Zeiger drehst, siehst du im Zeitfenster eine passende Szene."
+ },
+ {
+  "id": "card_album",
+  "kind": "card",
+  "text": "Die Käfersammlung. Wow! Der Skarabäus war für die Ägypter ein Glücksbringer. Das sind die versteckten Sonnenkäfer, die du gefunden hast. Die Ägypter sahen im Pillendreher-Käfer ein Bild für die aufgehende Sonne: Wie der Käfer die Kugel rollt, so schiebt der Gott Chepre die Sonne über den Himmel."
+ },
+ {
+  "id": "card_zeitluecke",
+  "kind": "card",
+  "text": "Die große Zeitspanne. Wow! Zwischen Cheops und Kleopatra liegen mehr Jahre als zwischen Kleopatra und heute. Die Cheops-Pyramide entstand um 2600 vor Christus Kleopatra starb 30 vor Christus Dazwischen liegen etwa 2500 Jahre. Von Kleopatra bis heute sind es gut 2050 Jahre."
+ }
+]
