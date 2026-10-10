@@ -65,9 +65,10 @@ export class Music {
   tick(from, to) {
     const c = this.cfg; if (!c) return;
     while (this.next < to) { this.phrase(); if (this.live.length > 12) this.live = this.live.filter((v) => !v.dead); }
-    if (c.theme) {
-      if (!this.th && this.tStart < to) this.startTheme(Math.max(this.tStart, from));
+    while (c.theme) { // Thema: Zeilen planen; nach dem Ende ggf. gleich das nächste Mal (nur beim Offline-Rendern über mehrere Minuten relevant)
+      if (!this.th) { if (this.tStart < to) this.startTheme(Math.max(this.tStart, from)); else break; }
       while (this.th && this.th.tl < to) this.themeLine();
+      if (this.th) break;
     }
   }
   motifFor(c, short) {
