@@ -4,10 +4,17 @@ import krokodil from './animals/krokodil.js';
 import ibis from './animals/ibis.js';
 import reiher from './animals/reiher.js';
 import fisch from './animals/fisch.js';
+import ochse from './animals/ochse.js';
+import esel from './animals/esel.js';
+import pferd from './animals/pferd.js';
 import nilpferd from './animals/nilpferd.js';
 const sk = (tone) => (o = {}) => skarabaeus({ tone, ...o });
 export default {
   skarabaeus,
+  pferd,
+  esel,
+  ochse,
+  ochse_joch: (o = {}) => ochse({ ...o, yoke: true }),
   fisch,
   fisch_tilapia: (o = {}) => fisch({ ...o, kind: 'tilapia' }),
   reiher,

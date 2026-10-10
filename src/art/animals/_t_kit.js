@@ -180,6 +180,12 @@ export function kit(u) {
     }
     return out;
   };
+  // lift: build a part of the drawing at design coordinates, then raise it by dy (design units) afterwards:
+  // L = K.up(dy); L.s(...shapes) shifts polygons, L.d(decoFn) shifts the painting coordinates of a deco callback.
+  K.up = (dy, dx = 0) => ({
+    s: (...items) => K.S(...items).map((p) => p.map(([x, y]) => [x + dx * u, y + dy * u])),
+    d: (fn) => (c, bb) => fn({ ...c, tf: (x, y) => c.tf(x + dx * u, y + dy * u) }, bb),
+  });
   // compose several deco functions
   K.deco = (...fns) => (c, bb) => { for (const f of fns) if (f) f(c, bb); };
   return K;
