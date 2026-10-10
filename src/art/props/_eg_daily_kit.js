@@ -155,3 +155,26 @@ export function flameShape(cx, y0, w, h, lean = 0, k = 2) {
     [cx + w * 0.18 + lean * w, y0 + h * 0.7], [cx + w * 0.5, y0 + h * 0.4], [cx + w * 0.52, y0 + h * 0.16], [cx + w * 0.2, y0]], k);
 }
 export { rngOf as rng };
+
+/** Gefäß-Silhouette: prof = [[radius, y], ...] von unten nach oben, achsensymmetrisch um x=cx; sm = Glättung. */
+export function vase(prof, cx = 0, sm = 2) {
+  const R = prof.map(([r, y]) => [cx + r, y]);
+  const Lf = prof.slice().reverse().map(([r, y]) => [cx - r, y]);
+  return poly(R.concat(Lf), sm);
+}
+/** Symmetrischer Radius-Verlauf als Funktion von y (lineare Interpolation) – für Bänder auf Gefäßen. */
+export function radiusAt(prof, y) {
+  for (let i = 0; i < prof.length - 1; i++) {
+    const [r0, y0] = prof[i], [r1, y1] = prof[i + 1];
+    if (y >= y0 && y <= y1) return r0 + ((r1 - r0) * (y - y0)) / (y1 - y0 || 1);
+  }
+  return prof[prof.length - 1][0];
+}
+/** Zähes Zufallsmuster Lehmverputz-Spritzer */
+export function plasterBlotches(c, bb, cols, n, seed = 2) {
+  const r = rngOf(seed, 31);
+  for (let i = 0; i < n; i++) {
+    const x = bb.x0 + r() * bb.w, y = bb.y0 + r() * bb.h, rx = 0.01 + r() * 0.03;
+    fillPoly(c, blob(x, y, rx, rx * (0.4 + r() * 0.4), r() * 3, 9), cols[Math.floor(r() * cols.length)], 0.35);
+  }
+}
