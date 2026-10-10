@@ -449,8 +449,9 @@ export function person(o = {}) {
   }
   if (garment === 'gehrock1822') {
     const jc = o.garmentCol || '#2e3646';
-    const coat = poly(Tp([[-0.080, -0.26], [-0.074, -0.10], [-0.068, 0.02], [-0.062, 0.10], [-0.072, 0.20], [-0.078, 0.27], [-0.068, 0.32], [-0.040, 0.345], [-0.005, 0.36], [0.030, 0.35], [0.064, 0.30], [0.078, 0.24],
-      [0.074, 0.16], [0.066, 0.07], [0.076, -0.02], [0.092, -0.20], [0.096, -0.255], [0.02, -0.262]]), 1);
+    const coatPts = [[-0.080, -0.26], [-0.074, -0.10], [-0.068, 0.02], [-0.062, 0.10], [-0.072, 0.20], [-0.078, 0.27], [-0.068, 0.32], [-0.040, 0.345], [-0.005, 0.36], [0.030, 0.35], [0.064, 0.30], [0.078, 0.24],
+      [0.074, 0.16], [0.066, 0.07], [0.076, -0.02], [0.092, -0.20], [0.096, -0.255], [0.02, -0.262]];
+    const coat = poly(Tp(pose === 'chair' ? [[-0.09, -0.07], [-0.074, -0.02], ...coatPts.slice(2, 16), [0.09, -0.02], [0.13, -0.04], [0.14, -0.075], [0.02, -0.08]] : coatPts), 1);
     bodyLayers.push({
       shapes: [coat], fill: { top: tint(jc, 0.08), bottom: shade(jc, 0.1) },
       deco: (c, bb) => {
@@ -953,6 +954,14 @@ export const HEADS = {
       layers: [{ shapes: [poly(cap, 1), ...curls, side], fill: { top: tint(hc, 0.12), bottom: hc }, deco: (c, bb) => { for (const [x, y] of [[0.04, 0.08], [0.0, 0.09], [-0.04, 0.09], [-0.07, 0.06], [-0.085, 0.02]]) K.pen.curve(c, [K.P(x - 0.01, y - 0.006), K.P(x, y + 0.006), K.P(x + 0.01, y - 0.004)], tint(hc, 0.35), 0.004 * K.hs, 0.8); K.pen.vol(c, bb, 'rgba(0,0,0,0.2)'); } }],
     };
   },
+  strohhut(K, o) { // Kurzhaar + flacher Strohhut (Feldarbeit)
+    const base = HEADS.kurz(K, { ...o, band: undefined });
+    const brim = K.limb([[-0.13, 0.072, 0.016], [-0.06, 0.088, 0.018], [0.03, 0.090, 0.018], [0.11, 0.078, 0.014]]);
+    const crown = K.pts([[-0.07, 0.085], [-0.05, 0.135], [-0.01, 0.150], [0.03, 0.138], [0.05, 0.088]]);
+    base.layers.push({ shapes: [brim, poly(crown, 1)], fill: { top: '#ead48c', bottom: '#c9a85a' }, deco: (c, bb) => { for (let i = 0; i < 12; i++) K.pen.line(c, [K.P(-0.13 + i * 0.022, 0.065), K.P(-0.12 + i * 0.02, 0.15)], '#a8883e', 0.003 * K.hs, 0.6); K.pen.line(c, [K.P(-0.068, 0.095), K.P(0.052, 0.095)], EG.carn, 0.009 * K.hs, 0.9); } });
+    base.top = [-0.01, 0.15];
+    return base;
+  },
   anubis(K, o) { return headAnubis(K, o); },
 };
 
@@ -1119,6 +1128,11 @@ export const PROPS = {
         },
       }],
     };
+  },
+  blatt(g, s, { C, pen }) { // Notizblatt / Papier (europäisch)
+    const a = s.ang ?? 0.2, A = axis(g.G, a);
+    const p = poly([A(-0.01, -0.02), A(0.13, -0.03), A(0.135, 0.07), A(-0.005, 0.08)], 0);
+    return { under: [], over: [{ shapes: [p], fill: { top: '#fbf6e8', bottom: '#e6dcc2' }, deco: (c) => { for (let i = 0; i < 5; i++) pen.line(c, [A(0.02, 0.06 - i * 0.017), A(0.11, 0.055 - i * 0.017)], '#5a5a70', 0.0035, 0.6); } }] };
   },
   binse(g, s, { C, pen }) {
     const a = s.ang ?? -1.0, A = axis(g.G, a);
