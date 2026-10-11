@@ -96,4 +96,7 @@ node tools/speech-dump.mjs && python3 tools/make-narration.py --kbps 24   # Erz�
 
 ## Lizenzen
 
-Code und Kunst: eigener Code (Papierschnitt-DSL). three.js: MIT. clipper-lib: Boost Software License. Erzählstimme: Piper „thorsten-medium“, CC0 (Thorsten Müller), siehe `assets/narration/LICENSE.txt`. Texte: eigene Formulierung.
+- **Code und im Code erzeugte Kunst:** MIT (`LICENSE`).
+- **Texte, Karten, Faktenbasis, Dokumentation:** CC BY-SA 4.0 (`LICENSE-CONTENT`). Bei Weitergabe bitte „Das große Ägypten-Popup-Buch von Stephan Wilski“ nennen.
+- **Erzählstimme:** Piper „thorsten-medium“, CC0 (Thorsten Müller), siehe `assets/narration/LICENSE.txt`.
+- **Bestandteile von Dritten** (three.js MIT, clipper-lib Boost, …): siehe `NOTICE.md`.

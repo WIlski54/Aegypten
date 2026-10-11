@@ -1,0 +1,6 @@
+Erzählstimme "Das große Ägypten-Popup-Buch"
+
+Die MP3-Clips in diesem Ordner wurden offline erzeugt mit dem Sprachmodell Piper "de_DE-thorsten-medium"
+(Stimme: Thorsten Müller, Thorsten-Voice, Lizenz CC0 1.0, https://creativecommons.org/publicdomain/zero/1.0/),
+ausgeführt über sherpa-onnx (Apache License 2.0), Text -> Sprache. Die Texte stehen unter CC BY-SA 4.0 (siehe LICENSE-CONTENT).
+Die erzeugten Audiodateien dürfen frei weiterverwendet werden.
