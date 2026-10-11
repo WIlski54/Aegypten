@@ -2,6 +2,7 @@
 
 Ein 3D-Popup-Buch im Browser: neun Stationen vom Nil und der Einigung der Beiden Länder über die Pyramiden von Gizeh, Götter, Mumienwerkstatt, Alltag und das Tal der Könige bis zu Kleopatra und dem Stein von Rosette. Für Klasse 5/6, mit Erzählstimme, Info-Karten und Arbeitsblatt-Export. Die Engine stammt aus dem „Großen Dinosaurier-Popup-Buch“, Inhalt und Kunst sind neu.
 
+- **Online ansehen** (nach dem Einschalten von GitHub Pages, siehe `tools/publish-pages.sh`): https://wilski54.github.io/Aegypten/
 - **Eine Datei**: `dist/index.html` (alles eingebettet). Doppelklick genügt, auch von der Festplatte (`file://`) und auf dem iPad (Safari).
 - **Keine externen Anfragen**: keine Bibliotheken, Schriften, Bilder oder Töne aus dem Netz. Keine Cookies, kein Tracking. Alle Grafiken, Texturen und Klänge entstehen im Code; die Erzählstimme steckt als MP3 in der Datei.
 - **Gespeichert wird nur im Browser** (`localStorage`, nur auf diesem Gerät): Lautstärke, Ton an/aus, Ruhiger Modus, Untertitel, Auto-Vorlesen und welche versteckten Sonnenkäfer du gefunden hast. Alles ist mit Rückfall gebaut; ohne Speicher läuft das Buch trotzdem.
